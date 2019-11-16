@@ -27,6 +27,18 @@ express()
   })
   .get('/cool', (req, res) => res.send(cool()))
   .get('/times', (req, res) => res.send(showTimes()))
+  .get('/getRate', (req, res) => {
+    console.log("received request for getRate");
+    console.log(req.query.weight);
+
+    var weight = req.query.weight;
+    var type   = req.query.type;
+    var cost = calculateRate(weight, type);
+    var params = {weight: weight, type: type, cost: cost}
+
+    console.log("params are " + params);
+    res.render('pages/getRate', params);
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
   showTimes = () => { 
@@ -36,4 +48,10 @@ express()
       result += i + ' '
     }
     return result
+  }
+
+  calculateRate = (weight, type) => { 
+    console.log("calculateRate function is called");
+    console.log("inside calculateRate " + weight);
+    return 8.00;
   }

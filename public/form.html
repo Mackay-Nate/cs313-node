@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Math Submission Form</title>
+  <title>Math Submission Form</title>
+  <style>
+    #weight { 
+      padding: 10px;
+      margin: 10px;
+      width: 175px;
+    } 
+    select, input { 
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+    }
+    p { 
+      margin: 0 10px;
+    }
+  </style>
 </head>
-<body>
-	<h1>Math Submission Form</h1>
-	<form action="/math" method="get" name="form">
-		<select name="operation">
-			<option>Add</option>
-			<option>Subtract</option>
-			<option>Multiply</option>
-			<option>Divide</option>
+<body onload="document.getElementsById('weight').focus()">
+	<h1>Determine letter postage</h1>
+  <form action="/getRate" method="get" name="form"> 
+    <p>Weight: (lbs)</p>
+    <input type="text" name="weight" id="weight"> <br>
+    <p>Mail type:</p>
+		<select name="type">
+			<option value="stamp">Letters (Stamped)</option>
+			<option value="meter">Letters (Metered)</option>
+			<option value="flats">Large Envelopes (Flats)</option>
+			<option value="first">First-Class Package Service-Retail</option>
 		</select>
-
-		<input type="text" name="operand1">
-		<input type="text" name="operand2">
-
-    <br><br>
-    
-    <input type="button" value="AJAX update" onclick="display()">
-		<input type="submit" value="Get Result">
-
+    <br>
+		<input type="submit">
   </form>
   
-  <div id="ajaxDiv"></div>
   <script>
   
   </script>
