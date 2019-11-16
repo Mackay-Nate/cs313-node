@@ -21,14 +21,14 @@
 <body onload="document.getElementsById('weight').focus()">
 	<h1>Determine letter postage</h1>
   <form action="/getRate" method="get" name="form"> 
-    <p>Weight: (lbs)</p>
+    <p>Weight: (oz)</p>
     <input type="text" name="weight" id="weight"> <br>
     <p>Mail type:</p>
 		<select name="type">
-			<option value="stamp">Letters (Stamped)</option>
-			<option value="meter">Letters (Metered)</option>
-			<option value="flats">Large Envelopes (Flats)</option>
-			<option value="first">First-Class Package Service-Retail</option>
+			<option value="Stamped Letter">Letters (Stamped)</option>
+			<option value="Metered Letter">Letters (Metered)</option>
+			<option value="Large flats Envelope">Large Envelopes (Flats)</option>
+			<option value="Package">First-Class Package Service-Retail</option>
 		</select>
     <br>
 		<input type="submit">

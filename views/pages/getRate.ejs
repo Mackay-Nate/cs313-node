@@ -5,13 +5,7 @@
 </head>
 <body>
 	<h1>Postage</h1>
-  <p>Your package will cost "cool"</p>
-
-  <%= weight %>
-  
-  <%= type %> 
-
-  <%= cost %> 
+  <p>For a <%= type %>, that weights <%= weight.toFixed(1) %> ounces, your <%= type2 %> will cost $<%= cost.toFixed(2) %></p>
 
   <script>
 

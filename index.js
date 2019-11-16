@@ -34,7 +34,22 @@ express()
     var weight = req.query.weight;
     var type   = req.query.type;
     var cost = calculateRate(weight, type);
-    var params = {weight: weight, type: type, cost: cost}
+    console.log('type ' + type);
+    switch (type) { 
+      case "Stamped Letter":
+        type2 = "letter";
+        break;
+      case "Metered Letter":
+        type2 = "letter";
+        break;
+      case "Large flat Envelope":
+        type2 = "envelope";
+        break;
+      case "Package":
+        type2 = "package";
+        break;
+    }
+    var params = {weight: weight, type: type, cost: cost, type2: type2}
 
     console.log("params are " + params);
     res.render('pages/getRate', params);
@@ -53,5 +68,34 @@ express()
   calculateRate = (weight, type) => { 
     console.log("calculateRate function is called");
     console.log("inside calculateRate " + weight);
-    return 8.00;
+
+    switch (type) { 
+      case "Stamped Letter":
+        if (weight < 1)      { cost = 0.55; }
+        else if (weight < 2) { cost = 0.70; }
+        else if (weight < 3) { cost = 0.85; }
+        else                 { cost = 1.00; }
+        break;
+      case "Metered Letter":
+        if (weight < 1)      { cost = 0.50; }
+        else if (weight < 2) { cost = 0.65; }
+        else if (weight < 3) { cost = 0.80; }
+        else                 { cost = 0.95; }
+        break;
+      case "Large flat Envelope":
+        cost = 0.85 + (0.15 * weight);
+        break;
+      case "Package":
+        // zones 1 & 2
+        if      (weight < 4)  { cost = 3.66; }
+        else if (weight < 8)  { cost = 4.39; }
+        else if (weight < 12) { cost = 5.19; }
+        else                  { cost = 5.71; }
+        break;
+    }
+
+    console.log("cost " + cost);
+    console.log("type " + type);
+
+    return cost;
   }
