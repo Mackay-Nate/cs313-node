@@ -82,7 +82,19 @@ express()
         else                 { cost = 0.95; }
         break;
       case "Large flat Envelope":
-        cost = 0.85 + (0.15 * weight);
+        if (weight < 1)       { cost = 1.00; }
+        else if (weight < 2)  { cost = 1.15; }
+        else if (weight < 3)  { cost = 1.30; }
+        else if (weight < 4)  { cost = 1.45; }
+        else if (weight < 5)  { cost = 1.60; }
+        else if (weight < 6)  { cost = 1.75; }
+        else if (weight < 7)  { cost = 1.90; }
+        else if (weight < 8)  { cost = 2.05; }
+        else if (weight < 9)  { cost = 2.20; }
+        else if (weight < 10) { cost = 2.35; }
+        else if (weight < 11) { cost = 2.50; }
+        else if (weight < 12) { cost = 2.65; }
+        else                  { cost = 2.80; }
         break;
       case "Package":
         // zones 1 & 2
