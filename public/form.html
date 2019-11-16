@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Math Submission Form</title>
+</head>
+<body>
+	<h1>Math Submission Form</h1>
+	<form action="/math" method="get" name="form">
+		<select name="operation">
+			<option>Add</option>
+			<option>Subtract</option>
+			<option>Multiply</option>
+			<option>Divide</option>
+		</select>
+
+		<input type="text" name="operand1">
+		<input type="text" name="operand2">
+
+    <br><br>
+    
+    <input type="button" value="AJAX update" onclick="display()">
+		<input type="submit" value="Get Result">
+
+  </form>
+  
+  <div id="ajaxDiv"></div>
+  <script>
+    function display() {
+
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() { 
+    // if (this.readyState == 0 && this.status == 0) { 
+
+      // myObj = params;
+
+      // document.getElementById('ajaxDiv').innerHTML = '<p>The result of performing "<%= operation %>" on <%= left %> and <%= right %> is: <%= result %></p>';
+
+//    }
+  }
+
+  xhttp.open("GET", "/math_service", true);
+  xhttp.send();
+  }
+  </script>
+</body>
+</html>
