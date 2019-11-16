@@ -29,7 +29,7 @@ express()
   .get('/times', (req, res) => res.send(showTimes()))
   .get('/getRate', (req, res) => {
     console.log("received request for getRate");
-    console.log(req.query.weight);
+    console.log("weight is " + req.query.weight);
 
     var weight = req.query.weight;
     var type   = req.query.type;
@@ -51,7 +51,6 @@ express()
     }
     var params = {weight: weight, type: type, cost: cost, type2: type2}
 
-    console.log("params are " + params);
     res.render('pages/getRate', params);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
@@ -67,7 +66,7 @@ express()
 
   calculateRate = (weight, type) => { 
     console.log("calculateRate function is called");
-    console.log("inside calculateRate " + weight);
+    console.log("inside calculateRate weight is " + weight);
 
     switch (type) { 
       case "Stamped Letter":
@@ -94,7 +93,7 @@ express()
         break;
     }
 
-    console.log("cost " + cost);
+    console.log("cost is " + cost);
     console.log("type " + type);
 
     return cost;
