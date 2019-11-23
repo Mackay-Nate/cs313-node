@@ -26,7 +26,55 @@ express()
     }
   })
   .get('/cool', (req, res) => res.send(cool()))
+  .get('/home', (req, res) => res.send(home()))
   .get('/times', (req, res) => res.send(showTimes()))
+  .get('/populate', (req, res) => {
+    console.log("received request for populate");
+
+
+    var weight = 0, type = 0, cost = 0, type2 = 0;
+    var params = {weight: weight, type: type, cost: cost, type2: type2}
+
+    res.render('public/jobs.html', params);
+  })
+
+  .get('/daily', (req, res) => {
+    console.log("received request for daily");
+
+    var member = {1: "member1", 2: "member2", 3: "member3", 4: "member4" };
+    var params = {member: member}
+    console.log(member);
+ 
+    // for (i = 0; i < member.length; i++) {
+    //   var item = document.createElement('option');
+    //   item.value = member[i + 1];
+    //   dropdown.appendChild(item);
+    // }
+
+    res.render('pages/daily', params);
+  })
+
+  .get('/week', (req, res) => {
+    console.log("received request for week");
+
+    var job = ['family room', 'living room', 'bedroom', 'outside'];
+    var member = ["member1", "member2", "member3", "member4" ];
+    var params = {member: member, job: job}
+
+    res.render('pages/week', params);
+  })
+
+  .get('/monthly', (req, res) => {
+    console.log("received request for monthly");
+
+    var date = ['7th', '11th', '9th', '16th']
+    var job = ['job1', 'job2', 'job3', 'job4'];
+    var member = ["member1", "member2", "member3", "member4" ];
+    var params = {member: member, job: job, date: date}
+
+    res.render('pages/monthly', params);
+  })
+
   .get('/getRate', (req, res) => {
     console.log("received request for getRate");
     console.log("weight is " + req.query.weight);
@@ -54,6 +102,9 @@ express()
     res.render('pages/getRate', params);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+
+
 
   showTimes = () => { 
     let result = ''
