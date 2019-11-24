@@ -14,15 +14,11 @@
     
   </select>
 
-  <!-- <%=member[1]%> -->
-  <!-- <%=member[2]%> -->
-
   <ul>
-      <% results.forEach(function(r) { %>
-          <li><%= r.id %> - <%= r.firstname %></li>
+      <% member.forEach(function(m) { %>
+          <li><%= m.id %> - <%= m.firstname %></li>
       <% }); %>
   </ul>
-  
 
   <script>
 
