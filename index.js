@@ -74,13 +74,14 @@ express()
       const members = await client.query('SELECT * FROM Member');
       const member = { 'members': (members) ? members.firstName : null};
       // res.render('pages/db', results );
-      var params = {member: member}
-      res.render('pages/daily', params);
-  
+      // var params = {member: member}
+      // res.render('pages/daily', params);
+
       var job = ['family room', 'living room', 'bedroom', 'outside'];
       var params = {member: member, job: job}
-  
+
       res.render('pages/week', params);
+
       client.release();
     } catch (err) {
       console.error(err);
