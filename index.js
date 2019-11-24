@@ -105,7 +105,6 @@ express()
       case "Nate":
         console.log("Nate");
         var message = "Monday: Wash the dishes<br>Wednesday: Empty the dishwasher<br>Friday: Wash the dishes, Make dinner<br>";
-        document.getElementById('jobs'). innerHTML = message;
         
         break;
       case "Jen":
@@ -135,7 +134,7 @@ express()
         break;
     }
     var member = req.query.dropdown;
-    var params = {weight: weight, message, message };
+    var params = {member: member, message, message };
 
     res.render('pages/daily', params);
 
