@@ -22,7 +22,7 @@
   </div>
   <ul>
       <% member.forEach(function(m) { %>
-          <li><%= m.id %> - <%= m.firstname %></li>
+          <li><input type="button" onclick="selectMember(<%=m.firstname%>)"><%= m.id %> - <%= m.firstname %></li>
       <% }); %>
   </ul>
 
