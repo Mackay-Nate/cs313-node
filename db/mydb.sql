@@ -22,6 +22,10 @@ INSERT INTO job (jobName) VALUES ('Clean toilet');
 INSERT INTO job (jobName) VALUES ('Sink, and mirror');
 INSERT INTO job (jobName) VALUES ('Sweep floor');
 INSERT INTO job (jobName) VALUES ('hallway');
+INSERT INTO job (jobName) VALUES ('dust');
+INSERT INTO job (jobName) VALUES ('Wash the baseboards');
+INSERT INTO job (jobName) VALUES ('Wipe the cabinets');
+INSERT INTO job (jobName) VALUES ('Dust the blinds');
 INSERT INTO job (jobName) VALUES ('');
 
 --Member db inserted 

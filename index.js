@@ -78,7 +78,7 @@ express()
 
   })
 
-  .get('/monthly', (req, res) => {
+  .get('/monthly', async (req, res) => {
     try { 
       console.log("received request for monthly");
 
