@@ -43,7 +43,7 @@ express()
 
     try {
       const client = await pool.connect()
-      const member = await client.query('SELECT * Member');
+      const member = await client.query('SELECT * FROM Member');
       // const results = { 'results': (result) ? result.rows : null};
       // res.render('pages/db', results );
       client.release();
