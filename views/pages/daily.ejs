@@ -11,7 +11,7 @@
       <option >Select a member</option>
       <% for (var i = 0; i < member.length; i++) { %>
         <option value='<%=member[i].firstname%>' 
-          onselect="selectMember(<%=member[i].firstname%>)"><%=member[i].firstname%></option>
+          onclick="selectMember(<%=member[i].firstname%>)"><%=member[i].firstname%></option>
       <% } %>
     
     </select>
