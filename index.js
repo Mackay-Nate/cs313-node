@@ -46,6 +46,10 @@ express()
       const members = await client.query('SELECT * FROM Member');
       const member = { 'results': (members) ? members.firstName : null};
       // res.render('pages/db', results );
+      var params = {member: member}
+      console.log(member);
+      res.render('pages/daily', params);
+  
       client.release();
     } catch (err) {
       console.error(err);
@@ -53,8 +57,6 @@ express()
     }
 
     // var member = {1: "member1", 2: "member2", 3: "member3", 4: "member4" };
-    var params = {member: member}
-    console.log(member);
  
     // for (i = 0; i < member.length; i++) {
     //   var item = document.createElement('option');
@@ -62,7 +64,6 @@ express()
     //   dropdown.appendChild(item);
     // }
 
-    res.render('pages/daily', params);
   })
 
   .get('/week', (req, res) => {
