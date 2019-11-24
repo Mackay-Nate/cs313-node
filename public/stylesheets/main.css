@@ -48,14 +48,18 @@ td {
 }
 
 .ava { 
-
+  color: red;
 }
 
 .nat { 
-
+  color: gold;
 }
 
 button { 
   margin: 10px; 
   padding: 10px 60px;
+}
+
+option { 
+  padding: 5px 10px;
 }

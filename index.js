@@ -49,44 +49,24 @@ express()
 
       res.render('pages/daily', params );
 
-
-      // const client = await pool.connect()
-      // const members = await client.query('SELECT * FROM Member');
-      // const member = { 'members': (members) ? members.firstName : null};
-      // // res.render('pages/db', params );
-      // var params = {member: member}
-      // console.log(member);
-      // res.render('pages/daily', params);
-  
       client.release();
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
     }
 
-    // var member = {1: "member1", 2: "member2", 3: "member3", 4: "member4" };
- 
-    // for (i = 0; i < member.length; i++) {
-    //   var item = document.createElement('option');
-    //   item.value = member[i + 1];
-    //   dropdown.appendChild(item);
-    // }
-
   })
 
   .get('/week', async (req, res) => {
     console.log("received request for week");
     try {
-      //var member = ["member1", "member2", "member3", "member4" ];
-      const client = await pool.connect()
-      const members = await client.query('SELECT * FROM Member');
-      const member = { 'members': (members) ? members.firstName : null};
-      // res.render('pages/db', params );
-      // var params = {member: member}
-      // res.render('pages/daily', params);
 
-      var job = ['family room', 'living room', 'bedroom', 'outside'];
-      var params = {member: member, job: job}
+      const client = await pool.connect()
+      const member = await client.query('SELECT * FROM Member');
+      const job    = await client.query('SELECT * FROM Job');
+
+      const params = { 'member': (member) ? member.rows : null, 
+                        'job'  : (job)    ? job.rows    : null  };
 
       res.render('pages/week', params);
 
