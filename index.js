@@ -66,7 +66,7 @@ express()
 
   })
 
-  .get('/week', (req, res) => {
+  .get('/week', async (req, res) => {
     console.log("received request for week");
     try {
       var member = ["member1", "member2", "member3", "member4" ];
