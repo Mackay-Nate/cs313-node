@@ -10,11 +10,12 @@
    <select id="dropdown" name="dropdown"> 
       <option >Select a member</option>
       <% for (var i = 0; i < member.length; i++) { %>
-        <option value='<%=member[i].firstname%>'><%=member[i].firstname%></option>
+        <option value='<%=member[i].firstname%>' 
+          onselect="selectMember(<%=member[i].firstname%>)"><%=member[i].firstname%></option>
       <% } %>
     
     </select>
-    <input type="submit">
+    <!-- <input type="submit"> -->
   </form>
   <div id="jobs">
 
