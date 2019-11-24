@@ -45,7 +45,7 @@ express()
 
       const client = await pool.connect()
       const member = await client.query('SELECT * FROM Member');
-      const params = { 'params': (member) ? member.rows : null };
+      const params = { 'member': (member) ? member.rows : null };
 
       res.render('pages/daily', params );
 
