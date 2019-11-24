@@ -44,7 +44,7 @@ express()
     try {
       const client = await pool.connect()
       const members = await client.query('SELECT * FROM Member');
-      const member = { 'results': (members) ? members.firstName : null};
+      const member = { 'members': (members) ? members.firstName : null};
       // res.render('pages/db', results );
       var params = {member: member}
       console.log(member);
@@ -68,12 +68,25 @@ express()
 
   .get('/week', (req, res) => {
     console.log("received request for week");
+    try {
+      var member = ["member1", "member2", "member3", "member4" ];
+      const client = await pool.connect()
+      const members = await client.query('SELECT * FROM Member');
+      const member = { 'members': (members) ? members.firstName : null};
+      // res.render('pages/db', results );
+      var params = {member: member}
+      res.render('pages/daily', params);
+  
+      var job = ['family room', 'living room', 'bedroom', 'outside'];
+      var params = {member: member, job: job}
+  
+      res.render('pages/week', params);
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
 
-    var job = ['family room', 'living room', 'bedroom', 'outside'];
-    var member = ["member1", "member2", "member3", "member4" ];
-    var params = {member: member, job: job}
-
-    res.render('pages/week', params);
   })
 
   .get('/monthly', (req, res) => {
