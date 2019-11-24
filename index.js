@@ -42,19 +42,18 @@ express()
     console.log("received request for daily");
 
     try {
-      var member = ["member1", "member2", "member3", "member4" ];
 
       const client = await pool.connect()
-      const result = await client.query('SELECT * FROM Member');
-      const results = { 'results': (result) ? result.rows : null, member: member};
+      const member = await client.query('SELECT * FROM Member');
+      const params = { 'params': (member) ? member.rows : null };
 
-      res.render('pages/daily', results );
+      res.render('pages/daily', params );
 
 
       // const client = await pool.connect()
       // const members = await client.query('SELECT * FROM Member');
       // const member = { 'members': (members) ? members.firstName : null};
-      // // res.render('pages/db', results );
+      // // res.render('pages/db', params );
       // var params = {member: member}
       // console.log(member);
       // res.render('pages/daily', params);
@@ -82,7 +81,7 @@ express()
       const client = await pool.connect()
       const members = await client.query('SELECT * FROM Member');
       const member = { 'members': (members) ? members.firstName : null};
-      // res.render('pages/db', results );
+      // res.render('pages/db', params );
       // var params = {member: member}
       // res.render('pages/daily', params);
 
