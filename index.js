@@ -101,7 +101,7 @@ express()
   .get('/selectMember', (req, res) => {
     console.log("received request for selectMember");
 
-    switch (dropdown) { 
+    switch (req.query.dropdown) { 
       case "Nate":
         console.log("Nate");
         var message = "Monday: Wash the dishes<br>Wednesday: Empty the dishwasher<br>Friday: Wash the dishes, Make dinner<br>";
@@ -109,22 +109,29 @@ express()
         
         break;
       case "Jen":
-        type2 = "letter";
+
+
         break;
       case "gpa":
-        type2 = "envelope";
+  
+  
         break;
       case "gma":
-        type2 = "package";
+    
+      
         break;
       case "Natalie":
-        type2 = "package";
+        
+      
         break;
       case "Ava":
-        type2 = "package";
+      
+      
         break;
       case "Corbin":
-        type2 = "package";
+      
+      
+      
         break;
     }
 
