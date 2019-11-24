@@ -6,14 +6,19 @@
 <body>
 	<h1>Daily jobs</h1>
 
-  <select id="dropdown"> 
-    <option >Select a member</option>
-    <% for (var i = 0; i < member.length; i++) { %>
-      <option><%=member[i].firstname%></option>
-    <% } %>
+  <form action="/selectMember">
+   <select id="dropdown" name="dropdown"> 
+      <option >Select a member</option>
+      <% for (var i = 0; i < member.length; i++) { %>
+        <option value='<%=member[i].firstname%>'><%=member[i].firstname%></option>
+      <% } %>
     
-  </select>
-
+    </select>
+    <input type="submit">
+  </form>
+  <div id="jobs">
+    
+  </div>
   <ul>
       <% member.forEach(function(m) { %>
           <li><%= m.id %> - <%= m.firstname %></li>

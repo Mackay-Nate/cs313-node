@@ -31,7 +31,6 @@ express()
   .get('/populate', (req, res) => {
     console.log("received request for populate");
 
-
     var weight = 0, type = 0, cost = 0, type2 = 0;
     var params = {weight: weight, type: type, cost: cost, type2: type2}
 
@@ -99,6 +98,39 @@ express()
 
   })
 
+  .get('/selectMember', (req, res) => {
+    console.log("received request for selectMember");
+
+    switch (dropdown) { 
+      case "Nate":
+        console.log("Nate");
+        var message = "Monday: Wash the dishes<br>Wednesday: Empty the dishwasher<br>Friday: Wash the dishes, Make dinner<br>";
+        document.getElementById('jobs'). innerHTML = message;
+        
+        break;
+      case "Jen":
+        type2 = "letter";
+        break;
+      case "gpa":
+        type2 = "envelope";
+        break;
+      case "gma":
+        type2 = "package";
+        break;
+      case "Natalie":
+        type2 = "package";
+        break;
+      case "Ava":
+        type2 = "package";
+        break;
+      case "Corbin":
+        type2 = "package";
+        break;
+    }
+
+
+  })
+
   .get('/getRate', (req, res) => {
     console.log("received request for getRate");
     console.log("weight is " + req.query.weight);
@@ -126,9 +158,6 @@ express()
     res.render('pages/getRate', params);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
-
-
 
   showTimes = () => { 
     let result = ''
