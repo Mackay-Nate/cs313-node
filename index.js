@@ -38,10 +38,21 @@ express()
     res.render('public/jobs.html', params);
   })
 
-  .get('/daily', (req, res) => {
+  .get('/daily', async (req, res) => {
     console.log("received request for daily");
 
-    var member = {1: "member1", 2: "member2", 3: "member3", 4: "member4" };
+    try {
+      const client = await pool.connect()
+      const member = await client.query('SELECT * Member');
+      // const results = { 'results': (result) ? result.rows : null};
+      // res.render('pages/db', results );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+
+    // var member = {1: "member1", 2: "member2", 3: "member3", 4: "member4" };
     var params = {member: member}
     console.log(member);
  
