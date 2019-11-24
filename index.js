@@ -105,6 +105,7 @@ express()
       case "Nate":
         console.log("Nate");
         var message = "Monday: Wash the dishes<br>Wednesday: Empty the dishwasher<br>Friday: Wash the dishes, Make dinner<br>";
+        document.getElementById('jobs').innerHTML = message;
         
         break;
       case "Jen":
@@ -138,7 +139,7 @@ express()
 
     // res.render('pages/daily', params);
 
-  })
+  }
 
   .get('/getRate', (req, res) => {
     console.log("received request for getRate");
