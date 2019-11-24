@@ -8,17 +8,17 @@
 
   <select id="dropdown"> 
     <option >Select a member</option>
-    <% for (var i = 0; i < member.length; i++) { %>
+    <!-- <% for (var i = 0; i < member.length; i++) { %>
       <option><%=member[i+1]%></option>
-    <% } %> 
+    <% } %>  -->
     
   </select>
 
-  <%=member[1]%>
-  <%=member[2]%>
+  <!-- <%=member[1]%> -->
+  <!-- <%=member[2]%> -->
 
   <ul>
-      <% member.forEach(function(r) { %>
+      <% results.forEach(function(r) { %>
           <li><%= r.id %> - <%= r.firstName %></li>
       <% }); %>
   </ul>

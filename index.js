@@ -43,12 +43,18 @@ express()
 
     try {
       const client = await pool.connect()
-      const members = await client.query('SELECT * FROM Member');
-      const member = { 'members': (members) ? members.firstName : null};
-      // res.render('pages/db', results );
-      var params = {member: member}
-      console.log(member);
-      res.render('pages/daily', params);
+      const result = await client.query('SELECT * FROM test_table');
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/daily', results );
+
+
+      // const client = await pool.connect()
+      // const members = await client.query('SELECT * FROM Member');
+      // const member = { 'members': (members) ? members.firstName : null};
+      // // res.render('pages/db', results );
+      // var params = {member: member}
+      // console.log(member);
+      // res.render('pages/daily', params);
   
       client.release();
     } catch (err) {
