@@ -17,6 +17,12 @@
   <%=member[1]%>
   <%=member[2]%>
 
+  <ul>
+      <% member.forEach(function(r) { %>
+          <li><%= r.id %> - <%= r.firstName %></li>
+      <% }); %>
+  </ul>
+  
 
   <script>
 
