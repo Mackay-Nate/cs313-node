@@ -131,10 +131,13 @@ express()
       case "Corbin":
       
       
-      
+
         break;
     }
+    var member = req.query.dropdown;
+    var params = {weight: weight, message, message };
 
+    res.render('pages/daily', params);
 
   })
 
