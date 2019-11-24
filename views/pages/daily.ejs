@@ -11,7 +11,7 @@
       <option >Select a member</option>
       <% for (var i = 0; i < member.length; i++) { %>
         <option value='<%=member[i].firstname%>' 
-          onfocus="selectMember(<%=member[i].firstname%>)"><%=member[i].firstname%></option>
+          onfocus="selectMember('<%=member[i].firstname%>')"><%=member[i].firstname%></option>
       <% } %>
     
     </select>
@@ -64,7 +64,7 @@
         break;
     }
   }
-  
+
   </script>
 </body>
 </html>
