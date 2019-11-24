@@ -6,7 +6,7 @@
 <body>
 	<h1>Daily jobs</h1>
 
-  <form action="/selectMember">
+  <form action="selectMember(dropdown.value)">
    <select id="dropdown" name="dropdown"> 
       <option >Select a member</option>
       <% for (var i = 0; i < member.length; i++) { %>
@@ -17,7 +17,7 @@
     <input type="submit">
   </form>
   <div id="jobs">
-    
+
   </div>
   <ul>
       <% member.forEach(function(m) { %>

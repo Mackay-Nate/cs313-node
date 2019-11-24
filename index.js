@@ -98,10 +98,10 @@ express()
 
   })
 
-  .get('/selectMember', (req, res) => {
+  selectMember = (dropdown) => {
     console.log("received request for selectMember");
 
-    switch (req.query.dropdown) { 
+    switch (dropdown) { 
       case "Nate":
         console.log("Nate");
         var message = "Monday: Wash the dishes<br>Wednesday: Empty the dishwasher<br>Friday: Wash the dishes, Make dinner<br>";
@@ -136,7 +136,7 @@ express()
     var member = req.query.dropdown;
     var params = {member: member, message, message };
 
-    res.render('pages/daily', params);
+    // res.render('pages/daily', params);
 
   })
 
