@@ -45,7 +45,7 @@ express()
       var member = ["member1", "member2", "member3", "member4" ];
 
       const client = await pool.connect()
-      const result = await client.query('SELECT * FROM test_table');
+      const result = await client.query('SELECT * FROM Member');
       const results = { 'results': (result) ? result.rows : null, member: member};
 
       res.render('pages/daily', results );
