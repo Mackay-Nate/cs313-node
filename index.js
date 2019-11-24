@@ -135,8 +135,8 @@ express()
     return result
   }
 
-
-  selectMember = (dropdown) => {
+  function selectMember(dropdown) {
+  // selectMember = (dropdown) => {
     console.log("received request for selectMember");
 
     switch (dropdown) { 
