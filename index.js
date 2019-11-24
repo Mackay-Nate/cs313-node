@@ -42,9 +42,12 @@ express()
     console.log("received request for daily");
 
     try {
+      var member = ["member1", "member2", "member3", "member4" ];
+
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM test_table');
-      const results = { 'results': (result) ? result.rows : null};
+      const results = { 'results': (result) ? result.rows : null, member: member};
+
       res.render('pages/daily', results );
 
 
