@@ -69,7 +69,7 @@ express()
   .get('/week', async (req, res) => {
     console.log("received request for week");
     try {
-      var member = ["member1", "member2", "member3", "member4" ];
+      //var member = ["member1", "member2", "member3", "member4" ];
       const client = await pool.connect()
       const members = await client.query('SELECT * FROM Member');
       const member = { 'members': (members) ? members.firstName : null};
