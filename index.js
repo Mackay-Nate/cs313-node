@@ -79,14 +79,24 @@ express()
   })
 
   .get('/monthly', (req, res) => {
-    console.log("received request for monthly");
+    try { 
+      console.log("received request for monthly");
 
-    var date = ['7th', '11th', '9th', '16th']
-    var job = ['job1', 'job2', 'job3', 'job4'];
-    var member = ["member1", "member2", "member3", "member4" ];
-    var params = {member: member, job: job, date: date}
+      const client = await pool.connect()
+      const member = await client.query('SELECT * FROM Member');
+      const job    = await client.query('SELECT * FROM Job');
+      var date = ['7th', '11th', '14th', '21st'];
 
-    res.render('pages/monthly', params);
+      const params = { 'member': (member) ? member.rows : null, 
+                        'job'  : (job)    ? job.rows    : null, date: date  };
+
+      res.render('pages/monthly', params);
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+
   })
 
   .get('/getRate', (req, res) => {
