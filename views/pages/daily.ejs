@@ -19,7 +19,7 @@
   </form>
   <ul>
       <% member.forEach(function(m) { %>
-          <li><input type="button" onclick="selectMember('<%=m.firstname%>')"><%= m.id %> - <%= m.firstname%></li>
+          <li><input type="button" onclick="selectMember('<%=m.firstname%>')" value="<%=m.firstname%>"><%= m.id %> - <%= m.firstname%></li>
       <% }); %>
   </ul>
   <div id="jobs">
