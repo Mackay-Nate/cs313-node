@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Daily jobs</title>
+  <title>Daily jobs</title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 </head>
 <body>
 	<h1>Daily jobs</h1>
 
   <form action="selectMember()">
-   <select id="dropdown" name="dropdown"> 
+   <!-- <select id="dropdown" name="dropdown"> 
       <option >Select a member</option>
       <% for (var i = 0; i < member.length; i++) { %>
         <option value='<%=member[i].firstname%>' 
           onfocus="selectMember('<%=member[i].firstname%>')"><%=member[i].firstname%></option>
       <% } %>
     
-    </select>
+    </select> -->
     <!-- <input type="submit"> -->
   </form>
   <ul>
       <% member.forEach(function(m) { %>
-          <li><input type="button" onclick="selectMember('<%=m.firstname%>')" value="<%=m.firstname%>"><%= m.id %> - <%= m.firstname%></li>
+          <li><input type="button" onclick="selectMember('<%=m.firstname%>')" value="<%=m.firstname%>">
+            <!-- <%= m.id %> - <%= m.firstname%> -->
+          </li>
       <% }); %>
   </ul>
   <div id="jobs">

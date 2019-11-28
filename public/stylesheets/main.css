@@ -72,3 +72,12 @@ button {
 option { 
   padding: 5px 10px;
 }
+
+ul {
+  list-style-type: none;
+}
+
+li { 
+  font-size: 125%;
+  padding: 3px;
+}
