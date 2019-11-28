@@ -11,7 +11,7 @@
       <option >Select a member</option>
       <% for (var i = 0; i < member.length; i++) { %>
         <option value='<%=member[i].firstname%>' 
-          onselect="selectMember('<%=member[i].firstname%>')"><%=member[i].firstname%></option>
+          onfocus="selectMember('<%=member[i].firstname%>')"><%=member[i].firstname%></option>
       <% } %>
     
     </select>
@@ -32,7 +32,7 @@
     switch (dropdown) { 
       case "Nate":
         console.log("Nate");
-        var message = "<br>Monday: Wash the dishes<br>Wednesday: Empty the dishwasher<br>Friday: Wash the dishes, Make dinner<br>";
+        var message = "Monday: Wash the dishes<br>Wednesday: Empty the dishwasher<br>Friday: Wash the dishes, Make dinner<br>";
         document.getElementById('jobs').innerHTML = message;
     
         break;
@@ -89,8 +89,6 @@
         "Friday: Outside<br>" + 
         "Saturday: Empty the dishwasher<br>";
         document.getElementById('jobs').innerHTML = message;
-  
-  
         break;
       case "Corbin":
         console.log("Corbin");
@@ -99,9 +97,6 @@
         "Thursday: bedroom<br>" + 
         "Friday: playroom<br>";
         document.getElementById('jobs').innerHTML = message;
-  
-  
-
         break;
     }
   }

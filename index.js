@@ -1,4 +1,4 @@
-const {  Pool } = require('pg')
+const { Pool } = require('pg')
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL, 
   ssl: true
@@ -59,7 +59,6 @@ express()
   .get('/week', async (req, res) => {
     console.log("received request for week");
     try {
-
       const client = await pool.connect()
       const member = await client.query('SELECT * FROM Member');
       const job    = await client.query('SELECT * FROM Job');
@@ -74,7 +73,6 @@ express()
       console.error(err);
       res.send("Error " + err);
     }
-
   })
 
   .get('/monthly', async (req, res) => {
