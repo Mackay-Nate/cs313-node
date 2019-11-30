@@ -73,7 +73,7 @@ option {
   padding: 5px 10px;
 }
 
-ul, .jobs {
+ul, #jobs {
   list-style-type: none;
   margin-left: auto;
   margin-right: auto;
