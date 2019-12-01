@@ -96,6 +96,28 @@ express()
 
   })
 
+  .get('/add', async (req, res) => {
+    try { 
+      console.log("received request for adding a job");
+
+      const client = await pool.connect()
+      const job    = await client.query('INSERT INTO Job (jobname) VALUES ('req.query.job)');
+      var date = ['7th', '11th', '14th', '21st'];
+
+      const params = { 'member': (member) ? member.rows : null, 
+                        'job'  : (job)    ? job.rows    : null, date: date  };
+
+      res.render('pages/monthly', params);
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+
+  })
+
+
+
   .get('/getRate', (req, res) => {
     console.log("received request for getRate");
     console.log("weight is " + req.query.weight);

@@ -18,13 +18,12 @@
     <li><%=date[3]%>: <%=job[13].jobname%> - <span class='<%=member[4].firstname%>'><%=member[4].firstname%></span></li>
   </ul>
 
-  <section>
-    Date: <input type="text" id="date"><br>
-    Job: <input type="text" id="job"><br>
-    Assigned to:<input type="text" id="assigned"><br>
+  <form action="/add" method="post">
+    Date: <input type="text" id="date" name="date"><br>
+    Job: <input type="text" id="job" name="job"><br>
+    Assigned to:<input type="text" id="assigned" name="assigned"><br>
     <input type="button" value="Add the job"><br>
-  </section>
-
+  </form>
 
   <script>
 
