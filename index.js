@@ -101,7 +101,7 @@ express()
       console.log("received request for adding a job");
 
       const client = await pool.connect()
-      const job    = await client.query('INSERT INTO Job (jobname) VALUES ('req.query.job)');
+      const job    = await client.query('INSERT INTO Job (jobname) VALUES (req.query.job)');
       var date = ['7th', '11th', '14th', '21st'];
 
       const params = { 'member': (member) ? member.rows : null, 
