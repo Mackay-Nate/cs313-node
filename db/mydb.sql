@@ -1,4 +1,12 @@
 
+CREATE TABLE Secure ( 
+  username  varchar(80), 
+  password  varchar(80)
+)
+INSERT INTO Secure (username, password) VALUES ('admin', 'password');
+INSERT INTO Secure (username, password) VALUES ('ava', '123');
+INSERT INTO Secure (username, password) VALUES ('william', '456');
+
 --creation of the job
 CREATE TABLE job (
   id         SERIAL NOT NULL PRIMARY KEY,
