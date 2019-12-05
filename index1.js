@@ -74,10 +74,11 @@ async function handleLogin(request, response) {
       console.log('line 74: inside try, 76 next');
       const results = { 'results': (result) ? result.rows : null};
       console.log('line 76: inside try, 77 next');
-      console.log('line 77, 80 next' + result);
+      console.log('line 77, 78 next' + result[0]);
+      console.log('line 78, next 81' + result.length);
 
       for (var i = 0; i < result.length; i++) { 
-        console.log('line 80; inside for loop, ? next');
+        console.log('line 81; inside for loop, ? next');
         if (request.body.username == result[0] && request.body.password == result[0]) {
       		request.session.user = request.body.username;
           result = {success: true};
