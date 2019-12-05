@@ -71,7 +71,7 @@ express()
                         'job'  : (job)    ? job.rows    : null  };
 
       console.log('params ' + params);
-      console.log('job[0].jobname' + job[0].jobname);
+      // console.log('job[0].jobname' + job[0].jobname);
       console.log('params.job[0].jobname ' + params.job[0].jobname);
       console.log('member ' + member);
       // console.log('params ' + params);
