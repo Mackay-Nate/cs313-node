@@ -120,3 +120,41 @@ express()
   })
 
 
+
+  .get('/getRate', (req, res) => {
+    console.log("received request for getRate");
+    console.log("weight is " + req.query.weight);
+
+    var weight = req.query.weight;
+    var type   = req.query.type;
+    var cost = calculateRate(weight, type);
+    console.log('type ' + type);
+    switch (type) { 
+      case "Stamped Letter":
+        type2 = "letter";
+        break;
+      case "Metered Letter":
+        type2 = "letter";
+        break;
+      case "Large flat Envelope":
+        type2 = "envelope";
+        break;
+      case "Package":
+        type2 = "package";
+        break;
+    }
+    var params = {weight: weight, type: type, cost: cost, type2: type2}
+
+    res.render('pages/getRate', params);
+  })
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+  showTimes = () => { 
+    let result = ''
+    const times = process.env.TIMES || 5 
+    for (i=0; i < times; i++) {
+      result += i + ' '
+    }
+    return result
+  }
+
