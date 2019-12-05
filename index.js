@@ -37,6 +37,7 @@ express()
     res.render('public/jobs.html', params);
   })
 
+  
   .get('/daily', async (req, res) => {
     console.log("received request for daily");
 

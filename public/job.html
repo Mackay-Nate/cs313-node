@@ -10,17 +10,148 @@
 
 <body>
 
-  <h2>Select</h2>
+  <section>
+    <h2>Select</h2>
 
-  <form action="/daily">
-    <button type="submit">Daily</button>
-  </form>
-  <form action="/week">
-    <button type="submit">Weekly</button>
-  </form>
-  <form action="/monthly">
-    <button type="submit">Monthly</button>
-  </form>
+    <form action="/daily">
+      <button type="submit">Daily</button>
+    </form>
+    <form action="/week">
+      <button type="submit">Weekly</button>
+    </form>
+    <form action="/monthly">
+      <button type="submit">Monthly</button>
+    </form>
+
+
+
+
+    <section id="week">
+
+        <h1>Family responsibilities</h1>
+      
+        <form action="/populate">
+          <table>
+            <tr><th></th>
+              <th>Sunday</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+              <th>Saturday</th>
+            </tr>
+            <tr>
+              <td><%=job[5].jobname%></td>
+              <td></td>
+              <td><%=member[1].firstname%></td>
+              <td class='<%=member[5].firstname%>'><%=member[5].firstname%></td>
+              <td class='<%=member[4].firstname%>'><%=member[4].firstname%></td>
+              <td><%=member[6].firstname%></td>
+              <td><%=member[0].firstname%></td>
+              <td><%=member[1].firstname%></td>
+            </tr>
+            <tr>
+              <td>Empty the dishwasher</td>
+              <td class='<%=member[4].firstname%>'><%=member[4].firstname%></td>
+              <td><%=member[2].firstname%></td>
+              <td><%=member[2].firstname%></td>
+              <td><%=member[0].firstname%></td>
+              <td><%=member[2].firstname%></td>
+              <td><%=member[2].firstname%></td>
+              <td class='<%=member[5].firstname%>'><%=member[5].firstname%></td>
+            </tr>
+      
+            <tr class="five">
+              <td colspan="8">5 minutes</td>
+            </tr>
+            <tr class="five">
+              <td>playroom</td>
+              <td></td>
+              <td class='<%=member[4].firstname%>'><%=member[4].firstname%></td>
+              <td></td>
+              <td class='<%=member[5].firstname%>'><%=member[5].firstname%></td>
+              <td></td>
+              <td><%=member[6].firstname%></td>
+              <td></td>
+            </tr>
+            <tr class="five">
+              <td><%=job[0].jobname%></td>
+              <td></td>
+              <td class='<%=member[5].firstname%>'><%=member[5].firstname%></td>
+              <td class='<%=member[4].firstname%>'><%=member[4].firstname%></td>
+              <td></td>
+              <td></td>
+              <td class='<%=member[4].firstname%>'><%=member[4].firstname%></td>
+              <td></td>
+            </tr>
+            <tr class="five">
+              <td>Outside</td>
+              <td></td>
+              <td></td>
+              <td><%=member[6].firstname%></td>
+              <td></td>
+              <td></td>
+              <td class='<%=member[5].firstname%>'><%=member[5].firstname%></td>
+              <td></td>
+            </tr>
+            <tr class="five">
+              <td><%=job[2].jobname%></td>
+              <td></td>
+              <td><%=member[6].firstname%></td>
+              <td class='<%=member[5].firstname%>'><%=member[5].firstname%></td>
+              <td class='<%=member[4].firstname%>'><%=member[4].firstname%></td>
+              <td><%=member[6].firstname%></td>
+              <td></td>
+              <td class='<%=member[4].firstname%>'><%=member[4].firstname%></td>
+            </tr>
+        
+            <tr>
+              <td>Complete together</td>
+              <td></td>
+              <td><%=job[1].jobname%></td>
+              <td><%=job[2].jobname%></td>
+              <td><%=job[0].jobname%></td>
+              <td>Special Projects</td>
+              <td><%=job[2].jobname%></td>
+              <td>bathroom</td>
+            </tr>
+            <tr>
+              <td><%=job[4].jobname%></td>
+              <td></td>
+              <td><%=member[1].firstname%></td>
+              <td><%=member[2].firstname%></td>
+              <td><%=member[2].firstname%></td>
+              <td><%=member[1].firstname%></td>
+              <td><%=member[0].firstname%></td>
+              <td><%=member[2].firstname%></td>
+            </tr>
+            <tr>
+              <td>Clear and wipe the table</td>
+              <td></td>
+              <td><%=member[1].firstname%></td>
+              <td><%=member[4].firstname%></td>
+              <td><%=member[2].firstname%></td>
+              <td><%=member[3].firstname%></td>
+              <td><%=member[1].firstname%></td>
+              <td><%=member[6].firstname%></td>
+            </tr>
+            <tr>
+              <td>Wash the dishes</td>
+              <td><%=member[2].firstname%></td>
+              <td><%=member[0].firstname%></td>
+              <td><%=member[1].firstname%></td>
+              <td><%=member[1].firstname%></td>
+              <td><%=member[2].firstname%></td>
+              <td><%=member[0].firstname%></td>
+              <td><%=member[1].firstname%></td>
+            </tr>
+      
+      
+          </table>
+        </form>
+      
+    </section>
 
 
 </body>
