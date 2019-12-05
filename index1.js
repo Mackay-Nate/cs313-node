@@ -9,6 +9,11 @@ const pool = new Pool({
   ssl: true
 });
 
+// const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const myPlaintextPassword = 's0/\/\P4$$w0rD';
+const someOtherPlaintextPassword = 'not_bacon';
+
 // We are going to use sessions
 var session = require('express-session')
 
@@ -54,15 +59,21 @@ app.listen(app.get('port'), function() {
 
 // Checks if the username and password match a hardcoded set
 // If they do, put the username on the session
-function handleLogin(request, response) {
-	var result = {success: false};
+async function handleLogin(request, response) {
+  var result = {success: false};
+  console.log('line 64: success stored as failure, 68 next');
 
   // We should do better error checking here to make sure the parameters are present
-  async (req, res) => {
+  // async function data(req, res) {
+    console.log('line 68: async, 70 next');
     try {
+      console.log('line 70: inside try, 72 next');
       const client = await pool.connect()
+      console.log('line 72: inside try, 74 next');
       const result = await client.query('SELECT * FROM secure');
+      console.log('line 74: inside try, 76 next');
       const results = { 'results': (result) ? result.rows : null};
+      console.log('line 76: inside try, ? next');
 
       for (var i = 0; i < result.length; i++) { 
         if (request.body.username == result[0] && request.body.password == result[0]) {
@@ -76,7 +87,7 @@ function handleLogin(request, response) {
     console.error(err);
     res.send("Error " + err);
   }
-}
+
 
 	response.json(result);
 }
