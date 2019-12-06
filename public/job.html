@@ -17,7 +17,7 @@
       <button type="submit">Daily</button>
     </form>
     <!-- <form action="/week"> -->
-      <button onclick="week">Weekly</button>
+      <button onclick="week()">Weekly</button>
     <!-- </form> -->
     <form action="/monthly">
       <button type="submit">Monthly</button>
@@ -163,7 +163,20 @@
     function week() { 
       console.log('week() called');
       document.getElementById('week').style.display = "visible";
+
+      var xmlHttpReqeust = new XMLHttpRequest();
+
+      xmlHttpRequest.onreadystatechange = function() {
+        if ( xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+          console.log('inside if statement');
+          document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
+        }
+      };
+
+      xmlHttpRequest.open('GET', 'http://localhost/week', true);
+      xmlHttpRequest.send();
     }
+    
 
   </script>
 </body>
