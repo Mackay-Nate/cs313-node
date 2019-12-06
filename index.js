@@ -30,7 +30,7 @@ express()
   .get('/cool', (req, res) => res.send(cool()))
   .get('/home', (req, res) => res.send(home()))
   .get('/times', (req, res) => res.send(showTimes()))
-  // .get('/www.google.com', (req, res) => res.send(www.google.com))
+  .get('/www.google.com', (req, res) => res.send(google.com))
   .get('/populate', (req, res) => {
     console.log("received request for populate");
 
