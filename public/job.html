@@ -164,8 +164,7 @@
       console.log('week() called');
       document.getElementById('week').style.display = "visible";
 
-      var xmlHttpReqeust = new XMLHttpRequest();
-
+      var xmlHttpRequest = new XMLHttpRequest();
       xmlHttpRequest.onreadystatechange = function() {
         if ( xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
           console.log('inside if statement');
