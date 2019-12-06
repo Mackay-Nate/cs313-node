@@ -13,15 +13,9 @@
   <section>
     <h2>Select</h2>
 
-    <form action="/daily">
-      <button type="submit">Daily</button>
-    </form>
-    <!-- <form action="/week"> -->
+      <button onclick="daily()">Daily</button>
       <button onclick="week()">Weekly</button>
-    <!-- </form> -->
-    <form action="/monthly">
-      <button type="submit">Monthly</button>
-    </form>
+      <button onclick="weekly()">Monthly</button>
 
 
     <!-- <iframe src="www.google.com"> Does this work? </iframe>
@@ -160,6 +154,13 @@
 
   <script>
 
+    //this function displays the Daily jobs
+    function daily() { 
+
+
+    }
+
+
     // this function displays the Weekly job assignments
     function week() { 
       console.log('week() called');
@@ -181,6 +182,13 @@
       //the json is from the database here
       xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/week', true);
       xmlHttpRequest.send();
+    }
+
+
+    //this displays the weekly jobs
+    function weekly() { 
+
+
     }
 
   </script>
