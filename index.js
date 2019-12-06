@@ -77,10 +77,11 @@ express()
       console.log('member ' + params.member[1]);
       // console.log('params ' + params);
 
-      return params;
       // res.render('job.html', params);
 
       client.release();
+      return params;
+
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
