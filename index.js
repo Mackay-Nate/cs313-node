@@ -78,9 +78,9 @@ express()
       // console.log('params ' + params);
 
       // res.render('job.html', params);
-
+      res.send(params);
       client.release();
-      return params;
+      // return params;
 
     } catch (err) {
       console.error(err);
