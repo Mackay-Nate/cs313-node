@@ -73,10 +73,11 @@ express()
       console.log('params ' + params);
       // console.log('job[0].jobname' + job[0].jobname);
       console.log('params.job[0].jobname ' + params.job[0].jobname);
-      console.log('member ' + member);
+      console.log('member ' + params.member[1]);
       // console.log('params ' + params);
 
-      res.render('job.html', params);
+      return params;
+      // res.render('job.html', params);
 
       client.release();
     } catch (err) {
