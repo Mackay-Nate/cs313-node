@@ -87,3 +87,8 @@ li {
 input { 
   margin: 4px;
 }
+
+#week { 
+  display: none;
+}
+
