@@ -196,6 +196,7 @@
       document.getElementById('daily').style.display = "initial";
       document.getElementById('week').style.display  = "none";
       document.getElementById('month').style.display = "none";
+      document.getElementById('jobs').innerHTML = "";
 
       document.body.style.backgroundColor = "lightblue";
 
@@ -300,7 +301,6 @@
 
       document.body.style.backgroundColor = "rgb(155, 226, 240)";
 
-
       //get the assignments from the database
       var xmlHttpRequest = new XMLHttpRequest();
       xmlHttpRequest.onreadystatechange = function() {
@@ -315,17 +315,13 @@
             monthList.removeChild(monthList.lastElementChild);
           }
 
-          //  do { 
-          //    monthList.removeChild(monthList.lastElementChild);
-          //  } while (monthList.children.length - 1);
-
           //loop through data and add a button to the list
           for (var i = 0; i < data.date.length; i++) { 
             var item = document.createElement('li');
             item.innerHTML = data.date[i] + ": " + data.job[10 + i].jobname + " - ";
             var spanName = document.createElement('span');
-            spanName.innerHTML = data.member[i+2].firstname;
-            spanName.setAttribute("class", data.member[i].firstname);
+            spanName.innerHTML = data.member[i+3].firstname;
+            spanName.setAttribute("class", data.member[i+3].firstname);
             item.appendChild(spanName);
 
             monthList.appendChild(item);
