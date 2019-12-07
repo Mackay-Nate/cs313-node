@@ -225,7 +225,8 @@
             var item = document.createElement('li');
             var iButton = document.createElement('button');
             iButton.innerHTML = data.member[0].firstname;
-            iButton.addEventListener(onclick, 'selectMember(' + data.member[0].firstname + ')');
+            iButton.setAttribute(onclick, 'selectMember(' + data.member[0].firstname + ')');
+            // iButton.addEventListener(onclick, 'selectMember(' + data.member[0].firstname + ')');
             item.appendChild(iButton);
 
             dailyList.appendChild(item);
