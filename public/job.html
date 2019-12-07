@@ -217,9 +217,11 @@
 
           //manipulate the DOM with the assignments 
           console.log('inside daily if statement');
+          //turn json into an object
           var data = JSON.parse(xmlHttpRequest.responseText);
 
-          for (var i = 0; i < data.length; i++) { 
+          //loop through data and add a button to the list
+          for (var i = 0; i < data.member.length; i++) { 
             var item = document.createElement('li');
             var iButton = document.createElement('button');
             iButton.innerHTML = data.member[0].firstname;
