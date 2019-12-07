@@ -370,68 +370,21 @@
         dailyJobs(1, dropdown);
         break;
       case "Jen":
-        console.log("Jen");
-        var message = "Monday: Make breakfast, Make dinner<br>" + 
-        "Tuesday: Wash the dishes<br>" + 
-        "Wednesday: Wash the dishes<br>" + 
-        "Thursday: Make dinner<br>" + 
-        "Friday: Clear and Wipe the table<br>" + 
-        "Saturday: Make breakfast, Wash the dishes<br>";
-        document.getElementById('jobs').innerHTML = message;
-
         dailyJobs(2, dropdown);
-
         break;
       case "grandpa":
-        console.log("grandpa");
-        var message = "Thursday: Clear and Wipe the table<br>" + 
-        "Saturday: Make dinner<br>";
-        document.getElementById('jobs').innerHTML = message;
-
         dailyJobs(4, dropdown);
         break;
       case "grandma":
-        console.log("grandma");
-        var message = "Monday: Empty the dishwasher<br>" + 
-        "Tuesday: Empty the dishwasher, Make dinner<br>" + 
-        "Wednesday: Make dinner, Clear and Wipe the table<br>" + 
-        "Thursday: Empty the dishwasher, Wash the dishes<br>" + 
-        "Friday: Empty the dishwasher<br>" + 
-        "Saturday: Make breakfast, Wash the dishes<br>";
-        document.getElementById('jobs').innerHTML = message;
-
         dailyJobs(3, dropdown);
         break;
       case "Natalie":
-        console.log("Natalie");
-        var message = "Sunday: Emtpy the dishwasher<br>" + 
-        "Monday: playroom<br>" + 
-        "Tuesday: family room<br>" + 
-        "Wednesday: Make breakfast, bedroom<br>" +  
-        "Friday: family room<br>" + 
-        "Saturday: bedroom<br>";
-        document.getElementById('jobs').innerHTML = message;
-        dailyJobs(5, dropdown);
-  
+        dailyJobs(5, dropdown);  
         break;
       case "Ava":
-        console.log("Ava");
-        var message = "Monday: family room<br>" + 
-        "Tuesday: Make breakfast, bedroom<br>" + 
-        "Wednesday: playroom<br>" + 
-        "Thursday: <br>" + 
-        "Friday: Outside<br>" + 
-        "Saturday: Empty the dishwasher<br>";
-        document.getElementById('jobs').innerHTML = message;
         dailyJobs(6, dropdown);
         break;
       case "Corbin":
-        console.log("Corbin");
-        var message = "Monday: bedroom<br>" + 
-        "Tuesday: Outside<br>" + 
-        "Thursday: bedroom<br>" + 
-        "Friday: playroom<br>";
-        document.getElementById('jobs').innerHTML = message;
         dailyJobs(7, dropdown);
         break;
     }
@@ -445,8 +398,8 @@
 
         console.log('inside dailyJobs if statement');
         var data = JSON.parse(xmlHttpRequest.responseText);
-        day = ["Sunday", "Monday", "Tuesday", "Wednesay", "Thursday", "Friday", "Saturday"];
-        message = "<h3>" + name + "'s Jobs</h3><br><br>";
+        day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        message = "<h3>" + name + "'s Jobs</h3>";
 
         //looping throught the days of the week
         for (var i = 1; i < 7; i ++) {
