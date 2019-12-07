@@ -217,10 +217,11 @@
 
           //manipulate the DOM with the assignments 
           console.log('inside daily if statement');
+          var data = JSON.parse(xmlHttpRequest.responseText);
 
           var item = document.createElement('li');
           var iButton = document.createElement('button');
-          iButton.innerHTML = params.member[0].firstname;
+          iButton.innerHTML = data.member[0].firstname;
           iButton.addEventListener(onclick, 'selectMember(' + params.member[0].firstname + ')');
           item.appendChild(iButton);
 
