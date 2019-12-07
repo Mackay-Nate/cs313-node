@@ -39,7 +39,7 @@
         </select> -->
         <!-- <input type="submit"> -->
       </form>
-      <ul id="list">
+      <ul id="dailyList">
           <% member.forEach(function(m) { %>
               <li><input type="button" onclick="selectMember('<%=m.firstname%>')" value="<%=m.firstname%>">
                 <!-- <%= m.id %> - <%= m.firstname%> -->
@@ -219,14 +219,15 @@
           console.log('inside daily if statement');
           var data = JSON.parse(xmlHttpRequest.responseText);
 
-          var item = document.createElement('li');
-          var iButton = document.createElement('button');
-          iButton.innerHTML = data.member[0].firstname;
-          iButton.addEventListener(onclick, 'selectMember(' + params.member[0].firstname + ')');
-          item.appendChild(iButton);
+          for (var i = 0; i < data.length; i++) { 
+            var item = document.createElement('li');
+            var iButton = document.createElement('button');
+            iButton.innerHTML = data.member[0].firstname;
+            iButton.addEventListener(onclick, 'selectMember(' + params.member[0].firstname + ')');
+            item.appendChild(iButton);
 
-          list.appendChild(item);
-          
+            dailyList.appendChild(item);
+          }
 
               // <li><input type="button" onclick="selectMember('<%=m.firstname%>')" value="<%=m.firstname%>">
 
