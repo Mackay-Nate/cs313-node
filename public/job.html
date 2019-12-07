@@ -90,7 +90,7 @@
               <td></td> -->
             </tr>
             <tr class="five" id="outside">
-              <td>Outside</td>
+              <!-- <td>Outside</td> -->
               <!-- <td></td>
               <td></td>
               <td></td>
@@ -292,14 +292,14 @@
             //second row id=empty
             var job = document.createElement('td');
             job.innerHTML = data.job[14].jobname;
-            breakfast.appendChild(job);
+            empty.appendChild(job);
 
             // create the days of the week
             for (var i = 0; i < data.empty.length; i++) { 
               var day = document.createElement('td');
               day.innerHTML = data.member[data.empty[i].nameid - 1].firstname;
               day.setAttribute("class", data.member[data.empty[i].nameid -1].firstname);
-              breakfast.appendChild(day);
+              empty.appendChild(day);
             }
 
             // var job = document.createElement('td');
