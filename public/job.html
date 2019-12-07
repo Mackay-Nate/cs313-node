@@ -89,34 +89,34 @@
               <td></td> -->
             </tr>
             <tr class="five" id="family">
+              <!-- <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
+              <td></td> -->
             </tr>
-            <tr class="five">
+            <tr class="five" id="outside">
               <td>Outside</td>
+              <!-- <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
+              <td></td> -->
             </tr>
-            <tr class="five">
+            <tr class="five" id="bedroom">
+              <!-- <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
+              <td></td> -->
             </tr>
         
             <tr>
@@ -379,6 +379,28 @@
               day.setAttribute("class", data.member[data.family[i].nameid -1].firstname);
               family.appendChild(day);
             }
+
+            // create the days of the week for outside jobs
+            for (var i = 0; i < data.outside.length; i++) { 
+              var day = document.createElement('td');
+              day.innerHTML = data.member[data.outside[i].nameid - 1].firstname;
+              day.setAttribute("class", data.member[data.outside[i].nameid -1].firstname);
+              outside.appendChild(day);
+            }
+
+            // row id=bedroom
+            var job = document.createElement('td');
+            job.innerHTML = data.job[2].jobname;
+            bedroom.appendChild(job);
+
+            // create the days of the week
+            for (var i = 0; i < data.bedroom.length; i++) { 
+              var day = document.createElement('td');
+              day.innerHTML = data.member[data.bedroom[i].nameid - 1].firstname;
+              day.setAttribute("class", data.member[data.bedroom[i].nameid -1].firstname);
+              bedroom.appendChild(day);
+            }
+
 
             // var mon = document.createElement('td');
             // mon.innerHTML = data.member[] ;

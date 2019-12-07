@@ -67,11 +67,16 @@ express()
       const client = await pool.connect()
       const member = await client.query('SELECT * FROM Member');
       const job    = await client.query('SELECT * FROM Job');
-      const family = await client.query('SELECT * FROM Familyroom')
+      const family = await client.query('SELECT * FROM Familyroom');
+      const outside = await client.query('SELECT * FROM Outside');
+      const bedroom = await client.query('SELECT * FROM Bedroom');
 
-      const params = { 'member': (member) ? member.rows : null, 
-                        'job'  : (job)    ? job.rows    : null, 
-                       'family': (family) ? family.rows : null 
+
+      const params = { 'member': (member)  ? member.rows  : null, 
+                        'job'  : (job)     ? job.rows     : null, 
+                       'family': (family)  ? family.rows  : null, 
+                      'outside': (outside) ? outside.rows : null,
+                      'bedroom': (bedroom) ? bedroom.rows : null
                       };
 
 
