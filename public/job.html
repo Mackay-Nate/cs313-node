@@ -488,8 +488,9 @@
             temp += data.job[17].jobname; 
           }
 
-          message += day[i] + ": " + temp + "<br>";
-
+          if (temp) {
+            message += day[i] + ": " + temp + "<br>";
+          }
         }
 
         document.getElementById('jobs').innerHTML = message;
