@@ -54,7 +54,7 @@
               <th>Friday</th>
               <th>Saturday</th>
             </tr>
-            <tr id="dishes">
+            <tr id="dinner">
               <!-- <td></td>
               <td></td>
               <td></td>
@@ -247,7 +247,7 @@
           var data = JSON.parse(xmlHttpRequest.responseText);
 
           //only populate if data doesn't already exist
-          if (!dishes.children[4]) { 
+          if (!dinner.children[4]) { 
 
             //first row id=dinner
             var job = document.createElement('td');
