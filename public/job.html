@@ -25,32 +25,20 @@
 
     <section id="persons"></section>
 
+    <!-- display section for daily jobs -->
     <section id="daily">
       <h1>Daily jobs</h1>
 
-      <form action="selectMember()">
-       <!-- <select id="dropdown" name="dropdown"> 
-          <option >Select a member</option>
-          <% for (var i = 0; i < member.length; i++) { %>
-            <option value='<%=member[i].firstname%>' 
-              onfocus="selectMember('<%=member[i].firstname%>')"><%=member[i].firstname%></option>
-          <% } %>
-        
-        </select> -->
-        <!-- <input type="submit"> -->
-      </form>
-      <ul id="dailyList">
-          <% member.forEach(function(m) { %>
-              <li><input type="button" onclick="selectMember('<%=m.firstname%>')" value="<%=m.firstname%>">
-                <!-- <%= m.id %> - <%= m.firstname%> -->
-              </li>
-          <% }); %>
-      </ul>
-      <div id="jobs">
-      </div>
+      <!-- <form action="selectMember()">
+      </form> -->
+        <ul id="dailyList">
+        </ul>
+        <div id="jobs">
+        </div>
     
     </section>
 
+    <!-- display section for weekly jobs -->
     <section id="week">
 
         <h1>Family responsibilities</h1>
@@ -178,6 +166,7 @@
       
     </section>
 
+    <!-- display section for monthly jobs -->
     <section id="month">
       <h2>Monthly jobs</h2>
 
@@ -226,14 +215,11 @@
             var iButton = document.createElement('button');
             iButton.innerHTML = data.member[i].firstname;
             iButton.setAttribute("onclick", 'selectMember("' + data.member[i].firstname + '")');
-            // iButton.addEventListener("click", selectMember(data.member[0].firstname) );
+            iButton.setAttribute("class", 'data.member[i].firstname');
             item.appendChild(iButton);
 
             dailyList.appendChild(item);
           }
-
-              // <li><input type="button" onclick="selectMember('<%=m.firstname%>')" value="<%=m.firstname%>">
-
 
           document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
         }
@@ -242,7 +228,6 @@
       //the json is from the database here
       xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/daily', true);
       xmlHttpRequest.send();
-
     }
 
 
@@ -302,7 +287,7 @@
 
 
     function selectMember(dropdown) {
-    console.log("received request for selectMember");
+    console.log("received request for selectMember " + dropdown);
 
     switch (dropdown) { 
       case "Nate":
