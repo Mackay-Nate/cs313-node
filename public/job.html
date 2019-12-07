@@ -211,7 +211,7 @@
 
           //remove previous data
           for (var i = 0; i < dailyList.children.length; i++) {
-            dailyList.removeChild(dailyList.children[i]);
+            dailyList.removeChild(dailyList.lastChildElement);
           }
 
           //loop through data and add a button to the list
@@ -220,7 +220,7 @@
             var iButton = document.createElement('button');
             iButton.innerHTML = data.member[i].firstname;
             iButton.setAttribute("onclick", 'selectMember("' + data.member[i].firstname + '")');
-            iButton.setAttribute("class", 'data.member[i].firstname');
+            iButton.setAttribute("class", data.member[i].firstname);
             item.appendChild(iButton);
 
             dailyList.appendChild(item);
