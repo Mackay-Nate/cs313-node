@@ -372,11 +372,12 @@
             job.innerHTML = data.job[1].jobname;
             family.appendChild(job);
 
+            // create the days of the week
             for (var i = 0; i < data.family.length; i++) { 
-              var sun = document.createElement('td');
-              sun.innerHTML = data.member[data.family[i].nameid].firstname;
-              sun.setAttribute("class", data.member[data.family[i].nameid].firstname);
-              family.appendChild(sun);
+              var day = document.createElement('td');
+              day.innerHTML = data.member[data.family[i].nameid - 1].firstname;
+              day.setAttribute("class", data.member[data.family[i].nameid -1].firstname);
+              family.appendChild(day);
             }
 
             // var mon = document.createElement('td');
