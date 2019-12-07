@@ -54,7 +54,7 @@
               <th>Friday</th>
               <th>Saturday</th>
             </tr>
-            <tr id="dinner">
+            <tr id="breakfast">
               <!-- <td></td>
               <td></td>
               <td></td>
@@ -64,29 +64,29 @@
               <td></td>
               <td></td> -->
             </tr>
-            <tr>
-              <td>Empty the dishwasher</td>
+            <tr id="empty">
+              <!-- <td>Empty the dishwasher</td>
               <td</td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
+              <td></td> -->
             </tr>
       
             <tr class="five">
               <td colspan="8">5 minutes</td>
             </tr>
-            <tr class="five">
-              <td>playroom</td>
+            <tr class="five" id="play">
+              <!-- <td>playroom</td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
+              <td></td> -->
             </tr>
             <tr class="five">
               <td></td>
@@ -249,139 +249,166 @@
           //only populate if data doesn't already exist
           if (!dinner.children[4]) { 
 
-            //first row id=dinner
+            //first row id=breakfast
             var job = document.createElement('td');
             job.innerHTML = data.job[5].jobname;
-            dinner.appendChild(job);
+            breakfast.appendChild(job);
 
             var sun = document.createElement('td');
             sun.innerHTML = "";
-            dinner.appendChild(sun);
+            breakfast.appendChild(sun);
 
             var mon = document.createElement('td');
             mon.innerHTML = data.member[1].firstname ;
             mon.setAttribute("class", data.member[1].firstname);
-            dinner.appendChild(mon);
+            breakfast.appendChild(mon);
 
             var tue = document.createElement('td');
             tue.innerHTML = data.member[5].firstname;
             tue.setAttribute("class", data.member[5].firstname);
-            dinner.appendChild(tue);
+            breakfast.appendChild(tue);
 
             var wed = document.createElement('td');
             wed.innerHTML = data.member[4].firstname;
             wed.setAttribute("class", data.member[4].firstname);
-            dinner.appendChild(wed);
+            breakfast.appendChild(wed);
 
             var thur = document.createElement('td');
             thur.innerHTML = data.member[6].firstname;
             thur.setAttribute("class", data.member[6].firstname);
-            dinner.appendChild(thur);
+            breakfast.appendChild(thur);
 
             var fri = document.createElement('td');
             fri.innerHTML = data.member[0].firstname;
             fri.setAttribute("class", data.member[0].firstname);
-            dinner.appendChild(fri);
+            breakfast.appendChild(fri);
 
             var sat = document.createElement('td');
             sat.innerHTML = data.member[1].firstname;
             sat.setAttribute("class", data.member[1].firstname);
-            dinner.appendChild(sat);
+            breakfast.appendChild(sat);
 
 
+            //second row id=empty
+            var job = document.createElement('td');
+            job.innerHTML = data.job[1].jobname + "empty dishwasher";
+            empty.appendChild(job);
+
+            var sun = document.createElement('td');
+            sun.innerHTML = data.member[4].firstname;
+            sun.setAttribute("class", data.member[4].firstname);
+            empty.appendChild(sun);
+
+            var mon = document.createElement('td');
+            mon.innerHTML = data.member[2].firstname ;
+            mon.setAttribute("class", data.member[2].firstname);
+            empty.appendChild(mon);
+
+            var tue = document.createElement('td');
+            tue.innerHTML = data.member[2].firstname;
+            tue.setAttribute("class", data.member[2].firstname);
+            empty.appendChild(tue);
+
+            var wed = document.createElement('td');
+            wed.innerHTML = data.member[0].firstname;
+            wed.setAttribute("class", data.member[0].firstname);
+            empty.appendChild(wed);
+
+            var thur = document.createElement('td');
+            thur.innerHTML = data.member[2].firstname;
+            thur.setAttribute("class", data.member[2].firstname);
+            empty.appendChild(thur);
+
+            var fri = document.createElement('td');
+            fri.innerHTML = data.member[2].firstname;
+            fri.setAttribute("class", data.member[2].firstname);
+            empty.appendChild(fri);
+
+            var sat = document.createElement('td');
+            sat.innerHTML = data.member[5].firstname;
+            sat.setAttribute("class", data.member[5].firstname);
+            empty.appendChild(sat);
 
 
-            // //second row id=dinner
-            // var job = document.createElement('td');
-            // job.innerHTML = data.job[5].jobname;
-            // dinner.appendChild(job);
+            // row id=play
+            var job = document.createElement('td');
+            job.innerHTML = data.job[5].jobname + "playroom";
+            play.appendChild(job);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
+            var sun = document.createElement('td');
+            sun.innerHTML = "";
+            play.appendChild(sun);
 
-            // var mon = document.createElement('td');
-            // item.innerHTML = data.member[] ;
-            // .setAttribute("class", data.member[i].firstname);
-            // item.appendChild(spanName);
+            var mon = document.createElement('td');
+            mon.innerHTML = data.member[4].firstname ;
+            mon.setAttribute("class", data.member[4].firstname);
+            play.appendChild(mon);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
+            var tue = document.createElement('td');
+            tue.innerHTML = "";
+            play.appendChild(tue);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
+            var wed = document.createElement('td');
+            wed.innerHTML = data.member[5].firstname;
+            wed.setAttribute("class", data.member[5].firstname);
+            play.appendChild(wed);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
+            var thur = document.createElement('td');
+            thur.innerHTML = "";
+            play.appendChild(thur);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
+            var fri = document.createElement('td');
+            fri.innerHTML = data.member[6].firstname;
+            fri.setAttribute("class", data.member[6].firstname);
+            play.appendChild(fri);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
+            var sat = document.createElement('td');
+            sat.innerHTML = "";
+            play.appendChild(sat);
 
 
+            
             // // row id=
             // var job = document.createElement('td');
             // job.innerHTML = data.job[5].jobname;
-            // dinner.appendChild(job);
+            // play.appendChild(job);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
+            // var sun = document.createElement('td');
+            // sun.innerHTML = data.member[].firstname;
+            // sun.setAttribute("class", data.member[].firstname);
+            // item.appendChild(sun);
 
             // var mon = document.createElement('td');
-            // item.innerHTML = data.member[] ;
-            // .setAttribute("class", data.member[i].firstname);
-            // item.appendChild(spanName);
+            // mon.innerHTML = data.member[] ;
+            // mon.setAttribute("class", data.member[i].firstname);
+            // item.appendChild(mon);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
+            // var tue = document.createElement('td');
+            // tue.innerHTML = data.member[].firstname;
+            // tue.setAttribute("class", data.member[].firstname);
+            // item.appendChild(tue);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
+            // var wed = document.createElement('td');
+            // wed.innerHTML = data.member[].firstname;
+            // wed.setAttribute("class", data.member[].firstname);
+            // item.appendChild(wed);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
+            // var thur = document.createElement('td');
+            // thur.innerHTML = data.member[].firstname;
+            // thur.setAttribute("class", data.member[].firstname);
+            // item.appendChild(thur);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
+            // var fri = document.createElement('td');
+            // fri.innerHTML = data.member[].firstname;
+            // fri.setAttribute("class", data.member[].firstname);
+            // item.appendChild(fri);
 
-            // var  = document.createElement('td');
-            // .innerHTML = data.member[].firstname;
-            // .setAttribute("class", data.member[].firstname);
-            // item.appendChild();
-
+            // var sat = document.createElement('td');
+            // sat.innerHTML = data.member[].firstname;
+            // sat.setAttribute("class", data.member[].firstname);
+            // item.appendChild(sat);
 
           }
-
-
-
-
-
-
-
-
 
           document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
         }
