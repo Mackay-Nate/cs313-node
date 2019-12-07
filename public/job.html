@@ -401,10 +401,10 @@
               bedroom.appendChild(day);
             }
 
-            // row id=bedroom
+            // row id=dinner
             var job = document.createElement('td');
             job.innerHTML = data.job[4].jobname;
-            dishes.appendChild(job);
+            dinner.appendChild(job);
 
             // create the days of the week
             for (var i = 0; i < data.dinner.length; i++) { 
@@ -427,7 +427,7 @@
               clear.appendChild(day);
             }
 
-            // row id=dishes
+            // row id=washDishes
             var job = document.createElement('td');
             job.innerHTML = "Wash the dishes";
             // dishes.appendChild(job);
@@ -437,7 +437,7 @@
               var day = document.createElement('td');
               day.innerHTML = data.member[data.dishes[i].nameid - 1].firstname;
               day.setAttribute("class", data.member[data.dishes[i].nameid -1].firstname);
-              dishes.appendChild(day);
+              washDishes.appendChild(day);
             }
 
 
