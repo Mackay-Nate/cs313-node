@@ -433,10 +433,10 @@
             // dishes.appendChild(job);
 
             // create the days of the week
-            for (var i = 0; i < data.dishes.length; i++) { 
+            for (var i = 0; i < data.wash.length; i++) { 
               var day = document.createElement('td');
-              day.innerHTML = data.member[data.dishes[i].nameid - 1].firstname;
-              day.setAttribute("class", data.member[data.dishes[i].nameid -1].firstname);
+              day.innerHTML = data.member[data.wash[i].nameid - 1].firstname;
+              day.setAttribute("class", data.member[data.wash[i].nameid -1].firstname);
               washDishes.appendChild(day);
             }
 
