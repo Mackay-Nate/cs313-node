@@ -224,9 +224,9 @@
           for (var i = 0; i < data.member.length; i++) { 
             var item = document.createElement('li');
             var iButton = document.createElement('button');
-            iButton.innerHTML = data.member[0].firstname;
-            iButton.setAttribute(onclick, 'selectMember(' + data.member[0].firstname + ')');
-            // iButton.addEventListener(onclick, 'selectMember(' + data.member[0].firstname + ')');
+            iButton.innerHTML = data.member[i].firstname;
+            // iButton.setAttribute(onclick, 'selectMember(' + data.member[i].firstname + ')');
+            iButton.addEventListener(click, 'selectMember(' + data.member[0].firstname + ')');
             item.appendChild(iButton);
 
             dailyList.appendChild(item);
