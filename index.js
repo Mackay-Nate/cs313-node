@@ -11,46 +11,19 @@ const PORT = process.env.PORT || 5000
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
-  // .set('view engine', 'ejs')
-  // .get('/', (req, res) => res.render('pages/index'))
-  
-  // .get('/db', async (req, res) => {
-  //   try {
-  //     const client = await pool.connect()
-  //     const result = await client.query('SELECT * FROM test_table');
-  //     const results = { 'results': (result) ? result.rows : null};
-  //     res.render('pages/db', results );
-  //     client.release();
-  //   } catch (err) {
-  //     console.error(err);
-  //     res.send("Error " + err);
-  //   }
-  // })
-  
   .get('/cool', (req, res) => res.send(cool()))
   .get('/home', (req, res) => res.send(home()))
   .get('/times', (req, res) => res.send(showTimes()))
-  .get('/www.google.com', (req, res) => res.send(google.com))
-  .get('/populate', (req, res) => {
-    console.log("received request for populate");
-
-    var weight = 0, type = 0, cost = 0, type2 = 0;
-    var params = {weight: weight, type: type, cost: cost, type2: type2}
-
-    res.render('public/jobs.html', params);
-  })
 
   // displays the daily jobs 
   .get('/daily', async (req, res) => {
     console.log("received request for daily");
 
     try {
-
       const client = await pool.connect()
       const member = await client.query('SELECT * FROM Member');
       const params = { 'member': (member) ? member.rows : null };
 
-      // res.render('pages/daily', params );
       res.send(params);
       client.release();
     } catch (err) {
@@ -92,7 +65,6 @@ express()
 
       res.send(params);
       client.release();
-      // return params;
 
     } catch (err) {
       console.error(err);
@@ -113,7 +85,6 @@ express()
       const params = { 'member': (member) ? member.rows : null, 
                         'job'  : (job)    ? job.rows    : null, date: date  };
 
-      // res.render('pages/monthly', params);
       res.send(params);
       client.release();
     } catch (err) {

@@ -17,7 +17,7 @@
       <button onclick="week()">Weekly</button><br>
       <button onclick="monthly()">Monthly</button><br>
 
-    <section id="persons"></section>
+    <section id="jsonDisplay"></section>
 
     <!-- display section for daily jobs -->
     <section id="daily">
@@ -44,113 +44,37 @@
               <th>Friday</th>
               <th>Saturday</th>
             </tr>
+
             <tr id="breakfast">
-              <!-- <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td> -->
             </tr>
+
             <tr id="empty">
-              <!-- <td>Empty the dishwasher</td>
-              <td</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td> -->
             </tr>
       
             <tr class="five">
               <td colspan="8">5 minutes</td>
             </tr>
             <tr class="five" id="play">
-              <!-- <td>playroom</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td> -->
             </tr>
             <tr class="five" id="family">
-              <!-- <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td> -->
             </tr>
             <tr class="five" id="outside">
-              <!-- <td>Outside</td> -->
-              <!-- <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td> -->
             </tr>
             <tr class="five" id="bedroom">
-              <!-- <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td> -->
             </tr>
         
             <tr id="together">
-              <!-- <td>Complete together</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>Special Projects</td>
-              <td></td>
-              <td>bathroom</td> -->
             </tr>
+
             <tr id="dinner">
-              <!-- <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td> -->
             </tr>
+
             <tr id="clear">
-              <!-- <td>Clear and wipe the table</td> -->
-              <!-- <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td> -->
             </tr>
+
             <tr id="washDishes">
-              <!-- <td>Wash the dishes</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td> -->
             </tr>
           </table>
-        <!-- </form> -->
     </section>
 
 
@@ -166,7 +90,7 @@
   <!-- client-side javaScript -->
   <script>
 
-    //this function displays the Daily jobs
+    // this function uses AJAX request get the database of members, and populates buttons for each member  
     function daily() { 
       console.log('daily() called');
       //show the correct table/list
@@ -182,7 +106,7 @@
       xmlHttpRequest.onreadystatechange = function() {
         if ( xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
 
-          //manipulate the DOM with the assignments 
+          //manipulate the DOM with the member names 
           console.log('inside daily if statement');
           //turn json into an object
           var data = JSON.parse(xmlHttpRequest.responseText);
@@ -203,8 +127,6 @@
 
             dailyList.appendChild(item);
           }
-
-          // document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
         }
       };
 
@@ -214,7 +136,7 @@
     }
 
 
-    // this function displays the Weekly job assignments
+    // this function fills in the table for the Weekly job assignments
     function week() { 
       console.log('week() called');
       //show the correct table/list
@@ -241,7 +163,7 @@
             job.innerHTML = data.job[5].jobname;
             breakfast.appendChild(job);
 
-            // create the days of the week
+            // create the days of the week for breakfast
             for (var i = 0; i < data.breakfast.length; i++) { 
               var day = document.createElement('td');
               day.innerHTML = data.member[data.breakfast[i].nameid - 1].firstname;
@@ -249,51 +171,12 @@
               breakfast.appendChild(day);
             }
 
-            // var job = document.createElement('td');
-            // job.innerHTML = data.job[5].jobname;
-            // breakfast.appendChild(job);
-
-            // var sun = document.createElement('td');
-            // sun.innerHTML = "";
-            // breakfast.appendChild(sun);
-
-            // var mon = document.createElement('td');
-            // mon.innerHTML = data.member[1].firstname ;
-            // mon.setAttribute("class", data.member[1].firstname);
-            // breakfast.appendChild(mon);
-
-            // var tue = document.createElement('td');
-            // tue.innerHTML = data.member[5].firstname;
-            // tue.setAttribute("class", data.member[5].firstname);
-            // breakfast.appendChild(tue);
-
-            // var wed = document.createElement('td');
-            // wed.innerHTML = data.member[4].firstname;
-            // wed.setAttribute("class", data.member[4].firstname);
-            // breakfast.appendChild(wed);
-
-            // var thur = document.createElement('td');
-            // thur.innerHTML = data.member[6].firstname;
-            // thur.setAttribute("class", data.member[6].firstname);
-            // breakfast.appendChild(thur);
-
-            // var fri = document.createElement('td');
-            // fri.innerHTML = data.member[0].firstname;
-            // fri.setAttribute("class", data.member[0].firstname);
-            // breakfast.appendChild(fri);
-
-            // var sat = document.createElement('td');
-            // sat.innerHTML = data.member[1].firstname;
-            // sat.setAttribute("class", data.member[1].firstname);
-            // breakfast.appendChild(sat);
-
-
             //second row id=empty
             var job = document.createElement('td');
             job.innerHTML = data.job[14].jobname;
             empty.appendChild(job);
 
-            // create the days of the week
+            // create the days of the week for empty
             for (var i = 0; i < data.empty.length; i++) { 
               var day = document.createElement('td');
               day.innerHTML = data.member[data.empty[i].nameid - 1].firstname;
@@ -301,89 +184,12 @@
               empty.appendChild(day);
             }
 
-            // var job = document.createElement('td');
-            // job.innerHTML = data.job[1].jobname + "empty dishwasher";
-            // empty.appendChild(job);
-
-            // var sun = document.createElement('td');
-            // sun.innerHTML = data.member[4].firstname;
-            // sun.setAttribute("class", data.member[4].firstname);
-            // empty.appendChild(sun);
-
-            // var mon = document.createElement('td');
-            // mon.innerHTML = data.member[2].firstname ;
-            // mon.setAttribute("class", data.member[2].firstname);
-            // empty.appendChild(mon);
-
-            // var tue = document.createElement('td');
-            // tue.innerHTML = data.member[2].firstname;
-            // tue.setAttribute("class", data.member[2].firstname);
-            // empty.appendChild(tue);
-
-            // var wed = document.createElement('td');
-            // wed.innerHTML = data.member[0].firstname;
-            // wed.setAttribute("class", data.member[0].firstname);
-            // empty.appendChild(wed);
-
-            // var thur = document.createElement('td');
-            // thur.innerHTML = data.member[2].firstname;
-            // thur.setAttribute("class", data.member[2].firstname);
-            // empty.appendChild(thur);
-
-            // var fri = document.createElement('td');
-            // fri.innerHTML = data.member[2].firstname;
-            // fri.setAttribute("class", data.member[2].firstname);
-            // empty.appendChild(fri);
-
-            // var sat = document.createElement('td');
-            // sat.innerHTML = data.member[5].firstname;
-            // sat.setAttribute("class", data.member[5].firstname);
-            // empty.appendChild(sat);
-
-            
-
-            // // row id=play
-            // var job = document.createElement('td');
-            // job.innerHTML = data.job[5].jobname + "playroom";
-            // play.appendChild(job);
-
-            // var sun = document.createElement('td');
-            // sun.innerHTML = "";
-            // play.appendChild(sun);
-
-            // var mon = document.createElement('td');
-            // mon.innerHTML = data.member[4].firstname ;
-            // mon.setAttribute("class", data.member[4].firstname);
-            // play.appendChild(mon);
-
-            // var tue = document.createElement('td');
-            // tue.innerHTML = "";
-            // play.appendChild(tue);
-
-            // var wed = document.createElement('td');
-            // wed.innerHTML = data.member[5].firstname;
-            // wed.setAttribute("class", data.member[5].firstname);
-            // play.appendChild(wed);
-
-            // var thur = document.createElement('td');
-            // thur.innerHTML = "";
-            // play.appendChild(thur);
-
-            // var fri = document.createElement('td');
-            // fri.innerHTML = data.member[6].firstname;
-            // fri.setAttribute("class", data.member[6].firstname);
-            // play.appendChild(fri);
-
-            // var sat = document.createElement('td');
-            // sat.innerHTML = "";
-            // play.appendChild(sat);
-
-            // // row id=play
+            // row id=play
             var job = document.createElement('td');
             job.innerHTML = data.job[15].jobname;
             play.appendChild(job);
 
-            // create the days of the week
+            // create the days of the week for play 
             for (var i = 0; i < data.play.length; i++) { 
               var day = document.createElement('td');
               day.innerHTML = data.member[data.play[i].nameid - 1].firstname;
@@ -396,7 +202,7 @@
             job.innerHTML = data.job[0].jobname;
             family.appendChild(job);
 
-            // create the days of the week
+            // create the days of the week for family 
             for (var i = 0; i < data.family.length; i++) { 
               var day = document.createElement('td');
               day.innerHTML = data.member[data.family[i].nameid - 1].firstname;
@@ -422,14 +228,13 @@
             job.innerHTML = data.job[2].jobname;
             bedroom.appendChild(job);
 
-            // create the days of the week
+            // create the days of the week for bedroom 
             for (var i = 0; i < data.bedroom.length; i++) { 
               var day = document.createElement('td');
               day.innerHTML = data.member[data.bedroom[i].nameid - 1].firstname;
               day.setAttribute("class", data.member[data.bedroom[i].nameid -1].firstname);
               bedroom.appendChild(day);
             }
-
 
             // row id=together
             var job = document.createElement('td');
@@ -464,13 +269,12 @@
             sat.innerHTML = "";
             together.appendChild(sat);
 
-
             // row id=dinner
             var job = document.createElement('td');
             job.innerHTML = data.job[4].jobname;
             dinner.appendChild(job);
 
-            // create the days of the week
+            // create the days of the week for dinner
             for (var i = 0; i < data.dinner.length; i++) { 
               var day = document.createElement('td');
               day.innerHTML = data.member[data.dinner[i].nameid - 1].firstname;
@@ -483,7 +287,7 @@
             job.innerHTML = data.job[3].jobname;
             clear.appendChild(job);
 
-            // create the days of the week
+            // create the days of the week for clear
             for (var i = 0; i < data.clear.length; i++) { 
               var day = document.createElement('td');
               day.innerHTML = data.member[data.clear[i].nameid - 1].firstname;
@@ -496,7 +300,7 @@
             job.innerHTML = data.job[17].jobname;
             washDishes.appendChild(job);
 
-            // create the days of the week
+            // create the days of the week for washDishes
             for (var i = 0; i < data.wash.length; i++) { 
               var day = document.createElement('td');
               day.innerHTML = data.member[data.wash[i].nameid - 1].firstname;
@@ -504,40 +308,7 @@
               washDishes.appendChild(day);
             }
 
-
-            // var mon = document.createElement('td');
-            // mon.innerHTML = data.member[] ;
-            // mon.setAttribute("class", data.member[i].firstname);
-            // item.appendChild(mon);
-
-            // var tue = document.createElement('td');
-            // tue.innerHTML = data.member[].firstname;
-            // tue.setAttribute("class", data.member[].firstname);
-            // item.appendChild(tue);
-
-            // var wed = document.createElement('td');
-            // wed.innerHTML = data.member[].firstname;
-            // wed.setAttribute("class", data.member[].firstname);
-            // item.appendChild(wed);
-
-            // var thur = document.createElement('td');
-            // thur.innerHTML = data.member[].firstname;
-            // thur.setAttribute("class", data.member[].firstname);
-            // item.appendChild(thur);
-
-            // var fri = document.createElement('td');
-            // fri.innerHTML = data.member[].firstname;
-            // fri.setAttribute("class", data.member[].firstname);
-            // item.appendChild(fri);
-
-            // var sat = document.createElement('td');
-            // sat.innerHTML = data.member[].firstname;
-            // sat.setAttribute("class", data.member[].firstname);
-            // item.appendChild(sat);
-
           }
-
-          // document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
         }
       };
 
@@ -562,7 +333,7 @@
       xmlHttpRequest.onreadystatechange = function() {
         if ( xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
 
-          //manipulate the DOM with the assignments 
+          //add list item to the DOM with AJAX using the assignments from the database  
           console.log('inside if statement');
           var data = JSON.parse(xmlHttpRequest.responseText);
 
@@ -582,8 +353,6 @@
 
             monthList.appendChild(item);
           }
-
-          // document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
         }
       };
 
@@ -601,7 +370,8 @@
         console.log("Nate");
         var message = "Monday: Wash the dishes<br>Wednesday: Empty the dishwasher<br>Friday: Wash the dishes, Make dinner<br>";
         document.getElementById('jobs').innerHTML = message;
-    
+        
+        dailyJobs(1);
         break;
       case "Jen":
         console.log("Jen");
@@ -669,13 +439,68 @@
   }
 
   function dailyJobs(nameId) { 
+      //get the assignments from the database
+      var xmlHttpRequest = new XMLHttpRequest();
+      xmlHttpRequest.onreadystatechange = function() {
+        if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
 
+        console.log('inside dailyJobs if statement');
+        var data = JSON.parse(xmlHttpRequest.responseText);
+        day = ["Sunday", "Monday", "Tuesday", "Wednesay", "Thursday", "Friday", "Saturday"];
+        message = "";
 
+        //looping throught the days of the week
+        for (var i = 1; i < 8; i ++) {
+          temp    = "";
+          if (data.breakfast[i].nameid == nameId) { 
+            temp += data.job[5].jobname; 
+          }
+          if (data.empty[i].nameid == nameId) { 
+            if (temp != "") {temp += ", ";}
+            temp += data.job[14].jobname; 
+          }
+          if (data.play[i].nameid == nameId) { 
+            if (temp != "") {temp += ", ";}
+            temp += data.job[15].jobname; 
+          }
+          if (data.family[i].nameid == nameId) { 
+            if (temp != "") {temp += ", ";}
+            temp += data.job[0].jobname; 
+          }
+          if (data.outside[i].nameid == nameId) { 
+            if (temp != "") {temp += ", ";}
+            temp += data.job[16].jobname; 
+          }
+          if (data.bedroom[i].nameid == nameId) { 
+            if (temp != "") {temp += ", ";}
+            temp += data.job[2].jobname; 
+          }
+          if (data.dinner[i].nameid == nameId) { 
+            if (temp != "") {temp += ", ";}
+            temp += data.job[4].jobname; 
+          }
+          if (data.clear[i].nameid == nameId) { 
+            if (temp != "") {temp += ", ";}
+            temp += data.job[3].jobname; 
+          }
+          if (data.wash[i].nameid == nameId) { 
+            if (temp != "") {temp += ", ";}
+            temp += data.job[17].jobname; 
+          }
 
+          message += day[i] + ": " + temp + "<br>";
 
+        }
+
+        document.getElementById('jobs').innerHTML = message;
+
+      }
+
+      //the json is from the database here
+      xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/week', true);
+      xmlHttpRequest.send();
+    }
   }
-
-
 
 
   </script>
