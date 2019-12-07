@@ -210,10 +210,14 @@
           var data = JSON.parse(xmlHttpRequest.responseText);
 
           //remove previous data
-          for (var i = 0; i < dailyList.children.length; i++) {
-            dailyList.removeChild(dailyList.lastElementChild);
-          }
+          // for (var i = 0; i < dailyList.children.length; i++) {
+          //   dailyList.removeChild(dailyList.lastElementChild);
+          // }
 
+          do { 
+            dailyList.removeChild(dailyList.lastElementChild);
+          } while (dailyList.children.length);
+          
           //loop through data and add a button to the list
           for (var i = 0; i < data.member.length; i++) { 
             var item = document.createElement('li');
