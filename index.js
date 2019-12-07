@@ -70,14 +70,19 @@ express()
       const family = await client.query('SELECT * FROM Familyroom');
       const outside = await client.query('SELECT * FROM Outside');
       const bedroom = await client.query('SELECT * FROM Bedroom');
-
+      const dinner  = await client.query('SELECT * FROM Dinner');
+      const clear   = await client.query('SELECT * FROM ClearWipe');
+      const wash    = await client.query('SELECT * FROM WashDishes');
 
       const params = { 'member': (member)  ? member.rows  : null, 
                         'job'  : (job)     ? job.rows     : null, 
                        'family': (family)  ? family.rows  : null, 
                       'outside': (outside) ? outside.rows : null,
-                      'bedroom': (bedroom) ? bedroom.rows : null
-                      };
+                      'bedroom': (bedroom) ? bedroom.rows : null,
+                       'dinner': (dinner)  ? dinner.rows  : null, 
+                       'clear' : (clear)   ? clear.rows   : null,
+                        'wash' : (wash)    ? wash.rows    : null
+                    };
 
 
       res.send(params);
