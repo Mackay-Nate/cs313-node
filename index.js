@@ -50,8 +50,8 @@ express()
       const member = await client.query('SELECT * FROM Member');
       const params = { 'member': (member) ? member.rows : null };
 
-      res.render('pages/daily', params );
-
+      // res.render('pages/daily', params );
+      res.send(params);
       client.release();
     } catch (err) {
       console.error(err);
@@ -101,7 +101,8 @@ express()
       const params = { 'member': (member) ? member.rows : null, 
                         'job'  : (job)    ? job.rows    : null, date: date  };
 
-      res.render('pages/monthly', params);
+      // res.render('pages/monthly', params);
+      res.send(params);
       client.release();
     } catch (err) {
       console.error(err);

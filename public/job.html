@@ -14,10 +14,9 @@
     <h2>Select</h2>
 
       <button onclick="daily()">Daily</button>
-      <button onclick="week()">Weekly</button>
-    <form action="monthly()">
-      <button type="submit">Monthly</button>
-    </form>
+      <p><button onclick="week()">Weekly</button></p>
+      <button onclick="monthly()">Monthly</button>
+
 
     <!-- <iframe src="www.google.com"> Does this work? </iframe>
     <iframe src="www.google.com"> Does this work? </iframe>
@@ -211,6 +210,21 @@
 
       document.body.style.backgroundColor = "aqua";
 
+            //get the assignments from the database
+            var xmlHttpRequest = new XMLHttpRequest();
+      xmlHttpRequest.onreadystatechange = function() {
+        if ( xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+
+          //manipulate the DOM with the assignments 
+          console.log('inside if statement');
+          document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
+        }
+      };
+
+      //the json is from the database here
+      xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/daily', true);
+      xmlHttpRequest.send();
+
     }
 
 
@@ -252,6 +266,20 @@
       document.body.style.backgroundColor = "teal";
 
 
+      //get the assignments from the database
+      var xmlHttpRequest = new XMLHttpRequest();
+      xmlHttpRequest.onreadystatechange = function() {
+        if ( xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+
+          //manipulate the DOM with the assignments 
+          console.log('inside if statement');
+          document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
+        }
+      };
+
+      //the json is from the database here
+      xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/monthly', true);
+      xmlHttpRequest.send();
     }
 
   </script>
