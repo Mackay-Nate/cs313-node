@@ -68,7 +68,7 @@ express()
       const member   = await client.query('SELECT * FROM Member');
       const job      = await client.query('SELECT * FROM Job');
       const breakfast= await client.query('SELECT * FROM Breakfast');
-      const empty    = await client.query('SELECT * FROM EmpmtyDishwasher');
+      const empty    = await client.query('SELECT * FROM EmptyDishwasher');
       const play     = await client.query('SELECT * FROM Playroom');
       const family   = await client.query('SELECT * FROM Familyroom');
       const outside  = await client.query('SELECT * FROM Outside');
