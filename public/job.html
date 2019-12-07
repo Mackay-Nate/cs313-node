@@ -131,7 +131,7 @@
               <td></td> -->
             </tr>
             <tr id="clear">
-              <td>Clear and wipe the table</td>
+              <!-- <td>Clear and wipe the table</td> -->
               <!-- <td></td>
               <td></td>
               <td></td>
@@ -242,80 +242,104 @@
             job.innerHTML = data.job[5].jobname;
             breakfast.appendChild(job);
 
-            var sun = document.createElement('td');
-            sun.innerHTML = "";
-            breakfast.appendChild(sun);
+            // create the days of the week
+            for (var i = 0; i < data.breakfast.length; i++) { 
+              var day = document.createElement('td');
+              day.innerHTML = data.member[data.breakfast[i].nameid - 1].firstname;
+              day.setAttribute("class", data.member[data.breakfast[i].nameid -1].firstname);
+              breakfast.appendChild(day);
+            }
 
-            var mon = document.createElement('td');
-            mon.innerHTML = data.member[1].firstname ;
-            mon.setAttribute("class", data.member[1].firstname);
-            breakfast.appendChild(mon);
+            // var job = document.createElement('td');
+            // job.innerHTML = data.job[5].jobname;
+            // breakfast.appendChild(job);
 
-            var tue = document.createElement('td');
-            tue.innerHTML = data.member[5].firstname;
-            tue.setAttribute("class", data.member[5].firstname);
-            breakfast.appendChild(tue);
+            // var sun = document.createElement('td');
+            // sun.innerHTML = "";
+            // breakfast.appendChild(sun);
 
-            var wed = document.createElement('td');
-            wed.innerHTML = data.member[4].firstname;
-            wed.setAttribute("class", data.member[4].firstname);
-            breakfast.appendChild(wed);
+            // var mon = document.createElement('td');
+            // mon.innerHTML = data.member[1].firstname ;
+            // mon.setAttribute("class", data.member[1].firstname);
+            // breakfast.appendChild(mon);
 
-            var thur = document.createElement('td');
-            thur.innerHTML = data.member[6].firstname;
-            thur.setAttribute("class", data.member[6].firstname);
-            breakfast.appendChild(thur);
+            // var tue = document.createElement('td');
+            // tue.innerHTML = data.member[5].firstname;
+            // tue.setAttribute("class", data.member[5].firstname);
+            // breakfast.appendChild(tue);
 
-            var fri = document.createElement('td');
-            fri.innerHTML = data.member[0].firstname;
-            fri.setAttribute("class", data.member[0].firstname);
-            breakfast.appendChild(fri);
+            // var wed = document.createElement('td');
+            // wed.innerHTML = data.member[4].firstname;
+            // wed.setAttribute("class", data.member[4].firstname);
+            // breakfast.appendChild(wed);
 
-            var sat = document.createElement('td');
-            sat.innerHTML = data.member[1].firstname;
-            sat.setAttribute("class", data.member[1].firstname);
-            breakfast.appendChild(sat);
+            // var thur = document.createElement('td');
+            // thur.innerHTML = data.member[6].firstname;
+            // thur.setAttribute("class", data.member[6].firstname);
+            // breakfast.appendChild(thur);
+
+            // var fri = document.createElement('td');
+            // fri.innerHTML = data.member[0].firstname;
+            // fri.setAttribute("class", data.member[0].firstname);
+            // breakfast.appendChild(fri);
+
+            // var sat = document.createElement('td');
+            // sat.innerHTML = data.member[1].firstname;
+            // sat.setAttribute("class", data.member[1].firstname);
+            // breakfast.appendChild(sat);
 
 
             //second row id=empty
             var job = document.createElement('td');
-            job.innerHTML = data.job[1].jobname + "empty dishwasher";
-            empty.appendChild(job);
+            job.innerHTML = data.job[14].jobname;
+            breakfast.appendChild(job);
 
-            var sun = document.createElement('td');
-            sun.innerHTML = data.member[4].firstname;
-            sun.setAttribute("class", data.member[4].firstname);
-            empty.appendChild(sun);
+            // create the days of the week
+            for (var i = 0; i < data.empty.length; i++) { 
+              var day = document.createElement('td');
+              day.innerHTML = data.member[data.empty[i].nameid - 1].firstname;
+              day.setAttribute("class", data.member[data.empty[i].nameid -1].firstname);
+              breakfast.appendChild(day);
+            }
 
-            var mon = document.createElement('td');
-            mon.innerHTML = data.member[2].firstname ;
-            mon.setAttribute("class", data.member[2].firstname);
-            empty.appendChild(mon);
+            // var job = document.createElement('td');
+            // job.innerHTML = data.job[1].jobname + "empty dishwasher";
+            // empty.appendChild(job);
 
-            var tue = document.createElement('td');
-            tue.innerHTML = data.member[2].firstname;
-            tue.setAttribute("class", data.member[2].firstname);
-            empty.appendChild(tue);
+            // var sun = document.createElement('td');
+            // sun.innerHTML = data.member[4].firstname;
+            // sun.setAttribute("class", data.member[4].firstname);
+            // empty.appendChild(sun);
 
-            var wed = document.createElement('td');
-            wed.innerHTML = data.member[0].firstname;
-            wed.setAttribute("class", data.member[0].firstname);
-            empty.appendChild(wed);
+            // var mon = document.createElement('td');
+            // mon.innerHTML = data.member[2].firstname ;
+            // mon.setAttribute("class", data.member[2].firstname);
+            // empty.appendChild(mon);
 
-            var thur = document.createElement('td');
-            thur.innerHTML = data.member[2].firstname;
-            thur.setAttribute("class", data.member[2].firstname);
-            empty.appendChild(thur);
+            // var tue = document.createElement('td');
+            // tue.innerHTML = data.member[2].firstname;
+            // tue.setAttribute("class", data.member[2].firstname);
+            // empty.appendChild(tue);
 
-            var fri = document.createElement('td');
-            fri.innerHTML = data.member[2].firstname;
-            fri.setAttribute("class", data.member[2].firstname);
-            empty.appendChild(fri);
+            // var wed = document.createElement('td');
+            // wed.innerHTML = data.member[0].firstname;
+            // wed.setAttribute("class", data.member[0].firstname);
+            // empty.appendChild(wed);
 
-            var sat = document.createElement('td');
-            sat.innerHTML = data.member[5].firstname;
-            sat.setAttribute("class", data.member[5].firstname);
-            empty.appendChild(sat);
+            // var thur = document.createElement('td');
+            // thur.innerHTML = data.member[2].firstname;
+            // thur.setAttribute("class", data.member[2].firstname);
+            // empty.appendChild(thur);
+
+            // var fri = document.createElement('td');
+            // fri.innerHTML = data.member[2].firstname;
+            // fri.setAttribute("class", data.member[2].firstname);
+            // empty.appendChild(fri);
+
+            // var sat = document.createElement('td');
+            // sat.innerHTML = data.member[5].firstname;
+            // sat.setAttribute("class", data.member[5].firstname);
+            // empty.appendChild(sat);
 
             
 
@@ -356,9 +380,9 @@
             // play.appendChild(sat);
 
             // // row id=play
-            // var job = document.createElement('td');
-            // job.innerHTML = data.play[1].jobname;
-            // play.appendChild(job);
+            var job = document.createElement('td');
+            job.innerHTML = data.job[15].jobname;
+            play.appendChild(job);
 
             // create the days of the week
             for (var i = 0; i < data.play.length; i++) { 
@@ -380,6 +404,11 @@
               day.setAttribute("class", data.member[data.family[i].nameid -1].firstname);
               family.appendChild(day);
             }
+
+            // row id=outside
+            var job = document.createElement('td');
+            job.innerHTML = data.job[16].jobname;
+            outside.appendChild(job);
 
             // create the days of the week for outside jobs
             for (var i = 0; i < data.outside.length; i++) { 
@@ -416,9 +445,9 @@
             }
 
             // row id=clear
-            // var job = document.createElement('td');
-            // job.innerHTML = "Clear and Wipe the table";
-            // clear.appendChild(job);
+            var job = document.createElement('td');
+            job.innerHTML = data.job[3].jobname;
+            clear.appendChild(job);
 
             // create the days of the week
             for (var i = 0; i < data.clear.length; i++) { 
@@ -430,8 +459,8 @@
 
             // row id=washDishes
             var job = document.createElement('td');
-            job.innerHTML = "Wash the dishes";
-            dishes.appendChild(job);
+            job.innerHTML = data.job[17].jobname;
+            washDishes.appendChild(job);
 
             // create the days of the week
             for (var i = 0; i < data.wash.length; i++) { 

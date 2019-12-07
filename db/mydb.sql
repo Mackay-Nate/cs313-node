@@ -20,28 +20,31 @@ CREATE TABLE Member (
 );
 
 --job db inserted 
-INSERT INTO job (jobName) VALUES ('family room');
-INSERT INTO job (jobName) VALUES ('living room');
-INSERT INTO job (jobName) VALUES ('Familyroom');
-INSERT INTO job (jobName) VALUES ('Clear and Wipe the table');
+INSERT INTO job (jobName) VALUES ('Clean the Family Room');
+INSERT INTO job (jobName) VALUES ('Clean the Living Room');
+INSERT INTO job (jobName) VALUES ('Clean your Bedroom');
+INSERT INTO job (jobName) VALUES ('Clear & Wipe the table');
 INSERT INTO job (jobName) VALUES ('Make dinner');
 INSERT INTO job (jobName) VALUES ('Make breakfast');
-INSERT INTO job (jobName) VALUES ('Clean toilet');
-INSERT INTO job (jobName) VALUES ('Sink, and mirror');
-INSERT INTO job (jobName) VALUES ('Sweep floor');
-INSERT INTO job (jobName) VALUES ('hallway');
-INSERT INTO job (jobName) VALUES ('dust');
+INSERT INTO job (jobName) VALUES ('Clean the toilet');
+INSERT INTO job (jobName) VALUES ('Clean the sink and mirror');
+INSERT INTO job (jobName) VALUES ('Sweep the floor');
+INSERT INTO job (jobName) VALUES ('Clean the hallway');
+INSERT INTO job (jobName) VALUES ('Dust');
 INSERT INTO job (jobName) VALUES ('Wash the baseboards');
 INSERT INTO job (jobName) VALUES ('Wipe the cabinets');
 INSERT INTO job (jobName) VALUES ('Dust the blinds');
 
-INSERT INTO job (jobName) VALUES ('');
-INSERT INTO job (jobName) VALUES ('');
-INSERT INTO job (jobName) VALUES ('');
-INSERT INTO job (jobName) VALUES ('');
-INSERT INTO job (jobName) VALUES ('');
-INSERT INTO job (jobName) VALUES ('');
-INSERT INTO job (jobName) VALUES ('');
+INSERT INTO job (jobName) VALUES ('Empty the dishwasher');
+INSERT INTO job (jobName) VALUES ('Clean the playroom');
+INSERT INTO job (jobName) VALUES ('Clean up outside');
+INSERT INTO job (jobName) VALUES ('Wash the dishes');
+INSERT INTO job (jobName) VALUES ('Clean the bathroom');
+
+
+UPDATE job SET jobname='4' Where id=
+
+
 
 INSERT INTO job (jobName) VALUES ('');
 
