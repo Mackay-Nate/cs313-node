@@ -44,7 +44,7 @@
         <h1>Family responsibilities</h1>
       
         <form action="/populate">
-          <table>
+          <table id="weekly">
             <tr><th></th>
               <th>Sunday</th>
               <th>Monday</th>
@@ -54,7 +54,7 @@
               <th>Friday</th>
               <th>Saturday</th>
             </tr>
-            <tr>
+            <tr id="row1">
               <td></td>
               <td></td>
               <td></td>
@@ -172,22 +172,12 @@
 
       <ul id="monthList">
         <li style="list-style-type: none">Date: Job - member</li>
-        <!-- <li><%=date[0]%>: <%=job[10].jobname%> - <span class='<%=member[5].firstname%>'><%=member[5].firstname%></span></li>
-        <li><%=date[1]%>: <%=job[11].jobname%> - <%=member[6].firstname%></li>
-        <li><%=date[2]%>: <%=job[12].jobname%> - <%=member[1].firstname%></li>
-        <li><%=date[3]%>: <%=job[13].jobname%> - <span class='<%=member[4].firstname%>'><%=member[4].firstname%></span></li> -->
-      </ul>
-    
-      <!-- <form action="/add" method="post">
-        Date: <input type="text" id="date" name="date"><br>
-        Job: <input type="text" id="job" name="job"><br>
-        Assigned to:<input type="text" id="assigned" name="assigned"><br>
-        <input type="submit" value="Add the job"><br>
-      </form> -->
-    
+      </ul>    
     </section>
 
-<script>
+
+  <!-- client-side javaScript -->
+  <script>
 
     //this function displays the Daily jobs
     function daily() { 
@@ -256,21 +246,133 @@
           console.log('inside if statement');
           var data = JSON.parse(xmlHttpRequest.responseText);
 
-          //remove previous data
-          // do { 
-          //   dailyList.removeChild(dailyList.lastElementChild);
-          // } while (dailyList.children.length);
+          //only populate if data doesn't already exist
+          if (!dishes.children[4]) { 
 
-          //loop through data and add a button to the list
-          for (var i = 0; i < data.date.length; i++) { 
-            var item = document.createElement('li');
-            item.innerHTML = data.data[i] + ": " + data.job[10 + i].jobname + " - ";
-            var spanName = document.createElement('span');
-            spanName.innerHTML = data.member[i+2].firstname;
-            spanName.setAttribute("class", data.member[i].firstname);
+            //first row id=dinner
+            var job = document.createElement('tr');
+            job.innerHTML = data.job[5].jobname;
+            dinner.appendChild(job);
+
+            var sun = document.createElement('tr');
+            sun.innerHTML = "";
+            dinner.appendChild(sun);
+
+            var mon = document.createElement('tr');
+            mon.innerHTML = data.member[1].firstname ;
+            mon.setAttribute("class", data.member[1].firstname);
+            dinner.appendChild(mon);
+
+            var tue = document.createElement('tr');
+            tue.innerHTML = data.member[5].firstname;
+            tue.setAttribute("class", data.member[5].firstname);
+            dinner.appendChild(tue);
+
+            var wed = document.createElement('tr');
+            wed.innerHTML = data.member[4].firstname;
+            wed.setAttribute("class", data.member[4].firstname);
+            dinner.appendChild(wed);
+
+            var thur = document.createElement('tr');
+            thur.innerHTML = data.member[6].firstname;
+            thur.setAttribute("class", data.member[6].firstname);
+            dinner.appendChild(thur);
+
+            var fri = document.createElement('tr');
+            fri.innerHTML = data.member[0].firstname;
+            fri.setAttribute("class", data.member[0].firstname);
+            dinner.appendChild(fri);
+
+            var sat = document.createElement('tr');
+            sat.innerHTML = data.member[1].firstname;
+            sat.setAttribute("class", data.member[1].firstname);
+            dinner.appendChild(sat);
+
+
+
+
+            //second row id=dinner
+            var job = document.createElement('tr');
+            job.innerHTML = data.job[5].jobname;
+            dinner.appendChild(job);
+
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+            var mon = document.createElement('tr');
+            item.innerHTML = data.member[] ;
+            .setAttribute("class", data.member[i].firstname);
             item.appendChild(spanName);
 
-            dailyList.appendChild(item);
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+
+            // row id=
+            var job = document.createElement('tr');
+            job.innerHTML = data.job[5].jobname;
+            dinner.appendChild(job);
+
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+            var mon = document.createElement('tr');
+            item.innerHTML = data.member[] ;
+            .setAttribute("class", data.member[i].firstname);
+            item.appendChild(spanName);
+
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+            var  = document.createElement('tr');
+            .innerHTML = data.member[].firstname;
+            .setAttribute("class", data.member[].firstname);
+            item.appendChild();
+
+
           }
 
 
