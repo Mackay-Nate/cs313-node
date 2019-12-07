@@ -308,6 +308,27 @@
 
           //manipulate the DOM with the assignments 
           console.log('inside if statement');
+          var data = JSON.parse(xmlHttpRequest.responseText);
+
+          //remove previous data
+          // do { 
+          //   dailyList.removeChild(dailyList.lastElementChild);
+          // } while (dailyList.children.length);
+
+          //loop through data and add a button to the list
+          for (var i = 0; i < data.date.length; i++) { 
+            var item = document.createElement('li');
+            item.innerHTML = data.data[i] + ": " + data.job[10 + i].jobname + " - ";
+            var spanName = document.createElement('span');
+            spanName.innerHTML = data.member[i+2].firstname;
+            spanName.setAttribute("class", data.member[i].firstname);
+            item.appendChild(spanName);
+
+            dailyList.appendChild(item);
+          }
+
+
+
           document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
         }
       };
