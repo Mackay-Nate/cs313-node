@@ -311,9 +311,9 @@
           var data = JSON.parse(xmlHttpRequest.responseText);
 
           //remove previous data
-          // do { 
-          //   dailyList.removeChild(dailyList.lastElementChild);
-          // } while (dailyList.children.length);
+           do { 
+             monthList.removeChild(monthList.lastElementChild);
+           } while (monthList.children.length - 1);
 
           //loop through data and add a button to the list
           for (var i = 0; i < data.date.length; i++) { 
@@ -327,9 +327,7 @@
             monthList.appendChild(item);
           }
 
-
-
-          document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
+          // document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
         }
       };
 
