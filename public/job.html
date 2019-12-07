@@ -15,8 +15,9 @@
 
       <button onclick="daily()">Daily</button>
       <button onclick="week()">Weekly</button>
-      <button onclick="monthly()">Monthly</button>
-
+    <form action="monthly()">
+      <button type="submit">Monthly</button>
+    </form>
 
     <!-- <iframe src="www.google.com"> Does this work? </iframe>
     <iframe src="www.google.com"> Does this work? </iframe>
@@ -208,7 +209,7 @@
       document.getElementById('week').style.display    = "none";
       document.getElementById('month').style.display = "none";
 
-      document.body.style.backgroundColor = "lightred";
+      document.body.style.backgroundColor = "aqua";
 
     }
 
@@ -248,7 +249,7 @@
       document.getElementById('week').style.display    = "none";
       document.getElementById('month').style.display = "initial";
 
-      document.body.style.backgroundColor = "lightblue";
+      document.body.style.backgroundColor = "teal";
 
 
     }
