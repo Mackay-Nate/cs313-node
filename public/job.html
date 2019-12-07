@@ -439,11 +439,11 @@
   }
 
   function dailyJobs(nameId) { 
-      //get the assignments from the database
-      var xmlHttpRequest = new XMLHttpRequest();
-      xmlHttpRequest.onreadystatechange = function() {
-        // if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
-        {
+    //get the assignments from the database
+    var xmlHttpRequest = new XMLHttpRequest();
+    xmlHttpRequest.onreadystatechange = function() {
+      if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+
         console.log('inside dailyJobs if statement');
         var data = JSON.parse(xmlHttpRequest.responseText);
         day = ["Sunday", "Monday", "Tuesday", "Wednesay", "Thursday", "Friday", "Saturday"];
@@ -493,13 +493,12 @@
         }
 
         document.getElementById('jobs').innerHTML = message;
+      }
+    };
 
-      };
-
-      //the json is from the database here
-      xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/week', true);
-      xmlHttpRequest.send();
-    }
+    //the json is from the database here
+    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/week', true);
+    xmlHttpRequest.send();
   }
 
 
