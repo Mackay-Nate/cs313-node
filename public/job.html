@@ -211,7 +211,7 @@
 
           //remove previous data
           for (var i = 0; i < dailyList.childNodes.length; i++) {
-            dailyList.removeChild(dailyList.firstElementChild);
+            dailyList.removeChild(dailyList.children[i]);
           }
 
           //loop through data and add a button to the list
