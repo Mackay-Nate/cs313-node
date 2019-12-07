@@ -311,9 +311,13 @@
           var data = JSON.parse(xmlHttpRequest.responseText);
 
           //remove previous data
-           do { 
-             monthList.removeChild(monthList.lastElementChild);
-           } while (monthList.children.length - 1);
+          for (var i = monthList.children.length; i > 2; i++) {
+            monthList.removeChild(monthList.lastElementChild);
+          }
+
+          //  do { 
+          //    monthList.removeChild(monthList.lastElementChild);
+          //  } while (monthList.children.length - 1);
 
           //loop through data and add a button to the list
           for (var i = 0; i < data.date.length; i++) { 
