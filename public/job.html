@@ -205,7 +205,7 @@
           } while (dailyList.children.length);
 
           //loop through data and add a button to the list
-          for (var i = 0; i < data.member.length; i++) { 
+          for (var i = 0; i < data.member.length - 1; i++) { 
             var item = document.createElement('li');
             var iButton = document.createElement('button');
             iButton.innerHTML = data.member[i].firstname;
@@ -420,10 +420,10 @@
             // clear.appendChild(job);
 
             // create the days of the week
-            for (var i = 0; i < data.ClearWipe.length; i++) { 
+            for (var i = 0; i < data.clear.length; i++) { 
               var day = document.createElement('td');
-              day.innerHTML = data.member[data.clearwipe[i].nameid - 1].firstname;
-              day.setAttribute("class", data.member[data.clearwipe[i].nameid -1].firstname);
+              day.innerHTML = data.member[data.clear[i].nameid - 1].firstname;
+              day.setAttribute("class", data.member[data.clear[i].nameid -1].firstname);
               clear.appendChild(day);
             }
 
