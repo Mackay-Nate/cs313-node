@@ -318,7 +318,7 @@
           //loop through data and add a button to the list
           for (var i = 0; i < data.date.length; i++) { 
             var item = document.createElement('li');
-            item.innerHTML = data.data[i] + ": " + data.job[10 + i].jobname + " - ";
+            item.innerHTML = data.date[i] + ": " + data.job[10 + i].jobname + " - ";
             var spanName = document.createElement('span');
             spanName.innerHTML = data.member[i+2].firstname;
             spanName.setAttribute("class", data.member[i].firstname);
