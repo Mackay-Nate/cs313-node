@@ -60,12 +60,16 @@ td {
   color: gold;
 }
 
+#weekly { 
+  background-color: rgb(204, 231, 224);
+}
+
 .five { 
-  background-color: lightgrey;
+  background-color: rgb(218, 218, 218);
 }
 
 button { 
-  margin: 5px; 
+  margin: 4px; 
   padding: 10px 60px;
 }
 
@@ -90,8 +94,5 @@ input {
 
 #daily, #week, #month { 
   display: none;
-  background-color: rgb(183, 225, 233);
-  background-color: lightblue;
-  background-color: lightskyblue;
 }
 

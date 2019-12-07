@@ -13,24 +13,16 @@
   <section>
     <h2>Select</h2>
 
-      <button onclick="daily()">Daily</button>
-      <p><button onclick="week()">Weekly</button></p>
-      <button onclick="monthly()">Monthly</button>
-
-
-    <!-- <iframe src="www.google.com"> Does this work? </iframe>
-    <iframe src="www.google.com"> Does this work? </iframe>
-    <iframe src="pages/monthly"> Does this work? </iframe>
-    <iframe src="pages/daily"> Does this work? </iframe> -->
+      <button onclick="daily()">Daily</button><br>
+      <button onclick="week()">Weekly</button><br>
+      <button onclick="monthly()">Monthly</button><br>
 
     <section id="persons"></section>
 
     <!-- display section for daily jobs -->
     <section id="daily">
-      <h1>Daily jobs</h1>
+      <h2>Daily jobs</h2>
 
-      <!-- <form action="selectMember()">
-      </form> -->
         <ul id="dailyList"> <li></li>
         </ul>
         <div id="jobs">
@@ -41,9 +33,8 @@
     <!-- display section for weekly jobs -->
     <section id="week">
 
-        <h1>Family responsibilities</h1>
-      
-        <form action="/populate">
+        <h2>Family responsibilities</h2>
+        <!-- <form action="/populate"> -->
           <table id="weekly">
             <tr><th></th>
               <th>Sunday</th>
@@ -159,16 +150,14 @@
               <td></td>
               <td></td> -->
             </tr>
-            
           </table>
-        </form>
-      
+        <!-- </form> -->
     </section>
+
 
     <!-- display section for monthly jobs -->
     <section id="month">
       <h2>Monthly jobs</h2>
-
       <ul id="monthList">
         <li style="list-style-type: none">Date: Job - member</li>
       </ul>    
@@ -181,7 +170,7 @@
     //this function displays the Daily jobs
     function daily() { 
       console.log('daily() called');
-      //show the correct table
+      //show the correct table/list
       document.getElementById('daily').style.display = "initial";
       document.getElementById('week').style.display  = "none";
       document.getElementById('month').style.display = "none";
@@ -229,7 +218,7 @@
     // this function displays the Weekly job assignments
     function week() { 
       console.log('week() called');
-      //show the correct table
+      //show the correct table/list
       document.getElementById('daily').style.display = "none";
       document.getElementById('week').style.display  = "initial";
       document.getElementById('month').style.display = "none";
@@ -330,42 +319,54 @@
 
             
 
-            // row id=play
-            var job = document.createElement('td');
-            job.innerHTML = data.job[5].jobname + "playroom";
-            play.appendChild(job);
+            // // row id=play
+            // var job = document.createElement('td');
+            // job.innerHTML = data.job[5].jobname + "playroom";
+            // play.appendChild(job);
 
-            var sun = document.createElement('td');
-            sun.innerHTML = "";
-            play.appendChild(sun);
+            // var sun = document.createElement('td');
+            // sun.innerHTML = "";
+            // play.appendChild(sun);
 
-            var mon = document.createElement('td');
-            mon.innerHTML = data.member[4].firstname ;
-            mon.setAttribute("class", data.member[4].firstname);
-            play.appendChild(mon);
+            // var mon = document.createElement('td');
+            // mon.innerHTML = data.member[4].firstname ;
+            // mon.setAttribute("class", data.member[4].firstname);
+            // play.appendChild(mon);
 
-            var tue = document.createElement('td');
-            tue.innerHTML = "";
-            play.appendChild(tue);
+            // var tue = document.createElement('td');
+            // tue.innerHTML = "";
+            // play.appendChild(tue);
 
-            var wed = document.createElement('td');
-            wed.innerHTML = data.member[5].firstname;
-            wed.setAttribute("class", data.member[5].firstname);
-            play.appendChild(wed);
+            // var wed = document.createElement('td');
+            // wed.innerHTML = data.member[5].firstname;
+            // wed.setAttribute("class", data.member[5].firstname);
+            // play.appendChild(wed);
 
-            var thur = document.createElement('td');
-            thur.innerHTML = "";
-            play.appendChild(thur);
+            // var thur = document.createElement('td');
+            // thur.innerHTML = "";
+            // play.appendChild(thur);
 
-            var fri = document.createElement('td');
-            fri.innerHTML = data.member[6].firstname;
-            fri.setAttribute("class", data.member[6].firstname);
-            play.appendChild(fri);
+            // var fri = document.createElement('td');
+            // fri.innerHTML = data.member[6].firstname;
+            // fri.setAttribute("class", data.member[6].firstname);
+            // play.appendChild(fri);
 
-            var sat = document.createElement('td');
-            sat.innerHTML = "";
-            play.appendChild(sat);
+            // var sat = document.createElement('td');
+            // sat.innerHTML = "";
+            // play.appendChild(sat);
 
+            // // row id=play
+            // var job = document.createElement('td');
+            // job.innerHTML = data.play[1].jobname;
+            // play.appendChild(job);
+
+            // create the days of the week
+            for (var i = 0; i < data.play.length; i++) { 
+              var day = document.createElement('td');
+              day.innerHTML = data.member[data.play[i].nameid - 1].firstname;
+              day.setAttribute("class", data.member[data.play[i].nameid -1].firstname);
+              play.appendChild(day);
+            }
 
             // row id=family
             var job = document.createElement('td');
@@ -430,7 +431,7 @@
             // row id=washDishes
             var job = document.createElement('td');
             job.innerHTML = "Wash the dishes";
-            // dishes.appendChild(job);
+            dishes.appendChild(job);
 
             // create the days of the week
             for (var i = 0; i < data.wash.length; i++) { 
@@ -473,7 +474,7 @@
 
           }
 
-          document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
+          // document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
         }
       };
 
@@ -486,7 +487,7 @@
     //this displays the weekly jobs
     function monthly() { 
       console.log('monthly() called');
-      //show the correct table
+      //show the correct table/list
       document.getElementById('daily').style.display = "none";
       document.getElementById('week').style.display  = "none";
       document.getElementById('month').style.display = "initial";
