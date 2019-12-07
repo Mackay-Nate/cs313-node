@@ -367,10 +367,6 @@
 
     switch (dropdown) { 
       case "Nate":
-        console.log("Nate");
-        var message = "Monday: Wash the dishes<br>Wednesday: Empty the dishwasher<br>Friday: Wash the dishes, Make dinner<br>";
-        document.getElementById('jobs').innerHTML = message;
-        
         dailyJobs(1);
         break;
       case "Jen":
@@ -383,6 +379,7 @@
         "Saturday: Make breakfast, Wash the dishes<br>";
         document.getElementById('jobs').innerHTML = message;
 
+        dailyJobs(2);
 
         break;
       case "grandpa":
@@ -391,7 +388,7 @@
         "Saturday: Make dinner<br>";
         document.getElementById('jobs').innerHTML = message;
 
-
+        dailyJobs(3);
         break;
       case "grandma":
         console.log("grandma");
@@ -403,7 +400,7 @@
         "Saturday: Make breakfast, Wash the dishes<br>";
         document.getElementById('jobs').innerHTML = message;
 
-  
+        dailyJobs(4);
         break;
       case "Natalie":
         console.log("Natalie");
@@ -414,7 +411,7 @@
         "Friday: family room<br>" + 
         "Saturday: bedroom<br>";
         document.getElementById('jobs').innerHTML = message;
-    
+        dailyJobs(5);
   
         break;
       case "Ava":
@@ -426,6 +423,7 @@
         "Friday: Outside<br>" + 
         "Saturday: Empty the dishwasher<br>";
         document.getElementById('jobs').innerHTML = message;
+        dailyJobs(6);
         break;
       case "Corbin":
         console.log("Corbin");
@@ -434,6 +432,7 @@
         "Thursday: bedroom<br>" + 
         "Friday: playroom<br>";
         document.getElementById('jobs').innerHTML = message;
+        dailyJobs(7);
         break;
     }
   }
