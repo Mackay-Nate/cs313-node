@@ -90,5 +90,8 @@ input {
 
 #daily, #week, #month { 
   display: none;
+  background-color: rgb(183, 225, 233);
+  background-color: lightblue;
+  background-color: lightskyblue;
 }
 

@@ -39,7 +39,7 @@
         </select> -->
         <!-- <input type="submit"> -->
       </form>
-      <ul>
+      <ul id="list">
           <% member.forEach(function(m) { %>
               <li><input type="button" onclick="selectMember('<%=m.firstname%>')" value="<%=m.firstname%>">
                 <!-- <%= m.id %> - <%= m.firstname%> -->
@@ -183,18 +183,18 @@
 
       <ul>
         <li style="list-style-type: none">Date: Job - member</li>
-        <li><%=date[0]%>: <%=job[10].jobname%> - <span class='<%=member[5].firstname%>'><%=member[5].firstname%></span></li>
+        <!-- <li><%=date[0]%>: <%=job[10].jobname%> - <span class='<%=member[5].firstname%>'><%=member[5].firstname%></span></li>
         <li><%=date[1]%>: <%=job[11].jobname%> - <%=member[6].firstname%></li>
         <li><%=date[2]%>: <%=job[12].jobname%> - <%=member[1].firstname%></li>
-        <li><%=date[3]%>: <%=job[13].jobname%> - <span class='<%=member[4].firstname%>'><%=member[4].firstname%></span></li>
+        <li><%=date[3]%>: <%=job[13].jobname%> - <span class='<%=member[4].firstname%>'><%=member[4].firstname%></span></li> -->
       </ul>
     
-      <form action="/add" method="post">
+      <!-- <form action="/add" method="post">
         Date: <input type="text" id="date" name="date"><br>
         Job: <input type="text" id="job" name="job"><br>
         Assigned to:<input type="text" id="assigned" name="assigned"><br>
         <input type="submit" value="Add the job"><br>
-      </form>
+      </form> -->
     
     </section>
 
@@ -204,19 +204,32 @@
     function daily() { 
       console.log('daily() called');
       //show the correct table
-      document.getElementById('daily').style.display   = "initial";
-      document.getElementById('week').style.display    = "none";
+      document.getElementById('daily').style.display = "initial";
+      document.getElementById('week').style.display  = "none";
       document.getElementById('month').style.display = "none";
 
-      document.body.style.backgroundColor = "aqua";
+      document.body.style.backgroundColor = "lightblue";
 
-            //get the assignments from the database
-            var xmlHttpRequest = new XMLHttpRequest();
+      //get the assignments from the database
+      var xmlHttpRequest = new XMLHttpRequest();
       xmlHttpRequest.onreadystatechange = function() {
         if ( xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
 
           //manipulate the DOM with the assignments 
-          console.log('inside if statement');
+          console.log('inside daily if statement');
+
+          var item = document.createElement('li');
+          var iButton = document.createElement('button');
+          iButton.innerHTML = params.member[0].firstname;
+          iButton.addEventListener(onclick, 'selectMember(' + params.member[0].firstname + ')');
+          item.appendChild(iButton);
+
+          list.appendChild(item);
+          
+
+              // <li><input type="button" onclick="selectMember('<%=m.firstname%>')" value="<%=m.firstname%>">
+
+
           document.getElementById("persons").innerHTML = xmlHttpRequest.responseText;
         }
       };
@@ -232,11 +245,11 @@
     function week() { 
       console.log('week() called');
       //show the correct table
-      document.getElementById('daily').style.display   = "none";
-      document.getElementById('week').style.display    = "initial";
+      document.getElementById('daily').style.display = "none";
+      document.getElementById('week').style.display  = "initial";
       document.getElementById('month').style.display = "none";
 
-      document.body.style.backgroundColor = "lightblue";
+      document.body.style.backgroundColor = "lightskyblue";
 
       //get the assignments from the database
       var xmlHttpRequest = new XMLHttpRequest();
@@ -259,11 +272,11 @@
     function monthly() { 
       console.log('monthly() called');
       //show the correct table
-      document.getElementById('daily').style.display   = "none";
-      document.getElementById('week').style.display    = "none";
+      document.getElementById('daily').style.display = "none";
+      document.getElementById('week').style.display  = "none";
       document.getElementById('month').style.display = "initial";
 
-      document.body.style.backgroundColor = "teal";
+      document.body.style.backgroundColor = "rgb(155, 226, 240)";
 
 
       //get the assignments from the database
