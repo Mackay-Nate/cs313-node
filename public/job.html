@@ -88,7 +88,7 @@
               <td></td>
               <td></td> -->
             </tr>
-            <tr class="five">
+            <tr class="five" id="family">
               <td></td>
               <td></td>
               <td></td>
@@ -240,7 +240,7 @@
       //get the assignments from the database
       var xmlHttpRequest = new XMLHttpRequest();
       xmlHttpRequest.onreadystatechange = function() {
-        if ( xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+        if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
 
           //manipulate the DOM with the assignments 
           console.log('inside if statement');
@@ -367,16 +367,17 @@
             play.appendChild(sat);
 
 
-            
-            // // row id=
-            // var job = document.createElement('td');
-            // job.innerHTML = data.job[5].jobname;
-            // play.appendChild(job);
+            // row id=family
+            var job = document.createElement('td');
+            job.innerHTML = data.job[1].jobname;
+            family.appendChild(job);
 
-            // var sun = document.createElement('td');
-            // sun.innerHTML = data.member[].firstname;
-            // sun.setAttribute("class", data.member[].firstname);
-            // item.appendChild(sun);
+            for (var i = 0; i < data.family.length; i++) { 
+              var sun = document.createElement('td');
+              sun.innerHTML = data.member[data.family[i].nameid].firstname;
+              sun.setAttribute("class", data.member[data.family[i].nameid].firstname);
+              family.appendChild(sun);
+            }
 
             // var mon = document.createElement('td');
             // mon.innerHTML = data.member[] ;

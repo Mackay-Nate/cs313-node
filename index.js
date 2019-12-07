@@ -67,17 +67,14 @@ express()
       const client = await pool.connect()
       const member = await client.query('SELECT * FROM Member');
       const job    = await client.query('SELECT * FROM Job');
+      const family = await client.query('SELECT * FROM Familyroom')
 
       const params = { 'member': (member) ? member.rows : null, 
-                        'job'  : (job)    ? job.rows    : null  };
+                        'job'  : (job)    ? job.rows    : null, 
+                       'family': (family) ? family.rows : null 
+                      };
 
-      console.log('params ' + params);
-      // console.log('job[0].jobname' + job[0].jobname);
-      console.log('params.job[0].jobname ' + params.job[0].jobname);
-      console.log('member ' + params.member[1]);
-      // console.log('params ' + params);
 
-      // res.render('job.html', params);
       res.send(params);
       client.release();
       // return params;
