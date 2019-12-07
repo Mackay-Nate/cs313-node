@@ -81,6 +81,7 @@ ul, #jobs {
   list-style-type: none;
   margin-left: auto;
   margin-right: auto;
+  padding: 0px;
 }
 
 li { 

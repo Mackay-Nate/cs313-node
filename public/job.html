@@ -110,15 +110,15 @@
               <td></td> -->
             </tr>
         
-            <tr>
-              <td>Complete together</td>
+            <tr id="together">
+              <!-- <td>Complete together</td>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
               <td>Special Projects</td>
               <td></td>
-              <td>bathroom</td>
+              <td>bathroom</td> -->
             </tr>
             <tr id="dinner">
               <!-- <td></td>
@@ -394,7 +394,7 @@
 
             // row id=family
             var job = document.createElement('td');
-            job.innerHTML = data.job[1].jobname;
+            job.innerHTML = data.job[0].jobname;
             family.appendChild(job);
 
             // create the days of the week
@@ -430,6 +430,41 @@
               day.setAttribute("class", data.member[data.bedroom[i].nameid -1].firstname);
               bedroom.appendChild(day);
             }
+
+
+            // row id=together
+            var job = document.createElement('td');
+            job.innerHTML = "Complete together";
+            together.appendChild(job);
+
+            var sun = document.createElement('td');
+            sun.innerHTML = "";
+            together.appendChild(sun);
+
+            var mon = document.createElement('td');
+            mon.innerHTML = data.job[1].jobname;
+            together.appendChild(mon);
+
+            var tue = document.createElement('td');
+            tue.innerHTML = data.job[2].jobname;
+            together.appendChild(tue);
+
+            var wed = document.createElement('td');
+            wed.innerHTML = data.job[0].jobname ;
+            together.appendChild(wed);
+
+            var thur = document.createElement('td');
+            thur.innerHTML = "Special Projects";
+            together.appendChild(thur);
+
+            var fri = document.createElement('td');
+            fri.innerHTML = data.job[2].jobname;
+            together.appendChild(fri);
+
+            var sat = document.createElement('td');
+            sat.innerHTML = "";
+            together.appendChild(sat);
+
 
             // row id=dinner
             var job = document.createElement('td');
