@@ -170,7 +170,7 @@
     <section id="month">
       <h2>Monthly jobs</h2>
 
-      <ul>
+      <ul id="monthList">
         <li style="list-style-type: none">Date: Job - member</li>
         <!-- <li><%=date[0]%>: <%=job[10].jobname%> - <span class='<%=member[5].firstname%>'><%=member[5].firstname%></span></li>
         <li><%=date[1]%>: <%=job[11].jobname%> - <%=member[6].firstname%></li>
@@ -324,7 +324,7 @@
             spanName.setAttribute("class", data.member[i].firstname);
             item.appendChild(spanName);
 
-            dailyList.appendChild(item);
+            monthList.appendChild(item);
           }
 
 
