@@ -52,12 +52,24 @@ td {
   padding: 10px;
 }
 
-.Ava { 
-  color: red;
+.Nate { 
+  color: darkgrey;
+}
+
+.Jen { 
+  color: navy;
 }
 
 .Natalie { 
   color: gold;
+}
+
+.Ava { 
+  color: red;
+}
+
+.Corbin { 
+  color: blue;
 }
 
 #weekly { 
