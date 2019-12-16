@@ -48,8 +48,8 @@ th {
   min-width: 100px;
 }
 
-td { 
-  margin:   5px;
+td, th { 
+  margin:  5px;
   padding: 7px;
 }
 
@@ -89,7 +89,7 @@ tr:nth-child(even) {
   background-color: #f5f5f5;
 }
 
-.five tr:nth-child(even):hover { 
+.five tr:hover { 
   background-color: rgb(194, 194, 194);
 }
 
