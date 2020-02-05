@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-us" id="html">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Chores</title>
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/nav.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/menu.css">
+  </head>
+
+<body onload="populate()"> 
+
+  <!-- popup menu -->
+  <div id="mySidenav" class="sidenav">
+    <a onclick="goTo('sunday'); switchNav();">Sunday</a>
+    <a onclick="goTo('monday'); switchNav();">Monday</a>
+    <a onclick="goTo('tuesday'); switchNav();">Tuesday</a>
+    <a onclick="goTo('wednesday'); switchNav();">Wednesday</a>
+    <a onclick="goTo('thursday'); switchNav();">Thursday</a>
+    <a onclick="goTo('friday'); switchNav();">Friday</a>
+    <a onclick="goTo('saturday'); switchNav();">Saturday</a>
+    <a></a>
+    <a onclick="goTo('sunday'); switchNav();">Next week</a>
+    <a></a>
+    <a onclick="goTo('sunday'); switchNav();">This week's grocery list</a>
+    <a></a>
+    <a onclick="goTo('sunday'); switchNav();">This week's grocery list</a>
+    <a></a>
+  </div>
+
+  <!-- icon to open the sidenav -->
+  <div id="hamburgerIcon"> 
+    <span class="navIcon" onclick="switchNav()" style="display: block;">
+      <canvas class="bar1" >Canvas cannot display in this browswer.</canvas>
+      <canvas class="bar2" >Canvas cannot display in this browswer.</canvas>
+      <canvas class="bar3" >Canvas cannot display in this browswer.</canvas>
+    </span>
+  </div>
+
+  <h1 id="header">Responsibilities</h1>
+
+  <div id="swiper">
+    <!-- Sunday -->
+    <section id="sunday" class="day">
+      <h2 onclick="switchNav()" class="date">Sunday</h2>
+      <div class="breakfast">
+        <h3>Breakfast</h3>
+        <p class="breakfastMeal"></p>
+      </div>
+
+      <div class="lunch">
+        <h3>Lunch</h3>
+        <p class="lunchMeal"></p>
+      </div>
+
+      <div class="dinner">
+        <h3>Dinner</h3>
+        <p></p>
+      </div>
+
+    </section>
+
+    <!-- Monday -->
+    <section id="monday" class="day">
+      <h2 onclick="switchNav()" class="date">Monday</h2>
+      <div class="breakfast">
+        <h3>Breakfast</h3>
+        <p class="breakfastMeal"></p>
+      </div>
+
+      <div class="lunch">
+        <h3>Lunch</h3>
+        <p class="lunchMeal"></p>
+      </div>
+
+      <div class="dinner">
+        <h3>Dinner</h3>
+        <p ></p>
+
+      </div>
+    </section>
+
+    <!-- Tuesday -->
+    <section id="tuesday" class="day">
+      <h2 onclick="switchNav()" class="date">Tuesday</h2>
+      <div class="breakfast">
+        <h3>Breakfast</h3>
+        <p class="breakfastMeal"></p>
+      </div>
+  
+      <div class="lunch">
+        <h3>Lunch</h3>
+        <p class="lunchMeal"></p>
+      </div>
+  
+      <div class="dinner">
+        <h3>Dinner</h3>
+        <p ></p>
+      </div>
+    </section>
+  
+    <!-- Wednesday -->
+    <section id="wednesday" class="day">
+      <h2 onclick="switchNav()" class="date">Wednesday</h2>
+      <div class="breakfast">
+        <h3>Breakfast</h3>
+        <p class="breakfastMeal"></p>
+      </div>
+  
+      <div class="lunch">
+        <h3>Lunch</h3>
+        <p class="lunchMeal"></p>
+      </div>
+  
+      <div class="dinner">
+        <h3>Dinner</h3>
+        <p ></p>
+      </div>
+    </section>
+
+    <!-- Thursday -->
+    <section id="thursday" class="day">
+      <h2 onclick="switchNav()" class="date">Thursday</h2>
+      <div class="breakfast">
+        <h3>Breakfast</h3>
+        <p class="breakfastMeal"></p>
+      </div>
+
+      <div class="lunch">
+        <h3>Lunch</h3>
+        <p class="lunchMeal"></p>
+      </div>
+
+      <div class="dinnerAll">
+          <div class="dinner front">
+            <h3>Dinner</h3>
+            <p ></p>
+          </div>
+          <div class="back">
+            <h3>Dinner</h3>
+            <p></p>
+          </div>
+      </div>
+    </section>
+
+    <!-- Friday -->
+    <section id="friday" class="day">
+      <h2 onclick="switchNav()" class="date">Friday</h2>
+      <div class="breakfast">
+        <h3>Breakfast</h3>
+        <p class="breakfastMeal"></p>
+      </div>
+
+      <div class="lunch">
+        <h3>Lunch</h3>
+        <p class="lunchMeal"></p>
+      </div>
+
+      <div class="dinner">
+        <h3>Dinner</h3>
+        <p ></p>
+      </div>
+    </section>
+    
+    <!-- Saturday -->
+    <section id="saturday" class="day">
+      <h2 onclick="switchNav()" class="date">Saturday</h2>
+      <div class="breakfast">
+        <h3>Breakfast</h3>
+        <p class="breakfastMeal"></p>
+      </div>
+      
+      <div class="lunch">
+        <h3>Lunch</h3>
+        <p class="lunchMeal"></p>
+      </div>
+      
+      <div class="dinner">
+        <h3>Dinner</h3>
+        <p></p>
+      </div>
+    </section>
+      
+  </div>
+
+  <script src="swipe.js"></script>
+  <script src="menu.js"></script>
+  <script src="meals.js"></script>
+  <script src="dinner.js"></script>
+</body>
+</html>
