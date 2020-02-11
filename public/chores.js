@@ -24,8 +24,9 @@ function assignChores() {
           var day = document.createElement('p');
           day.innerHTML = data.member[data.empty[i].nameid - 1].firstname;
           day.setAttribute("class", data.member[data.empty[i].nameid -1].firstname);
-          emptyClass[i].appendChild(header);
-          emptyClass[i].appendChild(day);
+          emptyClass[j].appendChild(header);
+          emptyClass[j].appendChild(day);
+          j++;
         }
       
       // Make-breakfast assignments
@@ -81,11 +82,12 @@ function assignChores() {
         var day = document.createElement('p');
         day.innerHTML = data.member[data.outside[i].nameid - 1].firstname;
         day.setAttribute("class", data.member[data.outside[i].nameid -1].firstname);
+        console.log("index i = " + i);
         if (data.member[data.outside[i].nameid - 1].firstname) {
           outside[j].appendChild(header);
           outside[j].appendChild(day);
+          j++;
         } else {
-          console.log("index i = " + i);
           console.log(j);
           outside[j].parentElement.removeChild(outside[j]);
         }
@@ -102,6 +104,7 @@ function assignChores() {
         if (data.member[data.bedroom[i].nameid - 1].firstname) {
           bed[j].appendChild(header);
           bed[j].appendChild(day);
+          j++;
         }
       }
 
