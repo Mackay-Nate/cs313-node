@@ -27,6 +27,8 @@ function assignChores() {
           emptyClass[j].appendChild(header);
           emptyClass[j].appendChild(day);
           j++;
+        } else {
+          j++;
         }
       
       // Make-breakfast assignments
@@ -40,6 +42,8 @@ function assignChores() {
         if (data.member[data.breakfast[i].nameid - 1].firstname) {
           breakfast[j].appendChild(header);
           breakfast[j].appendChild(day);
+          j++;
+        } else {
           j++;
         }
       }
@@ -56,6 +60,8 @@ function assignChores() {
           playroom[j].appendChild(header);
           playroom[j].appendChild(day);
           j++;
+        } else {
+          j++;
         }
       }
 
@@ -70,6 +76,8 @@ function assignChores() {
         if (data.member[data.family[i].nameid - 1].firstname) {
           family[j].appendChild(header);
           family[j].appendChild(day);
+          j++;
+        } else {
           j++;
         }
       }
@@ -104,6 +112,8 @@ function assignChores() {
         if (data.member[data.bedroom[i].nameid - 1].firstname) {
           bed[j].appendChild(header);
           bed[j].appendChild(day);
+          j++;
+        } else {
           j++;
         }
       }
