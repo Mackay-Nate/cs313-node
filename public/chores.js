@@ -5,7 +5,7 @@ var playroom   = document.getElementsByClassName('play');
 var family     = document.getElementsByClassName('family');
 var outside    = document.getElementsByClassName('outside');
 var bed        = document.getElementsByClassName('bedroom');
-
+var j = 0;
 
 function assignChores() {
 
@@ -29,6 +29,7 @@ function assignChores() {
         }
       
       // Make-breakfast assignments
+      j = 0;
       for (var i = 0; i < data.breakfast.length; i++) { 
         var header = document.createElement('h4');
         header.innerHTML = data.job[5].jobname;
@@ -36,12 +37,14 @@ function assignChores() {
         day.innerHTML = data.member[data.breakfast[i].nameid - 1].firstname;
         day.setAttribute("class", data.member[data.breakfast[i].nameid -1].firstname);
         if (data.member[data.breakfast[i].nameid - 1].firstname) {
-          breakfast[i].appendChild(header);
-          breakfast[i].appendChild(day);
+          breakfast[j].appendChild(header);
+          breakfast[j].appendChild(day);
+          j++;
         }
       }
 
       // Clean-the-playroom assignments
+      j = 0;
       for (var i = 0; i < data.play.length; i++) { 
         var header = document.createElement('h4');
         header.innerHTML = data.job[15].jobname;
@@ -49,12 +52,14 @@ function assignChores() {
         day.innerHTML = data.member[data.play[i].nameid - 1].firstname;
         day.setAttribute("class", data.member[data.play[i].nameid -1].firstname);
         if (data.member[data.play[i].nameid - 1].firstname) {
-          playroom[i].appendChild(header);
-          playroom[i].appendChild(day);
+          playroom[j].appendChild(header);
+          playroom[j].appendChild(day);
+          j++;
         }
       }
 
       // Clean-the-family-room assignments
+      j = 0;
       for (var i = 0; i < data.family.length; i++) { 
         var header = document.createElement('h4');
         header.innerHTML = data.job[0].jobname;
@@ -62,12 +67,14 @@ function assignChores() {
         day.innerHTML = data.member[data.family[i].nameid - 1].firstname;
         day.setAttribute("class", data.member[data.family[i].nameid -1].firstname);
         if (data.member[data.family[i].nameid - 1].firstname) {
-          family[i].appendChild(header);
-          family[i].appendChild(day);
+          family[j].appendChild(header);
+          family[j].appendChild(day);
+          j++;
         }
       }
 
       // Clean-the-outside assignments
+      j = 0;
       for (var i = 0; i < data.outside.length; i++) { 
         var header = document.createElement('h4');
         header.innerHTML = data.job[16].jobname;
@@ -75,15 +82,17 @@ function assignChores() {
         day.innerHTML = data.member[data.outside[i].nameid - 1].firstname;
         day.setAttribute("class", data.member[data.outside[i].nameid -1].firstname);
         if (data.member[data.outside[i].nameid - 1].firstname) {
-          outside[i].appendChild(header);
-          outside[i].appendChild(day);
+          outside[j].appendChild(header);
+          outside[j].appendChild(day);
         } else {
+          console.log(i);
+          console.log(j);
           outside[i].parentElement.removeChild(outside[i]);
-          i--;
         }
       }
 
       // Clean-bedroom assignments
+      j = 0;
       for (var i = 0; i < data.bedroom.length; i++) { 
         var header = document.createElement('h4');
         header.innerHTML = data.job[2].jobname;
@@ -91,8 +100,8 @@ function assignChores() {
         day.innerHTML = data.member[data.bedroom[i].nameid - 1].firstname;
         day.setAttribute("class", data.member[data.bedroom[i].nameid -1].firstname);
         if (data.member[data.bedroom[i].nameid - 1].firstname) {
-          bed[i].appendChild(header);
-          bed[i].appendChild(day);
+          bed[j].appendChild(header);
+          bed[j].appendChild(day);
         }
       }
 
