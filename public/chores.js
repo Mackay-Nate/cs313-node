@@ -17,7 +17,7 @@ function assignChores() {
         var day = document.createElement('p');
         day.innerHTML = data.member[data.empty[i].nameid - 1].firstname;
         day.setAttribute("class", data.member[data.empty[i].nameid -1].firstname);
-        empty[i].appendChild(day);
+        empty.appendChild(day);
       }
 
     }
