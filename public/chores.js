@@ -1,4 +1,6 @@
 
+var emptyClass = document.getElementsByClassName('empty');
+
 function assignChores() {
 
   //get the assignments from the database
@@ -17,7 +19,7 @@ function assignChores() {
         var day = document.createElement('p');
         day.innerHTML = data.member[data.empty[i].nameid - 1].firstname;
         day.setAttribute("class", data.member[data.empty[i].nameid -1].firstname);
-        empty.appendChild(day);
+        emptyClass[i].appendChild(day);
       }
 
     }
