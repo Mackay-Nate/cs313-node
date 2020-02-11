@@ -148,7 +148,7 @@ function assignChores() {
       together[5].appendChild(tog);
 
       together[0].parentElement.removeChild(together[0]);
-      together[6].parentElement.removeChild(together[6]);
+      together[5].parentElement.removeChild(together[5]);
 
       // Make-dinner assignments
       j = 0;
