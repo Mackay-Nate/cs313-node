@@ -67,7 +67,33 @@ function assignChores() {
         }
       }
 
+      // Clean-the-outside assignments
+      for (var i = 0; i < data.outside.length; i++) { 
+        var header = document.createElement('h4');
+        header.innerHTML = data.job[16].jobname;
+        var day = document.createElement('p');
+        day.innerHTML = data.member[data.outside[i].nameid - 1].firstname;
+        day.setAttribute("class", data.member[data.outside[i].nameid -1].firstname);
+        if (data.member[data.outside[i].nameid - 1].firstname) {
+          outside[i].appendChild(header);
+          outside[i].appendChild(day);
+        } else {
+          // outside[i].parentElement.removeChild(outside[i]);
+        }
+      }
 
+      // Clean-bedroom assignments
+      for (var i = 0; i < data.bedroom.length; i++) { 
+        var header = document.createElement('h4');
+        header.innerHTML = data.job[2].jobname;
+        var day = document.createElement('p');
+        day.innerHTML = data.member[data.bedroom[i].nameid - 1].firstname;
+        day.setAttribute("class", data.member[data.bedroom[i].nameid -1].firstname);
+        if (data.member[data.bedroom[i].nameid - 1].firstname) {
+          bed[i].appendChild(header);
+          bed[i].appendChild(day);
+        }
+      }
 
 
 
