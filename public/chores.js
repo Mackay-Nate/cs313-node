@@ -22,4 +22,8 @@ function assignChores() {
 
     }
   }
+
+  //the json is from the database here
+  xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/week', true);
+  xmlHttpRequest.send();
 }
