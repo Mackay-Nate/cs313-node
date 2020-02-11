@@ -19,8 +19,10 @@ function assignChores() {
         var day = document.createElement('p');
         day.innerHTML = data.member[data.breakfast[i].nameid - 1].firstname;
         day.setAttribute("class", data.member[data.breakfast[i].nameid -1].firstname);
-        breakfast[i].appendChild(header);
-        breakfast[i].appendChild(day);
+        if (data.member[data.breakfast[i].nameid - 1].firstname) {
+          breakfast[i].appendChild(header);
+          breakfast[i].appendChild(day);
+        }
       }
 
       // Empty the dishwasher assignments
