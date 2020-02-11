@@ -4,7 +4,7 @@ body {
   background-color: rgb(241, 232, 231);
 }
 
-.breakfast, .lunch, .dinner {
+.breakfast, .lunch, .dinner, .empty {
   background-color: #F41501;
   min-height: 20px;
   margin: 5px;
