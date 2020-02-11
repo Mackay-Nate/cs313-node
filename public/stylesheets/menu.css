@@ -16,6 +16,11 @@ body {
 
 h1, h2, h3 { 
   text-align: center;
+  margin: 3px;
+}
+
+p { 
+  margin: 1px;
 }
 
 #button { 

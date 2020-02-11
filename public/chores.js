@@ -14,10 +14,10 @@ function assignChores() {
       // Sunday assignments
 
 
-      // Monday assignments
+      // Empty the dishwasher assignments
       for (var i = 0; i < data.empty.length; i++) { 
         var header = document.createElement('h2');
-        header.innerHTML = data.job[4].jobname;
+        header.innerHTML = data.job[14].jobname;
         var day = document.createElement('p');
         day.innerHTML = data.member[data.empty[i].nameid - 1].firstname;
         day.setAttribute("class", data.member[data.empty[i].nameid -1].firstname);
