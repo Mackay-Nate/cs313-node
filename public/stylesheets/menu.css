@@ -10,17 +10,18 @@ body {
   margin: 5px;
   border-radius: 15px;
   padding: 1px;
-  font-size: 120%;
+  /* font-size: 120%; */
   text-align: center;
 }
 
-h1, h2, h3 { 
+h1, h2, h3, h4 { 
   text-align: center;
   margin: 3px;
 }
 
 p { 
   margin: 1px;
+  font-size: 130%;
 }
 
 #button { 

@@ -1,5 +1,6 @@
 
 var emptyClass = document.getElementsByClassName('empty');
+var breakfast  = document.getElementsByClassName('breakfast');
 
 function assignChores() {
 
@@ -11,12 +12,20 @@ function assignChores() {
       console.log('inside if statement');
       var data = JSON.parse(xmlHttpRequest.responseText);
   
-      // Sunday assignments
-
+      // Make breakfast assignments
+      for (var i = 0; i < data.breakfast.length; i++) { 
+        var header = document.createElement('h4');
+        header.innerHTML = data.job[5].jobname;
+        var day = document.createElement('p');
+        day.innerHTML = data.member[data.breakfast[i].nameid - 1].firstname;
+        day.setAttribute("class", data.member[data.breakfast[i].nameid -1].firstname);
+        breakfast[i].appendChild(header);
+        breakfast[i].appendChild(day);
+      }
 
       // Empty the dishwasher assignments
       for (var i = 0; i < data.empty.length; i++) { 
-        var header = document.createElement('h2');
+        var header = document.createElement('h4');
         header.innerHTML = data.job[14].jobname;
         var day = document.createElement('p');
         day.innerHTML = data.member[data.empty[i].nameid - 1].firstname;
