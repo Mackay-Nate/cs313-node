@@ -27,10 +27,8 @@ function assignChores() {
           emptyClass[j].appendChild(header);
           emptyClass[j].appendChild(day);
           j++;
-        } else {
-          j++;
         }
-      
+
       // Make-breakfast assignments
       j = 0;
       for (var i = 0; i < data.breakfast.length; i++) { 
