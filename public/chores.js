@@ -78,7 +78,7 @@ function assignChores() {
           outside[i].appendChild(header);
           outside[i].appendChild(day);
         } else {
-          // outside[i].parentElement.removeChild(outside[i]);
+          outside[i].parentElement.removeChild(outside[i]);
         }
       }
 
