@@ -4,12 +4,12 @@ body {
   background-color: rgb(241, 232, 231);
 }
 
-.breakfast, .lunch, .dinner, .empty {
+.breakfast, .lunch, .dinner, .empty, .play, .family, .outside, .bedroom {
   background-color: #F41501;
   /* min-height: 20px; */
   margin: 5px;
   border-radius: 15px;
-  /* padding: 1px; */
+  padding: 1px;
   /* font-size: 120%; */
   text-align: center;
 }

@@ -2,8 +2,9 @@
 var emptyClass = document.getElementsByClassName('empty');
 var breakfast  = document.getElementsByClassName('breakfast');
 var playroom   = document.getElementsByClassName('play');
-
-
+var family     = document.getElementsByClassName('family');
+var outside    = document.getElementsByClassName('outside');
+var bed        = document.getElementsByClassName('bedroom');
 
 
 function assignChores() {
@@ -53,6 +54,18 @@ function assignChores() {
         }
       }
 
+      // Clean-the-family-room assignments
+      for (var i = 0; i < data.family.length; i++) { 
+        var header = document.createElement('h4');
+        header.innerHTML = data.job[0].jobname;
+        var day = document.createElement('p');
+        day.innerHTML = data.member[data.family[i].nameid - 1].firstname;
+        day.setAttribute("class", data.member[data.family[i].nameid -1].firstname);
+        if (data.member[data.family[i].nameid - 1].firstname) {
+          family[i].appendChild(header);
+          family[i].appendChild(day);
+        }
+      }
 
 
 
