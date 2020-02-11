@@ -5,6 +5,10 @@ var playroom   = document.getElementsByClassName('play');
 var family     = document.getElementsByClassName('family');
 var outside    = document.getElementsByClassName('outside');
 var bed        = document.getElementsByClassName('bedroom');
+var together   = document.getElementsByClassName('together');
+var dinner     = document.getElementsByClassName('dinner');
+var clear      = document.getElementsByClassName('clear');
+var wash       = document.getElementsByClassName('washDishes');
 var j = 0;
 
 function assignChores() {
@@ -42,7 +46,7 @@ function assignChores() {
           breakfast[j].appendChild(day);
           j++;
         } else {
-          j++;
+          breakfast[j].parentElement.removeChild(breakfast[j]);
         }
       }
 
@@ -59,7 +63,7 @@ function assignChores() {
           playroom[j].appendChild(day);
           j++;
         } else {
-          j++;
+          playroom[j].parentElement.removeChild(playroom[j]);
         }
       }
 
@@ -76,7 +80,7 @@ function assignChores() {
           family[j].appendChild(day);
           j++;
         } else {
-          j++;
+          family[j].parentElement.removeChild(family[j]);
         }
       }
 
@@ -94,7 +98,6 @@ function assignChores() {
           outside[j].appendChild(day);
           j++;
         } else {
-          console.log(j);
           outside[j].parentElement.removeChild(outside[j]);
         }
       }
@@ -112,13 +115,91 @@ function assignChores() {
           bed[j].appendChild(day);
           j++;
         } else {
-          j++;
+          bed[j].parentElement.removeChild(bed[j]);
         }
       }
 
+      // Complete together job
+      var togetherHeader = document.createElement('h4');
+      togetherHeader.innerHTML = "Complete together";
+      var tog = document.createElement('p');
+      tog.innerHTML = data.job[1].jobname;
+      together[1].appendChild(togetherHeader);
+      together[1].appendChild(tog);
 
+      var tog = document.createElement('p');
+      tog.innerHTML = data.job[2].jobname;
+      together[2].appendChild(togetherHeader);
+      together[2].appendChild(tog);
 
+      var tog = document.createElement('p');
+      tog.innerHTML = data.job[0].jobname;
+      together[3].appendChild(togetherHeader);
+      together[3].appendChild(tog);
 
+      var tog = document.createElement('p');
+      tog.innerHTML = "Special Projects";
+      together[4].appendChild(togetherHeader);
+      together[4].appendChild(tog);
+
+      var tog = document.createElement('p');
+      tog.innerHTML = data.job[2].jobname;
+      together[5].appendChild(togetherHeader);
+      together[5].appendChild(tog);
+
+      together[0].parentElement.removeChild(together[0]);
+      together[6].parentElement.removeChild(together[6]);
+
+      // Make-dinner assignments
+      j = 0;
+      for (var i = 0; i < data.dinner.length; i++) { 
+        var header = document.createElement('h4');
+        header.innerHTML = data.job[4].jobname;
+        var day = document.createElement('p');
+        day.innerHTML = data.member[data.dinner[i].nameid - 1].firstname;
+        day.setAttribute("class", data.member[data.dinner[i].nameid -1].firstname);
+        if (data.member[data.dinner[i].nameid - 1].firstname) {
+          dinner[j].appendChild(header);
+          dinner[j].appendChild(day);
+          j++;
+        } else {
+          dinner[j].parentElement.removeChild(dinner[j]);
+        }
+      }
+
+      // Clear-the-table assignments
+      j = 0;
+      for (var i = 0; i < data.clear.length; i++) { 
+        var header = document.createElement('h4');
+        header.innerHTML = data.job[3].jobname;
+        var day = document.createElement('p');
+        day.innerHTML = data.member[data.clear[i].nameid - 1].firstname;
+        day.setAttribute("class", data.member[data.clear[i].nameid -1].firstname);
+        if (data.member[data.clear[i].nameid - 1].firstname) {
+          clear[j].appendChild(header);
+          clear[j].appendChild(day);
+          j++;
+        } else {
+          clear[j].parentElement.removeChild(clear[j]);
+        }
+      }
+
+      // Wash-the-dishes assignments
+      j = 0;
+      for (var i = 0; i < data.wash.length; i++) { 
+        var header = document.createElement('h4');
+        header.innerHTML = data.job[17].jobname;
+        var day = document.createElement('p');
+        day.innerHTML = data.member[data.wash[i].nameid - 1].firstname;
+        day.setAttribute("class", data.member[data.wash[i].nameid -1].firstname);
+        if (data.member[data.wash[i].nameid - 1].firstname) {
+          wash[j].appendChild(header);
+          wash[j].appendChild(day);
+          j++;
+        } else {
+          wash[j].parentElement.removeChild(wash[j]);
+        }
+      }
 
 
 
