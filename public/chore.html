@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/menu.css">
   </head>
 
-<body onload="populate()"> 
+<body onload="assignChores();"> 
 
   <!-- popup menu -->
   <div id="mySidenav" class="sidenav">
@@ -20,12 +20,6 @@
     <a onclick="goTo('thursday'); switchNav();">Thursday</a>
     <a onclick="goTo('friday'); switchNav();">Friday</a>
     <a onclick="goTo('saturday'); switchNav();">Saturday</a>
-    <a></a>
-    <a onclick="goTo('sunday'); switchNav();">Next week</a>
-    <a></a>
-    <a onclick="goTo('sunday'); switchNav();">This week's grocery list</a>
-    <a></a>
-    <a onclick="goTo('sunday'); switchNav();">This week's grocery list</a>
     <a></a>
   </div>
 
@@ -44,19 +38,19 @@
     <!-- Sunday -->
     <section id="sunday" class="day">
       <h2 onclick="switchNav()" class="date">Sunday</h2>
-      <div class="breakfast">
-        <h3>Breakfast</h3>
-        <p class="breakfastMeal"></p>
+      <div class="empty" id="sunempty">
+        <!-- <h3></h3>
+        <p class="breakfastMeal"></p> -->
       </div>
 
-      <div class="lunch">
-        <h3>Lunch</h3>
-        <p class="lunchMeal"></p>
+      <div class="washDishes" id="sunwashDishes">
+        <!-- <h3></h3>
+        <p class="lunchMeal"></p> -->
       </div>
 
       <div class="dinner">
-        <h3>Dinner</h3>
-        <p></p>
+        <!-- <h3></h3>
+        <p></p> -->
       </div>
 
     </section>
@@ -64,21 +58,37 @@
     <!-- Monday -->
     <section id="monday" class="day">
       <h2 onclick="switchNav()" class="date">Monday</h2>
-      <div class="breakfast">
-        <h3>Breakfast</h3>
-        <p class="breakfastMeal"></p>
+      <div class="empty" id="monempty">
+        <!-- <h3>Breakfast</h3>
+        <p class="breakfastMeal"></p> -->
       </div>
 
-      <div class="lunch">
-        <h3>Lunch</h3>
-        <p class="lunchMeal"></p>
+      <div class="play">
+        <!-- <h3>Lunch</h3>
+        <p class="lunchMeal"></p> -->
+      </div>
+
+      <div class="family">
+      </div>
+
+      <div class="outside">
+      </div>
+
+      <div class="bedroom">
+      </div>
+
+      <div class="together">
       </div>
 
       <div class="dinner">
-        <h3>Dinner</h3>
-        <p ></p>
-
       </div>
+
+      <div class="clear">
+      </div>
+
+      <div class="washDishes">
+      </div>
+
     </section>
 
     <!-- Tuesday -->
@@ -184,9 +194,10 @@
       
   </div>
 
-  <script src="swipe.js"></script>
+  <!-- <script src="swipe.js"></script> -->
   <script src="menu.js"></script>
-  <script src="meals.js"></script>
-  <script src="dinner.js"></script>
+  <!-- <script src="meals.js"></script> -->
+  <!-- <script src="dinner.js"></script> -->
+  <script src="chores.js"></script>
 </body>
 </html>
