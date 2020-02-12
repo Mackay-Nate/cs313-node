@@ -5,13 +5,17 @@ body {
 }
 
 .breakfast, .empty, .play, .family, .outside, .bedroom, .together, .clear, .dinner, .washDishes {
-  background-color: #F41501;
+  background-color: rgb(5, 1, 244);
   /* min-height: 20px; */
   margin: 5px;
   border-radius: 15px;
   padding: 1px;
   /* font-size: 120%; */
   text-align: center;
+}
+
+.five { 
+  background-color: rgb(10, 10, 250);
 }
 
 h1, h2, h3, h4 { 
@@ -86,3 +90,22 @@ ul {
   text-align: left;
 }
 
+.Nate { 
+  color: darkgrey;
+}
+
+.Jen { 
+  color: navy;
+}
+
+.Natalie { 
+  color: gold;
+}
+
+.Ava { 
+  color: red;
+}
+
+.Corbin { 
+  color: blue;
+}
