@@ -120,7 +120,7 @@ function assignChores() {
       }
 
 
-      togJob = ["", 1, 2, 0, "", 2];
+      togJob = ["", 1, 2, 0, "Special", 2];
       for (var i = 1; i < 6; i++) {
         var togetherHeader = document.createElement('h4');
         togetherHeader.innerHTML = "Complete together";
