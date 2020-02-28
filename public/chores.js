@@ -121,11 +121,11 @@ function assignChores() {
 
 
       togJob = ["", 1, 2, 0, "", 2];
-      for (var i = 0; i < 6; i++) {
+      for (var i = 1; i < 6; i++) {
         var togetherHeader = document.createElement('h4');
         togetherHeader.innerHTML = "Complete together";
         var tog = document.createElement('p');
-        tog.innerHTML = data.job[(isNaN(togJob[i]) ? "Special Projects" : togJob[i])].jobname;
+        tog.innerHTML = (isNaN(togJob[i]) ? "Special Projects" : data.job[togJob[i]].jobname);
         together[i].appendChild(togetherHeader);
         together[i].appendChild(tog);
       }
