@@ -121,7 +121,7 @@ function assignChores() {
 
 
       togJob = ["", 1, 2, 0, "", 2];
-      for (var i = 0; i < data.together.length; i++) {
+      for (var i = 0; i < 6; i++) {
         var togetherHeader = document.createElement('h4');
         togetherHeader.innerHTML = "Complete together";
         var tog = document.createElement('p');
