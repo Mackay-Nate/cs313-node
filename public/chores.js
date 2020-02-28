@@ -120,16 +120,15 @@ function assignChores() {
       }
 
 
-      togJob = ["", 1, 2, 0, "Special", 2];
+      togJob = ["", 1, 2, 0, "Special Projects", 2];
       for (var i = 1; i < 6; i++) {
         var togetherHeader = document.createElement('h4');
         togetherHeader.innerHTML = "Complete together";
         var tog = document.createElement('p');
-        tog.innerHTML = (isNaN(togJob[i]) ? "Special Projects" : data.job[togJob[i]].jobname);
+        tog.innerHTML = (isNaN(togJob[i]) ? togJob[i] : data.job[togJob[i]].jobname);
         together[i].appendChild(togetherHeader);
         together[i].appendChild(tog);
       }
-
 
       // // Complete together job
       // var togetherHeader = document.createElement('h4');
