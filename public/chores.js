@@ -225,6 +225,11 @@ function assignChores() {
   //the json is from the database here
   xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/week', true);
   xmlHttpRequest.send();
+
+
+var day = new Date();
+goTo(week[day.getDay()]);
+
 }
 
 
