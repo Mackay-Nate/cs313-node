@@ -6,7 +6,7 @@ body {
 
 .breakfast, .empty, .play, .family, .outside, .bedroom, .together, .clear, .dinner, .washDishes, #login{
   background-color: rgb(148, 148, 148);
-  /* min-height: 20px; */
+  min-height: 20px;
   margin: 5px;
   border-radius: 15px;
   padding: 1px;

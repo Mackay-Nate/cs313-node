@@ -34,6 +34,7 @@ function assignChores() {
           day.setAttribute("class", data.member[data.empty[i].nameid -1].firstname);
           emptyClass[j].appendChild(header);
           emptyClass[j].appendChild(day);
+          emptyClass[j].setAttribute("onclick", 'jobComplete(this)');
           j++;
         }
 
