@@ -10,8 +10,12 @@ var dinner     = document.getElementsByClassName('dinner');
 var clear      = document.getElementsByClassName('clear');
 var wash       = document.getElementsByClassName('washDishes');
 var j = 0;
+var week = ["sunday" ,"monday" ,"tuesday" ,"wednesday" ,"thursday" ,"friday" ,"saturday"];
+var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 function assignChores() {
+
+  addDates(0);
 
   //get the assignments from the database
   var xmlHttpRequest = new XMLHttpRequest();
@@ -215,16 +219,37 @@ function assignChores() {
 
 
 
-
-
-
-
-
-
     }
   }
 
   //the json is from the database here
   xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/week', true);
   xmlHttpRequest.send();
+}
+
+
+//this function adds the date to each day
+function addDates(next) { 
+  var days = document.getElementsByClassName('date'); 
+  var today  = new Date();
+
+  var sunday = new Date;
+  sunday = new Date(today.getFullYear(), today.getMonth(), today.getDate() - today.getDay() + next);
+
+  //store a local date value for sunday 
+  //localStorage.setItem('sunday', sunday.getDate());
+  //sessionStorage.setItem('iCounter', parseInt(0));
+
+  var dayToSet = new Date;
+  dayToSet = sunday;
+
+  for (var i = 0 + next; i < 7 + next; i++) {
+    days[(i + next) % 7].innerHTML = capitalize(week[(i + next) % 7]) + ", " + month[dayToSet.getMonth()] + " " + dayToSet.getDate();
+    dayToSet.setDate(dayToSet.getDate() + 1);
+  }
+}
+
+//this function capitalizes the first letter of a string
+function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
 }

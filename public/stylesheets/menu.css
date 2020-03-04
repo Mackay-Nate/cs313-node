@@ -5,7 +5,7 @@ body {
 }
 
 .breakfast, .empty, .play, .family, .outside, .bedroom, .together, .clear, .dinner, .washDishes {
-  background-color: rgb(5, 1, 244);
+  background-color: rgb(148, 148, 148);
   /* min-height: 20px; */
   margin: 5px;
   border-radius: 15px;
@@ -15,7 +15,7 @@ body {
 }
 
 .five { 
-  background-color: rgb(10, 10, 250);
+  background-color: rgb(80, 80, 80);
 }
 
 h1, h2, h3, h4 { 
@@ -92,6 +92,7 @@ ul {
 
 .Nate { 
   color: darkgrey;
+  text-shadow: 1px 1px 5px #000000;
 }
 
 .Jen { 
@@ -100,6 +101,7 @@ ul {
 
 .Natalie { 
   color: gold;
+  text-shadow: 1px 1px 5px #000000;
 }
 
 .Ava { 
@@ -108,4 +110,5 @@ ul {
 
 .Corbin { 
   color: blue;
+  text-shadow: 1px 1px 5px #000000;
 }
