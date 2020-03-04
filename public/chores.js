@@ -123,7 +123,7 @@ function assignChores() {
         }
       }
 
-
+      // Complete together job assignments
       togJob = ["", 1, 2, 0, "Special Projects", 2];
       for (var i = 1; i < 6; i++) {
         var togetherHeader = document.createElement('h4');
@@ -133,34 +133,6 @@ function assignChores() {
         together[i].appendChild(togetherHeader);
         together[i].appendChild(tog);
       }
-
-      // // Complete together job
-      // var togetherHeader = document.createElement('h4');
-      // togetherHeader.innerHTML = "Complete together";
-      // var tog = document.createElement('p');
-      // tog.innerHTML = data.job[1].jobname;
-      // together[1].appendChild(togetherHeader);
-      // together[1].appendChild(tog);
-
-      // var tog = document.createElement('p');
-      // tog.innerHTML = data.job[2].jobname;
-      // //together[2].appendChild(togetherHeader);
-      // together[2].appendChild(tog);
-
-      // var tog = document.createElement('p');
-      // tog.innerHTML = data.job[0].jobname;
-      // //together[3].appendChild(togetherHeader);
-      // together[3].appendChild(tog);
-
-      // var tog = document.createElement('p');
-      // tog.innerHTML = "Special Projects";
-      // //together[4].appendChild(togetherHeader);
-      // together[4].appendChild(tog);
-
-      // var tog = document.createElement('p');
-      // tog.innerHTML = data.job[2].jobname;
-      // //together[5].appendChild(togetherHeader);
-      // together[5].appendChild(tog);
 
       //remove Sunday, and Saturday
       together[0].parentElement.removeChild(together[0]);
