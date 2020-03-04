@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/menu.css">
   </head>
 
-<body onload="assignChores();"> 
+<body onload="checkLogin(); assignChores();"> 
 
   <!-- popup menu -->
   <div id="mySidenav" class="sidenav">
@@ -21,6 +21,7 @@
     <a onclick="goTo('friday'); switchNav();">Friday</a>
     <a onclick="goTo('saturday'); switchNav();">Saturday</a>
     <a></a>
+    <a id="logout" onclick="localStorage.removeItem('choreUser'); switchNav()">Log out</a>
   </div>
 
   <!-- icon to open the sidenav -->
@@ -33,6 +34,17 @@
   </div>
 
   <h1 id="header">Responsibilities</h1>
+
+  <div id="login">
+    <h2>Which user?</h2>
+    <p onclick="assign('Nate')">Dad</p>
+    <p onclick="assign('Jen')">Mom</p>
+    <p onclick="assign('Natalie')">Natalie</p>
+    <p onclick="assign('Ava')">Ava</p>
+    <p onclick="assign('Corbin')">Corbin</p>
+    <p>William</p>
+
+  </div>
 
   <div id="swiper">
     <!-- Sunday -->
@@ -235,10 +247,8 @@
       
   </div>
 
-  <!-- <script src="swipe.js"></script> -->
+  <script src="login.js"></script>
   <script src="menu.js"></script>
-  <!-- <script src="meals.js"></script> -->
-  <!-- <script src="dinner.js"></script> -->
   <script src="chores.js"></script>
 </body>
 </html>
