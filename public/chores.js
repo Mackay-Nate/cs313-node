@@ -32,7 +32,7 @@ function assignChores() {
           var day = document.createElement('p');
           day.innerHTML = data.member[data.empty[i].nameid - 1].firstname;
           day.setAttribute("class", data.member[data.empty[i].nameid -1].firstname);
-          day..setAttribute("onclick", 'jobComplete(this)');
+          day.setAttribute("onclick", 'jobComplete(this)');
           emptyClass[j].appendChild(header);
           emptyClass[j].appendChild(day);
           j++;
