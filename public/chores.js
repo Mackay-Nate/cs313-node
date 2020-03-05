@@ -191,6 +191,7 @@ function assignChores() {
       }
 
 
+      document.getElementsByTagName('div').addEventListener('click', jobComplete());
 
     }
   }
