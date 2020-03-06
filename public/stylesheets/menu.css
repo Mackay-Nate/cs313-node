@@ -14,11 +14,15 @@ body {
   text-align: center;
 }
 
+#myChore {
+  visibility: hidden;
+}
+
 .five { 
   background-color: rgb(80, 80, 80);
 }
 
-h1, h2, h3, h4 { 
+h1, h2, h3, h4, li { 
   text-align: center;
   margin: 4px;
 }
