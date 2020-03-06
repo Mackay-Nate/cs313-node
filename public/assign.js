@@ -32,16 +32,22 @@ function makeAssign() {
   //the json is from the database here
   xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/week', true);
   xmlHttpRequest.send();
-}
+};
 
 function storeJob() { 
   var radio = document.getElementById('member');
-  for (var i = 0; i < radio.length; i++) {
-    if (radio.checked) {
-      console.log(radio.innerHTML);
-      var chore = document.getElementById('chore1').innerHTML;
-
+  for (var i = 0; i < radio.childElementCount; i++) {
+    if (radio.childNodes[i].checked) {
+      console.log(radio.childNodes[i].id);
+      var chore = document.getElementById('chore1').value;
+      var tr    = document.createElement('tr');
+      var td1   = document.createElement('td');
+      td1.innerHTML = radio.childNodes[i].id;
+      tr.appendChild(td1);
+      var td2   = document.createElement('td');
+      td2.innerHTML = chore;
+      tr.appendChild(td2);
+      document.getElementById('assignments').appendChild(tr);
     }
   }
-
-}
+};

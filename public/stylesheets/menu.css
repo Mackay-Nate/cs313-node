@@ -14,7 +14,7 @@ body {
   text-align: center;
 }
 
-#myChore {
+#myChore, #createChore {
   visibility: hidden;
 }
 
