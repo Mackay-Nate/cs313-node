@@ -2,9 +2,9 @@
 //navigation functions
 function switchNav() { 
   // open navigation
-  if (document.getElementById("mySidenav").style.width != "200px") {
-    document.getElementById("mySidenav").style.width = "200px";
-    document.getElementById("hamburgerIcon").style.marginLeft = "200px";
+  if (document.getElementById("mySidenav").style.width != "260px") {
+    document.getElementById("mySidenav").style.width = "260px";
+    document.getElementById("hamburgerIcon").style.marginLeft = "260px";
     switchIcon();
   } else { 
     // close navigation

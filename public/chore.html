@@ -21,6 +21,7 @@
     <a onclick="goTo('friday'); switchNav();">Friday</a>
     <a onclick="goTo('saturday'); switchNav();">Saturday</a>
     <a onclick="myAssignments();">my Chores</a>
+    <a onclick="makeAssign();">Assign a chore</a>
     <a></a>
     <a id="logout" onclick="localStorage.removeItem('choreUser'); switchNav()">Log out</a>
   </div>
@@ -248,9 +249,19 @@
       
   </div>
 
+  <div id="createChore">
+  </div>
+
+  <div id="myChore">
+    <ul id="member">
+    <li><h4>Who completes the chore?</h4></li>
+    </ul>
+  </div>
+
   <script src="complete.js"></script>
   <script src="login.js"></script>
   <script src="menu.js"></script>
   <script src="chores.js"></script>
+  <script src="assign.js"></script>
 </body>
 </html>
