@@ -1,6 +1,7 @@
 
 function makeAssign() { 
   document.getElementById('login').style.display = "none";
+  document.getElementById('swiper').style.display = "none";
   document.getElementById('createChore').style.visibility = "initial";
   var member = document.getElementById('member');
   
@@ -16,8 +17,11 @@ function makeAssign() {
       //get names
       for (var i = 0; i < data.member.length; i++) {
         var li = document.createElement('li');
-        li.innerHTML = data.member[i].firstname;
-        li.setAttribute('onclick', 'doSomething();');
+        var check = document.createElement('input');
+        check.setAttribute('type', 'checkbox');
+        check.innerHTML = data.member[i].firstname;
+        //li.setAttribute('onclick', 'doSomething();');
+        li.appendChild(check);
         member.appendChild(li);
 
       }
