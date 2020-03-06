@@ -21,7 +21,7 @@ function makeAssign() {
         check.setAttribute('type', 'radio');
         check.setAttribute('id', data.member[i].firstname);
         member.appendChild(check);
-        var la = createElement('label');
+        var la = document.createElement('label');
         la.setAttribute('for', data.member[i].firstname);
         la.innerHTML = data.member[i].firstname;
         //li.setAttribute('onclick', 'doSomething();');
