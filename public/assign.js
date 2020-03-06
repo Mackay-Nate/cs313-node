@@ -13,9 +13,8 @@ function makeAssign() {
       console.log('inside if statement');
       var data = JSON.parse(xmlHttpRequest.responseText);
 
-
-      //get names
-      for (var i = 0; i < data.member.length; i++) {
+      //display names
+      for (var i = 0; i < data.member.length - 1; i++) {
         //var li = document.createElement('li');
         var check = document.createElement('input');
         check.setAttribute('type', 'radio');
@@ -25,19 +24,24 @@ function makeAssign() {
         la.setAttribute('for', data.member[i].firstname);
         la.innerHTML = data.member[i].firstname;
         member.appendChild(la);
-        //li.setAttribute('onclick', 'doSomething();');
         member.appendChild(document.createElement('br'));
-        //li.appendChild(check);
-        //member.appendChild(li);
-
       }
-
     }
-
   }
 
   //the json is from the database here
   xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/week', true);
   xmlHttpRequest.send();
+}
+
+function storeJob() { 
+  var radio = document.getElementById('member');
+  for (var i = 0; i < radio.length; i++) {
+    if (radio.checked) {
+      console.log(radio.innerHTML);
+      var chore = document.getElementById('chore1').innerHTML;
+
+    }
+  }
 
 }
