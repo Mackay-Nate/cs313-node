@@ -16,14 +16,18 @@ function makeAssign() {
 
       //get names
       for (var i = 0; i < data.member.length; i++) {
-        var li = document.createElement('li');
+        //var li = document.createElement('li');
         var check = document.createElement('input');
         check.setAttribute('type', 'radio');
         check.setAttribute('id', data.member[i].firstname);
-        check.innerHTML = data.member[i].firstname;
+        member.appendChild(check);
+        var la = createElement('label');
+        la.setAttribute('for', data.member[i].firstname);
+        la.innerHTML = data.member[i].firstname;
         //li.setAttribute('onclick', 'doSomething();');
-        li.appendChild(check);
-        member.appendChild(li);
+        member.appendChild(document.createElement('br'));
+        //li.appendChild(check);
+        //member.appendChild(li);
 
       }
 
