@@ -24,6 +24,7 @@ function makeAssign() {
         var la = document.createElement('label');
         la.setAttribute('for', data.member[i].firstname);
         la.innerHTML = data.member[i].firstname;
+        member.appendChild(la);
         //li.setAttribute('onclick', 'doSomething();');
         member.appendChild(document.createElement('br'));
         //li.appendChild(check);
