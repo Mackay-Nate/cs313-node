@@ -16,7 +16,7 @@ function makeAssign() {
       //get names
       for (var i = 0; i < data.member.length; i++) {
         var li = document.createElement('li');
-        li.innerHTML = data.member.firstname;
+        li.innerHTML = data.member[i].firstname;
         li.setAttribute('onclick', 'doSomething();');
         member.appendChild(li);
 
