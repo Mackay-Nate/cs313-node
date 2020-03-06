@@ -19,7 +19,7 @@ function makeAssign() {
         var li = document.createElement('li');
         var check = document.createElement('input');
         check.setAttribute('type', 'radio');
-        check.setAttribute('id', data.member[i].firstname)
+        check.setAttribute('id', data.member[i].firstname);
         check.innerHTML = data.member[i].firstname;
         //li.setAttribute('onclick', 'doSomething();');
         li.appendChild(check);
