@@ -128,3 +128,19 @@ ul {
   color: blue;
   text-shadow: 1px 1px 5px #000000;
 }
+
+  /* for screens largeer than 1500 */
+  @media screen and (min-width: 1500px) {
+    section { 
+      min-width: initial;
+    }
+  
+    h2, h3 { 
+      font-size: 110%;
+    }
+  
+    p, ul { 
+      font-size: 80%;
+    }
+  }
+  
