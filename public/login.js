@@ -8,10 +8,14 @@ function checkLogin() {
   }
 }
 
-function assign(member) { 
-  localStorage.setItem('choreUser', member);
+function assign() { 
   checkLogin();
 }
 
+function showPass(user) { 
+  document.getElementById('password').style.display = "initial";
+  user.style.color = "blue";
+  localStorage.setItem('choreUser', user.innerText);
+}
 
 

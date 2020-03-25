@@ -39,13 +39,18 @@
 
   <div id="login">
     <h2>Which user?</h2>
-    <p onclick="assign('Nate')">Dad</p>
-    <p onclick="assign('Jen')">Mom</p>
-    <p onclick="assign('Natalie')">Natalie</p>
-    <p onclick="assign('Ava')">Ava</p>
-    <p onclick="assign('Corbin')">Corbin</p>
+    <p onclick="showPass(this)">Dad</p>
+    <p onclick="showPass(this)">Mom</p>
+    <p onclick="showPass(this)">Natalie</p>
+    <p onclick="showPass(this)">Ava</p>
+    <p onclick="showPass(this)">Corbin</p>
     <p>William</p>
 
+    <div id="password">
+      <h3>Password?</h3>
+      <input type="password" id="pass"><br>
+      <button onclick="assign()">Submit</button>
+    </div>
   </div>
 
   <div id="swiper">
@@ -53,8 +58,6 @@
     <section id="sunday" class="day">
       <h2 onclick="switchNav()" class="date">Sunday</h2>
       <div class="empty" id="sunempty">
-        <!-- <h3></h3>
-        <p class="breakfastMeal"></p> -->
       </div>
 
       <div class="breakfast">

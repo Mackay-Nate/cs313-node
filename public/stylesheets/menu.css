@@ -18,6 +18,14 @@ body {
   visibility: hidden;
 }
 
+input, button { 
+  margin-bottom: 5px;
+}
+
+#password { 
+  display: none;
+}
+
 .five { 
   background-color: rgb(80, 80, 80);
 }
