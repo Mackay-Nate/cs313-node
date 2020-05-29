@@ -38,7 +38,7 @@ express()
     console.log("received request for week");
     try {
       const client   = await pool.connect()
-      const member   = await client.query('SELECT * FROM Member');
+      const member   = await client.query('SELECT * FROM Member ORDER BY id');
       const job      = await client.query('SELECT * FROM Job');
       const breakfast= await client.query('SELECT * FROM Breakfast');
       const empty    = await client.query('SELECT * FROM EmptyDishwasher');
