@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-Centered Church-Supported</title>
+    <!--<script src=".js"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href=".css">-->
+    <style>
+      body { 
+        background: rgb(138, 0, 138);
+        color: gold;
+        text-align: center;
+      }
+
+      table { 
+        margin: auto;
+        text-align: left;
+      }
+
+      .col1 { 
+        text-align: right;
+        padding: 13px;
+        width: 50px;
+        font-variant: small-caps;
+        font-size: 80%;
+      }
+
+      a { 
+        color: gold;
+        text-decoration: unset;
+      }
+
+      input { 
+        padding: 10px;
+        background: purple;
+        color: yellow;
+        margin: 10px;
+      }
+
+      footer { 
+        margin: 40px;
+      }
+    </style>
+  </head>
+
+<body onload="loadFirst()">
+
+<h1>Lesson Plan</h1>
+
+<form>
+  <input type="button" value="Click to load this week" onclick="load(getWeek())">
+  <h3 id="dates"></h3>
+  <table>
+    <!--<tr><th class="col1"><th></th></tr>-->
+    <tr><td class="col1">Topic</td><td id="topic"><a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-new-testament-2019/41?lang=eng" target="_blank">Be kind, tell the truth...</a></td></tr>
+    <tr><td class="col1">Priesthood/
+      Relief Society</td><td id="prs"></td></tr>
+    <tr><td class="col1">Scriptures</td><td id="scripture"><a href="https://www.churchofjesuschrist.org/study/scriptures/nt?lang=eng" style="text-decoration: unset;" target="_blank">New Testament</a></td></tr>
+    <tr><td class="col1">Conducting</td><td id="conduct"></td></tr>
+    <tr><td class="col1">Family business</td><td id="announce">Love one Another</td></tr>
+    <tr><td class="col1">Opening Song</td><td id="osong"></td></tr>
+    <tr><td class="col1">Opening Prayer</td><td id="oprayer"></td></tr>
+    <tr><td class="col1">Lesson</td><td id="teacher"></td></tr>
+    <tr><td class="col1">Closing Song</td><td id="csong"></td></tr>
+    <tr><td class="col1">Closing Prayer</td><td id="cprayer"></td></tr>
+    <tr><td class="col1"></td><td></td></tr>
+  </table>
+  <input type="button" value="Click to load next week" onclick="load(getWeek() + 1)">
+</form>
+
+<form action="weekly.html">
+  <div id='debug'></div>
+  <p>Monday said 46.</p>
+  <input type="submit" value="2019 Schedule">
+
+</form>
+<footer id="date">
+
+</footer>
+
+<script>
+  function loadFirst() { 
+    if (sessionStorage.getItem("week")) {
+      week = sessionStorage.getItem("week");
+      load(week);
+    } else {
+      load(week);
+    }
+  };
+
+  function load(week) {
+    var myObj, topic, scripture, slink, conduct, osong, oprayer;
+    var teacher, csong, cprayer;
+    myObj = { 
+    // family members
+    "members":["Nate", "Natalie", "Jen", "Ava", "Corbin"],
+    // topics
+    "topics":["Be Not Soon Shaken in Mind, or Be Troubled", "Be Thou an Example of the Believers", "Jesus Christ, 'the Author of Eternal Salvation'", "An High Priest of Good Things to Come", "Be Ye Doers of the Word, and Not Hearers Only", "Rejoice with Joy Unspeakable and Full of Glory", "God is Love", "Glory, and Power, Be unto … the Lamb for Ever", "Good Tidings of Great Joy", "He That Overcometh Shall Inherit All Things"], 
+    // scriptures
+    "scriptures":["1st & 2nd Thessalonians", "1st & 2nd Timothy, Titus, Philemon", "Hebrews 1-6", "Hebrews 7-13", "James", "1st & 2nd Peter", "1-3 John, Jude", "Revelation 1-11", "Luke 2", "Revelation 12-22"],
+    // dates
+    "dates":["October 21-27", "October 28-November 3", "November 4-10", "November 11-17", "November 18-24", "November 25-December 1", "December 2-8", "December 9-15", "December 16-22", "December 23-29"], 
+    // songs
+    "songs":["Love Is Spoken Here, CSB page 190", 
+      "My Heavenly Father Loves Me, CSB page 228", 
+      "Hymn #116 Come, Follow Me", 
+      "A Child's Prayer, CSB page 12", 
+      "Hymn #241, Count Your Blessing"], 
+    // song links
+    "songlink":[
+      "https://www.churchofjesuschrist.org/music/library/childrens-songbook?lang=eng", 
+      "https://www.churchofjesuschrist.org/music/library/childrens-songbook?lang=eng", 
+      "https://www.churchofjesuschrist.org/music/library/hymns?lang=eng", 
+      "https://www.churchofjesuschrist.org/music/library/childrens-songbook?lang=eng", 
+      "https://www.churchofjesuschrist.org/music/library/hymns?lang=eng"], 
+    // scripture links
+    "scripturelink":["1-thes/1", "1-tim/1", "heb/1", "heb/7", "james/1", "1-pet/1", "1-jn/1", "rev/1", "rev/12"], 
+    // Priesthood and Relief Society lessons
+    "prslesson":[
+      "Giving our Spirits Control over Our Bodies - M. Russell Ballard", "",
+      "Spiritual Treasures - President Nelson", "",
+      "Standing by Our Promises and Covenants - Elder Rasband", "",
+      "True Disciples of the Savior - President Vinson", "", "", ""],
+    // Links to the Priesthood and Relief Society lessons
+    "prslink":[
+      "", "", 
+      "https://www.churchofjesuschrist.org/study/general-conference/2019/10/36nelson?lang=eng", "", 
+      "https://www.churchofjesuschrist.org/study/general-conference/2019/10/29rasband?lang=eng", "",
+      "https://www.churchofjesuschrist.org/study/general-conference/2019/10/12vinson?lang=eng", "", "", ""]
+    };
+
+    // document.getElementById("osong").innerHTML = week;
+    topic = '<a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-new-testament-2019/' + week + '?lang=eng" target="_blank">' + myObj.topics[week - 41] +'</a>';
+
+    scripture = '<a href="https://www.churchofjesuschrist.org/study/scriptures/nt/' + myObj.scripturelink[week - 41] + '?lang=eng" target="_blank">' + myObj.scriptures[week - 41] +'</a>';
+
+    document.getElementById("dates").innerHTML = myObj.dates[week - 41];
+    document.getElementById("conduct").innerHTML = myObj.members[week % 5];
+    document.getElementById("teacher").innerHTML = myObj.members[(week + 4) % 5];
+    document.getElementById("cprayer").innerHTML = myObj.members[(week + 2) % 5];
+    document.getElementById("oprayer").innerHTML = myObj.members[(week + 1) % 5]; 
+    document.getElementById("topic").innerHTML = topic;
+    document.getElementById("scripture").innerHTML = scripture;
+    document.getElementById("osong").innerHTML = 
+    '<a href=' + myObj.songlink[(week + 1) % 5] + ' target="_blank">' + myObj.songs[(week + 1) % 5] + '</a>';
+    document.getElementById("csong").innerHTML = 
+    '<a href=' + myObj.songlink[(week) % 5] + ' target="_blank">' + myObj.songs[(week) % 5] + '</a>';
+    document.getElementById("announce").innerHTML = "";
+    document.getElementById("prs").innerHTML = '<a href=' + myObj.prslink[week - 41] + ' target="_blank">' + myObj.prslesson[week -41] + '</a>';
+
+    var d = new Date();
+    var n = d.getDay();
+    document.getElementById('date').innerHTML = d.toDateString() + " " + n;
+  };
+
+  function getWeek() { 
+    let now = new Date();
+    let onejan = new Date(now.getFullYear(), 0, 1);
+
+    document.getElementById('debug').innerHTML = (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ));
+    //getDay() returns the day of the week
+    //if it's Sunday
+    if (now.getDay() < 1) {
+      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 3);
+      //if it's before Thursday
+    } else if (now.getDay() < 5) {
+      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
+      //after Wednesday
+    } else {
+      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 3);
+    }
+  }
+
+</script>
+</body>
+</html>
