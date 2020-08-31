@@ -91,8 +91,10 @@
   //get the data from the database
   var xmlHttpRequest = new XMLHttpRequest();
   xmlHttpRequest.onreadystatechange = function() {
-    if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
-      //manipulate the DOM with the assignments 
+    // if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+    if (xmlHttpRequest.status == 200) {
+
+ 
       console.log('inside if statement');
       var data = JSON.parse(xmlHttpRequest.responseText);
 
