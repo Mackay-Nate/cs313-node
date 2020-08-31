@@ -99,7 +99,7 @@
       var data = JSON.parse(xmlHttpRequest.responseText);
 
       
-      var scripture = '<a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/' + data.scriptLink[week].linkname + '?lang=eng" target="_blank">' + data.scriptures[week].scriptname +'</a>';
+      var scripture = '<a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/' + data.scriptLink[week].linkname + '?lang=eng" target="_blank">' + data.scriptures[week].scriptname +'</a>';
 
       document.getElementById("dates").innerHTML = data.dates[week].weekname;
       document.getElementById("conduct").innerHTML = data.family[(week + 2) % 5].firstname;
