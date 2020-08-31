@@ -93,11 +93,11 @@
   xmlHttpRequest.onreadystatechange = function() {
     // if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
     // if (xmlHttpRequest.status == 200) {
-                          
+    if (xmlHttpRequest.readyState == XMLHttpRequest.DONE ) {
  
       console.log('inside if statement');
       console.log(xmlHttpRequest.readyState);
-      console.lot(xmlHttpRequest.status);
+      console.log(xmlHttpRequest.status);
       var data = JSON.parse(xmlHttpRequest.responseText);
 
       document.getElementById("dates").innerHTML = data.dates[week].weekName;
