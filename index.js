@@ -137,13 +137,13 @@ express()
       console.log("received request for adding a job");
 
       const client = await pool.connect()
-      const job    = await client.query('UPDATE business SET note = (req) WHERE id = (req.query.business.id)');
-      var date = ['7th', '11th', '14th', '21st'];
+      const job    = await client.query('UPDATE business SET note = (req.query.business.note) WHERE id = (req.query.business.id)');
 
       const params = { 'business': (business) ? business.rows : null, 
                           'job'  : (job)      ? job.rows      : null, date: date  };
 
       // res.render('pages/monthly', params);
+      res.send(params);
       client.release();
     } catch (err) {
       console.error(err);

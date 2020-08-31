@@ -210,13 +210,14 @@
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.onreadystatechange = function() {
       if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+        var data = JSON.parse(xmlHttpRequest.responseText);
 
         data.business[getWeek()].note = document.getElementById('announce').innerHTML;
 
       }
 
     }
-    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/cfm', true);
+    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/add', true);
     xmlHttpRequest.send();
 
   };
