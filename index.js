@@ -91,7 +91,7 @@ express()
         const params = { 'family': (family)    ? family.rows     : null, 
                           'dates': (dates)     ? dates.rows      : null, 
                      'scriptures': (scriptures)? scriptures.rows : null, 
-                     'scriptLink': (scriptLink)? scriptLink.rows : null
+                     'scriptLink': (scriptLink)? scriptLink.rows : null,
                       'business' : (business)  ? business.rows   : null,
                          'oSong' : (oSong)     ? oSong.rows      : null, 
                          'oLink':  (oLink)     ? oLink.rows      : null
