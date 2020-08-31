@@ -81,9 +81,9 @@ express()
         const dates     = await client.query('SELECT * FROM Dates');
         const scriptures= await client.query('SELECT * FROM Scriptures');
         const scriptLink= await client.query('SELECT * FROM scriptLink');
-        // const business  = await client.query('SELECT * FROM business');
-        // const oSong     = await client.query('SELECT * FROM oSong');
-        // const oLink     = await client.query('SELECT * FROM oLink');
+        const business  = await client.query('SELECT * FROM business');
+        const oSong     = await client.query('SELECT * FROM oSong');
+        const oLink     = await client.query('SELECT * FROM oLink');
         // const dinner   = await client.query('SELECT * FROM Dinner');
         // const clear    = await client.query('SELECT * FROM ClearWipe');
         // const wash     = await client.query('SELECT * FROM WashDishes');
@@ -92,9 +92,9 @@ express()
                           'dates': (dates)     ? dates.rows      : null, 
                      'scriptures': (scriptures)? scriptures.rows : null, 
                      'scriptLink': (scriptLink)? scriptLink.rows : null
-                      // 'business' : (business)  ? business.rows   : null,
-                        //  'oSong' : (oSong)     ? oSong.rows      : null, 
-                        //  'oLink':  (oLink)     ? oLink.rows      : null
+                      'business' : (business)  ? business.rows   : null,
+                         'oSong' : (oSong)     ? oSong.rows      : null, 
+                         'oLink':  (oLink)     ? oLink.rows      : null
                         // 'bedroom': (bedroom)   ? bedroom.rows    : null,
                         //  'dinner': (dinner)    ? dinner.rows     : null, 
                         //  'clear' : (clear)     ? clear.rows      : null,

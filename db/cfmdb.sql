@@ -26,14 +26,23 @@ CREATE TABLE business (
   note        varchar(255)
 );
 
-CREATE TABLE oSong (
-  id          SERIAL PRIMARY KEY,
+CREATE TABLE musicLink (
+  id          SERIAL UNIQUE,
   name        varchar(255)
 );
 
-CREATE TABLE musicLink (
-  id          SERIAL,
-  name        varchar(255)
+CREATE TABLE oSong (
+  id          SERIAL PRIMARY KEY,
+  name        varchar(255),
+  number      INT, 
+  book        INT REFERENCES musicLink(id)
+);
+
+CREATE TABLE cSong (
+  id          SERIAL PRIMARY KEY,
+  name        varchar(255),
+  book        INT REFERENCES musicLink(id),
+  number      INT
 );
 
 --INSERT INTO Dates VALUES ('');
@@ -198,7 +207,6 @@ INSERT INTO scriptLink (linkName) VALUES ('137');
 INSERT INTO scriptLink (linkName) VALUES ('0');
 INSERT INTO scriptLink (linkName) VALUES ('0');
 
---Family db inserted 
 INSERT INTO Family (firstName) VALUES('Dad');
 INSERT INTO Family (firstName) VALUES('Mom');
 INSERT INTO Family (firstName) VALUES('Natalie');
@@ -206,5 +214,72 @@ INSERT INTO Family (firstName) VALUES('Ginger');
 INSERT INTO Family (firstName) VALUES('Dude');
 INSERT INTO Family (firstName) VALUES('William');
 
+INSERT INTO business (note) VALUES ('Love one another');
+INSERT INTO business (note) VALUES ('Serve others');
+INSERT INTO business (note) VALUES ('Be extra kind to one another');
 
+
+INSERT INTO musicLink (name) VALUES ('https://www.churchofjesuschrist.org/music/library/hymns?lang=eng');
+INSERT INTO musicLink (name) VALUES ('https://www.churchofjesuschrist.org/music/library/childrens-songbook?lang=eng');
+
+--INSERT INTO oSong (name, number, book) VALUES ('', );
+INSERT INTO oSong (name, number, book) VALUES ('Follow the Prophet', 110, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Joseph Smith''s First Prayer', 26, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Family History_I Am Doing It', 94, 2);
+INSERT INTO oSong (name, number, book) VALUES ('I Will Be Valiant', 162, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Dare to Do Right', 158, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Search, Ponder, and Pray', 109, 2);
+INSERT INTO oSong (name, number, book) VALUES ('The Priesthood Is Restored', 89, 2);
+INSERT INTO oSong (name, number, book) VALUES ('I''ll Go Where You Want Me to Go', 270, 1);
+INSERT INTO oSong (name, number, book) VALUES ('I Stand All Amazed', 193, 1);
+INSERT INTO oSong (name, number, book) VALUES ('The Church of Jesus Christ', 77, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Lift Up Your Voice and Sing', 252, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Come, Listen to a Prophet''s Voice', 21, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Israel, Israel, God Is Calling', 7, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Jesus Has Risen', 70, 2);
+INSERT INTO oSong (name, number, book) VALUES ('I Hope They Call Me on a Mission', 169, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Jesus Said Love Everyone', 61, 2);
+INSERT INTO oSong (name, number, book) VALUES ('I Want to Live the Gospel', 148, 2);
+INSERT INTO oSong (name, number, book) VALUES ('When He Comes Again', 82, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Have I Done Any Good?', 223, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Shine On', 144, 2);
+INSERT INTO oSong (name, number, book) VALUES ('"Give," Said the Little Stream', 236, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Choose the Right', 239, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Testimony', 137, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Reverence Is Love', 31, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Help Me, Dear Father', 99, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Home Can Be a Heaven on Earth', 298, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Let Us All Press On', 243, 1);
+INSERT INTO oSong (name, number, book) VALUES ('I Know That My Redeemer Lives', 136, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Count Your Blessings', 241, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Have I Done Any Good?', 223, 1);
+INSERT INTO oSong (name, number, book) VALUES ('The Priesthood Is Restored', 89, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Where Love Is', 138, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Nearer, My God, to Thee', 100, 1);
+INSERT INTO oSong (name, number, book) VALUES ('The Lord Gave Me a Temple', 153, 2);
+INSERT INTO oSong (name, number, book) VALUES ('I Am a Child of God', 2, 2);
+INSERT INTO oSong (name, number, book) VALUES ('I Love to See the Temple', 95, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Help Me, Dear Father', 99, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Count Your Blessings', 241, 1);
+INSERT INTO oSong (name, number, book) VALUES ('We Listen to a Prophet''s Voice', 22, 1);
+INSERT INTO oSong (name, number, book) VALUES ('The Spirit of God', 2, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Be Thou Humble', 130, 1);
+INSERT INTO oSong (name, number, book) VALUES ('I Want to Give the Lord My Tenth', 150, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Where Can I Turn for Peach?', 129, 1);
+INSERT INTO oSong (name, number, book) VALUES ('I Love to See the Temple', 95, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Family History-I Am Doing It', 94, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Families Can Be Together, Forever', 188, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Come, Ye Children of the Lord', 58, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Praise to the Man', 27, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Search, Ponder, and Pray', 109, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Keep the Commandments', 146, 2);
+INSERT INTO oSong (name, number, book) VALUES ('Home Can Be a Heaven on Earth', 298, 1);
+INSERT INTO oSong (name, number, book) VALUES ('Hark! The Herald Angels Sing', 209, 1);
+
+INSERT INTO cSong (name, book, number) VALUES ('Love Is Spoken Here', 2, 190);
+INSERT INTO cSong (name, book, number) VALUES ('Come, Follow Me', 1, 116);
+INSERT INTO cSong (name, book, number) VALUES ('I''m Trying to Be Like Jesus', 2, 78);
+INSERT INTO cSong (name, book, number) VALUES ('A Child''s Prayer', 2, 12);
+INSERT INTO cSong (name, book, number) VALUES ('My Heavenly Father Loves Me', 2, 228);
+INSERT INTO cSong (name, book, number) VALUES ('Count Your Blessings', 1, 241);
 

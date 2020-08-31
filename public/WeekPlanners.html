@@ -91,9 +91,7 @@
   //get the data from the database
   var xmlHttpRequest = new XMLHttpRequest();
   xmlHttpRequest.onreadystatechange = function() {
-    // if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
-    // if (xmlHttpRequest.status == 200) {
-    if (xmlHttpRequest.readyState == XMLHttpRequest.DONE ) {
+    if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
  
       console.log('inside if statement');
       console.log(xmlHttpRequest.readyState);
@@ -108,10 +106,10 @@
       document.getElementById("topic").innerHTML = topic;
       document.getElementById("scripture").innerHTML = data.scriptures[week].scriptname;
       document.getElementById("osong").innerHTML = 
-      '<a href=' + data.openingsonglink[week] + ' target="_blank">' + data.oSongs[week].name + '</a>';
+      '<a href=' + data.osong[week].book + ' target="_blank">' + data.osong[week].name + '</a>';
       document.getElementById("csong").innerHTML = 
-      '<a href=' + data.songlink[(week) % 5] + ' target="_blank">' + data.songs[(week) % 5] + '</a>';
-      document.getElementById("announce").innerHTML = "";
+      '<a href=' + data.csong[(week) % 6].book + ' target="_blank">' + data.csong[(week) % 5].name + '</a>';
+      document.getElementById("announce").innerHTML = data.business[week].note;
       document.getElementById("prs").innerHTML = '<a href=' + data.prslink[week] + ' target="_blank">' + data.prslesson[week] + '</a>';
 
 
