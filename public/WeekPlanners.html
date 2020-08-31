@@ -49,7 +49,7 @@
     <!--<tr><th class="col1"><th></th></tr>-->
 
     <tr><td class="col1">Conducting</td><td id="conduct"></td></tr>
-    <tr><td class="col1">Family business</td><td id="announce">Love one Another</td></tr>
+    <tr><td class="col1">Family announcements</td><td id="announce" onclick="editItem(this)">Love one Another</td></tr>
     <tr><td class="col1">Opening Song</td><td id="osong"></td></tr>
     <tr><td class="col1">Opening Prayer</td><td id="oprayer"></td></tr>
     <tr><td class="col1">Lesson</td><td id="teacher"></td></tr>
@@ -146,107 +146,6 @@
   //   var hymnLink = "https://www.churchofjesuschrist.org/music/library/hymns?lang=eng";
   //   var childsSongLink = "https://www.churchofjesuschrist.org/music/library/childrens-songbook?lang=eng";
 
-  //   myObj = { 
-  //   // family members
-  //   "members":["Dad", "Natalie", "Mom", "Corbin", "Ava"],
-  //   // topics
-  //   "topics":["Another Testament of Jesus Christ", "I Will Go and Do", "Come and Partake of the Fruit", "Armed with Righteousness and with the Power of God", "I Will Prepare the Way before You", "We Lived after the Manner of Happiness", "O How Great the Plan of Our God!", "We Rejoice in Christ", "A Marvelous Work and a Wonder", "This Is the Way", "Be Reconciled unto God through the Atonement of Christ", "The Lord Labors with Us", "He Works in Me to Do His Will", "Easter: He Shall Rise...with Healing in His Wings", "Easter: He Shall Rise...with Healing in His Wings", "Filled with Love towards God and all Men", "A Mighty Change", "In the Strength of the Lord", "A Light...That Can Never Be Darkened", "We Have Entered into a Covenant with Him", "They Were Called the People of God", "They Were Steadfast and Immovable", "Have Ye Experienced This Mighty Change in Your Hearts?", "Jesus Christ Will Come to Redeem His People", "Enter into the Rest of the Lord", "I Will Make an Instrument of Thee", 'They "Never Did Fall Away"', "The Virtue of the Word of God", "Plant This Word in Your Hearts", "Look to God and Live", "The Great Plan of Happiness", "Stand Fast in the Faith of Christ", "Preserved by His Marvelous Power", "The Rock of Our Redeemer", "Remember the Lord", "Glad Tidings of Great Joy", "Lift Up Your Head and Be of Good Cheer", "Arise and Come Forth unto Me", "I Am the Law, and the Light", "Behold, My Joy Is Full", "Behold, My Joy Is Full", "Ye Are the Children of the Covenant", "There Could Not Be a Happier People", "I Would That I Could Persuade All...to Repent", "I Speak unto You As If Ye Were Present", "Rend That Veil of Unbelief", "That Evil May Be Done Away", "By Faith All Things Are Fulfilled", "To Keep Them in the Right Way", "May Christ Lift Thee Up", "Come unto Christ, and Be Perfected in Him", "He Shall Come into the World to Redeem His People"], 
-  //   // scriptures
-  //   "scriptures":["Introductory Pages of the Book of Mormon", "1 Nephi 1-7", "1 Nephi 8-10", "1 Nephi 11-15", "1 Nephi 16-22", "2 Nephi 1-5", "2 Nephi 6-10", "2 Nephi 11-25", "2 Nephi 26-30", "2 Nephi 31-33", "Jacob 1-4", "Jacob 5-7", "Enos-Words of Mormon", "", "", "Mosiah 1-3", "Mosiah 4-6", "Mosiah 7-10", "Mosiah 11-17", "Mosiah 18-24", "Mosiah 25-28", "Mosiah 29-Alma 4", "Alma 5-7", "Alma 8-12", "Alma 13-16", "Alma 17-22", "Alma 23-29", "Alma 30-31", "Alma 32-35", "Alma 36-38", "Alma 39-42", "Alma 43-52", "Alma 53-63", "Helaman 1-6", "Helaman 7-12", "Helaman 13-16", "3 Nephi 1-7", "3 Nephi 8-11", "3 Nephi 12-16", "3 Nephi 17-19", "3 Nephi 17-19", "3 Nephi 20-26", "3 Nephi 27-4 Nephi", "Mormon 1-6", "Mormon 7-9", "Ether 1-5", "Ether 6-11", "Ether 12-15", "Moroni 1-6", "Moroni 7-9", "Moroni 10", "Luke 2"],
-  //   // dates
-  //   "dates":["December 30-January 5", "January 6-12", "January 13-19", "January 20-26", "January 27-February 2", "February 3-9", "February 10-16", "February 17-23", "February 24- March 1", "March 2-8", "March 9-15", "March 16-22", "March 23-29", "March 30-April 12", "March 30-April 12", "April 13-19", "April 20-26", "April 27-May 3", "May 4-10", "May 11-17", "May 18-24", "May 25-31", "June 1-7", "June 8-14", "June 15-21", "June 22-26", "June 27-July 5", "July 6-12", "July 13-19", "July 20-26", "July 27-August 2", "August 3-9", "August 10-16", "August 17-23", "August 24-30", "August 31-September 6", "September 7-13", "September 14-20", "September 21-27", "September 28-October 11", "September 28-October 11", "October 12-18", "October 19-25", "October 26-November 1", "November 2-8", "November 9-15", "November 16-22", "November 23-29", "November 30-December 6", "December 7-13", "December 14-20", "December 21-27"], 
-  //   // opening songs
-  //   "openingsongs":["Book of Mormon Stories, CSB page 118",
-  //     "Keep the Commandments, CSB page 146", 
-  //     "Search, Ponder, and Pray, CSB page 109", 
-  //     "Hymn #274. The Iron Rod", 
-  //     "Nephi's Courage, CSB page 120", 
-  //     "Hymn #27. Praise to the Man", 
-  //     "I Feel My Savior's Love, CSB page 74", 
-  //     "I Love to See the Temple, CSB page 95", 
-  //     "The Holy Ghost, CSB page 105", 
-  //     "When I Am Baptized, CSB page 103",
-  //     "The Wise Man and the Foolish Man, CSB page 281", 
-  //     "Dare to Do Right, CSB page 158", 
-  //     "A Child's Prayer, CSB page 12", 
-  //     "Easter Hosanna, CSB page 68", 
-  //     "Easter Hosanna, CSB page 68", 
-  //     "When We're Helping, CSB page 198", 
-  //     "Love One Another, CSB page 136", 
-  //     "Book of Mormon Stories, CSB page 118", 
-  //     "I Will Be Valiant, CSB page 162",
-  //     "Baptism, CSB page 100", 
-  //     "Help Me, Dear Father, CSB page 99",
-  //     "Hymn 137, Testimony",
-  //     "Hymn #116, Come, Follow Me",
-  //     "We'll Bring the World His Truth, CSB page 172",
-  //     "Follow the Prophet, CSB page 110",
-  //     "I Want to Be a Missionary Now, CSB page 168",
-  //     "For Health and Strength, CSB page 21",
-  //     "My Heavenly Father Loves Me, CSB page 228",
-  //     "Faith, CSB page 96",
-  //     "Hymn #277. As I Search the Holy Scripture",
-  //     "Repentance, CSB page 98",
-  //     "Hymn #298. Home Can Be a Heaven on Earth",
-  //     "We'll Bring the World His Truth, CSB page 172",
-  //     "The Still Small Voice, CSB page 106",
-  //     "Follow the Prophet, CSB page 110",
-  //     "Samuel Tells of the Baby Jesus. CSB page 36",
-  //     "I'm Trying to Be like Jesus. CSB page 78",
-  //     "This Is My Beloved Son. CSB page 76",
-  //     "The Wise Man and the Foolish Man. CSB page 281",
-  //     "Reverently, Quietly. CSB page 26",
-  //     "Reverently, Quietly. CSB page 26",
-  //     "Families Can Be Together Forever. CSB page 188",
-  //     "The Church of Jesus Christ. CSB page 77",
-  //     "Jesus Said Love Everyone. CSB page 61",
-  //     "Stand for the Right. CSB page 159",
-  //     "Head, Shoulders, Knees, and Toes. CSB page 275",
-  //     "I Thank Thee, Dear Father. CSB page 7",
-  //     "Faith. CSB page 96",
-  //     "Help Me, Dear Father. CSB page 99",
-  //     "I Will Follow God's Plan. CSB page 164",
-  //     "Search, Ponder, and Pray. CSB page 109",
-  //     "Away in a Manger. CSB page 42"],
-  //   // opening song links
-  //   "openingsonglink":[childsSongLink, childsSongLink, childsSongLink, hymnLink, childsSongLink, hymnLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, hymnLink, hymnLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, hymnLink, childsSongLink, hymnLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink, childsSongLink],
-  //   // closing songs
-  //   "songs":["Love Is Spoken Here, CSB page 190", 
-  //     "My Heavenly Father Loves Me, CSB page 228", 
-  //     "Hymn #116 Come, Follow Me", 
-  //     "A Child's Prayer, CSB page 12", 
-  //     "Hymn #241, Count Your Blessing"], 
-  //   // closing song links
-  //   "songlink":[
-  //     childsSongLink, 
-  //     childsSongLink, 
-  //     hymnLink, 
-  //     childsSongLink, 
-  //     hymnLink], 
-  //   // scripture links
-  //   "scripturelink":["","","","","","","","","","2-ne/31","jacob/1","jacob/5","enos/1","","","mosiah/1","mosiah/4","mosiah/7","mosiah/11","mosiah/18","mosiah/25","mosiah/29","alma/5","alma/8","alma/13","alma/17","alma/23","alma/30","alma/32","alma/36","alma/39","alma/43","alma/53","hel/1","hel/7","hel/13","3-ne/1","3-ne/8","3-ne/12","3-ne/17","3-ne/17","3-ne/20","3-ne/27","morm/1","morm/7","ether/1","ether/6","ether/12","moro/1","moro/7","moro/10","" ], 
-  //   // Priesthood and Relief Society lesson titles
-  //   "prslesson":[
-  //     "", "Take Up Our Cross - Elder Soares", "",
-  //     "Consistency and Resilient Trust - Elder Budge", "", 
-  //     "Holiness and the Plan of Happiness - President Eyring", "", 
-  //     "The Joy of the Saints - Elder Christofferson", "",
-  //     "Your Great Adventure - Elder Uchtdorf", "", 
-  //     "Unwavering Commitment to Jesus Christ - Elder Renlund", "", 
-  //     "","","","","","","","","","","","","","","",
-  //     "","","","","","","","","","","","","","",""
-  //     ],
-  //   // Links to the Priesthood and Relief Society lessons
-  //   "prslink":[
-  //     "", "https://www.churchofjesuschrist.org/study/general-conference/2019/10/55soares?lang=eng", "",
-  //     "https://www.churchofjesuschrist.org/study/general-conference/2019/10/27budge?lang=eng", "",
-  //     "https://www.churchofjesuschrist.org/study/general-conference/2019/10/51eyring?lang=eng", "", 
-  //     "https://www.churchofjesuschrist.org/study/general-conference/2019/10/14christofferson?lang=eng", "", 
-  //     "https://www.churchofjesuschrist.org/study/general-conference/2019/10/43uchtdorf?lang=eng", "", 
-  //     "https://www.churchofjesuschrist.org/study/general-conference/2019/10/16renlund?lang=eng", ""
-  //     ]
-  //   };
-
   //   topic = '<a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-book-of-mormon-2020/' + (week) + '?lang=eng" target="_blank">' + myObj.topics[week] +'</a>';
 
   //   scripture = '<a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/' + myObj.scripturelink[week] + '?lang=eng" target="_blank">' + myObj.scriptures[week] +'</a>';
@@ -285,6 +184,25 @@
     } else {
       return week;
     }
+  }
+
+  function editItem(item) {
+    var edit = document.getElementById('announce');
+    var box = document.createElement('input');
+    box.setAttribute("type", "text");
+    box.setAttribute("value", item.innerText);
+
+    var button = document.createElement('input');
+    button.setAttribute("type", "button");
+    button.setAttribute("onclick", "addBusiness()");
+    button.setAttribute("value", "Done");
+
+    edit.parentElement.childNodes[1].innerText = "";
+    edit.parentElement.childNodes[1].removeAttribute("onclick");
+
+    edit.appendChild(box);
+    edit.appendChild(button);
+    document.getElementById('announce').childNodes[0].focus();
   }
 
 </script>
