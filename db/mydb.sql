@@ -42,11 +42,8 @@ INSERT INTO job (jobName) VALUES ('Wash the dishes');
 INSERT INTO job (jobName) VALUES ('Clean the bathroom');
 
 
-UPDATE job SET jobname='4' Where id=
 
-
-
-INSERT INTO job (jobName) VALUES ('');
+-- INSERT INTO job (jobName) VALUES ('');
 
 --Member db inserted 
 INSERT INTO Member (firstName) VALUES('Nate');
@@ -193,17 +190,17 @@ CREATE TABLE Together (
   jobId     INT NOT NULL REFERENCES job(id)
 );
 
-INSERT INTO  (jobId) VALUES ();
-INSERT INTO  (jobId) VALUES (2);
-INSERT INTO  (jobId) VALUES (3);
-INSERT INTO  (jobId) VALUES (1);
-INSERT INTO  (jobId) VALUES ();
-INSERT INTO  (jobId) VALUES (3);
-INSERT INTO  (jobId) VALUES ();
+-- INSERT INTO  (jobId) VALUES ();
+-- INSERT INTO  (jobId) VALUES (2);
+-- INSERT INTO  (jobId) VALUES (3);
+-- INSERT INTO  (jobId) VALUES (1);
+-- INSERT INTO  (jobId) VALUES ();
+-- INSERT INTO  (jobId) VALUES (3);
+-- INSERT INTO  (jobId) VALUES ();
 
 
-SELECT * FROM 
-JOIN Member ON  .nameid = Member.id 
-ORDER BY day
+-- SELECT * FROM 
+-- JOIN Member ON  .nameid = Member.id 
+-- ORDER BY day
 
-INSERT INTO  (nameId) VALUES ();
+-- INSERT INTO  (nameId) VALUES ();
