@@ -218,6 +218,10 @@ INSERT INTO business (note) VALUES ('Love one another');
 INSERT INTO business (note) VALUES ('Serve others');
 INSERT INTO business (note) VALUES ('Be extra kind to one another');
 
+UPDATE business 
+SET    note = value
+WHERE  id   = value;
+
 
 INSERT INTO musicLink (name) VALUES ('https://www.churchofjesuschrist.org/music/library/hymns?lang=eng');
 INSERT INTO musicLink (name) VALUES ('https://www.churchofjesuschrist.org/music/library/childrens-songbook?lang=eng');

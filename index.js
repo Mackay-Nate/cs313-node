@@ -72,43 +72,43 @@ express()
     }
   })
 
-    //sends database data to display the 2021 Come Follow Me schedule  
-    .get('/cfm', async (req, res) => {
-      console.log("received request for come follow me");
-      try {
-        const client    = await pool.connect()
-        const family    = await client.query('SELECT * FROM Family');
-        const dates     = await client.query('SELECT * FROM Dates');
-        const scriptures= await client.query('SELECT * FROM Scriptures');
-        const scriptLink= await client.query('SELECT * FROM scriptLink');
-        const business  = await client.query('SELECT * FROM business');
-        const oSong     = await client.query('SELECT * FROM oSong');
-        const cSong     = await client.query('SELECT * FROM cSong');
-        const music     = await client.query('SELECT * FROM musicLink');
-        // const clear    = await client.query('SELECT * FROM ClearWipe');
-        // const wash     = await client.query('SELECT * FROM WashDishes');
-  
-        const params = { 'family': (family)    ? family.rows     : null, 
-                          'dates': (dates)     ? dates.rows      : null, 
-                     'scriptures': (scriptures)? scriptures.rows : null, 
-                     'scriptLink': (scriptLink)? scriptLink.rows : null,
-                      'business' : (business)  ? business.rows   : null,
-                         'oSong' : (oSong)     ? oSong.rows      : null, 
-                         'cSong' : (cSong)     ? cSong.rows      : null,
-                          'music': (music)     ? music.rows      : null
-                        //  'dinner': (dinner)    ? dinner.rows     : null, 
-                        //  'clear' : (clear)     ? clear.rows      : null,
-                          // 'wash' : (wash)      ? wash.rows       : null
-                      };
-  
-        res.send(params);
-        client.release();
-  
-      } catch (err) {
-        console.error(err);
-        res.send("Error " + err);
-      }
-    })
+  //sends database data to display the 2021 Come Follow Me schedule  
+  .get('/cfm', async (req, res) => {
+    console.log("received request for come follow me");
+    try {
+      const client    = await pool.connect()
+      const family    = await client.query('SELECT * FROM Family ORDER BY id');
+      const dates     = await client.query('SELECT * FROM Dates ORDER BY week');
+      const scriptures= await client.query('SELECT * FROM Scriptures ORDER BY week');
+      const scriptLink= await client.query('SELECT * FROM scriptLink ORDER BY id');
+      const business  = await client.query('SELECT * FROM business ORDER BY id');
+      const oSong     = await client.query('SELECT * FROM oSong ORDER BY id');
+      const cSong     = await client.query('SELECT * FROM cSong ORDER BY id');
+      const music     = await client.query('SELECT * FROM musicLink ORDER BY id');
+      // const clear    = await client.query('SELECT * FROM ClearWipe');
+      // const wash     = await client.query('SELECT * FROM WashDishes');
+
+      const params = { 'family': (family)    ? family.rows     : null, 
+                        'dates': (dates)     ? dates.rows      : null, 
+                   'scriptures': (scriptures)? scriptures.rows : null, 
+                   'scriptLink': (scriptLink)? scriptLink.rows : null,
+                    'business' : (business)  ? business.rows   : null,
+                       'oSong' : (oSong)     ? oSong.rows      : null, 
+                       'cSong' : (cSong)     ? cSong.rows      : null,
+                        'music': (music)     ? music.rows      : null
+                      //  'dinner': (dinner)    ? dinner.rows     : null, 
+                      //  'clear' : (clear)     ? clear.rows      : null,
+                        // 'wash' : (wash)      ? wash.rows       : null
+                    };
+
+      res.send(params);
+      client.release();
+
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
   
   //data for monthly jobs
   .get('/monthly', async (req, res) => {
@@ -137,13 +137,13 @@ express()
       console.log("received request for adding a job");
 
       const client = await pool.connect()
-      const job    = await client.query('INSERT INTO Job (jobname) VALUES (req.query.job)');
+      const job    = await client.query('UPDATE business SET note = (req) WHERE id = (req.query.business.id)');
       var date = ['7th', '11th', '14th', '21st'];
 
-      const params = { 'member': (member) ? member.rows : null, 
-                        'job'  : (job)    ? job.rows    : null, date: date  };
+      const params = { 'business': (business) ? business.rows : null, 
+                          'job'  : (job)      ? job.rows      : null, date: date  };
 
-      res.render('pages/monthly', params);
+      // res.render('pages/monthly', params);
       client.release();
     } catch (err) {
       console.error(err);
