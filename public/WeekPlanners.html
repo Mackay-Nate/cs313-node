@@ -93,7 +93,7 @@
   xmlHttpRequest.onreadystatechange = function() {
     // if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
     // if (xmlHttpRequest.status == 200) {
-                          {
+                          
  
       console.log('inside if statement');
       var data = JSON.parse(xmlHttpRequest.responseText);
@@ -131,7 +131,7 @@
       xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/cfm', true);
       xmlHttpRequest.send();
 
-    }
+    
 
   };
 
