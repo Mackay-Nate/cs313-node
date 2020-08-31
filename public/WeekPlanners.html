@@ -130,13 +130,13 @@
       //     emptyClass[j].appendChild(day);
       //     j++;
       //   }
+        }
+
       }
-  }
+
       //the json is from the database here
       xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/cfm', true);
       xmlHttpRequest.send();
-
-    
 
   };
 
@@ -214,6 +214,8 @@
         data.business[getWeek()].note = document.getElementById('announce').innerHTML;
 
       }
+
+    }
     xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/cfm', true);
     xmlHttpRequest.send();
 
