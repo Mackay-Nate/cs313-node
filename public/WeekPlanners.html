@@ -99,6 +99,8 @@
       var data = JSON.parse(xmlHttpRequest.responseText);
 
       
+      var topic = '<a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-doctrine-and-covenants-2021/' + if (week < 10) {'0' + week} else {week} + '?lang=eng" target="_blank">' + myObj.topics[week] +'</a>';
+
       var scripture = '<a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/' + data.scriptLink[week].linkname + '?lang=eng" target="_blank">' + data.scriptures[week].scriptname +'</a>';
 
       document.getElementById("dates").innerHTML = data.dates[week].weekname;
