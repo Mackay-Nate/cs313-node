@@ -96,6 +96,8 @@
                           
  
       console.log('inside if statement');
+      console.log(xmlHttpRequest.readyState);
+      console.lot(xmlHttpRequest.status);
       var data = JSON.parse(xmlHttpRequest.responseText);
 
       document.getElementById("dates").innerHTML = data.dates[week].weekName;
