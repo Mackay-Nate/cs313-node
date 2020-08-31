@@ -84,7 +84,7 @@ express()
         const business  = await client.query('SELECT * FROM business');
         const oSong     = await client.query('SELECT * FROM oSong');
         const cSong     = await client.query('SELECT * FROM cSong');
-        // const dinner   = await client.query('SELECT * FROM Dinner');
+        const music     = await client.query('SELECT * FROM musicLink');
         // const clear    = await client.query('SELECT * FROM ClearWipe');
         // const wash     = await client.query('SELECT * FROM WashDishes');
   
@@ -94,8 +94,8 @@ express()
                      'scriptLink': (scriptLink)? scriptLink.rows : null,
                       'business' : (business)  ? business.rows   : null,
                          'oSong' : (oSong)     ? oSong.rows      : null, 
-                         'cSong':  (cSong)     ? cSong.rows      : null
-                        // 'bedroom': (bedroom)   ? bedroom.rows    : null,
+                         'cSong' : (cSong)     ? cSong.rows      : null,
+                          'music': (music)     ? music.rows      : null
                         //  'dinner': (dinner)    ? dinner.rows     : null, 
                         //  'clear' : (clear)     ? clear.rows      : null,
                           // 'wash' : (wash)      ? wash.rows       : null

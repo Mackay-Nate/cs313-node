@@ -106,9 +106,9 @@
       document.getElementById("topic").innerHTML = topic;
       document.getElementById("scripture").innerHTML = data.scriptures[week].scriptname;
       document.getElementById("osong").innerHTML = 
-      '<a href=' + data.oSong[week].book + ' target="_blank">' + data.oSong[week].name + '</a>';
+      '<a href=' + data.music[data.oSong[week].book].name + ' target="_blank">' + data.oSong[week].name + '</a>';
       document.getElementById("csong").innerHTML = 
-      '<a href=' + data.cSong[(week) % 6].book + ' target="_blank">' + data.cSong[(week) % 5].name + '</a>';
+      '<a href=' + data.music[data.cSong[week].book].name + ' target="_blank">' + data.cSong[(week) % 5].name + '</a>';
       document.getElementById("announce").innerHTML = data.business[week].note;
       document.getElementById("prs").innerHTML = '<a href=' + data.prslink[week] + ' target="_blank">' + data.prslesson[week] + '</a>';
 
