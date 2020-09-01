@@ -72,7 +72,7 @@ async function handleLogin(request, response) {
       console.log('line 72: inside try, 74 next');
       const result = await client.query('SELECT * FROM secure');
       console.log('line 74: inside try, 76 next');
-      const results = { 'results': (result) ? result.rows : null};
+      const results = { 'result': (result) ? result.rows : null};
       console.log('line 76: inside try, 77 next');
       console.log('line 77, 78 next' + result[0]);
       console.log('line 78, next 81' + result.length);
