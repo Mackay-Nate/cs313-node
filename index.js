@@ -95,8 +95,8 @@ express()
                     'business' : (business)  ? business.rows   : null,
                        'oSong' : (oSong)     ? oSong.rows      : null, 
                        'cSong' : (cSong)     ? cSong.rows      : null,
-                        'music': (music)     ? music.rows      : null
-                        'topic': (topic)     ? topic.rows      : null, 
+                        'music': (music)     ? music.rows      : null,
+                        'topic': (topic)     ? topic.rows      : null 
                       //  'clear' : (clear)     ? clear.rows      : null,
                         // 'wash' : (wash)      ? wash.rows       : null
                     };
