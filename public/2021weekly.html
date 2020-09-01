@@ -8,7 +8,13 @@
     <!--<link rel="stylesheet" type="text/css" href=".css">-->
     <style>
       body { 
-        background: rgb(0, 0, 204);
+        background-color: rgb(0, 0, 204);
+        background-image: url("Christ.jpg");
+        background-blend-mode: lighten;
+        background-size: 90%;
+        background-position: center;
+        /* background: rgb(0, 0, 204); */
+        background-repeat: no-repeat;
         color: gold;
         text-align: center;
       }
@@ -25,6 +31,9 @@
         font-variant: small-caps;
       }
 
+      .agenda { 
+
+      }
       a { 
         color: gold;
         text-decoration: unset;
@@ -42,7 +51,7 @@
 
 <h1>Lesson Plan</h1>
 
-<form>
+<form id="agenda">
   <input type="button" value="Click to load this week" onclick="load(getWeek())">
   <h3 id="dates"></h3>
   <table>
@@ -65,10 +74,10 @@
   <input type="button" value="Click to load next week" onclick="load(getWeek() + 1)">
 </form>
 
-<form action="2020homecenteredchurchsupported.html">
+<form action="2021schedule.html">
   <div id='debug'></div>
   <p></p>
-  <input type="submit" value="2020 Schedule">
+  <input type="submit" value="2021 Schedule">
   
 </form>
 <footer id="date">
@@ -117,20 +126,7 @@
       document.getElementById("announce").innerHTML = data.business[week - 1].note;
       // document.getElementById("prs").innerHTML = '<a href=' + data.prslink[week] + ' target="_blank">' + data.prslesson[week] + '</a>';
 
-
-      // Empty-the-dishwasher assignments
-      // for (var i = 0; i < data.empty.length; i++) { 
-      //     var header = document.createElement('h4');
-      //     header.innerHTML = data.job[14].jobname;
-      //     var day = document.createElement('p');
-      //     day.innerHTML = data.member[data.empty[i].nameid - 1].firstname;
-      //     day.setAttribute("class", data.member[data.empty[i].nameid -1].firstname);
-      //     day.setAttribute("onclick", 'jobComplete(this)');
-      //     emptyClass[j].appendChild(header);
-      //     emptyClass[j].appendChild(day);
-      //     j++;
-      //   }
-        }
+      }
 
       }
 

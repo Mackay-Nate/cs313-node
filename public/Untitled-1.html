@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Come, Follow Me</title>
+    <!--<script src=".js"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href=".css">-->
+    <style>
+      body { 
+        background: rgb(0, 0, 204);
+        color: gold;
+        text-align: center;
+      }
+
+      table { 
+        margin: auto;
+        text-align: left;
+      }
+      
+      .col1 { 
+        padding: 3px;
+        font-variant: small-caps;
+      }
+
+      a { 
+        color: gold;
+        text-decoration: unset;
+      }
+
+      input { 
+        padding: 10px;
+        background: lightblue;
+        color: yellow;
+      }
+    </style>
+  </head>
+
+  
+<body onload="load(1)">
+
+    <h2>Come, Follow Me</h2>
+
+    <form id="form1">
+      <table id="displayTable">
+        <tr><th>Dates</th><th>Topic</th><th></th></tr>
+
+      </table>
+    </form>
+
+
+<script>
+  function load(week) {
+
+    var myObj, topic, scripture, slink, conduct, osong, oprayer;
+    var teacher, csong, cprayer;
+
+    for (i = 0; i < myObj.topics.length; i++) 
+    { 
+      var row = document.createElement("tr");
+        //create a cell for the dates
+        var item = document.createElement("td");
+        //attach a link to the date
+        var link = document.createElement("a");
+          link.href = "homecenteredchurchsupported.html";
+          link.innerHTML = (myObj.dates[i]);
+        item.appendChild(link);
+          item.setAttribute("class", "col1");
+        row.appendChild(item);
+
+        //create a cell for the topic
+        var cellName = document.createElement("td");
+          var link = document.createElement("a");
+          link.href = "homecenteredchurchsupported.html";
+          link.innerHTML = (myObj.topics[i]);
+          cellName.appendChild(link);
+        row.appendChild(cellName);
+
+        row.setAttribute("id", i);
+        row.setAttribute("value", i);
+        row.setAttribute("onclick", "sessionStorage.setItem('week', " + i + ")");
+
+        document.getElementById('displayTable').appendChild(row);
+    }
+
+  };
+  
+  function getWeek() { 
+    let now = new Date();
+    let onejan = new Date(now.getFullYear(), 0, 1);
+    return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
+  }
+ 
+</script>
+</body>
+</html>
