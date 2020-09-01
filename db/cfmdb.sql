@@ -45,6 +45,11 @@ CREATE TABLE cSong (
   number      INT
 );
 
+CREATE TABLE Topic (
+  id          SERIAL PRIMARY KEY,
+  title       varchar(80)
+);
+
 --INSERT INTO Dates VALUES ('');
 INSERT INTO Dates VALUES (1, 'December 28-January 3');
 INSERT INTO Dates VALUES (2, 'January 4-10');
@@ -286,4 +291,59 @@ INSERT INTO cSong (name, book, number) VALUES ('I''m Trying to Be Like Jesus', 2
 INSERT INTO cSong (name, book, number) VALUES ('A Child''s Prayer', 2, 12);
 INSERT INTO cSong (name, book, number) VALUES ('My Heavenly Father Loves Me', 2, 228);
 INSERT INTO cSong (name, book, number) VALUES ('Count Your Blessings', 1, 241);
+
+-- INSERT INTO Topic (title) VALUES ('');
+INSERT INTO Topic (title) VALUES ('Hearken, O Ye People');
+INSERT INTO Topic (title) VALUES ('I Saw a Pillar of Light');
+INSERT INTO Topic (title) VALUES ('The Hearts of the Children Shall Turn to Their Fathers');
+INSERT INTO Topic (title) VALUES ('My Work Shall Go Forth');
+INSERT INTO Topic (title) VALUES ('This is the Spirit of Revelation');
+INSERT INTO Topic (title) VALUES ('That You May Come Off Conqueror');
+INSERT INTO Topic (title) VALUES ('Upon You My Fellow Servants');
+INSERT INTO Topic (title) VALUES ('Stand as a Witness');
+INSERT INTO Topic (title) VALUES ('The Worth of Souls Is Great');
+INSERT INTO Topic (title) VALUES ('The Rise of the Church of Christ');
+INSERT INTO Topic (title) VALUES ('Strengthen the Church');
+INSERT INTO Topic (title) VALUES ('All Things Must Be Done in Order');
+INSERT INTO Topic (title) VALUES ('Jesus Christ Will Gather His People');
+INSERT INTO Topic (title) VALUES ('I Am He Who Liveth, I Am He Who Was Slain');
+INSERT INTO Topic (title) VALUES ('You Are Called to Preach My Gospel');
+INSERT INTO Topic (title) VALUES ('If Ye Are Not One Ye Are Not Mine');
+INSERT INTO Topic (title) VALUES ('My Law to Govern My Church');
+INSERT INTO Topic (title) VALUES ('The Promise ... Shall Be Fulfilled');
+INSERT INTO Topic (title) VALUES ('Seek Ye Earnestly the Best Gifts');
+INSERT INTO Topic (title) VALUES ('That Which is of God is Light');
+INSERT INTO Topic (title) VALUES ('A Faithful, a just, and a Wise Steward');
+INSERT INTO Topic (title) VALUES ('Anxiously Engaged in a Good Cause');
+INSERT INTO Topic (title) VALUES ('All Flesh is in Mine Hand');
+INSERT INTO Topic (title) VALUES ('That Which Cometh from Above Is Sacred');
+INSERT INTO Topic (title) VALUES ('The Lord Requireth the Heart and a Willing Mind');
+INSERT INTO Topic (title) VALUES ('Worth ... the Riches of the Whole Earth');
+INSERT INTO Topic (title) VALUES ('No Weapon That Is Formed against You Shall Prosper');
+INSERT INTO Topic (title) VALUES ('Great Shall Be Their Reward and Eternal Shall Be Their Glory');
+INSERT INTO Topic (title) VALUES ('I Will Lead You Along');
+INSERT INTO Topic (title) VALUES ('Where "Much Is Given Much Is Required"');
+INSERT INTO Topic (title) VALUES ('The Power of Godliness');
+INSERT INTO Topic (title) VALUES ('Stand Ye in Holy Places');
+INSERT INTO Topic (title) VALUES ('Establish ... a House of God');
+INSERT INTO Topic (title) VALUES ('A Principle with Promise');
+INSERT INTO Topic (title) VALUES ('Receive of His Fulness');
+INSERT INTO Topic (title) VALUES ('For the Salvation of Zion');
+INSERT INTO Topic (title) VALUES ('Be Still and Know That I Am God');
+INSERT INTO Topic (title) VALUES ('After Much Tribulation ... Cometh the Blessing');
+INSERT INTO Topic (title) VALUES ('To Have the Heavens Opened');
+INSERT INTO Topic (title) VALUES ('It Is Thy House, a Place of Thy Holiness');
+INSERT INTO Topic (title) VALUES ('I Will Order All Things for Your Good');
+INSERT INTO Topic (title) VALUES ('His Sacrifice Shall Be More Sacred unto Me Than His Increase');
+INSERT INTO Topic (title) VALUES ('O God, Where Are Thou?');
+INSERT INTO Topic (title) VALUES ('A House unto My Name');
+INSERT INTO Topic (title) VALUES ('A Voice of Gladness for the Living and the Dead');
+INSERT INTO Topic (title) VALUES ('When We Obtain Any Blessing from God, It Is by Obedience');
+INSERT INTO Topic (title) VALUES ('Prepare Ye for the Coming of the Bridegroom');
+INSERT INTO Topic (title) VALUES ('He "Has Sealed His Mission and His Works with His Own Blood"');
+INSERT INTO Topic (title) VALUES ('The Vision of the Redemption of the Dead');
+INSERT INTO Topic (title) VALUES ('We Believe');
+INSERT INTO Topic (title) VALUES ('The Family Is Central to the Creator''s Plan');
+INSERT INTO Topic (title) VALUES ('The Matchless Gift of God''s Divine Son');
+
 

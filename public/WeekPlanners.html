@@ -98,8 +98,8 @@
       console.log(xmlHttpRequest.status);
       var data = JSON.parse(xmlHttpRequest.responseText);
 
-      
-      var topic = '<a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-doctrine-and-covenants-2021/' + addZero(week) + '?lang=eng" target="_blank">' + data.scriptures[week].scriptname +'</a>';
+
+      var topic = '<a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-doctrine-and-covenants-2021/' + addZero(week) + '?lang=eng" target="_blank">' + data.topic[week].title +'</a>';
 
       var scripture = '<a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/' + data.scriptLink[week].linkname + '?lang=eng" target="_blank">' + data.scriptures[week].scriptname +'</a>';
 
@@ -217,7 +217,7 @@
       }
 
     }
-    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/add', true);
+    xmlHttpRequest.open('POST', 'https://nate-node.herokuapp.com/add', true);
     xmlHttpRequest.send();
 
   };
