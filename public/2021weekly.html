@@ -8,15 +8,15 @@
     <!--<link rel="stylesheet" type="text/css" href=".css">-->
     <style>
       body { 
-        background-color: rgb(0, 0, 204);
-        background-image: url("Christ.jpg");
+        background-color: rgb(150, 150, 150);
+        background-image: url("joseph.jpg");
         background-blend-mode: lighten;
-        background-size: 90%;
-        background-position: center;
-        /* background: rgb(0, 0, 204); */
+        background-size: 100%;
+        background-position: top;
         background-repeat: no-repeat;
-        color: gold;
+        color: rgb(40, 40, 40);
         text-align: center;
+
       }
 
       table { 
@@ -26,24 +26,34 @@
       
       .col1 { 
         text-align: right;
-        padding: 13px;
+        padding: 3px;
         width: 50px;
         font-variant: small-caps;
+      }
+
+      tr { 
+        font-weight: 800;
+        
+      }
+
+      h1 { 
+        margin: 3px;
       }
 
       .agenda { 
 
       }
       a { 
-        color: gold;
+        color: inherit;
         text-decoration: unset;
       }
 
       input { 
-        padding: 10px;
-        background: rgb(11, 156, 247);
-        color: darkblue;
+        padding: 4px;
+        background: rgb(239, 245, 188);
+        color: rgb(138, 138, 138);
       }
+
     </style>
   </head>
 
@@ -53,7 +63,7 @@
 
 <form id="agenda">
   <input type="button" value="Click to load this week" onclick="load(getWeek())">
-  <h3 id="dates"></h3>
+  <!-- <h3 id="dates"></h3> -->
   <table>
     <!--<tr><th class="col1"><th></th></tr>-->
 

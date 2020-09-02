@@ -347,3 +347,7 @@ INSERT INTO Topic (title) VALUES ('The Family Is Central to the Creator''s Plan'
 INSERT INTO Topic (title) VALUES ('The Matchless Gift of God''s Divine Son');
 
 
+INSERT INTO back VALUES ('Joseph.jpg');
+INSERT INTO back VALUES ('https://upload.wikimedia.org/wikipedia/commons/c/c8/Joseph_Smith_first_vision_stained_glass.jpg');
+INSERT INTO back VALUES ('https://www.sltrib.com/resizer/hxyw7axVp11boJEAibpdlp10Y-0=/0x600/smart/filters:quality(86)/arc-anglerfish-arc2-prod-sltrib.s3.amazonaws.com/public/PJQ6RUV7HJBUPKPT63HXIHJLI4.jpeg');
+
