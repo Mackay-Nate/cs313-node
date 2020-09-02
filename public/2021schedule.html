@@ -112,18 +112,13 @@
         // document.getElementById("announce").innerHTML = data.business[week - 1].note;
         // document.getElementById("prs").innerHTML = '<a href=' + data.prslink[week] + ' target="_blank">' + data.prslesson[week] + '</a>';
 
-
-
-          }
-
         }
 
-        //the json is from the database here
-        xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/cfm', true);
-        xmlHttpRequest.send();
-
-
-
+      }
+    }
+      //the json is from the database here
+      xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/cfm', true);
+      xmlHttpRequest.send();
 
     // for (i = 0; i < myObj.topics.length; i++) 
     // { 
@@ -151,7 +146,6 @@
     //     row.setAttribute("onclick", "sessionStorage.setItem('week', " + i + ")");
 
     //     document.getElementById('displayTable').appendChild(row);
-    }
 
   };
   
