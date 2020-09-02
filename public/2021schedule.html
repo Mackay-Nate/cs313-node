@@ -93,9 +93,9 @@
               cellName.appendChild(link);
             row.appendChild(cellName);
 
-            row.setAttribute("id", i);
-            row.setAttribute("value", i);
-            row.setAttribute("onclick", "sessionStorage.setItem('week', " + i + ")");
+            row.setAttribute("id", (i + 1));
+            row.setAttribute("value", (i + 1));
+            row.setAttribute("onclick", "sessionStorage.setItem('week', " + (i + 1) + ")");
 
             document.getElementById('displayTable').appendChild(row);
 
