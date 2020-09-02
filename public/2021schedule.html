@@ -75,7 +75,7 @@
             //attach a link to the date
             var link = document.createElement("a");
               link.href = "2021weekly.html";
-              link.innerHTML = (myObj.dates[i]);
+              link.innerHTML = (data.dates[i].weekName);
             item.appendChild(link);
               item.setAttribute("class", "col1");
             row.appendChild(item);
@@ -84,7 +84,7 @@
             var cellName = document.createElement("td");
               var link = document.createElement("a");
               link.href = "2021weekly.html";
-              link.innerHTML = (myObj.topics[i]);
+              link.innerHTML = (data.topic[i].scriptName);
               cellName.appendChild(link);
             row.appendChild(cellName);
 
