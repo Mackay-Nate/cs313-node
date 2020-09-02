@@ -122,7 +122,7 @@
 
       var scripture = '<a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/' + data.scriptLink[week - 1].linkname + '?lang=eng" target="_blank">' + data.scriptures[week - 1].scriptname +'</a>';
 
-      document.getElementById("dates").innerHTML = data.dates[week - 1].weekname;
+      // document.getElementById("dates").innerHTML = data.dates[week - 1].weekname;
       document.getElementById("conduct").innerHTML = data.family[(week + 2) % 5].firstname;
       document.getElementById("teacher").innerHTML = data.family[(week + 4) % 5].firstname;
       document.getElementById("cprayer").innerHTML = data.family[(week + 0) % 5].firstname;
