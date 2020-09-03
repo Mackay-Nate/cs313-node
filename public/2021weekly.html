@@ -135,7 +135,7 @@
       '<a href=' + data.music[data.cSong[(week - 1) % 6].book - 1].name + ' target="_blank">' + data.cSong[(week - 1) % 6].name + '</a>';
       document.getElementById("announce").innerHTML = data.business[week - 1].note;
       // document.getElementById("prs").innerHTML = '<a href=' + data.prslink[week] + ' target="_blank">' + data.prslesson[week] + '</a>';
-
+      document.body.style.backgroundImage = "url(" + data.background[(week % data.background.length)].picture + ")";
       }
 
       }
