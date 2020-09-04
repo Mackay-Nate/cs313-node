@@ -40,9 +40,6 @@
         margin: 3px;
       }
 
-      .agenda { 
-
-      }
       a { 
         color: inherit;
         text-decoration: unset;
@@ -130,8 +127,7 @@
       document.getElementById("topic").innerHTML = topic;
       document.getElementById("scripture").innerHTML = scripture;
 
-      document.getElementById("osong").innerHTML = 
-      '<a href=' + data.music[data.oSong[week - 1].book - 1].name + ' target="_blank">' + data.oSong[week - 1].name + " " '</a>';
+      document.getElementById("osong").innerHTML = '<a href=' + data.music[data.oSong[week - 1].book - 1].name + ' target="_blank">' + data.oSong[week - 1].name + " " + '</a>';
 
       document.getElementById("csong").innerHTML = 
       '<a href=' + data.music[data.cSong[(week - 1) % 6].book - 1].name + ' target="_blank">' + data.cSong[(week - 1) % 6].name + '</a>';
@@ -185,7 +181,7 @@
     } 
 
     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
-  }
+  };
 
   function addZero(week) {
     if (week < 10) {
@@ -193,7 +189,7 @@
     } else {
       return week;
     }
-  }
+  };
 
   function getMusicLink(music) {
     if (music.book == 1) {
