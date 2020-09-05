@@ -9,9 +9,9 @@
     <style>
       body { 
         background-color: rgb(150, 150, 150);
-        background-image: url("joseph.jpg");
-        background-blend-mode: lighten;
-        background-size: 100%;
+        /* background-image: url("joseph.jpg"); */
+        background-blend-mode: screen;
+        /* background-size: 100%; */
         background-position: top;
         background-repeat: no-repeat;
         color: rgb(40, 40, 40);
@@ -127,7 +127,7 @@
       document.getElementById("topic").innerHTML = topic;
       document.getElementById("scripture").innerHTML = scripture;
 
-      document.getElementById("osong").innerHTML = '<a href=' + data.music[data.oSong[week - 1].book - 1].name + ' target="_blank">' + data.oSong[week - 1].name + " " + '</a>';
+      document.getElementById("osong").innerHTML = '<a href=' + data.music[data.oSong[week - 1].book - 1].name + ' target="_blank">' + getMusicLink(data.oSong[week - 1]) + " " + '</a>';
 
       document.getElementById("csong").innerHTML = 
       '<a href=' + data.music[data.cSong[(week - 1) % 6].book - 1].name + ' target="_blank">' + data.cSong[(week - 1) % 6].name + '</a>';
@@ -194,6 +194,7 @@
   function getMusicLink(music) {
     if (music.book == 1) {
       return 1;
+      return ("Hymn number " + music.number + ", " + music.name);
     } else {
       return 2;
     }
