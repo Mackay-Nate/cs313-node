@@ -77,7 +77,9 @@ express()
     console.log("received request for come follow me");
     try {
 
+      console.log("req " + req);
       var week = getWeek();
+      console.log("week " + week);
 
       const client    = await pool.connect()
       const family    = await client.query('SELECT * FROM Family ORDER BY id');
