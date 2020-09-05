@@ -77,12 +77,12 @@ express()
     console.log("received request for come follow me");
     try {
 
-      if (sessionStorage.getItem("week")) {
-        week = parseInt(sessionStorage.getItem("week"));
-      } else {
-        week = getWeek();
-      }
-
+      // if (sessionStorage.getItem("week")) {
+      //   week = parseInt(sessionStorage.getItem("week"));
+      // } else {
+      //   week = getWeek();
+      // }
+      var week = getWeek();
 
       const client    = await pool.connect()
       const family    = await client.query('SELECT * FROM Family ORDER BY id');
