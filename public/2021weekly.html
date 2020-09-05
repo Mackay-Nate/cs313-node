@@ -133,7 +133,9 @@
       '<a href=' + data.music[data.cSong[(week - 1) % 6].book - 1].name + ' target="_blank">' + getMusicLink(data.cSong[(week - 1) % 6]) + '</a>';
 
       document.getElementById("announce").innerHTML = data.business[week - 1].note;
-      // document.getElementById("prs").innerHTML = '<a href=' + data.prslink[week] + ' target="_blank">' + data.prslesson[week] + '</a>';
+
+      // document.getElementById("prs").innerHTML = '<a href=' + data.PRSLesson[0].link + ' target="_blank"><em>' + data.PRSLesson[0].talkName + '</em>, by ' + data.PRSLesson[o].speaker + '</a>';
+
       document.body.style.backgroundImage = "url('" + data.background[(week % data.background.length)].picture + "')";
       }
 
@@ -145,30 +147,6 @@
 
   };
 
-  // function load(week) {
-  //   var myObj, topic, scripture, slink, conduct, osong, oprayer;
-  //   var teacher, csong, cprayer;
-  //   var hymnLink = "https://www.churchofjesuschrist.org/music/library/hymns?lang=eng";
-  //   var childsSongLink = "https://www.churchofjesuschrist.org/music/library/childrens-songbook?lang=eng";
-
-  //   topic = '<a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-book-of-mormon-2020/' + (week) + '?lang=eng" target="_blank">' + myObj.topics[week] +'</a>';
-
-  //   scripture = '<a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/' + myObj.scripturelink[week] + '?lang=eng" target="_blank">' + myObj.scriptures[week] +'</a>';
-
-  //   document.getElementById("dates").innerHTML = myObj.dates[week];
-  //   document.getElementById("conduct").innerHTML = myObj.members[(week + 2) % 5];
-  //   document.getElementById("teacher").innerHTML = myObj.members[(week + 4) % 5];
-  //   document.getElementById("cprayer").innerHTML = myObj.members[(week + 0) % 5];
-  //   document.getElementById("oprayer").innerHTML = myObj.members[(week + 1) % 5]; 
-  //   document.getElementById("topic").innerHTML = topic;
-  //   document.getElementById("scripture").innerHTML = scripture;
-  //   document.getElementById("osong").innerHTML = 
-  //   '<a href=' + myObj.openingsonglink[week] + ' target="_blank">' + myObj.openingsongs[week] + '</a>';
-  //   document.getElementById("csong").innerHTML = 
-  //   '<a href=' + myObj.songlink[(week) % 5] + ' target="_blank">' + myObj.songs[(week) % 5] + '</a>';
-  //   document.getElementById("announce").innerHTML = "";
-  //   document.getElementById("prs").innerHTML = '<a href=' + myObj.prslink[week] + ' target="_blank">' + myObj.prslesson[week] + '</a>';
-  //};
   
   function getWeek() { 
     let now = new Date();
@@ -197,7 +175,6 @@
     } else {
       return ("<em>" + music.name + "</em>, from the Children's Songbook, page " + music.number);
     }
-
 
   };
 

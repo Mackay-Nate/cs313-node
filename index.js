@@ -76,6 +76,14 @@ express()
   .get('/cfm', async (req, res) => {
     console.log("received request for come follow me");
     try {
+
+      if (sessionStorage.getItem("week")) {
+        week = parseInt(sessionStorage.getItem("week"));
+      } else {
+        week = getWeek();
+      }
+
+
       const client    = await pool.connect()
       const family    = await client.query('SELECT * FROM Family ORDER BY id');
       const dates     = await client.query('SELECT * FROM Dates ORDER BY week');
@@ -87,6 +95,7 @@ express()
       const music     = await client.query('SELECT * FROM musicLink ORDER BY id');
       const topic     = await client.query('SELECT * FROM Topic ORDER BY id');
       const background= await client.query('SELECT * FROM background ORDER BY id');
+      const PRSLesson = await client.query('SELECT * FROM PRSLesson WHERE weekTaught=' + week);
 
       const params = { 'family': (family)    ? family.rows     : null, 
                         'dates': (dates)     ? dates.rows      : null, 
@@ -97,8 +106,8 @@ express()
                        'cSong' : (cSong)     ? cSong.rows      : null,
                         'music': (music)     ? music.rows      : null,
                         'topic': (topic)     ? topic.rows      : null, 
-                  'background' : (background)? background.rows : null
-                        // 'wash' : (wash)      ? wash.rows       : null
+                  'background' : (background)? background.rows : null,
+                   'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null
                     };
 
       res.send(params);
