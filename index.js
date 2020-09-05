@@ -83,6 +83,7 @@ express()
       //   week = getWeek();
       // }
       var week = getWeek();
+      week = 1;
 
       const client    = await pool.connect()
       const family    = await client.query('SELECT * FROM Family ORDER BY id');
@@ -177,4 +178,3 @@ express()
 
     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
   };
-  
