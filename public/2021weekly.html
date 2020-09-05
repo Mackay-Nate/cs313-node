@@ -133,10 +133,10 @@
 
       document.getElementById("announce").innerHTML = data.business[week - 1].note;
 
-      if (data.PRSLesson[0].link) {
-        document.getElementById("prs").innerHTML = '<a href=' + data.PRSLesson[0].link + ' target="_blank"><em>' + data.PRSLesson[0].talkname + '</em>, by ' + data.PRSLesson[0].speaker + '</a>';
-      } else {
+      if (data.PRSLesson[0] == undefined) {
         document.getElementById("prs").innerHTML = "";
+      } else {
+        document.getElementById("prs").innerHTML = '<a href=' + data.PRSLesson[0].link + ' target="_blank"><em>' + data.PRSLesson[0].talkname + '</em>, by ' + data.PRSLesson[0].speaker + '</a>';
       }
 
       document.body.style.backgroundImage = "url('" + data.background[(week % data.background.length)].picture + "')";
