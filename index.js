@@ -104,10 +104,11 @@ express()
                         'music': (music)     ? music.rows      : null,
                         'topic': (topic)     ? topic.rows      : null, 
                   'background' : (background)? background.rows : null,
-                   'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null
+                   'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null, 
+                       'week'  : (week)      ? week.rows       : null
                     };
 
-      res.send(params, week);
+      res.send(params);
       client.release();
 
     } catch (err) {
