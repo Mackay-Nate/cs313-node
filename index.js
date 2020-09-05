@@ -107,7 +107,7 @@ express()
                    'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null
                     };
 
-      res.send(params);
+      res.send(params, week);
       client.release();
 
     } catch (err) {
