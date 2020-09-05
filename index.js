@@ -165,3 +165,16 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
+  function getWeek() { 
+    let now = new Date();
+    let onejan = new Date(now.getFullYear(), 0, 1);
+
+    if (now.getDay() > 5) { 
+      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);      
+    } else if (now.getDay() > 0) {
+      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2) + 1;      
+    } 
+
+    return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
+  };
+  
