@@ -193,9 +193,9 @@
 
   function getMusicLink(music) {
     if (music.book == 1) {
-      return ("Hymn number " + music.number + ", " + music.name);
+      return ("Hymn number " + music.number + ", <em>" + music.name + "</em>");
     } else {
-      return (music.name + ", from the Children's Songbook, page " + music.number);
+      return ("<em>" + music.name + "</em>, from the Children's Songbook, page " + music.number);
     }
 
 
