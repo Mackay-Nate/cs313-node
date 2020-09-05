@@ -364,15 +364,5 @@ INSERT INTO background (picture) VALUES ('Joseph.jpg');
 INSERT INTO background (picture) VALUES ('https://upload.wikimedia.org/wikipedia/commons/c/c8/Joseph_Smith_first_vision_stained_glass.jpg');
 INSERT INTO background (picture) VALUES ('https://www.sltrib.com/resizer/hxyw7axVp11boJEAibpdlp10Y-0=/0x600/smart/filters:quality(86)/arc-anglerfish-arc2-prod-sltrib.s3.amazonaws.com/public/PJQ6RUV7HJBUPKPT63HXIHJLI4.jpeg');
 
-
-CREATE TABLE PRSLesson ( 
-  id          SERIAL PRIMARY KEY,
-  talkName    varchar(255),
-  speaker     varchar(255),
-  link        varchar(255),
-  weekTaught  INT REFERENCES Dates(week)
-);
-
-
 INSERT INTO PRSLesson (talkName, speaker, link, weekTaught)
 VALUES ('Hear Him', 'President Russell M. Nelson', 'https://www.churchofjesuschrist.org/study/general-conference/2020/04/45nelson?lang=eng', 1);
