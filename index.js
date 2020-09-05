@@ -86,7 +86,7 @@ express()
       const cSong     = await client.query('SELECT * FROM cSong ORDER BY id');
       const music     = await client.query('SELECT * FROM musicLink ORDER BY id');
       const topic     = await client.query('SELECT * FROM Topic ORDER BY id');
-      // const wash     = await client.query('SELECT * FROM WashDishes');
+      const background= await client.query('SELECT * FROM background ORDER BY id');
 
       const params = { 'family': (family)    ? family.rows     : null, 
                         'dates': (dates)     ? dates.rows      : null, 
@@ -97,7 +97,7 @@ express()
                        'cSong' : (cSong)     ? cSong.rows      : null,
                         'music': (music)     ? music.rows      : null,
                         'topic': (topic)     ? topic.rows      : null 
-                      //  'clear' : (clear)     ? clear.rows      : null,
+                  'background' : (background)? background.rows : null,
                         // 'wash' : (wash)      ? wash.rows       : null
                     };
 
