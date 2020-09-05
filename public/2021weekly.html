@@ -130,7 +130,7 @@
       document.getElementById("osong").innerHTML = '<a href=' + data.music[data.oSong[week - 1].book - 1].name + ' target="_blank">' + getMusicLink(data.oSong[week - 1]) + " " + '</a>';
 
       document.getElementById("csong").innerHTML = 
-      '<a href=' + data.music[data.cSong[(week - 1) % 6].book - 1].name + ' target="_blank">' + data.cSong[(week - 1) % 6].name + '</a>';
+      '<a href=' + data.music[data.cSong[(week - 1) % 6].book - 1].name + ' target="_blank">' + getMusicLink(data.cSong[(week - 1) % 6]) + '</a>';
 
       document.getElementById("announce").innerHTML = data.business[week - 1].note;
       // document.getElementById("prs").innerHTML = '<a href=' + data.prslink[week] + ' target="_blank">' + data.prslesson[week] + '</a>';
@@ -195,7 +195,7 @@
     if (music.book == 1) {
       return ("Hymn number " + music.number + ", " + music.name);
     } else {
-      return (music.name + ", from the Children's song book, page " + music.number);
+      return (music.name + ", from the Children's Songbook, page " + music.number);
     }
 
 
