@@ -94,7 +94,7 @@ express()
       const music     = await client.query('SELECT * FROM musicLink ORDER BY id');
       const topic     = await client.query('SELECT * FROM Topic ORDER BY id');
       const background= await client.query('SELECT * FROM background ORDER BY id');
-      const PRSLesson = await client.query('SELECT * FROM PRSLesson WHERE weekTaught=' + week);
+      const PRSLesson = await client.query('SELECT * FROM PRSLesson WHERE weekTaught=' + req.query.week);
 
       const params = { 'family': (family)    ? family.rows     : null, 
                         'dates': (dates)     ? dates.rows      : null, 
