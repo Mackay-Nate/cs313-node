@@ -122,16 +122,16 @@
       document.getElementById("cprayer").innerHTML = data.family[(week + 0) % 5].firstname;
       document.getElementById("oprayer").innerHTML = data.family[(week + 1) % 5].firstname; 
 
-      document.getElementById("topic").innerHTML = '<a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-doctrine-and-covenants-2021/' + addZero(week) + '?lang=eng" target="_blank">' + data.topic[week - 1].title +'</a>';
+      document.getElementById("topic").innerHTML = '<a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-doctrine-and-covenants-2021/' + addZero(week) + '?lang=eng" target="_blank">' + data.topic[0].title +'</a>';
 
-      document.getElementById("scripture").innerHTML = '<a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/' + data.scriptLink[week - 1].linkname + '?lang=eng" target="_blank">' + data.scriptures[week - 1].scriptname +'</a>';
+      document.getElementById("scripture").innerHTML = '<a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/' + data.scriptLink[0].linkname + '?lang=eng" target="_blank">' + data.scriptures[0].scriptname +'</a>';
 
-      document.getElementById("osong").innerHTML = '<a href=' + data.music[data.oSong[week - 1].book - 1].name + ' target="_blank">' + getMusicLink(data.oSong[week - 1]) + " " + '</a>';
+      document.getElementById("osong").innerHTML = '<a href=' + data.music[data.oSong[0].book - 1].name + ' target="_blank">' + getMusicLink(data.oSong[0]) + " " + '</a>';
 
       document.getElementById("csong").innerHTML = 
-      '<a href=' + data.music[data.cSong[(week - 1) % 6].book - 1].name + ' target="_blank">' + getMusicLink(data.cSong[(week - 1) % 6]) + '</a>';
+      '<a href=' + data.music[data.cSong[(week) % 6].book].name + ' target="_blank">' + getMusicLink(data.cSong[(week) % 6]) + '</a>';
 
-      document.getElementById("announce").innerHTML = data.business[week - 1].note;
+      document.getElementById("announce").innerHTML = data.business[0].note;
 
       if (data.PRSLesson[0] == undefined) {
         document.getElementById("prs").innerHTML = "";

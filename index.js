@@ -5,7 +5,8 @@ const pool = new Pool({
 });
 const cool = require('cool-ascii-faces')
 const express = require('express')
-const path = require('path')
+const path = require('path');
+const { query } = require('express');
 const PORT = process.env.PORT || 5000
 
 express()
@@ -81,14 +82,14 @@ express()
 
       const client    = await pool.connect()
       const family    = await client.query('SELECT * FROM Family ORDER BY id');
-      const dates     = await client.query('SELECT * FROM Dates ORDER BY week');
-      const scriptures= await client.query('SELECT * FROM Scriptures ORDER BY week');
-      const scriptLink= await client.query('SELECT * FROM scriptLink ORDER BY id');
-      const business  = await client.query('SELECT * FROM business ORDER BY id');
-      const oSong     = await client.query('SELECT * FROM oSong ORDER BY id');
+      const dates     = await client.query('SELECT * FROM Dates WHERE week=' + req.query.week);
+      const scriptures= await client.query('SELECT * FROM Scriptures WHERE week=' + req.query.week);
+      const scriptLink= await client.query('SELECT * FROM scriptLink WHERE id=' + req.query.week);
+      const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
+      const oSong     = await client.query('SELECT * FROM oSong WHERE id=' + req.query.week);
       const cSong     = await client.query('SELECT * FROM cSong ORDER BY id');
       const music     = await client.query('SELECT * FROM musicLink ORDER BY id');
-      const topic     = await client.query('SELECT * FROM Topic ORDER BY id');
+      const topic     = await client.query('SELECT * FROM Topic WHERE id=' + req.query.week);
       const background= await client.query('SELECT * FROM background ORDER BY id');
       const PRSLesson = await client.query('SELECT * FROM PRSLesson WHERE weekTaught=' + req.query.week);
 
