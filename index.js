@@ -77,11 +77,7 @@ express()
     console.log("received request for come follow me");
     try {
 
-      console.log("req " + req.params);
-      console.log("week: " + req.params.week);
-      console.log("query " + req.query.week);
-      var week = getWeek();
-      console.log("week " + week);
+      console.log("week = " + req.query.week);
 
       const client    = await pool.connect()
       const family    = await client.query('SELECT * FROM Family ORDER BY id');
@@ -106,8 +102,8 @@ express()
                         'music': (music)     ? music.rows      : null,
                         'topic': (topic)     ? topic.rows      : null, 
                   'background' : (background)? background.rows : null,
-                   'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null, 
-                       'week'  : (week)      ? week.rows       : null
+                   'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null 
+                      //  'week'  : (week)      ? week.rows       : null
                     };
 
       res.send(params);
@@ -165,15 +161,15 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-  function getWeek() { 
-    let now = new Date();
-    let onejan = new Date(now.getFullYear(), 0, 1);
+  // function getWeek() { 
+  //   let now = new Date();
+  //   let onejan = new Date(now.getFullYear(), 0, 1);
 
-    if (now.getDay() > 5) { 
-      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);      
-    } else if (now.getDay() > 0) {
-      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2) + 1;      
-    } 
+  //   if (now.getDay() > 5) { 
+  //     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);      
+  //   } else if (now.getDay() > 0) {
+  //     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2) + 1;      
+  //   } 
 
-    return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
-  };
+  //   return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
+  // };

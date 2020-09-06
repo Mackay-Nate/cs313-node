@@ -63,8 +63,8 @@
 <script>
   function load(week) {
 
-    var myObj, topic, scripture, slink, conduct, osong, oprayer;
-    var teacher, csong, cprayer;
+    // var myObj, topic, scripture, slink, conduct, osong, oprayer;
+    // var teacher, csong, cprayer;
 
     //get the data from the database
     var xmlHttpRequest = new XMLHttpRequest();
@@ -92,7 +92,7 @@
             //create a cell for the topic
             var cellName = document.createElement("td");
               var link = document.createElement("a");
-              link.href = "2021weekly.html?week=" + (i + 1);
+              link.href = "2021weekly.html";
               link.innerHTML = (data.topic[i].title);
               cellName.appendChild(link);
             row.appendChild(cellName);
@@ -104,21 +104,19 @@
             document.getElementById('displayTable').appendChild(row);
 
         }
-
       }
     }
       //the json is from the database here
       xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/cfm?week=1', true);
       xmlHttpRequest.send();
 
-
   };
   
-  function getWeek() { 
-    let now = new Date();
-    let onejan = new Date(now.getFullYear(), 0, 1);
-    return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
-  }
+  // function getWeek() { 
+  //   let now = new Date();
+  //   let onejan = new Date(now.getFullYear(), 0, 1);
+  //   return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
+  // }
  
 </script>
 </body>
