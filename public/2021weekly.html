@@ -129,7 +129,7 @@
       document.getElementById("osong").innerHTML = '<a href=' + data.music[data.oSong[0].book - 1].name + ' target="_blank">' + getMusicLink(data.oSong[0]) + " " + '</a>';
 
       document.getElementById("csong").innerHTML = 
-      '<a href=' + data.music[data.cSong[(week) % 6].book].name + ' target="_blank">' + getMusicLink(data.cSong[(week) % 6]) + '</a>';
+      '<a href=' + data.music[data.cSong[(week) % 6].book - 1].name + ' target="_blank">' + getMusicLink(data.cSong[(week) % 6]) + '</a>';
 
       document.getElementById("announce").innerHTML = data.business[0].note;
 
