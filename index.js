@@ -77,8 +77,9 @@ express()
     console.log("received request for come follow me");
     try {
 
-      console.log("req " + req);
+      console.log("req " + req.params);
       console.log("week: " + req.params.week);
+      console.log("query " + req.query);
       var week = getWeek();
       console.log("week " + week);
 

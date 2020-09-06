@@ -92,7 +92,7 @@
             //create a cell for the topic
             var cellName = document.createElement("td");
               var link = document.createElement("a");
-              link.href = "2021weekly.html/week/" + (i + 1);
+              link.href = "2021weekly.html?week=" + (i + 1);
               link.innerHTML = (data.topic[i].title);
               cellName.appendChild(link);
             row.appendChild(cellName);
