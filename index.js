@@ -78,6 +78,7 @@ express()
     try {
 
       console.log("req " + req);
+      console.log("week: " + req.param('week'));
       var week = getWeek();
       console.log("week " + week);
 
