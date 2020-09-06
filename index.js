@@ -74,7 +74,7 @@ express()
 
   //sends database data to display the 2021 Come Follow Me schedule  
   .get('/cfmweek', async (req, res) => {
-    console.log("received request for come follow me");
+    console.log("received request for come follow me for week " + req.query.week);
     try {
 
       console.log("week = " + req.query.week);
@@ -118,7 +118,7 @@ express()
   
     //sends database data to display the 2021 Come Follow Me schedule  
   .get('/cfmyear', async (req, res) => {
-    console.log("received request for come follow me");
+    console.log("received request for come follow me for the year");
     try {
 
       // console.log("week = " + req.query.week);
