@@ -73,7 +73,7 @@ express()
   })
 
   //sends database data to display the 2021 Come Follow Me schedule  
-  .get('/cfm', async (req, res) => {
+  .get('/cfmweek', async (req, res) => {
     console.log("received request for come follow me");
     try {
 
@@ -114,7 +114,51 @@ express()
       res.send("Error " + err);
     }
   })
+
   
+    //sends database data to display the 2021 Come Follow Me schedule  
+  .get('/cfmyear', async (req, res) => {
+    console.log("received request for come follow me");
+    try {
+
+      // console.log("week = " + req.query.week);
+
+      const client    = await pool.connect()
+      // const family    = await client.query('SELECT * FROM Family ORDER BY id');
+      const dates     = await client.query('SELECT * FROM Dates ORDER BY week');
+      // const scriptures= await client.query('SELECT * FROM Scriptures ORDER BY week');
+      // const scriptLink= await client.query('SELECT * FROM scriptLink ORDER BY id');
+      // const business  = await client.query('SELECT * FROM business ORDER BY id');
+      // const oSong     = await client.query('SELECT * FROM oSong ORDER BY id');
+      // const cSong     = await client.query('SELECT * FROM cSong ORDER BY id');
+      // const music     = await client.query('SELECT * FROM musicLink ORDER BY id');
+      const topic     = await client.query('SELECT * FROM Topic ORDER BY id');
+      // const background= await client.query('SELECT * FROM background ORDER BY id');
+      // const PRSLesson = await client.query('SELECT * FROM PRSLesson WHERE weekTaught=' + req.query.week);
+
+      const params = {  'dates': (dates)     ? dates.rows      : null, 
+                  //  'scriptures': (scriptures)? scriptures.rows : null, 
+                  //  'scriptLink': (scriptLink)? scriptLink.rows : null,
+                  //   'business' : (business)  ? business.rows   : null,
+                  //      'oSong' : (oSong)     ? oSong.rows      : null, 
+                  //      'cSong' : (cSong)     ? cSong.rows      : null,
+                  //       'music': (music)     ? music.rows      : null,
+                        'topic': (topic)     ? topic.rows      : null 
+                  // 'background' : (background)? background.rows : null,
+                  //  'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null 
+                      //  'week'  : (week)      ? week.rows       : null
+                    };
+
+      res.send(params);
+      client.release();
+
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+
+
   //data for monthly jobs
   .get('/monthly', async (req, res) => {
     try { 
