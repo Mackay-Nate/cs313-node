@@ -186,11 +186,12 @@ express()
       console.log("req.query " + req.query.announceInput);
       console.log("week " + req.query.week);
 
-      const client = await pool.connect()
-      // const job    = await client.query('UPDATE business SET note = (req.query.business.note) WHERE id = (req.query.week)');
+      const client   = await pool.connect()
+      const update   = await client.query('UPDATE business SET note = (req.query.announceInput) WHERE id = (req.query.week)');
+      const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
 
-      const params = { 'business': (business) ? business.rows : null, 
-                          'job'  : (job)      ? job.rows      : null, date: date  };
+      const params = { 'business': (business) ? business.rows : null 
+                       };
 
       // res.render('pages/monthly', params);
       res.send(params);
