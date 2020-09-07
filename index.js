@@ -187,7 +187,8 @@ express()
       console.log("week " + req.query.week);
 
       const client   = await pool.connect()
-      const update   = await client.query('UPDATE business SET note = ' + req.query.announceInput + ' WHERE id = '  + req.query.week);
+      const update   = await client.query('UPDATE business SET note = (req.query.announceInput) WHERE id = (req.query.week)');
+      // const update   = await client.query('UPDATE business SET note = ' + req.query.announceInput + ' WHERE id = '  + req.query.week);
       const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
 
       const params = { 'business': (business) ? business.rows : null 
