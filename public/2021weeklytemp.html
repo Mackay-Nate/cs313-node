@@ -76,6 +76,7 @@
       <tr><td class="col1">Conducting</td><td id="conduct"></td></tr>
       <tr><td class="col1">Family announcements</td><td id="announce" onclick="editItem(this)">Love one Another</td></tr>
     </table>
+    <input type="hidden" id="week" name="week">
     <input type="submit" id="submit" value="Done" class="hidden">
   </form>
   <table>
@@ -150,6 +151,8 @@
 
       document.body.style.backgroundImage = "url('" + data.background[(week % data.background.length)].picture + "')";
       }
+
+      document.getElementById("week").innerHTML = week;
 
     }
 
