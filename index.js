@@ -73,7 +73,7 @@ express()
     }
   })
 
-  //sends database data to display the 2021 Come Follow Me schedule  
+  //sends database data to display the 2021 Come Follow Me lesson plan 
   .get('/cfmweek', async (req, res) => {
     console.log("received request for come follow me for week " + req.query.week);
     try {
@@ -117,12 +117,10 @@ express()
   })
 
   
-    //sends database data to display the 2021 Come Follow Me schedule  
+   //sends database data to display the 2021 Come Follow Me schedule  
   .get('/cfmyear', async (req, res) => {
     console.log("received request for come follow me for the year");
     try {
-
-      // console.log("week = " + req.query.week);
 
       const client    = await pool.connect()
       // const family    = await client.query('SELECT * FROM Family ORDER BY id');
@@ -185,6 +183,7 @@ express()
   .get('/add', async (req, res) => {
     try { 
       console.log("received request for adding a job");
+      console.log("req.query " + req.query.announceInput);
 
       const client = await pool.connect()
       const job    = await client.query('UPDATE business SET note = (req.query.business.note) WHERE id = (req.query.business.id)');
