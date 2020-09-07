@@ -184,7 +184,7 @@ express()
     try { 
       console.log("received request for adding a job");
       console.log("req.query " + req.query.announceInput);
-      console.log("week " + req.body.week);
+      console.log("week " + req.query.week);
 
       const client = await pool.connect()
       // const job    = await client.query('UPDATE business SET note = (req.query.business.note) WHERE id = (req.query.week)');

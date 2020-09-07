@@ -152,7 +152,7 @@
       document.body.style.backgroundImage = "url('" + data.background[(week % data.background.length)].picture + "')";
       }
 
-      document.getElementById("week").innerHTML = week;
+      document.getElementById("week").setAttribute("value", week);
 
     }
 
