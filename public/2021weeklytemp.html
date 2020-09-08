@@ -216,7 +216,7 @@
     edit.appendChild(box);
     // edit.appendChild(button);
     document.getElementById('announce').childNodes[0].focus();
-    document.getElementById('submit').style.display = "initial";
+    document.getElementsByClassName('hidden')[0].style.display = "initial";
   };
 
   function addBusiness() {
@@ -234,7 +234,8 @@
         console.log("You are here");
         document.getElementById("announce").innerHTML = data.business[0].note;
         document.getElementById('announce').childNodes[1].setAttribute("onclick", "editItem(this)");
-        document.getElementById('submit').style.display = "hidden";
+        // document.getElementById('submit').style.display = "hidden";
+        document.getElementsByClassName('hidden')[0].style.display = "initial";
       }
 
     }
