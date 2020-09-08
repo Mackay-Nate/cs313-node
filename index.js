@@ -179,6 +179,7 @@ express()
       // res.render('public/2021weeklytemp.html', params);
       res.send(params);
       client.release();
+
     } catch (err) {
       console.error(err);
       res.send("Error " + err);
@@ -190,15 +191,14 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-  // function getWeek() { 
-  //   let now = new Date();
-  //   let onejan = new Date(now.getFullYear(), 0, 1);
+  function sanitize(phrase) { 
 
-  //   if (now.getDay() > 5) { 
-  //     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);      
-  //   } else if (now.getDay() > 0) {
-  //     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2) + 1;      
-  //   } 
-
-  //   return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
-  // };
+    for (var i = 0; i < phrase.length; i++) {
+      if (phrase[i] == "'") {
+        phrase.splice(i, 0, "'");
+      }
+    }
+    
+    return phrase;
+  }
+  };
