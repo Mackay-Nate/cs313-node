@@ -233,9 +233,9 @@
         console.log(data.business[0].note);
         console.log("You are here");
         document.getElementById("announce").innerHTML = data.business[0].note;
-        document.getElementById('announce').childNodes[1].setAttribute("onclick", "editItem(this)");
+        document.getElementById('announce').setAttribute("onclick", "editItem(this)");
         // document.getElementById('submit').style.display = "hidden";
-        document.getElementsByClassName('hidden')[0].style.display = "initial";
+        document.getElementsByClassName('hidden')[0].style.display = "hidden";
       }
 
     }
