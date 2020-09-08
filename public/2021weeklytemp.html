@@ -221,22 +221,26 @@
 
   function addBusiness() {
     //add the data to the database
+
+    var announceInput = document.getElementById('announceInput').value; 
+    var week = document.getElementById('week').value; 
+
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.onreadystatechange = function() {
       if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
         var data = JSON.parse(xmlHttpRequest.responseText);
 
-        data.business[getWeek()].note = document.getElementById('announce').innerHTML;
+        console.log(data.business[0].note);
 
         console.log("You are here");
 
       }
 
     }
-    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/add', true);
+    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/add?announceInput=' + announceInput + 'week=' + week, true);
     xmlHttpRequest.send();
 
-    document.getElementById('announce').innerText = document.getElementById('announceInput').innerText;
+    // document.getElementById('announce').innerText = document.getElementById('announceInput').innerText;
   };
 
 </script>
