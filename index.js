@@ -18,7 +18,7 @@ express()
 
   // displays the daily jobs 
   .get('/daily', async (req, res) => {
-    console.log("received request for daily");
+    console.log("received request for daily jobs");
 
     try {
       const client = await pool.connect()
@@ -36,7 +36,7 @@ express()
 
   //sends database data to display the weekly jobs 
   .get('/week', async (req, res) => {
-    console.log("received request for week");
+    console.log("received request for weekly jobs");
     try {
       const client   = await pool.connect()
       const member   = await client.query('SELECT * FROM Member ORDER BY id');
@@ -116,36 +116,17 @@ express()
     }
   })
 
-  
    //sends database data to display the 2021 Come Follow Me schedule  
   .get('/cfmyear', async (req, res) => {
     console.log("received request for come follow me for the year");
     try {
 
       const client    = await pool.connect()
-      // const family    = await client.query('SELECT * FROM Family ORDER BY id');
       const dates     = await client.query('SELECT * FROM Dates ORDER BY week');
-      // const scriptures= await client.query('SELECT * FROM Scriptures ORDER BY week');
-      // const scriptLink= await client.query('SELECT * FROM scriptLink ORDER BY id');
-      // const business  = await client.query('SELECT * FROM business ORDER BY id');
-      // const oSong     = await client.query('SELECT * FROM oSong ORDER BY id');
-      // const cSong     = await client.query('SELECT * FROM cSong ORDER BY id');
-      // const music     = await client.query('SELECT * FROM musicLink ORDER BY id');
       const topic     = await client.query('SELECT * FROM Topic ORDER BY id');
-      // const background= await client.query('SELECT * FROM background ORDER BY id');
-      // const PRSLesson = await client.query('SELECT * FROM PRSLesson WHERE weekTaught=' + req.query.week);
 
       const params = {  'dates': (dates)     ? dates.rows      : null, 
-                  //  'scriptures': (scriptures)? scriptures.rows : null, 
-                  //  'scriptLink': (scriptLink)? scriptLink.rows : null,
-                  //   'business' : (business)  ? business.rows   : null,
-                  //      'oSong' : (oSong)     ? oSong.rows      : null, 
-                  //      'cSong' : (cSong)     ? cSong.rows      : null,
-                  //       'music': (music)     ? music.rows      : null,
                         'topic': (topic)     ? topic.rows      : null 
-                  // 'background' : (background)? background.rows : null,
-                  //  'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null 
-                      //  'week'  : (week)      ? week.rows       : null
                     };
 
       res.send(params);
@@ -161,7 +142,7 @@ express()
   //data for monthly jobs
   .get('/monthly', async (req, res) => {
     try { 
-      console.log("received request for monthly");
+      console.log("received request for monthly jobs");
 
       const client = await pool.connect()
       const member = await client.query('SELECT * FROM Member');
@@ -169,7 +150,8 @@ express()
       var date = ['7th', '11th', '14th', '21st'];
 
       const params = { 'member': (member) ? member.rows : null, 
-                        'job'  : (job)    ? job.rows    : null, date: date  };
+                        'job'  : (job)    ? job.rows    : null, 
+                           date: date  };
 
       res.send(params);
       client.release();
@@ -187,7 +169,7 @@ express()
       console.log("week " + req.query.week);
 
       const client   = await pool.connect()
-      const update   = await client.query('UPDATE business SET note = (req.query.announceInput) WHERE id = (req.query.week)');
+      // const update   = await client.query('UPDATE business SET note = (req.query.announceInput) WHERE id = (req.query.week)');
       // const update   = await client.query('UPDATE business SET note = ' + req.query.announceInput + ' WHERE id = '  + req.query.week);
       const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
 
