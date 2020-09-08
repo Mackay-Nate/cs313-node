@@ -69,8 +69,8 @@
   <input type="button" value="Click to load this week" onclick="load(getWeek())">
   <h3 id="dates"></h3> </form>
 
-  <form action="/add; return false;" method="GET" id="updateNote">
-    <!-- <form method="GET" onsubmit="addBusiness(); return false;" > -->
+  <!-- <form action="/add" method="GET" id="updateNote"> -->
+  <form method="GET" onsubmit="addBusiness(); return false;" >
     <table>
       <!--<tr><th class="col1"><th></th></tr>-->
 
@@ -231,8 +231,8 @@
         var data = JSON.parse(xmlHttpRequest.responseText);
 
         console.log(data.business[0].note);
-
         console.log("You are here");
+        document.getElementById("announce").innerHTML = data.business[0].note;
 
       }
 
