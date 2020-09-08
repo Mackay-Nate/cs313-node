@@ -69,7 +69,8 @@
   <input type="button" value="Click to load this week" onclick="load(getWeek())">
   <h3 id="dates"></h3> </form>
 
-  <form action="/add" method="GET" id="updateNote">
+  <!-- <form action="/add" method="GET" id="updateNote"> -->
+    <form method="GET" onsubmit="addBusiness(); return false;" >
     <table>
       <!--<tr><th class="col1"><th></th></tr>-->
 
@@ -227,10 +228,12 @@
 
         data.business[getWeek()].note = document.getElementById('announce').innerHTML;
 
+        console.log("You are here");
+
       }
 
     }
-    xmlHttpRequest.open('POST', 'https://nate-node.herokuapp.com/add', true);
+    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/add', true);
     xmlHttpRequest.send();
 
     document.getElementById('announce').innerText = document.getElementById('announceInput').innerText;
