@@ -31,7 +31,6 @@ express()
       console.error(err);
       res.send("Error " + err);
     }
-
   })
 
   //sends database data to display the weekly jobs 
@@ -77,8 +76,6 @@ express()
   .get('/cfmweek', async (req, res) => {
     console.log("received request for come follow me for week " + req.query.week);
     try {
-
-      console.log("week = " + req.query.week);
 
       const client    = await pool.connect()
       const family    = await client.query('SELECT * FROM Family ORDER BY id');
@@ -138,7 +135,6 @@ express()
     }
   })
 
-
   //data for monthly jobs
   .get('/monthly', async (req, res) => {
     try { 
@@ -159,7 +155,6 @@ express()
       console.error(err);
       res.send("Error " + err);
     }
-
   })
 
   .get('/add', async (req, res) => {
@@ -170,13 +165,10 @@ express()
 
       const client   = await pool.connect()
       const update   = await client.query("UPDATE business SET note ='" + sanitize(req.query.announceInput) + "' WHERE id=" + req.query.week);
-      // const update   = await client.query('UPDATE business SET note = ' + ' WHERE id = '  + req.query.week);
       const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
 
-      const params = { 'business': (business) ? business.rows : null 
-                       };
+      const params = { 'business': (business) ? business.rows : null };
 
-      // res.render('public/2021weeklytemp.html', params);
       res.send(params);
       client.release();
 
@@ -184,13 +176,12 @@ express()
       console.error(err);
       res.send("Error " + err);
     }
-
   })
 
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-
+  // takes the data to be inserted into the database and cleans it
   function sanitize(phrase) { 
 
     for (var i = 0; i < phrase.length; i++) {
@@ -199,6 +190,5 @@ express()
         i++;
       }
     }
-    
     return phrase;
   };

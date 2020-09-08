@@ -9,14 +9,12 @@
     <style>
       body { 
         background-color: rgb(150, 150, 150);
-        /* background-image: url("joseph.jpg"); */
         background-blend-mode: screen;
         background-size: cover;
         background-position: top;
         background-repeat: no-repeat;
         color: rgb(40, 40, 40);
         text-align: center;
-
       }
 
       table {
@@ -69,7 +67,6 @@
   <input type="button" value="Click to load this week" onclick="load(getWeek())">
   <h3 id="dates"></h3> </form>
 
-  <!-- <form action="/add" method="GET" id="updateNote"> -->
   <form method="GET" onsubmit="addBusiness(); return false;" >
     <table>
       <!--<tr><th class="col1"><th></th></tr>-->
@@ -94,7 +91,6 @@
     <tr><td class="col1">Scriptures</td><td id="scripture"><a href="https://www.churchofjesuschrist.org/study/scriptures/nt?lang=eng" style="text-decoration: unset;" target="_blank">Book of Mormon</a></td></tr>
   </table>
   <input type="button" value="Click to load next week" onclick="load(getWeek() + 1)">
-<!-- </form> -->
 
 <form action="2021schedule.html">
   <div id='debug'></div>
@@ -104,7 +100,6 @@
 
 <footer id="date">
 </footer>
-  
 
 <script>
   function loadFirst() { 
@@ -117,7 +112,6 @@
   };
 
   function load(week) { 
-
   //get the data from the database
   var xmlHttpRequest = new XMLHttpRequest();
   xmlHttpRequest.onreadystatechange = function() {
@@ -126,7 +120,7 @@
       console.log('inside xmlHttpResquet');
       var data = JSON.parse(xmlHttpRequest.responseText);
 
-      // add the database to the webpage
+      // add the database info to the webpage
       document.getElementById("dates").innerHTML = data.dates[0].weekname;
       document.getElementById("conduct").innerHTML = data.family[(week + 2) % 5].firstname;
       document.getElementById("teacher").innerHTML = data.family[(week + 4) % 5].firstname;
@@ -154,7 +148,6 @@
       }
 
       document.getElementById("week").setAttribute("value", week);
-
     }
 
     //the json is from the database here
@@ -204,17 +197,10 @@
     box.setAttribute("name", "announceInput");
     box.setAttribute("value", item.innerText);
 
-    // var button = document.createElement('input');
-    // button.setAttribute("type", "button");
-    // // button.setAttribute("onclick", "addBusiness()");
-    // button.setAttribute("form", "updateNote")
-    // button.setAttribute("value", "Done");
-
     edit.parentElement.childNodes[1].innerText = "";
     edit.parentElement.childNodes[1].removeAttribute("onclick");
 
     edit.appendChild(box);
-    // edit.appendChild(button);
     document.getElementById('announce').childNodes[0].focus();
     document.getElementsByClassName('hidden')[0].style.display = "initial";
   };
@@ -230,11 +216,9 @@
       if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
         var data = JSON.parse(xmlHttpRequest.responseText);
 
-        console.log(data.business[0].note);
-        console.log("You are here");
+        console.log("/add http request");
         document.getElementById("announce").innerHTML = data.business[0].note;
         document.getElementById('announce').setAttribute("onclick", "editItem(this)");
-        // document.getElementById('submit').style.display = "hidden";
         document.getElementsByClassName('hidden')[0].style.display = "none";
       }
 
@@ -242,7 +226,6 @@
     xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/add?announceInput=' + announceInput + '&week=' + week, true);
     xmlHttpRequest.send();
 
-    // document.getElementById('announce').innerText = document.getElementById('announceInput').innerText;
   };
 
 </script>
