@@ -176,8 +176,8 @@ express()
       const params = { 'business': (business) ? business.rows : null 
                        };
 
-      // res.render('pages/monthly', params);
-      res.send(params);
+      res.render('2021weeklytemp', params);
+      // res.send(params);
       client.release();
     } catch (err) {
       console.error(err);
