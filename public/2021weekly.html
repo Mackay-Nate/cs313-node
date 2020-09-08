@@ -19,21 +19,20 @@
 
       }
 
-      table { 
-        margin: auto;
+      table {
+        margin: 0;
         text-align: left;
       }
       
-      .col1 { 
+      .col1 {
         text-align: right;
         padding: 6px;
-        width: 50px;
+        width: 120px;
         font-variant: small-caps;
       }
 
-      tr { 
+      tr {
         font-weight: 800;
-        
       }
 
       h1 { 
@@ -49,10 +48,14 @@
         text-decoration: unset;
       }
 
-      input { 
+      input {
         padding: 4px;
         background: rgb(239, 245, 188);
         color: rgb(138, 138, 138);
+      }
+
+      .hidden {
+        display: none;
       }
 
     </style>
@@ -66,12 +69,18 @@
   <input type="button" value="Click to load this week" onclick="load(getWeek())">
   <h3 id="dates"></h3> </form>
 
-  <form action="/add" method="GET" id="updateNote"></form>
-  <table>
-    <!--<tr><th class="col1"><th></th></tr>-->
+  <!-- <form action="/add" method="GET" id="updateNote"> -->
+  <form method="GET" onsubmit="addBusiness(); return false;" >
+    <table>
+      <!--<tr><th class="col1"><th></th></tr>-->
 
-    <tr><td class="col1">Conducting</td><td id="conduct"></td></tr>
-    <tr><td class="col1">Family announcements</td><td id="announce" onclick="editItem(this)">Love one Another</td></tr>
+      <tr><td class="col1">Conducting</td><td id="conduct"></td></tr>
+      <tr><td class="col1">Family announcements</td><td id="announce" onclick="editItem(this)">Love one Another</td></tr>
+    </table>
+    <input type="hidden" id="week" name="week">
+    <input type="submit" id="submit" value="Done" class="hidden">
+  </form>
+  <table>
     <tr><td class="col1">Opening Song</td><td id="osong"></td></tr>
     <tr><td class="col1">Opening Prayer</td><td id="oprayer"></td></tr>
     <tr><td class="col1">Lesson</td><td id="teacher"></td></tr>
@@ -144,6 +153,8 @@
       document.body.style.backgroundImage = "url('" + data.background[(week % data.background.length)].picture + "')";
       }
 
+      document.getElementById("week").setAttribute("value", week);
+
     }
 
     //the json is from the database here
@@ -193,36 +204,45 @@
     box.setAttribute("name", "announceInput");
     box.setAttribute("value", item.innerText);
 
-    var button = document.createElement('input');
-    button.setAttribute("type", "button");
-    // button.setAttribute("onclick", "addBusiness()");
-    button.setAttribute("form", "updateNote")
-    button.setAttribute("value", "Done");
+    // var button = document.createElement('input');
+    // button.setAttribute("type", "button");
+    // // button.setAttribute("onclick", "addBusiness()");
+    // button.setAttribute("form", "updateNote")
+    // button.setAttribute("value", "Done");
 
     edit.parentElement.childNodes[1].innerText = "";
     edit.parentElement.childNodes[1].removeAttribute("onclick");
 
     edit.appendChild(box);
-    edit.appendChild(button);
+    // edit.appendChild(button);
     document.getElementById('announce').childNodes[0].focus();
+    document.getElementsByClassName('hidden')[0].style.display = "initial";
   };
 
   function addBusiness() {
     //add the data to the database
+
+    var announceInput = document.getElementById('announceInput').value; 
+    var week = document.getElementById('week').value; 
+
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.onreadystatechange = function() {
       if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
         var data = JSON.parse(xmlHttpRequest.responseText);
 
-        data.business[getWeek()].note = document.getElementById('announce').innerHTML;
-
+        console.log(data.business[0].note);
+        console.log("You are here");
+        document.getElementById("announce").innerHTML = data.business[0].note;
+        document.getElementById('announce').setAttribute("onclick", "editItem(this)");
+        // document.getElementById('submit').style.display = "hidden";
+        document.getElementsByClassName('hidden')[0].style.display = "none";
       }
 
     }
-    xmlHttpRequest.open('POST', 'https://nate-node.herokuapp.com/add', true);
+    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/add?announceInput=' + announceInput + '&week=' + week, true);
     xmlHttpRequest.send();
 
-    document.getElementById('announce').innerText = document.getElementById('announceInput').innerText;
+    // document.getElementById('announce').innerText = document.getElementById('announceInput').innerText;
   };
 
 </script>
