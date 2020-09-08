@@ -196,6 +196,7 @@ express()
     for (var i = 0; i < phrase.length; i++) {
       if (phrase[i] == "'") {
         phrase = phrase.slice(0, i) + "'" + phrase.slice(i);
+        i++;
       }
     }
     
