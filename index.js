@@ -176,7 +176,7 @@ express()
       const params = { 'business': (business) ? business.rows : null 
                        };
 
-      res.render('2021weeklytemp.html', params);
+      res.render('https://nate-node.herokuapp.com/2021weeklytemp.html', params);
       // res.send(params);
       client.release();
     } catch (err) {
