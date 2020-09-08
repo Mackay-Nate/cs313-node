@@ -162,9 +162,15 @@ express()
       console.log("received request for adding a job");
       console.log("req.query " + req.query.announceInput);
       console.log("week " + req.query.week);
+      var wifi = "73.98.191.136";
+      var trac = "172.58.142.186";
+      var moto = "172.58.142.186";
 
       const client   = await pool.connect()
-      const update   = await client.query("UPDATE business SET note ='" + sanitize(req.query.announceInput) + "' WHERE id=" + req.query.week);
+
+      if (device == wifi || device == moto || device == trac) {
+        const update   = await client.query("UPDATE business SET note ='" + sanitize(req.query.announceInput) + "' WHERE id=" + req.query.week);
+      }
       const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
 
       const params = { 'business': (business) ? business.rows : null };
