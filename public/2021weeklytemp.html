@@ -233,7 +233,8 @@
         console.log(data.business[0].note);
         console.log("You are here");
         document.getElementById("announce").innerHTML = data.business[0].note;
-
+        document.getElementById('announce').childNodes[1].setAttribute("onclick", "editItem(this)");
+        document.getElementById('submit').style.display = "hidden";
       }
 
     }
