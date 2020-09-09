@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/kids.css">
   </head>
 
-<body onload="load()" id="points">
+<body onload="load1()" id="points">
 
 <h1>Points</h1>
 <form id="form1" onsubmit="return false;">
@@ -26,7 +26,7 @@
 </footer>
 
 <script>
-  function load() { 
+  function load1() { 
     console.log('load function');
   var kids = ["", "", "Natalie", "Ava", "Corbin", "William"];
   var points = [5, 2, 5, 5, 10, 100];
@@ -121,7 +121,7 @@
   //   }
   // }
   //   //the json is from the database here
-  //   xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/cfmyear', true);
+  //   xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/getPoints', true);
   //   xmlHttpRequest.send();
 
   // };
