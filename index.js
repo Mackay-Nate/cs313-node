@@ -178,7 +178,7 @@ express()
     }
   })
 
-  //add 
+  //add for kids points
   .get('/addPoints', async (req, res) => {
     try { 
       console.log("received request for kids points");

@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/kids.css">
   </head>
 
-<body onload="load1()" id="points">
+<body onload="load()">
 
 <h1>Points</h1>
 <form id="form1" onsubmit="return false;">
@@ -79,52 +79,57 @@
 
   };
 
-  // function load() {
+  function load() {
 
-  // //get the data from the database
-  // var xmlHttpRequest = new XMLHttpRequest();
-  // xmlHttpRequest.onreadystatechange = function() {
-  //   if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+    //get the data from the database
+    var xmlHttpRequest = new XMLHttpRequest();
+    xmlHttpRequest.onreadystatechange = function() {
+      if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
 
-  //     console.log('inside if statement');
-  //     var data = JSON.parse(xmlHttpRequest.responseText);
+      console.log('inside if statement');
+      var data = JSON.parse(xmlHttpRequest.responseText);
+      var table = document.getElementById('displayTable');
 
+      for (var i = 2; i < data.kids.length; i++) { 
+        var row = document.createElement("tr");
+        //create a cell for the child
+        var item = document.createElement("td");
+        // link.innerHTML = (data.dates[i].weekname);
+        item.innerHTML = (data.kids[i].firstname);
+        // item.appendChild(link);
+        row.appendChild(item);
 
-  //     for (i = 0; i < data.topic.length; i++) 
-  //     { 
-  //       var row = document.createElement("tr");
-  //         //create a cell for the dates
-  //         var item = document.createElement("td");
-  //         //attach a link to the date
-  //         var link = document.createElement("a");
-  //           link.href = "2021weekly.html";
-  //           link.innerHTML = (data.dates[i].weekname);
-  //         item.appendChild(link);
-  //           item.setAttribute("class", "col1");
-  //         row.appendChild(item);
+        var mButton = document.createElement("td");
+        var minus   = document.createElement('button');
+        minus.setAttribute("onclick", "minus(" + (i - 2) + ")");
+        minus.innerHTML = "-";
+        mButton.appendChild(minus);
+        row.appendChild(mButton);
 
-  //         //create a cell for the topic
-  //         var cellName = document.createElement("td");
-  //           var link = document.createElement("a");
-  //           link.href = "2021weekly.html";
-  //           link.innerHTML = (data.topic[i].title);
-  //           cellName.appendChild(link);
-  //         row.appendChild(cellName);
+        var cell  = document.createElement('td');
+        var point = document.createElement('input'); 
+        point.setAttribute('type', 'text');
+        point.setAttribute('class', 'points'); 
+        point.value = data.point[i].points;
+        cell.appendChild(point)
+        row.appendChild(cell);
 
-  //         row.setAttribute("id", (i + 1));
-  //         row.setAttribute("value", (i + 1));
-  //         row.setAttribute("onclick", "sessionStorage.setItem('week', " + (i + 1) + ")");
+        var pButton = document.createElement("td");
+        var plus    = document.createElement('button');
+        plus.setAttribute("onclick", "plus(" + (i - 2) + ")");
+        plus.innerHTML = "+";
+        pButton.appendChild(plus);
+        row.appendChild(pButton);
 
-  //         document.getElementById('displayTable').appendChild(row);
+        table.appendChild(row);
+      }
+    }
+  }
+    //the json is from the database here
+    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/getPoints', true);
+    xmlHttpRequest.send();
 
-  //     }
-  //   }
-  // }
-  //   //the json is from the database here
-  //   xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/getPoints', true);
-  //   xmlHttpRequest.send();
-
-  // };
+  };
 
 
 </script>
