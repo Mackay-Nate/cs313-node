@@ -1,0 +1,45 @@
+
+body {
+  background-color: rgb(140, 203, 255);
+  background-blend-mode: screen;
+  text-align: center;
+  /* text-size-adjust: 150%; */
+  font-size: 150%;
+}
+
+table {
+  margin: auto;
+  text-align: center;
+}
+
+#form1 { 
+  margin-left: 20%;
+}
+
+tr {
+  font-weight: 800;
+}
+
+input {
+  padding: 4px;
+  background: rgb(239, 245, 188);
+  color: rgb(138, 138, 138);
+}
+
+.hidden {
+  display: none;
+}
+
+.points { 
+  width: 30px;
+  text-align: right;
+}
+
+button {
+  background: rgb(140, 203, 255);
+  color: rgb(140, 203, 255);
+  border-color: rgb(140, 203, 255);
+  border-width: 0px;
+  padding: 10px;
+  width: 40px;
+}

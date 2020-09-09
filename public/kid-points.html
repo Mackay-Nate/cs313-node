@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Points Earned</title>
+    <!--<script src=".js"></script>-->
+    <link rel="stylesheet" type="text/css" href="stylesheets/kids.css">
+  </head>
+
+<body onload="load()" id="points">
+
+<h1>Points</h1>
+<form id="form1" onsubmit="return false;">
+  <table id="displayTable">
+    <!-- <tr><th>Child</th><th></th><th>Points</th><th></th></tr> -->
+
+  </table>
+</form>
+
+<!-- <form id="add" method="GET" onsubmit="newItem(); return false;">
+  <input type="submit" value="Add to the database" onclick="newItem()">
+</form> -->
+
+<footer id="date">
+</footer>
+
+<script>
+  function load() { 
+    console.log('load function');
+  var kids = ["", "", "Natalie", "Ava", "Corbin", "William"];
+  var points = [5, 2, 5, 5, 10, 100];
+  var table = document.getElementById('displayTable');
+
+  for (var i = 2; i < kids.length; i++) { 
+    var row = document.createElement("tr");
+    //create a cell for the child
+    var item = document.createElement("td");
+    // link.innerHTML = (data.dates[i].weekname);
+    item.innerHTML = (kids[i]);
+    // item.appendChild(link);
+    row.appendChild(item);
+
+    var mButton = document.createElement("td");
+    var minus   = document.createElement('button');
+    minus.setAttribute("onclick", "minus(" + (i - 2) + ")");
+    minus.innerHTML = "-";
+    mButton.appendChild(minus);
+    row.appendChild(mButton);
+
+    var cell  = document.createElement('td');
+    var point = document.createElement('input'); 
+    point.setAttribute('type', 'text');
+    point.setAttribute('class', 'points'); 
+    point.value = points[i];
+    cell.appendChild(point)
+    row.appendChild(cell);
+
+    var pButton = document.createElement("td");
+    var plus    = document.createElement('button');
+    plus.setAttribute("onclick", "plus(" + (i - 2) + ")");
+    plus.innerHTML = "+";
+    pButton.appendChild(plus);
+    row.appendChild(pButton);
+
+    table.appendChild(row);
+  }
+
+  };
+
+  // add one point to a child
+  function plus(number) { 
+    document.getElementsByTagName('input')[number].parentElement.childNodes[0].value = parseInt(document.getElementsByTagName('input')[number].parentElement.childNodes[0].value) + 1;
+  };
+
+  // subtract one point from a child
+  function minus(number) { 
+    document.getElementsByTagName('input')[number].parentElement.childNodes[0].value = parseInt(document.getElementsByTagName('input')[number].parentElement.childNodes[0].value) - 1;
+
+  };
+
+  // function load() {
+
+  // //get the data from the database
+  // var xmlHttpRequest = new XMLHttpRequest();
+  // xmlHttpRequest.onreadystatechange = function() {
+  //   if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+
+  //     console.log('inside if statement');
+  //     var data = JSON.parse(xmlHttpRequest.responseText);
+
+
+  //     for (i = 0; i < data.topic.length; i++) 
+  //     { 
+  //       var row = document.createElement("tr");
+  //         //create a cell for the dates
+  //         var item = document.createElement("td");
+  //         //attach a link to the date
+  //         var link = document.createElement("a");
+  //           link.href = "2021weekly.html";
+  //           link.innerHTML = (data.dates[i].weekname);
+  //         item.appendChild(link);
+  //           item.setAttribute("class", "col1");
+  //         row.appendChild(item);
+
+  //         //create a cell for the topic
+  //         var cellName = document.createElement("td");
+  //           var link = document.createElement("a");
+  //           link.href = "2021weekly.html";
+  //           link.innerHTML = (data.topic[i].title);
+  //           cellName.appendChild(link);
+  //         row.appendChild(cellName);
+
+  //         row.setAttribute("id", (i + 1));
+  //         row.setAttribute("value", (i + 1));
+  //         row.setAttribute("onclick", "sessionStorage.setItem('week', " + (i + 1) + ")");
+
+  //         document.getElementById('displayTable').appendChild(row);
+
+  //     }
+  //   }
+  // }
+  //   //the json is from the database here
+  //   xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/cfmyear', true);
+  //   xmlHttpRequest.send();
+
+  // };
+
+
+</script>
+</body>
+</html>
