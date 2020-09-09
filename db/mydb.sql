@@ -1,4 +1,6 @@
 
+--the tables used for chores
+
 CREATE TABLE Secure ( 
   username  varchar(80), 
   password  varchar(80)

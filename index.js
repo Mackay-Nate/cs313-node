@@ -157,11 +157,54 @@ express()
     }
   })
 
+  //data for kids-points
+  .get('/getPoints', async (req, res) => {
+    try { 
+      console.log("received request for kids points");
+
+      const client = await pool.connect()
+      const member = await client.query('SELECT * FROM Member');
+      const point  = await client.query('SELECT * FROM Points');
+
+      const params = { 'member': (member) ? member.rows : null, 
+                       'point' : (point)  ? point.rows  : null
+                     };
+
+      res.send(params);
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+
+  //add 
+  .get('/addPoints', async (req, res) => {
+    try { 
+      console.log("received request for kids points");
+
+      const client = await pool.connect()
+      const member = await client.query('SELECT * FROM Member');
+      const point  = await client.query('SELECT * FROM Points');
+
+      const params = { 'member': (member) ? member.rows : null, 
+                       'point' : (point)  ? point.rows  : null
+                     };
+
+      res.send(params);
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+
   .get('/add', async (req, res) => {
     try { 
       console.log("received request for adding a job");
       console.log("req.query " + req.query.announceInput);
       console.log("week " + req.query.week);
+      console.log("ip address: " + req.ip);
       var wifi = "73.98.191.136";
       var trac = "172.58.142.186";
       var moto = "172.58.142.186";

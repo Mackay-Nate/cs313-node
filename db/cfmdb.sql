@@ -1,4 +1,6 @@
 
+-- tables used for Come, Follow Me 
+
 CREATE TABLE Dates ( 
   week      SERIAL NOT NULL PRIMARY KEY, 
   weekName  varchar(80) NOT NULL UNIQUE
