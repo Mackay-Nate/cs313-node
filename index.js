@@ -163,10 +163,10 @@ express()
       console.log("received request for kids points");
 
       const client = await pool.connect()
-      const member = await client.query('SELECT * FROM Member');
+      const kids   = await client.query('SELECT * FROM Member');
       const point  = await client.query('SELECT * FROM Points');
 
-      const params = { 'member': (member) ? member.rows : null, 
+      const params = { 'kids'  : (kids)   ? kids.rows   : null, 
                        'point' : (point)  ? point.rows  : null
                      };
 
