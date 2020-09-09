@@ -163,7 +163,7 @@ express()
       console.log("received request for kids points");
 
       const client = await pool.connect()
-      const kids   = await client.query('SELECT * FROM Member ORDER BY id');
+      const kids   = await client.query('SELECT * FROM Family  ORDER BY id');
       const point  = await client.query('SELECT * FROM Points');
 
       const params = { 'kids'  : (kids)   ? kids.rows   : null, 
