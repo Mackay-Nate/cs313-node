@@ -205,7 +205,7 @@ express()
       console.log("req.query " + req.query.announceInput);
       console.log("week " + req.query.week);
       console.log("ip address: " + req.ip);
-      console.log("filtered ip: " + req.ip.split(':'),slice(-1)); 
+      console.log("filtered ip: " + req.ip.split(':').slice(-1)); 
       console.log("ip address: " + req.connection.remoteAddress);
       var wifi = "73.98.191.136";
       var trac = "172.58.142.186";
