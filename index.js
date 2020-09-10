@@ -184,7 +184,7 @@ express()
       console.log("received request for adding kids points");
 
       const client = await pool.connect()
-      const member = await client.query('INSERT INTO Points (kids, points, notes) VALUES (' + req.query.child + ', ' + req.query.points + ', "' + req.query.notes + '")');
+      const member = await client.query("INSERT INTO Points (kids, points, notes) VALUES (" + req.query.child + ", " + req.query.points + ", '" + req.query.notes + "')");
       console.log("points added to the database");
       // const point  = await client.query('SELECT * FROM Points');
 

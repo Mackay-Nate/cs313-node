@@ -35,7 +35,7 @@ input {
   text-align: right;
 }
 
-button {
+button, #addPointButton {
   background: rgb(140, 203, 255);
   color: rgb(140, 203, 255);
   border-color: rgb(140, 203, 255);
