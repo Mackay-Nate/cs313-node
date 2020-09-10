@@ -18,9 +18,15 @@
   </table>
 </form>
 
-<!-- <form id="add" method="GET" onsubmit="newItem(); return false;">
+<form id="add" method="GET" onsubmit="addPoints; return false;">
+  <input type="button" value="Add points" onclick="show()">
+  <table>
+    <tr><td>Child</td><td id="dropdown" name="kid"></td></tr>
+    <tr><td>Points</td><td><input type="text" name="points"></td></tr>
+    <tr><td>Notes</td><td><input type="text" name="notes"></td></tr>
+    </table>
   <input type="submit" value="Add to the database" onclick="newItem()">
-</form> -->
+</form>
 
 <footer id="date">
 </footer>
@@ -64,6 +70,7 @@
     row.appendChild(pButton);
 
     table.appendChild(row);
+
   }
 
   };
@@ -113,7 +120,7 @@
             total = total + data.point.points;
           }
         }
-        script += '</table></span>;'        
+        script += '</table></span>'        
         item.innerHTML = script;
 
         row.appendChild(item);
@@ -141,6 +148,9 @@
         row.appendChild(pButton);
 
         table.appendChild(row);
+
+        document.getElementById('dropdown').innerHTML = 
+          '<input type="radio" id="' + i - 1 + '" name="child" value=" + i - 1 + "> <label for="' + i - 1 + '">' + data.kids[i].firstname + '</label><br>';
       }
     }
   }
