@@ -20,13 +20,13 @@
 
 <input type="button" value="Add points" onclick="show()">
 
-<form id="add" method="GET" onsubmit="/addPoints; return false;">
+<form id="add" method="GET" action="/addPoints">
   <table>
     <tr><td>Child</td><td id="dropdown" name="kid"></td></tr>
     <tr><td>Points</td><td><input type="text" name="points"></td></tr>
     <tr><td>Notes</td><td><input type="text" name="notes"></td></tr>
     </table>
-  <input type="submit" value="Add to the database" onclick="newItem()">
+  <input type="submit" value="Add to the database">
 </form>
 
 <footer id="date">
