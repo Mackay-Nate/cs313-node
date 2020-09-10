@@ -77,3 +77,7 @@ button {
   visibility: visible;
   animation: fadeIn 1s;
 }
+
+#add { 
+  display: none;
+}

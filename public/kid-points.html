@@ -20,7 +20,7 @@
 
 <input type="button" value="Add points" onclick="show()">
 
-<form id="add" method="GET" onsubmit="addPoints; return false;">
+<form id="add" method="GET" onsubmit="/addPoints; return false;">
   <table>
     <tr><td>Child</td><td id="dropdown" name="kid"></td></tr>
     <tr><td>Points</td><td><input type="text" name="points"></td></tr>
@@ -91,7 +91,7 @@
   };
 
   function show() { 
-    document.getElementById("add").
+    document.getElementById("add").style.display = "initial";
   }
 
   function load() {
