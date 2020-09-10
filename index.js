@@ -160,7 +160,7 @@ express()
   //data for kids-points
   .get('/getPoints', async (req, res) => {
     try { 
-      console.log("received request for kids points");
+      console.log("received request for getting kids points");
 
       const client = await pool.connect()
       const kids   = await client.query('SELECT * FROM Family  ORDER BY id');
@@ -181,17 +181,19 @@ express()
   //add for kids points
   .get('/addPoints', async (req, res) => {
     try { 
-      console.log("received request for kids points");
+      console.log("received request for adding kids points");
 
       const client = await pool.connect()
-      const member = await client.query('SELECT * FROM Member');
-      const point  = await client.query('SELECT * FROM Points');
+      const member = await client.query('INSERT INTO Points (kids, points, notes) VALUES (' + req.query.child + ', ' + req.query.points + ', ' + req.query.notes + ')');
+      console.log("points added to the database");
+      // const point  = await client.query('SELECT * FROM Points');
 
-      const params = { 'member': (member) ? member.rows : null, 
-                       'point' : (point)  ? point.rows  : null
-                     };
+      // const params = { 'member': (member) ? member.rows : null, 
+      //                  'point' : (point)  ? point.rows  : null
+      //                };
 
-      res.send(params);
+      // res.send(params);
+      res.redirect('https://nate-node.herokuapp.com/kid-points.html');
       client.release();
     } catch (err) {
       console.error(err);

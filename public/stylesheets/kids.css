@@ -73,7 +73,7 @@ button {
 }
 
 /* Toggle this class - hide and show the popup */
-.popup .show {
+.show {
   visibility: visible;
   animation: fadeIn 1s;
 }
@@ -81,3 +81,9 @@ button {
 #add { 
   display: none;
 }
+
+#dropdown {
+  text-align: left;
+  font-size: 70%;
+}
+
