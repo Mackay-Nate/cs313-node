@@ -83,8 +83,12 @@
   // subtract one point from a child
   function minus(number) { 
     document.getElementsByTagName('input')[number].parentElement.childNodes[0].value = parseInt(document.getElementsByTagName('input')[number].parentElement.childNodes[0].value) - 1;
-
   };
+
+  function pop(id) {
+      document.getElementById("pop" + id).classList.toggle("show");
+
+  }
 
   function load() {
 
@@ -150,7 +154,7 @@
 
         table.appendChild(row);
 
-        document.getElementById('dropdown').innerHTML = 
+        document.getElementById('dropdown').innerHTML += 
           '<input type="radio" id="' + i - 1 + '" name="child" value=" + i - 1 + "> <label for="' + i - 1 + '">' + data.kids[i].firstname + '</label><br>';
       }
     }
