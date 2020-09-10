@@ -115,6 +115,7 @@
         // item.innerHTML = (data.kids[i].firstname);
         script += data.kids[i].firstname;
         item.setAttribute('id', i - 2);
+        item.setAttribute('class', 'pop');
         item.setAttribute('onclick','pop(' + (i - 2) + ')'); 
 
         // var pop = document.createElement('span');
