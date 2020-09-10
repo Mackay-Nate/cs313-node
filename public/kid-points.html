@@ -33,48 +33,48 @@
 </footer>
 
 <script>
-  function load1() { 
-    console.log('load function');
-  var kids = ["", "", "Natalie", "Ava", "Corbin", "William"];
-  var points = [5, 2, 5, 5, 10, 100];
-  var table = document.getElementById('displayTable');
+  // function load1() { 
+  //   console.log('load function');
+  // var kids = ["", "", "Natalie", "Ava", "Corbin", "William"];
+  // var points = [5, 2, 5, 5, 10, 100];
+  // var table = document.getElementById('displayTable');
 
-  for (var i = 2; i < kids.length; i++) { 
-    var row = document.createElement("tr");
-    //create a cell for the child
-    var item = document.createElement("td");
-    // link.innerHTML = (data.dates[i].weekname);
-    item.innerHTML = (kids[i]);
-    // item.appendChild(link);
-    row.appendChild(item);
+  // for (var i = 2; i < kids.length; i++) { 
+  //   var row = document.createElement("tr");
+  //   //create a cell for the child
+  //   var item = document.createElement("td");
+  //   // link.innerHTML = (data.dates[i].weekname);
+  //   item.innerHTML = (kids[i]);
+  //   // item.appendChild(link);
+  //   row.appendChild(item);
 
-    var mButton = document.createElement("td");
-    var minus   = document.createElement('button');
-    minus.setAttribute("onclick", "minus(" + (i - 2) + ")");
-    minus.innerHTML = "-";
-    mButton.appendChild(minus);
-    row.appendChild(mButton);
+  //   var mButton = document.createElement("td");
+  //   var minus   = document.createElement('button');
+  //   minus.setAttribute("onclick", "minus(" + (i - 2) + ")");
+  //   minus.innerHTML = "-";
+  //   mButton.appendChild(minus);
+  //   row.appendChild(mButton);
 
-    var cell  = document.createElement('td');
-    var point = document.createElement('input'); 
-    point.setAttribute('type', 'text');
-    point.setAttribute('class', 'points'); 
-    point.value = points[i];
-    cell.appendChild(point)
-    row.appendChild(cell);
+  //   var cell  = document.createElement('td');
+  //   var point = document.createElement('input'); 
+  //   point.setAttribute('type', 'text');
+  //   point.setAttribute('class', 'points'); 
+  //   point.value = points[i];
+  //   cell.appendChild(point)
+  //   row.appendChild(cell);
 
-    var pButton = document.createElement("td");
-    var plus    = document.createElement('button');
-    plus.setAttribute("onclick", "plus(" + (i - 2) + ")");
-    plus.innerHTML = "+";
-    pButton.appendChild(plus);
-    row.appendChild(pButton);
+  //   var pButton = document.createElement("td");
+  //   var plus    = document.createElement('button');
+  //   plus.setAttribute("onclick", "plus(" + (i - 2) + ")");
+  //   plus.innerHTML = "+";
+  //   pButton.appendChild(plus);
+  //   row.appendChild(pButton);
 
-    table.appendChild(row);
+  //   table.appendChild(row);
 
-  }
+  // }
 
-  };
+  // };
 
   // add one point to a child
   function plus(number) { 
@@ -114,16 +114,16 @@
         var item = document.createElement("td");
         // item.innerHTML = (data.kids[i].firstname);
         script += data.kids[i].firstname;
-        item.setAttribute('id', i - 2);
+        item.setAttribute('id', i - 1);
         item.setAttribute('class', 'pop');
-        item.setAttribute('onclick','pop(' + (i - 2) + ')'); 
+        item.setAttribute('onclick','pop(' + (i - 1) + ')'); 
 
         // var pop = document.createElement('span');
         script += '<span class="popuptext" id=pop';
-        script += (i - 2) + '>';
+        script += (i - 1) + '>';
         script += '<table><th>points</th><th>why?</th>';
         for (var j = 0; j < data.point.length; j++) { 
-          if (data.point[j].kids == (i - 2)) {
+          if (data.point[j].kids == (i - 1)) {
             script += '<tr>' + data.point[j].points + '</tr>' + 
             '<tr>' + data.point[j].notes + '>,</tr>';
             total = total + data.point[j].points;
@@ -136,7 +136,7 @@
 
         var mButton = document.createElement("td");
         var minus   = document.createElement('button');
-        minus.setAttribute("onclick", "minus(" + (i - 2) + ")");
+        minus.setAttribute("onclick", "minus(" + (i - 1) + ")");
         minus.innerHTML = "-";
         mButton.appendChild(minus);
         row.appendChild(mButton);
@@ -156,7 +156,7 @@
 
         var pButton = document.createElement("td");
         var plus    = document.createElement('button');
-        plus.setAttribute("onclick", "plus(" + (i - 2) + ")");
+        plus.setAttribute("onclick", "plus(" + (i - 1) + ")");
         plus.innerHTML = "+";
         pButton.appendChild(plus);
         row.appendChild(pButton);
