@@ -120,17 +120,16 @@
 
         // var pop = document.createElement('span');
         script += '<span class="popuptext" id=pop';
-        script += (i - 2) + '>' +
-        '<table>' + 
-        '<th>points</th><th>why?</th>';
+        script += (i - 2) + '>';
+        script += '<table><th>points</th><th>why?</th>';
         for (var j = 0; j < data.point.length; j++) { 
           if (data.point[j].kids == (i - 2)) {
             script += '<tr>' + data.point[j].points + '</tr>' + 
-            '<tr>' + data.point[j].notes + '<,>/tr>';
+            '<tr>' + data.point[j].notes + '>,</tr>';
             total = total + data.point[j].points;
           }
         }
-        script += '</table></span>'        
+        script += '</table></span>';
         item.innerHTML = script;
 
         row.appendChild(item);
