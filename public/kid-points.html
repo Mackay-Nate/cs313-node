@@ -110,7 +110,8 @@
         item.setAttribute('onclick','pop(' + (i - 2) + ')'); 
 
         // var pop = document.createElement('span');
-        script += '<span class="popuptext" id=pop' + i - 2 + '>' +
+        script += '<span class="popuptext" id=pop';
+        script += (i - 2) + '>' +
         '<table>' + 
         '<th>points</th><th>why?</th>';
         for (var j = 0; j < data.point.length; j++) { 
