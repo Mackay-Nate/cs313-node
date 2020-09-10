@@ -124,10 +124,10 @@
         '<table>' + 
         '<th>points</th><th>why?</th>';
         for (var j = 0; j < data.point.length; j++) { 
-          if (data.point.kids == (i - 2)) {
-            script += '<tr>' + data.point.points + '</tr>' + 
-            '<tr>' + data.point.notes + '<,>/tr>';
-            total = total + data.point.points;
+          if (data.point[j].kids == (i - 2)) {
+            script += '<tr>' + data.point[j].points + '</tr>' + 
+            '<tr>' + data.point[j].notes + '<,>/tr>';
+            total = total + data.point[j].points;
           }
         }
         script += '</table></span>'        
