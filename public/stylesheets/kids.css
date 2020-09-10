@@ -56,7 +56,7 @@ button, #addPointButton {
 /* The actual popup */
 .pop .popuptext {
   visibility: hidden;
-  width: 260px;
+  width: 300px;
   background-color: #555;
   color: #fff;
   text-align: center;

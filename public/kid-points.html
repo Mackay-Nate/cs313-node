@@ -104,10 +104,11 @@
       console.log('inside if statement');
       var data = JSON.parse(xmlHttpRequest.responseText);
       var table = document.getElementById('displayTable');
-      var total = 0;
+      var total;
 
       for (var i = 2; i < data.kids.length; i++) { 
         var script = ""
+        total = 0;
         var row = document.createElement("tr");
 
         //create a cell for a child
