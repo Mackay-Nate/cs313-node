@@ -18,8 +18,9 @@
   </table>
 </form>
 
+<input type="button" value="Add points" onclick="show()">
+
 <form id="add" method="GET" onsubmit="addPoints; return false;">
-  <input type="button" value="Add points" onclick="show()">
   <table>
     <tr><td>Child</td><td id="dropdown" name="kid"></td></tr>
     <tr><td>Points</td><td><input type="text" name="points"></td></tr>
@@ -86,8 +87,11 @@
   };
 
   function pop(id) {
-      document.getElementById("pop" + id).classList.toggle("show");
+    document.getElementById("pop" + id).classList.toggle("show");
+  };
 
+  function show() { 
+    document.getElementById("add").
   }
 
   function load() {
@@ -159,7 +163,7 @@
 
         table.appendChild(row);
 
-        document.getElementById('dropdown').innerHTML += '<input type="radio" id="' + (i - 1) + '" name="child" value=" + i - 1 + "> <label for="' + (i - 1) + '">' + data.kids[i].firstname + '</label><br>';
+        document.getElementById('dropdown').innerHTML += '<input type="radio" id="' + (i - 1) + '" name="child" value="' + i - 1 + '"> <label for="' + (i - 1) + '">' + data.kids[i].firstname + '</label><br>';
       }
     }
   }
