@@ -44,6 +44,10 @@ button, #addPointButton {
   width: 40px;
 }
 
+#addPointButton { 
+  padding: 10px 70px;
+}
+
 /* The actual popup */
 .popuptext {
   visibility: hidden;
