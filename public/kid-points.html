@@ -78,12 +78,12 @@
 
   // add one point to a child
   function plus(number) { 
-    document.getElementsByTagName('input')[number].parentElement.childNodes[0].value = parseInt(document.getElementsByTagName('input')[number].parentElement.childNodes[0].value) + 1;
+    document.getElementsByTagName('input')[number - 1].parentElement.childNodes[0].value = parseInt(document.getElementsByTagName('input')[number].parentElement.childNodes[0].value) + 1;
   };
 
   // subtract one point from a child
   function minus(number) { 
-    document.getElementsByTagName('input')[number].parentElement.childNodes[0].value = parseInt(document.getElementsByTagName('input')[number].parentElement.childNodes[0].value) - 1;
+    document.getElementsByTagName('input')[number - 1].parentElement.childNodes[0].value = parseInt(document.getElementsByTagName('input')[number].parentElement.childNodes[0].value) - 1;
   };
 
   function pop(id) {
@@ -124,8 +124,7 @@
         script += '<table><th>points</th><th>why?</th>';
         for (var j = 0; j < data.point.length; j++) { 
           if (data.point[j].kids == (i - 1)) {
-            script += '<tr>' + data.point[j].points + '</tr>' + 
-            '<tr>' + data.point[j].notes + '>,</tr>';
+            script += '<tr><td>' + data.point[j].points + '</td><td>' + data.point[j].notes + '</td></tr>';
             total = total + data.point[j].points;
           }
         }
