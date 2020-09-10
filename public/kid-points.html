@@ -142,6 +142,11 @@
         point.setAttribute('type', 'text');
         point.setAttribute('class', 'points'); 
         // point.value = data.point[i].points;
+        if (total > 0) {
+          point.value = total;
+        } else {
+          point.value = 0;
+        }
         cell.appendChild(point)
         row.appendChild(cell);
 
@@ -154,8 +159,7 @@
 
         table.appendChild(row);
 
-        document.getElementById('dropdown').innerHTML += 
-          '<input type="radio" id="' + i - 1 + '" name="child" value=" + i - 1 + "> <label for="' + i - 1 + '">' + data.kids[i].firstname + '</label><br>';
+        document.getElementById('dropdown').innerHTML += '<input type="radio" id="' + (i - 1) + '" name="child" value=" + i - 1 + "> <label for="' + (i - 1) + '">' + data.kids[i].firstname + '</label><br>';
       }
     }
   }
