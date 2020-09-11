@@ -33,57 +33,15 @@
 </footer>
 
 <script>
-  // function load1() { 
-  //   console.log('load function');
-  // var kids = ["", "", "Natalie", "Ava", "Corbin", "William"];
-  // var points = [5, 2, 5, 5, 10, 100];
-  // var table = document.getElementById('displayTable');
-
-  // for (var i = 2; i < kids.length; i++) { 
-  //   var row = document.createElement("tr");
-  //   //create a cell for the child
-  //   var item = document.createElement("td");
-  //   // link.innerHTML = (data.dates[i].weekname);
-  //   item.innerHTML = (kids[i]);
-  //   // item.appendChild(link);
-  //   row.appendChild(item);
-
-  //   var mButton = document.createElement("td");
-  //   var minus   = document.createElement('button');
-  //   minus.setAttribute("onclick", "minus(" + (i - 2) + ")");
-  //   minus.innerHTML = "-";
-  //   mButton.appendChild(minus);
-  //   row.appendChild(mButton);
-
-  //   var cell  = document.createElement('td');
-  //   var point = document.createElement('input'); 
-  //   point.setAttribute('type', 'text');
-  //   point.setAttribute('class', 'points'); 
-  //   point.value = points[i];
-  //   cell.appendChild(point)
-  //   row.appendChild(cell);
-
-  //   var pButton = document.createElement("td");
-  //   var plus    = document.createElement('button');
-  //   plus.setAttribute("onclick", "plus(" + (i - 2) + ")");
-  //   plus.innerHTML = "+";
-  //   pButton.appendChild(plus);
-  //   row.appendChild(pButton);
-
-  //   table.appendChild(row);
-
-  // }
-
-  // };
 
   // add one point to a child
   function plus(number) { 
-    document.getElementsByTagName('input')[number - 1].parentElement.childNodes[0].value = parseInt(document.getElementsByTagName('input')[number].parentElement.childNodes[0].value) + 1;
+    document.getElementsByTagName('input')[number - 1].parentElement.childNodes[0].value = parseInt(document.getElementsByTagName('input')[number - 1].parentElement.childNodes[0].value) + 1;
   };
 
   // subtract one point from a child
   function minus(number) { 
-    document.getElementsByTagName('input')[number - 1].parentElement.childNodes[0].value = parseInt(document.getElementsByTagName('input')[number].parentElement.childNodes[0].value) - 1;
+    document.getElementsByTagName('input')[number - 1].parentElement.childNodes[0].value = parseInt(document.getElementsByTagName('input')[number - 1].parentElement.childNodes[0].value) - 1;
   };
 
   function pop(id) {
