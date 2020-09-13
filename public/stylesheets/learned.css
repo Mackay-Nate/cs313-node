@@ -80,3 +80,14 @@ button {
   border-width: 0px;
   padding: 10px;
 }
+
+.arrow { 
+  content: "";
+  position: relative;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}

@@ -14,6 +14,7 @@
 
 <ul id="list">
   <li>Things I've learned</li>
+  <li>Life is more fair than we think<span id="arrow"></span></li>
 </ul>
 <form id="add" method="GET" onsubmit="newItem()">
   <input type="submit" value="Add a new item" onclick="newItem()">
@@ -25,121 +26,125 @@
 <script>
 
   function load() { 
-  //get the data from the database
-  var xmlHttpRequest = new XMLHttpRequest();
-  xmlHttpRequest.onreadystatechange = function() {
-    if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+
+  };
+  
+  // function load() { 
+  // //get the data from the database
+  // var xmlHttpRequest = new XMLHttpRequest();
+  // xmlHttpRequest.onreadystatechange = function() {
+  //   if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
  
-      console.log('inside xmlHttpResquet');
-      var data = JSON.parse(xmlHttpRequest.responseText);
+  //     console.log('inside xmlHttpResquet');
+  //     var data = JSON.parse(xmlHttpRequest.responseText);
 
-      // add the database info to the webpage
-      document.getElementById("dates").innerHTML = data.dates[0].weekname;
-      document.getElementById("conduct").innerHTML = data.family[(week + 2) % 5].firstname;
-      document.getElementById("teacher").innerHTML = data.family[(week + 4) % 5].firstname;
-      document.getElementById("cprayer").innerHTML = data.family[(week + 0) % 5].firstname;
-      document.getElementById("oprayer").innerHTML = data.family[(week + 1) % 5].firstname; 
+  //     // add the database info to the webpage
+  //     document.getElementById("dates").innerHTML = data.dates[0].weekname;
+  //     document.getElementById("conduct").innerHTML = data.family[(week + 2) % 5].firstname;
+  //     document.getElementById("teacher").innerHTML = data.family[(week + 4) % 5].firstname;
+  //     document.getElementById("cprayer").innerHTML = data.family[(week + 0) % 5].firstname;
+  //     document.getElementById("oprayer").innerHTML = data.family[(week + 1) % 5].firstname; 
 
-      document.getElementById("topic").innerHTML = '<a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-doctrine-and-covenants-2021/' + addZero(week) + '?lang=eng" target="_blank">' + data.topic[0].title +'</a>';
+  //     document.getElementById("topic").innerHTML = '<a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-doctrine-and-covenants-2021/' + addZero(week) + '?lang=eng" target="_blank">' + data.topic[0].title +'</a>';
 
-      document.getElementById("scripture").innerHTML = '<a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/' + data.scriptLink[0].linkname + '?lang=eng" target="_blank">' + data.scriptures[0].scriptname +'</a>';
+  //     document.getElementById("scripture").innerHTML = '<a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/' + data.scriptLink[0].linkname + '?lang=eng" target="_blank">' + data.scriptures[0].scriptname +'</a>';
 
-      document.getElementById("osong").innerHTML = '<a href=' + data.music[data.oSong[0].book - 1].name + ' target="_blank">' + getMusicLink(data.oSong[0]) + " " + '</a>';
+  //     document.getElementById("osong").innerHTML = '<a href=' + data.music[data.oSong[0].book - 1].name + ' target="_blank">' + getMusicLink(data.oSong[0]) + " " + '</a>';
 
-      document.getElementById("csong").innerHTML = 
-      '<a href=' + data.music[data.cSong[(week) % data.cSong.length].book - 1].name + ' target="_blank">' + getMusicLink(data.cSong[(week) % 6]) + '</a>';
+  //     document.getElementById("csong").innerHTML = 
+  //     '<a href=' + data.music[data.cSong[(week) % data.cSong.length].book - 1].name + ' target="_blank">' + getMusicLink(data.cSong[(week) % 6]) + '</a>';
 
-      document.getElementById("announce").innerHTML = data.business[0].note;
+  //     document.getElementById("announce").innerHTML = data.business[0].note;
 
-      if (data.PRSLesson[0] == undefined) {
-        document.getElementById("prs").innerHTML = "";
-      } else {
-        document.getElementById("prs").innerHTML = '<a href=' + data.PRSLesson[0].link + ' target="_blank"><em>' + data.PRSLesson[0].talkname + '</em>, by ' + data.PRSLesson[0].speaker + '</a>';
-      }
+  //     if (data.PRSLesson[0] == undefined) {
+  //       document.getElementById("prs").innerHTML = "";
+  //     } else {
+  //       document.getElementById("prs").innerHTML = '<a href=' + data.PRSLesson[0].link + ' target="_blank"><em>' + data.PRSLesson[0].talkname + '</em>, by ' + data.PRSLesson[0].speaker + '</a>';
+  //     }
 
-      document.body.style.backgroundImage = "url('" + data.background[(week % data.background.length)].picture + "')";
-      }
+  //     document.body.style.backgroundImage = "url('" + data.background[(week % data.background.length)].picture + "')";
+  //     }
 
-      document.getElementById("week").setAttribute("value", week);
-    }
+  //     document.getElementById("week").setAttribute("value", week);
+  //   }
 
-    //the json is from the database here
-    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/cfmweek?week=' + week, true);
-    xmlHttpRequest.send();
+  //   //the json is from the database here
+  //   xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/lessons', true);
+  //   xmlHttpRequest.send();
 
-  };
+  // };
 
-  // returns the yearly week number 0-52
-  function getWeek() { 
-    let now = new Date();
-    let onejan = new Date(now.getFullYear(), 0, 1);
+  // // returns the yearly week number 0-52
+  // function getWeek() { 
+  //   let now = new Date();
+  //   let onejan = new Date(now.getFullYear(), 0, 1);
 
-    if (now.getDay() > 5) { 
-      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);      
-    } else if (now.getDay() > 0) {
-      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2) + 1;      
-    } 
+  //   if (now.getDay() > 5) { 
+  //     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);      
+  //   } else if (now.getDay() > 0) {
+  //     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2) + 1;      
+  //   } 
 
-    return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
-  };
+  //   return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
+  // };
 
-  // add a preceding zero to single digits, if necessary
-  function addZero(week) {
-    if (week < 10) {
-      return '0' + week;
-    } else {
-      return week;
-    }
-  };
+  // // add a preceding zero to single digits, if necessary
+  // function addZero(week) {
+  //   if (week < 10) {
+  //     return '0' + week;
+  //   } else {
+  //     return week;
+  //   }
+  // };
 
-  // edit music link based on if the music is a hymn or not 
-  function getMusicLink(music) {
-    if (music.book == 1) {
-      return ("Hymn number " + music.number + ", <em>" + music.name + "</em>");
-    } else {
-      return ("<em>" + music.name + "</em>, from the Children's Songbook, page " + music.number);
-    }
-  };
+  // // edit music link based on if the music is a hymn or not 
+  // function getMusicLink(music) {
+  //   if (music.book == 1) {
+  //     return ("Hymn number " + music.number + ", <em>" + music.name + "</em>");
+  //   } else {
+  //     return ("<em>" + music.name + "</em>, from the Children's Songbook, page " + music.number);
+  //   }
+  // };
 
-  // edit DOM for announcement section 
-  function editItem(item) {
-    var edit = document.getElementById('announce');
-    var box = document.createElement('input');
-    box.setAttribute("type", "text");
-    box.setAttribute("id", "announceInput");
-    box.setAttribute("name", "announceInput");
-    box.setAttribute("value", item.innerText);
+  // // edit DOM for announcement section 
+  // function editItem(item) {
+  //   var edit = document.getElementById('announce');
+  //   var box = document.createElement('input');
+  //   box.setAttribute("type", "text");
+  //   box.setAttribute("id", "announceInput");
+  //   box.setAttribute("name", "announceInput");
+  //   box.setAttribute("value", item.innerText);
 
-    edit.parentElement.childNodes[1].innerText = "";
-    edit.parentElement.childNodes[1].removeAttribute("onclick");
+  //   edit.parentElement.childNodes[1].innerText = "";
+  //   edit.parentElement.childNodes[1].removeAttribute("onclick");
 
-    edit.appendChild(box);
-    document.getElementById('announce').childNodes[0].focus();
-    document.getElementsByClassName('hidden')[0].style.display = "initial";
-  };
+  //   edit.appendChild(box);
+  //   document.getElementById('announce').childNodes[0].focus();
+  //   document.getElementsByClassName('hidden')[0].style.display = "initial";
+  // };
 
-  function addBusiness() {
-    //add the data to the database
+  // function addBusiness() {
+  //   //add the data to the database
 
-    var announceInput = document.getElementById('announceInput').value; 
-    var week = document.getElementById('week').value; 
+  //   var announceInput = document.getElementById('announceInput').value; 
+  //   var week = document.getElementById('week').value; 
 
-    var xmlHttpRequest = new XMLHttpRequest();
-    xmlHttpRequest.onreadystatechange = function() {
-      if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
-        var data = JSON.parse(xmlHttpRequest.responseText);
+  //   var xmlHttpRequest = new XMLHttpRequest();
+  //   xmlHttpRequest.onreadystatechange = function() {
+  //     if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+  //       var data = JSON.parse(xmlHttpRequest.responseText);
 
-        console.log("/add http request");
-        document.getElementById("announce").innerHTML = data.business[0].note;
-        document.getElementById('announce').setAttribute("onclick", "editItem(this)");
-        document.getElementsByClassName('hidden')[0].style.display = "none";
-      }
+  //       console.log("/add http request");
+  //       document.getElementById("announce").innerHTML = data.business[0].note;
+  //       document.getElementById('announce').setAttribute("onclick", "editItem(this)");
+  //       document.getElementsByClassName('hidden')[0].style.display = "none";
+  //     }
 
-    }
-    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/add?announceInput=' + announceInput + '&week=' + week, true);
-    xmlHttpRequest.send();
+  //   }
+  //   xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/lesson', true);
+  //   xmlHttpRequest.send();
 
-  };
+  // };
 
 </script>
 </body>
