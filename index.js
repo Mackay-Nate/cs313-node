@@ -213,7 +213,7 @@ express()
       var wifi = "73.98.191.136";
       var trac = "172.58.142.186";
       var moto = "172.58.142.186";
-      var device = req.ip;
+      var device = req.headers['x-forwarded-for'];
 
       const client   = await pool.connect()
 
