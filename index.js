@@ -206,7 +206,7 @@ express()
       console.log("received request for adding a job");
       console.log("req.query " + req.query.announceInput);
       console.log("week " + req.query.week);
-      console.log("ip addressx-forward: " + req.headers['x-forward-ip']);
+      console.log("ip addressx-forward: " + req.headers['x-forwarded-for']);
       console.log("ip addressx-real: " + req.headers['x-real-ip']);
       console.log("filtered ip: " + req.ip.split(':').slice(-1)); 
       console.log("ip address: " + req.connection.remoteAddress); 
