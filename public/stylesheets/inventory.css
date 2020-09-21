@@ -1,0 +1,126 @@
+
+body {
+  background-color: rgb(140, 203, 255);
+  /* background-blend-mode: screen; */
+  background: url("https://thumbs.dreamstime.com/b/light-pine-wood-texture-horizontal-planks-93600384.jpg");
+  text-align: center;
+  font-size: 150%;
+  width: 100%;
+}
+
+h1 {
+  margin: 20px;
+}
+
+table {
+  margin: auto;
+  text-align: center;
+}
+
+th { 
+  font-size: 80%;
+}
+
+.below { 
+  font-size: x-small;
+}
+
+input {
+  padding: 4px;
+  background: rgb(239, 245, 188);
+  color: rgb(138, 138, 138);
+}
+
+input[type=number] {
+  width: 20px;
+  text-align: center;
+}
+
+input[type=number]::before, input[type=number]::after {
+  width: 30px;
+}
+
+
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.points {
+  width: 20px;
+  text-align: center;
+}
+
+button, #addPointButton {
+  background: inherit;
+  /* color: rgb(140, 203, 255); */
+  border-color: rgb(140, 203, 255);
+  border-width: 0px;
+  padding-bottom: 15px;
+  /* width: 40px; */
+  /* font-size: 120%; */
+}
+
+tr {
+  padding: 10px;
+}
+
+#addPointButton {
+  /* padding: 10px 70px; */
+}
+
+.col1 {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  vertical-align: center;
+  font-size: large;
+}
+
+/* The actual popup */
+.pop .popuptext {
+  visibility: hidden;
+  width: 280px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -105px;
+}
+
+/* Popup arrow */
+.pop .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.pop .show {
+  visibility: visible;
+  animation: fadeIn 1s;
+  font-size: 50%;
+}
+
+#add { 
+  display: none;
+}
+
+#dropdown {
+  text-align: left;
+  font-size: 70%;
+}
+
