@@ -6,6 +6,7 @@ body {
   text-align: center;
   font-size: 150%;
   width: 100%;
+  margin: 1px;
 }
 
 h1 {
@@ -13,12 +14,17 @@ h1 {
 }
 
 table {
-  margin: auto;
+  /* margin: auto; */
   text-align: center;
+  /* margin-left: 1px; */
 }
 
 th { 
   font-size: 80%;
+}
+
+td { 
+  padding: 0px;
 }
 
 .below { 
