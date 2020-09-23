@@ -14,9 +14,8 @@ h1 {
 }
 
 table {
-  /* margin: auto; */
+  margin: 5px;
   text-align: center;
-  /* margin-left: 1px; */
 }
 
 th { 
@@ -38,7 +37,7 @@ input {
 }
 
 input[type=number] {
-  width: 20px;
+  width: 70%;
   text-align: center;
 }
 
@@ -66,6 +65,7 @@ button, #addPointButton {
   border-color: rgb(140, 203, 255);
   border-width: 0px;
   padding-bottom: 15px;
+  touch-action: manipulation;
   /* width: 40px; */
   /* font-size: 120%; */
 }
@@ -130,3 +130,9 @@ tr {
   font-size: 70%;
 }
 
+@media screen and (min-width: 380px) {
+  table {
+    margin: auto;
+  }
+
+}
