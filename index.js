@@ -256,13 +256,13 @@ express()
   })
 
 
-    // gets the inventory database info  
-    .get('/getInventory', async (req, res) => {
-      console.log("received request to retrieve inventory");
-      try {
-  
-        const client    = await pool.connect()
-        const family    = await client.query('SELECT * FROM Family ORDER BY id');
+  // gets the inventory database info  
+  .get('/getInventory', async (req, res) => {
+    console.log("received request to retrieve inventory");
+    try {
+
+      const client    = await pool.connect()
+      const family    = await client.query('SELECT * FROM Family ORDER BY id');
         // const dates     = await client.query('SELECT * FROM Dates WHERE week=' + req.query.week);
         // const scriptures= await client.query('SELECT * FROM Scriptures WHERE week=' + req.query.week);
         // const scriptLink= await client.query('SELECT * FROM scriptLink WHERE id=' + req.query.week);
@@ -273,8 +273,8 @@ express()
         // const topic     = await client.query('SELECT * FROM Topic WHERE id=' + req.query.week);
         // const background= await client.query('SELECT * FROM background ORDER BY id');
         // const PRSLesson = await client.query('SELECT * FROM PRSLesson WHERE weekTaught=' + req.query.week);
-  
-        const params = { 'family': (family)    ? family.rows     : null 
+
+      const params = { 'family': (family)    ? family.rows     : null 
         //                   'dates': (dates)     ? dates.rows      : null, 
         //              'scriptures': (scriptures)? scriptures.rows : null, 
         //              'scriptLink': (scriptLink)? scriptLink.rows : null,
@@ -288,15 +288,16 @@ express()
                         //  'week'  : (week)      ? week.rows       : null
                       };
   
-        res.send(params);
-        client.release();
-  
-      } catch (err) {
-        console.error(err);
-        res.send("Error " + err);
-      }
-    })
-  
+      // res.send(params);
+      res.redirect('https://nate-node.herokuapp.com/inventory.html');
+      client.release();
+
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+
   // update the inventory numbers
   .get('/updateInventory', async (req, res) => {
     try { 
