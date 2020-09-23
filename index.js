@@ -288,8 +288,8 @@ express()
                         //  'week'  : (week)      ? week.rows       : null
                       };
   
-      // res.send(params);
-      res.redirect('https://nate-node.herokuapp.com/inventory.html');
+      res.send(params);
+      // res.redirect('https://nate-node.herokuapp.com/inventory.html');
       client.release();
 
     } catch (err) {
