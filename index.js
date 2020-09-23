@@ -258,7 +258,7 @@ express()
 
     // gets the inventory database info  
     .get('/getInventory', async (req, res) => {
-      console.log("received request for come follow me for week " + req.query.week);
+      console.log("received request to retrieve inventory");
       try {
   
         const client    = await pool.connect()
@@ -298,7 +298,7 @@ express()
     })
   
   // update the inventory numbers
-  .get('/add', async (req, res) => {
+  .get('/updateInventory', async (req, res) => {
     try { 
       console.log("received request to update the inventory");
 
