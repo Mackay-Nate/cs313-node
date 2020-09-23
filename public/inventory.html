@@ -12,7 +12,8 @@
 <body onload="load()">
 
 <h1>Inventory</h1>
-<form id="form1" onsubmit="return false;">
+<!-- <form id="form1" onsubmit="return false;"> -->
+<form method="GET" action="/updateInventory" onsubmit="alert('submitted')">
   <table id="displayTable">
     <tr><th colspan="10">Medium</th></tr>
     <tr><td class="col1 pop" onclick="pop('Un')" colspan="7">unplaned boards
@@ -23,9 +24,9 @@
           <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
       </table></span></td>
-      <td><button onclick="minus(un)">-</button></td>
+      <td><button onclick="minus(un); return false;">-</button></td>
       <td><input type="number" id="un" name="un" min="0" max="500" value="0"><br></td>
-      <td><button onclick="plus(un)">+</button></td>
+      <td><button onclick="plus(un); return false;">+</button></td>
     </tr>
     <tr><th></th><th colspan="3">Natural</th><th colspan="3">Gray</th><th colspan="3">Kona</th></tr>
     <tr><td class="col1 pop" onclick="pop('P')">planed
@@ -38,15 +39,15 @@
           </table>
         </span>
       </td>
-      <td><button onclick="minus(pN)">-</button></td>
+      <td><button onclick="minus(pN); return false;">-</button></td>
       <td class="below"><input type="number" id="pN" name="pN" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(pN)">+</button></td>
-      <td><button onclick="minus(pG)">-</button></td>
+      <td><button onclick="plus(pN); return false;">+</button></td>
+      <td><button onclick="minus(pG); return false;">-</button></td>
       <td class="below"><input type="number" id="pG" name="pG" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(pG)">+</button></td>
-      <td><button onclick="minus(pK)">-</button></td>
+      <td><button onclick="plus(pG); return false;">+</button></td>
+      <td><button onclick="minus(pK); return false;">-</button></td>
       <td class="below"><input type="number" id="pK" name="pK" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(pK)">+</button></td>
+      <td><button onclick="plus(pK); return false;">+</button></td>
     </tr>  
     <tr><td class="col1 pop" onclick="pop('Stain')">stained
       <span class="popuptext" id="popStain">
@@ -57,15 +58,15 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(stainN)">-</button></td>
+      <td><button onclick="minus(stainN); return false;">-</button></td>
       <td class="below"><input type="number" id="stainN" name="stainN" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(stainN)">+</button></td>
-      <td><button onclick="minus(stainG)">-</button></td>
+      <td><button onclick="plus(stainN); return false;">+</button></td>
+      <td><button onclick="minus(stainG); return false;">-</button></td>
       <td class="below"><input type="number" id="stainG" name="stainG" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(stainG)">+</button></td>
-      <td><button onclick="minus(stainK)">-</button></td>
+      <td><button onclick="plus(stainG); return false;">+</button></td>
+      <td><button onclick="minus(stainK); return false;">-</button></td>
       <td class="below"><input type="number" id="stainK" name="stainK" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(stainK)">+</button></td>
+      <td><button onclick="plus(stainK); return false;">+</button></td>
     </tr>
     <tr><td class="col1 pop" onclick="pop('C')">cut
       <span class="popuptext" id="popC">
@@ -76,15 +77,15 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(cN)">-</button></td>
+      <td><button onclick="minus(cN); return false;">-</button></td>
       <td class="below"><input type="number" id="cN" name="cN" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(cN)">+</button></td>
-      <td><button onclick="minus(cG)">-</button></td>
+      <td><button onclick="plus(cN); return false;">+</button></td>
+      <td><button onclick="minus(cG); return false;">-</button></td>
       <td class="below"><input type="number" id="cG" name="cG" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(cG)">+</button></td>
-      <td><button onclick="minus(cK)">-</button></td>
+      <td><button onclick="plus(cG); return false;">+</button></td>
+      <td><button onclick="minus(cK); return false;">-</button></td>
       <td class="below"><input type="number" id="cK" name="cK" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(cK)">+</button></td>
+      <td><button onclick="plus(cK); return false;">+</button></td>
     </tr>
     <tr><td class="col1 pop" onclick="pop('Sl')">slotted
       <span class="popuptext" id="popSl">
@@ -95,15 +96,15 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(slN)">-</button></td>
+      <td><button onclick="minus(slN); return false;">-</button></td>
       <td class="below"><input type="number" id="slN" name="slN" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(slN)">+</button></td>
-      <td><button onclick="minus(slG)">-</button></td>
+      <td><button onclick="plus(slN); return false;">+</button></td>
+      <td><button onclick="minus(slG); return false;">-</button></td>
       <td class="below"><input type="number" id="slG" name="slG" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(slG)">+</button></td>
-      <td><button onclick="minus(slK)">-</button></td>
+      <td><button onclick="plus(slG); return false;">+</button></td>
+      <td><button onclick="minus(slK); return false;">-</button></td>
       <td class="below"><input type="number" id="slK" name="slK" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(slK)">+</button></td>
+      <td><button onclick="plus(slK); return false;">+</button></td>
     </tr>
     <tr><td class="col1 pop" onclick="pop('Stapled')">stapled
       <span class="popuptext" id="popStapled">
@@ -114,15 +115,15 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(stapledN)">-</button></td>
+      <td><button onclick="minus(stapledN); return false;">-</button></td>
       <td class="below"><input type="number" id="stapledN" name="stapledN" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(stapledN)">+</button></td>
-      <td><button onclick="minus(stapledG)">-</button></td>
+      <td><button onclick="plus(stapledN); return false;">+</button></td>
+      <td><button onclick="minus(stapledG); return false;">-</button></td>
       <td class="below"><input type="number" id="stapledG" name="stapledG" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(stapledG)">+</button></td>
-      <td><button onclick="minus(stapledK)">-</button></td>
+      <td><button onclick="plus(stapledG); return false;">+</button></td>
+      <td><button onclick="minus(stapledK); return false;">-</button></td>
       <td class="below"><input type="number" id="stapledK" name="stapledK" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(stapledK)">+</button></td>
+      <td><button onclick="plus(stapledK); return false;">+</button></td>
     </tr>
     <tr><td class="col1 pop" onclick="pop('D')">completed
       <span class="popuptext" id="popD">
@@ -133,15 +134,15 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(dN)">-</button></td>
+      <td><button onclick="minus(dN); return false;">-</button></td>
       <td class="below"><input type="number" id="dN" name="dN" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(dN)">+</button></td>
-      <td><button onclick="minus(dG)">-</button></td>
+      <td><button onclick="plus(dN); return false;">+</button></td>
+      <td><button onclick="minus(dG); return false;">-</button></td>
       <td class="below"><input type="number" id="dG" name="dG" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(dG)">+</button></td>
-      <td><button onclick="minus(dK)">-</button></td>
+      <td><button onclick="plus(dG); return false;">+</button></td>
+      <td><button onclick="minus(dK); return false;">-</button></td>
       <td class="below"><input type="number" id="dK" name="dK" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(dK)">+</button></td>
+      <td><button onclick="plus(dK); return false;">+</button></td>
     </tr>
     <tr><th colspan="10">Mini</th></tr>
     <tr><td class="col1 pop" onclick="pop('miniUp')" colspan="7">unplaned boards
@@ -153,9 +154,9 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(miniun)">-</button></td>
+      <td><button onclick="minus(miniun); return false;">-</button></td>
       <td><input type="number" id="miniun" name="miniun" min="0" max="500" value="0"><br></td>
-      <td><button onclick="plus(miniun)">+</button></td>
+      <td><button onclick="plus(miniun); return false;">+</button></td>
     </tr>
     <tr><th></th><th colspan="3">Natural</th><th colspan="3">Gray</th><th colspan="3">Kona</th></tr>
     <tr><td class="col1 pop" onclick="pop('miniP')">planed
@@ -167,15 +168,15 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(minipN)">-</button></td>
+      <td><button onclick="minus(minipN); return false;">-</button></td>
       <td class="below"><input type="number" id="minipN" name="minipN" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(minipN)">+</button></td>
-      <td><button onclick="minus(minipG)">-</button></td>
+      <td><button onclick="plus(minipN); return false;">+</button></td>
+      <td><button onclick="minus(minipG); return false;">-</button></td>
       <td class="below"><input type="number" id="minipG" name="minipG" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(minipG)">+</button></td>
-      <td><button onclick="minus(minipK)">-</button></td>
+      <td><button onclick="plus(minipG); return false;">+</button></td>
+      <td><button onclick="minus(minipK); return false;">-</button></td>
       <td class="below"><input type="number" id="minipK" name="minipK" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(minipK)">+</button></td>
+      <td><button onclick="plus(minipK); return false;">+</button></td>
     </tr>  
     <tr><td class="col1 pop" onclick="pop('miniStain')">stained
       <span class="popuptext" id="popminiStain">
@@ -186,15 +187,15 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(ministainN)">-</button></td>
+      <td><button onclick="minus(ministainN); return false;">-</button></td>
       <td class="below"><input type="number" id="ministainN" name="ministainN" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(ministainN)">+</button></td>
-      <td><button onclick="minus(ministainG)">-</button></td>
+      <td><button onclick="plus(ministainN); return false;">+</button></td>
+      <td><button onclick="minus(ministainG); return false;">-</button></td>
       <td class="below"><input type="number" id="ministainG" name="ministainG" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(ministainG)">+</button></td>
-      <td><button onclick="minus(ministainK)">-</button></td>
+      <td><button onclick="plus(ministainG); return false;">+</button></td>
+      <td><button onclick="minus(ministainK); return false;">-</button></td>
       <td class="below"><input type="number" id="ministainK" name="ministainK" min="0" max="500" value="0"><br>boards</td>
-      <td><button onclick="plus(ministainK)">+</button></td>
+      <td><button onclick="plus(ministainK); return false;">+</button></td>
     </tr>
     <tr><td class="col1 pop" onclick="pop('miniC')">cut
       <span class="popuptext" id="popminiC">
@@ -205,15 +206,15 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(minicN)">-</button></td>
+      <td><button onclick="minus(minicN); return false;">-</button></td>
       <td class="below"><input type="number" id="minicN" name="minicN" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(minicN)">+</button></td>
-      <td><button onclick="minus(minicG)">-</button></td>
+      <td><button onclick="plus(minicN); return false;">+</button></td>
+      <td><button onclick="minus(minicG); return false;">-</button></td>
       <td class="below"><input type="number" id="minicG" name="minicG" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(minicG)">+</button></td>
-      <td><button onclick="minus(minicK)">-</button></td>
+      <td><button onclick="plus(minicG); return false;">+</button></td>
+      <td><button onclick="minus(minicK); return false;">-</button></td>
       <td class="below"><input type="number" id="minicK" name="minicK" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(minicK)">+</button></td>
+      <td><button onclick="plus(minicK); return false;">+</button></td>
     </tr>
     <tr><td class="col1 pop" onclick="pop('miniSl')">slotted
       <span class="popuptext" id="popminiSl">
@@ -224,15 +225,15 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(minislN)">-</button></td>
+      <td><button onclick="minus(minislN); return false;">-</button></td>
       <td class="below"><input type="number" id="minislN" name="minislN" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(minislN)">+</button></td>
-      <td><button onclick="minus(minislG)">-</button></td>
+      <td><button onclick="plus(minislN); return false;">+</button></td>
+      <td><button onclick="minus(minislG); return false;">-</button></td>
       <td class="below"><input type="number" id="minislG" name="minislG" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(minislG)">+</button></td>
-      <td><button onclick="minus(minislK)">-</button></td>
+      <td><button onclick="plus(minislG); return false;">+</button></td>
+      <td><button onclick="minus(minislK); return false;">-</button></td>
       <td class="below"><input type="number" id="minislK" name="minislK" min="0" max="500" value="0"><br>pieces</td>
-      <td><button onclick="plus(minislK)">+</button></td>
+      <td><button onclick="plus(minislK); return false;">+</button></td>
     </tr>
     <tr><td class="col1 pop" onclick="pop('miniStapled')">stapled
       <span class="popuptext" id="popminiStapled">
@@ -243,15 +244,15 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(ministapledN)">-</button></td>
+      <td><button onclick="minus(ministapledN); return false;">-</button></td>
       <td class="below"><input type="number" id="ministapledN" name="ministapledN" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(ministapledN)">+</button></td>
-      <td><button onclick="minus(ministapledG)">-</button></td>
+      <td><button onclick="plus(ministapledN); return false;">+</button></td>
+      <td><button onclick="minus(ministapledG); return false;">-</button></td>
       <td class="below"><input type="number" id="ministapledG" name="ministapledG" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(ministapledG)">+</button></td>
-      <td><button onclick="minus(ministapledK)">-</button></td>
+      <td><button onclick="plus(ministapledG); return false;">+</button></td>
+      <td><button onclick="minus(ministapledK); return false;">-</button></td>
       <td class="below"><input type="number" id="ministapledK" name="ministapledK" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(ministapledK)">+</button></td>
+      <td><button onclick="plus(ministapledK); return false;">+</button></td>
     </tr>
     <tr><td class="col1 pop" onclick="pop('miniD')">completed
       <span class="popuptext" id="popminiD">
@@ -262,20 +263,21 @@
           <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
         </table>
       </span></td>
-      <td><button onclick="minus(minidN)">-</button></td>
+      <td><button onclick="minus(minidN); return false;">-</button></td>
       <td class="below"><input type="number" id="minidN" name="minidN" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(minidN)">+</button></td>
-      <td><button onclick="minus(minidG)">-</button></td>
+      <td><button onclick="plus(minidN); return false;">+</button></td>
+      <td><button onclick="minus(minidG); return false;">-</button></td>
       <td class="below"><input type="number" id="minidG" name="minidG" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(minidG)">+</button></td>
-      <td><button onclick="minus(minidK)">-</button></td>
+      <td><button onclick="plus(minidG); return false;">+</button></td>
+      <td><button onclick="minus(minidK); return false;">-</button></td>
       <td class="below"><input type="number" id="minidK" name="minidK" min="0" max="500" value="0"><br>frames</td>
-      <td><button onclick="plus(minidK)">+</button></td>
+      <td><button onclick="plus(minidK); return false;">+</button></td>
     </tr>
   </table>
+  <input type="submit" value="Update quantities">
 </form>
 
-<input id="addPointButton" type="button" value="Update quantities" onclick="show()">
+<!-- <input type="submit" value="Update quantities"> -->
 
 <form id="add" method="GET" action="/addPoints">
   <table>
@@ -294,6 +296,7 @@
   // add one point to a child
   function plus(number) { 
     number.value = parseInt(number.value) + 1;
+    return false;
   };
 
   // subtract one point from a child

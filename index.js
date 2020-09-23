@@ -256,6 +256,71 @@ express()
   })
 
 
+    // gets the inventory database info  
+    .get('/getInventory', async (req, res) => {
+      console.log("received request for come follow me for week " + req.query.week);
+      try {
+  
+        const client    = await pool.connect()
+        const family    = await client.query('SELECT * FROM Family ORDER BY id');
+        // const dates     = await client.query('SELECT * FROM Dates WHERE week=' + req.query.week);
+        // const scriptures= await client.query('SELECT * FROM Scriptures WHERE week=' + req.query.week);
+        // const scriptLink= await client.query('SELECT * FROM scriptLink WHERE id=' + req.query.week);
+        // const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
+        // const oSong     = await client.query('SELECT * FROM oSong WHERE id=' + req.query.week);
+        // const cSong     = await client.query('SELECT * FROM cSong ORDER BY id');
+        // const music     = await client.query('SELECT * FROM musicLink ORDER BY id');
+        // const topic     = await client.query('SELECT * FROM Topic WHERE id=' + req.query.week);
+        // const background= await client.query('SELECT * FROM background ORDER BY id');
+        // const PRSLesson = await client.query('SELECT * FROM PRSLesson WHERE weekTaught=' + req.query.week);
+  
+        const params = { 'family': (family)    ? family.rows     : null 
+        //                   'dates': (dates)     ? dates.rows      : null, 
+        //              'scriptures': (scriptures)? scriptures.rows : null, 
+        //              'scriptLink': (scriptLink)? scriptLink.rows : null,
+        //               'business' : (business)  ? business.rows   : null,
+        //                  'oSong' : (oSong)     ? oSong.rows      : null, 
+        //                  'cSong' : (cSong)     ? cSong.rows      : null,
+        //                   'music': (music)     ? music.rows      : null,
+        //                   'topic': (topic)     ? topic.rows      : null, 
+        //             'background' : (background)? background.rows : null,
+        //              'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null 
+                        //  'week'  : (week)      ? week.rows       : null
+                      };
+  
+        res.send(params);
+        client.release();
+  
+      } catch (err) {
+        console.error(err);
+        res.send("Error " + err);
+      }
+    })
+  
+  // update the inventory numbers
+  .get('/add', async (req, res) => {
+    try { 
+      console.log("received request to update the inventory");
+
+      const client   = await pool.connect()
+
+      // const update   = await client.query("UPDATE business SET note ='" + sanitize(req.query.announceInput) + "' WHERE id=" + req.query.week);
+      console.log('update was successful');
+
+      const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
+
+      const params = { 'business': (business) ? business.rows : null };
+
+      res.send(params);
+      client.release();
+
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+
+
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
   // takes the data to be inserted into the database and cleans it
