@@ -1,10 +1,11 @@
 
-CREATE TABLE Wood (
+CREATE TABLE Frame (
   id         SERIAL NOT NULL PRIMARY KEY, 
   color       INT REFERENCES Color(id),
   size        INT REFERENCES Size(id),
   stage       INT REFERENCES Stage(id),
-  quantity    INT
+  quantity    INT, 
+  dateUpdated DATE
 );
 
 CREATE TABLE Stage (
@@ -42,46 +43,46 @@ INSERT INTO Size (size) VALUES ('Mini', 'Medium');
 
 
 
--- INSERT INTO Wood (color, size, stage, quantity) VALUES ( , 2, ,-1);
+-- INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES ( , 2, ,-1, '09-01-2020');
 
-INSERT INTO Wood (size, stage, quantity) VALUES (2, 1, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 2, 2, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 2, 2, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 2, 2, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 2, 3, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 2, 3, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 2, 3, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 2, 4, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 2, 4, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 2, 4, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 2, 5, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 2, 5, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 2, 5, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 2, 6, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 2, 6, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 2, 6, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 2, 7, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 2, 7, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 2, 7, -1);
+INSERT INTO Frame (size, stage, quantity, dateUpdated) VALUES (2, 1, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 2, 2, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 2, 2, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 2, 2, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 2, 3, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 2, 3, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 2, 3, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 2, 4, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 2, 4, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 2, 4, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 2, 5, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 2, 5, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 2, 5, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 2, 6, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 2, 6, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 2, 6, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 2, 7, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 2, 7, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 2, 7, -1, '09-01-2020');
 
-INSERT INTO Wood (size, stage, quantity) VALUES (1, 1, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 1, 2, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 1, 2, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 1, 2, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 1, 3, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 1, 3, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 1, 3, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 1, 4, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 1, 4, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 1, 4, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 1, 5, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 1, 5, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 1, 5, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 1, 6, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 1, 6, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 1, 6, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (1, 1, 7, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (2, 1, 7, -1);
-INSERT INTO Wood (color, size, stage, quantity) VALUES (3, 1, 7, -1);
+INSERT INTO Frame (size, stage, quantity, dateUpdated) VALUES (1, 1, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 1, 2, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 1, 2, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 2, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 1, 3, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 1, 3, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 3, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 1, 4, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 1, 4, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 4, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 1, 5, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 1, 5, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 5, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 1, 6, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 1, 6, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 6, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 1, 7, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 1, 7, -1, '09-01-2020');
+INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 7, -1, '09-01-2020');
 
 
