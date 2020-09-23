@@ -288,8 +288,8 @@ express()
                         //  'week'  : (week)      ? week.rows       : null
                       };
   
+      console.log('inventory information successfully retrieved');
       res.send(params);
-      // res.redirect('https://nate-node.herokuapp.com/inventory.html');
       client.release();
 
     } catch (err) {
@@ -312,7 +312,7 @@ express()
 
       const params = { 'business': (business) ? business.rows : null };
 
-      res.send(params);
+      res.redirect('https://nate-node.herokuapp.com/inventory.html');
       client.release();
 
     } catch (err) {
