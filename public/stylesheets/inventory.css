@@ -14,7 +14,7 @@ h1 {
 }
 
 table {
-  margin: 5px;
+  /* margin: 10px; */
   text-align: center;
 }
 
@@ -80,16 +80,16 @@ tr {
 
 .col1 {
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
   user-select: none;
   vertical-align: center;
-  font-size: large;
+  font-size: medium;
 }
 
 /* The actual popup */
 .pop .popuptext {
   visibility: hidden;
-  width: 280px;
+  width: 140px;
   background-color: #555;
   color: #fff;
   text-align: center;
@@ -99,7 +99,7 @@ tr {
   z-index: 1;
   bottom: 125%;
   left: 50%;
-  margin-left: -105px;
+  margin-left: -25px;
 }
 
 /* Popup arrow */
@@ -108,7 +108,7 @@ tr {
   position: absolute;
   top: 100%;
   left: 50%;
-  margin-left: -5px;
+  margin-left: -45px;
   border-width: 5px;
   border-style: solid;
   border-color: #555 transparent transparent transparent;
@@ -118,7 +118,15 @@ tr {
 .pop .show {
   visibility: visible;
   animation: fadeIn 1s;
-  font-size: 50%;
+  font-size: 80%;
+}
+
+span td {
+  padding: 0px 5px;
+}
+
+span table {
+  margin: auto;
 }
 
 #add { 
@@ -135,4 +143,7 @@ tr {
     margin: auto;
   }
 
+  input[type=number] {
+    width: 14vw;
+  }
 }

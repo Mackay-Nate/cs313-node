@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"">
     <title>Frame Inventory</title>
     <!--<script src=".js"></script>-->
     <link rel="stylesheet" type="text/css" href="stylesheets/inventory.css">
@@ -15,13 +15,29 @@
 <form id="form1" onsubmit="return false;">
   <table id="displayTable">
     <tr><th colspan="10">Medium</th></tr>
-    <tr><td colspan="7">unplaned boards</td>
+    <tr><td class="col1 pop" onclick="pop('Un')" colspan="7">unplaned boards
+      <span class="popuptext" id="popUn">
+        <table>
+          <tr><th colspan="2">unplaned last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+      </table></span></td>
       <td><button onclick="minus(un)">-</button></td>
       <td><input type="number" id="un" name="un" min="0" max="500" value="0"><br></td>
       <td><button onclick="plus(un)">+</button></td>
     </tr>
     <tr><th></th><th colspan="3">Natural</th><th colspan="3">Gray</th><th colspan="3">Kona</th></tr>
-    <tr><td class="col1">planed</td>
+    <tr><td class="col1 pop" onclick="pop('P')">planed
+        <span class="popuptext" id="popP">
+          <table>
+            <tr><th colspan="2">planed last updated</th></tr>
+            <tr><td>Natural</td><td id="updatepN">Sept 1, 2018</td></tr>
+            <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+            <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          </table>
+        </span>
+      </td>
       <td><button onclick="minus(pN)">-</button></td>
       <td class="below"><input type="number" id="pN" name="pN" min="0" max="500" value="0"><br>boards</td>
       <td><button onclick="plus(pN)">+</button></td>
@@ -32,7 +48,15 @@
       <td class="below"><input type="number" id="pK" name="pK" min="0" max="500" value="0"><br>boards</td>
       <td><button onclick="plus(pK)">+</button></td>
     </tr>  
-    <tr><td class="col1">stained</td>
+    <tr><td class="col1 pop" onclick="pop('Stain')">stained
+      <span class="popuptext" id="popStain">
+        <table>
+          <tr><th colspan="2">stained last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
       <td><button onclick="minus(stainN)">-</button></td>
       <td class="below"><input type="number" id="stainN" name="stainN" min="0" max="500" value="0"><br>boards</td>
       <td><button onclick="plus(stainN)">+</button></td>
@@ -43,7 +67,15 @@
       <td class="below"><input type="number" id="stainK" name="stainK" min="0" max="500" value="0"><br>boards</td>
       <td><button onclick="plus(stainK)">+</button></td>
     </tr>
-    <tr><td class="col1">cut</td>
+    <tr><td class="col1 pop" onclick="pop('C')">cut
+      <span class="popuptext" id="popC">
+        <table>
+          <tr><th colspan="2">cut last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
       <td><button onclick="minus(cN)">-</button></td>
       <td class="below"><input type="number" id="cN" name="cN" min="0" max="500" value="0"><br>pieces</td>
       <td><button onclick="plus(cN)">+</button></td>
@@ -54,7 +86,34 @@
       <td class="below"><input type="number" id="cK" name="cK" min="0" max="500" value="0"><br>pieces</td>
       <td><button onclick="plus(cK)">+</button></td>
     </tr>
-    <tr><td class="col1">stapled</td>
+    <tr><td class="col1 pop" onclick="pop('Sl')">slotted
+      <span class="popuptext" id="popSl">
+        <table>
+          <tr><th colspan="2">slotted last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
+      <td><button onclick="minus(slN)">-</button></td>
+      <td class="below"><input type="number" id="slN" name="slN" min="0" max="500" value="0"><br>pieces</td>
+      <td><button onclick="plus(slN)">+</button></td>
+      <td><button onclick="minus(slG)">-</button></td>
+      <td class="below"><input type="number" id="slG" name="slG" min="0" max="500" value="0"><br>pieces</td>
+      <td><button onclick="plus(slG)">+</button></td>
+      <td><button onclick="minus(slK)">-</button></td>
+      <td class="below"><input type="number" id="slK" name="slK" min="0" max="500" value="0"><br>pieces</td>
+      <td><button onclick="plus(slK)">+</button></td>
+    </tr>
+    <tr><td class="col1 pop" onclick="pop('Stapled')">stapled
+      <span class="popuptext" id="popStapled">
+        <table>
+          <tr><th colspan="2">stapled last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
       <td><button onclick="minus(stapledN)">-</button></td>
       <td class="below"><input type="number" id="stapledN" name="stapledN" min="0" max="500" value="0"><br>frames</td>
       <td><button onclick="plus(stapledN)">+</button></td>
@@ -65,7 +124,15 @@
       <td class="below"><input type="number" id="stapledK" name="stapledK" min="0" max="500" value="0"><br>frames</td>
       <td><button onclick="plus(stapledK)">+</button></td>
     </tr>
-    <tr><td class="col1">completed</td>
+    <tr><td class="col1 pop" onclick="pop('D')">completed
+      <span class="popuptext" id="popD">
+        <table>
+          <tr><th colspan="2">completed last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
       <td><button onclick="minus(dN)">-</button></td>
       <td class="below"><input type="number" id="dN" name="dN" min="0" max="500" value="0"><br>frames</td>
       <td><button onclick="plus(dN)">+</button></td>
@@ -77,13 +144,29 @@
       <td><button onclick="plus(dK)">+</button></td>
     </tr>
     <tr><th colspan="10">Mini</th></tr>
-    <tr><td colspan="7">unplaned boards</td>
+    <tr><td class="col1 pop" onclick="pop('miniUp')" colspan="7">unplaned boards
+      <span class="popuptext" id="popminiUp">
+        <table>
+          <tr><th colspan="2">unplaned last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
       <td><button onclick="minus(miniun)">-</button></td>
       <td><input type="number" id="miniun" name="miniun" min="0" max="500" value="0"><br></td>
       <td><button onclick="plus(miniun)">+</button></td>
     </tr>
     <tr><th></th><th colspan="3">Natural</th><th colspan="3">Gray</th><th colspan="3">Kona</th></tr>
-    <tr><td class="col1">planed</td>
+    <tr><td class="col1 pop" onclick="pop('miniP')">planed
+      <span class="popuptext" id="popminiP">
+        <table>
+          <tr><th colspan="2">planed last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
       <td><button onclick="minus(minipN)">-</button></td>
       <td class="below"><input type="number" id="minipN" name="minipN" min="0" max="500" value="0"><br>boards</td>
       <td><button onclick="plus(minipN)">+</button></td>
@@ -94,7 +177,15 @@
       <td class="below"><input type="number" id="minipK" name="minipK" min="0" max="500" value="0"><br>boards</td>
       <td><button onclick="plus(minipK)">+</button></td>
     </tr>  
-    <tr><td class="col1">stained</td>
+    <tr><td class="col1 pop" onclick="pop('miniStain')">stained
+      <span class="popuptext" id="popminiStain">
+        <table>
+          <tr><th colspan="2">stained last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
       <td><button onclick="minus(ministainN)">-</button></td>
       <td class="below"><input type="number" id="ministainN" name="ministainN" min="0" max="500" value="0"><br>boards</td>
       <td><button onclick="plus(ministainN)">+</button></td>
@@ -105,7 +196,15 @@
       <td class="below"><input type="number" id="ministainK" name="ministainK" min="0" max="500" value="0"><br>boards</td>
       <td><button onclick="plus(ministainK)">+</button></td>
     </tr>
-    <tr><td class="col1">cut</td>
+    <tr><td class="col1 pop" onclick="pop('miniC')">cut
+      <span class="popuptext" id="popminiC">
+        <table>
+          <tr><th colspan="2">cut last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
       <td><button onclick="minus(minicN)">-</button></td>
       <td class="below"><input type="number" id="minicN" name="minicN" min="0" max="500" value="0"><br>pieces</td>
       <td><button onclick="plus(minicN)">+</button></td>
@@ -116,7 +215,34 @@
       <td class="below"><input type="number" id="minicK" name="minicK" min="0" max="500" value="0"><br>pieces</td>
       <td><button onclick="plus(minicK)">+</button></td>
     </tr>
-    <tr><td class="col1">stapled</td>
+    <tr><td class="col1 pop" onclick="pop('miniSl')">slotted
+      <span class="popuptext" id="popminiSl">
+        <table>
+          <tr><th colspan="2">slotted last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
+      <td><button onclick="minus(minislN)">-</button></td>
+      <td class="below"><input type="number" id="minislN" name="minislN" min="0" max="500" value="0"><br>pieces</td>
+      <td><button onclick="plus(minislN)">+</button></td>
+      <td><button onclick="minus(minislG)">-</button></td>
+      <td class="below"><input type="number" id="minislG" name="minislG" min="0" max="500" value="0"><br>pieces</td>
+      <td><button onclick="plus(minislG)">+</button></td>
+      <td><button onclick="minus(minislK)">-</button></td>
+      <td class="below"><input type="number" id="minislK" name="minislK" min="0" max="500" value="0"><br>pieces</td>
+      <td><button onclick="plus(minislK)">+</button></td>
+    </tr>
+    <tr><td class="col1 pop" onclick="pop('miniStapled')">stapled
+      <span class="popuptext" id="popminiStapled">
+        <table>
+          <tr><th colspan="2">stapled last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
       <td><button onclick="minus(ministapledN)">-</button></td>
       <td class="below"><input type="number" id="ministapledN" name="ministapledN" min="0" max="500" value="0"><br>frames</td>
       <td><button onclick="plus(ministapledN)">+</button></td>
@@ -127,7 +253,15 @@
       <td class="below"><input type="number" id="ministapledK" name="ministapledK" min="0" max="500" value="0"><br>frames</td>
       <td><button onclick="plus(ministapledK)">+</button></td>
     </tr>
-    <tr><td class="col1">completed</td>
+    <tr><td class="col1 pop" onclick="pop('miniD')">completed
+      <span class="popuptext" id="popminiD">
+        <table>
+          <tr><th colspan="2">completed last updated</th></tr>
+          <tr><td>Natural</td><td id="updatepN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+        </table>
+      </span></td>
       <td><button onclick="minus(minidN)">-</button></td>
       <td class="below"><input type="number" id="minidN" name="minidN" min="0" max="500" value="0"><br>frames</td>
       <td><button onclick="plus(minidN)">+</button></td>
