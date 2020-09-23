@@ -261,9 +261,9 @@ express()
     console.log("received request to retrieve inventory");
     try {
 
-      const client    = await pool.connect()
-      const family    = await client.query('SELECT * FROM Family ORDER BY id');
-        // const dates     = await client.query('SELECT * FROM Dates WHERE week=' + req.query.week);
+      const client = await pool.connect();
+      const wood   = await client.query('SELECT * FROM Wood ORDER BY id');
+      const stage  = await client.query('SELECT * FROM Stage');
         // const scriptures= await client.query('SELECT * FROM Scriptures WHERE week=' + req.query.week);
         // const scriptLink= await client.query('SELECT * FROM scriptLink WHERE id=' + req.query.week);
         // const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
@@ -274,8 +274,8 @@ express()
         // const background= await client.query('SELECT * FROM background ORDER BY id');
         // const PRSLesson = await client.query('SELECT * FROM PRSLesson WHERE weekTaught=' + req.query.week);
 
-      const params = { 'family': (family)    ? family.rows     : null 
-        //                   'dates': (dates)     ? dates.rows      : null, 
+      const params = { 'wood': (wood)    ? wood.rows     : null, 
+                      'stage': (stage)   ? stage.rows    : null 
         //              'scriptures': (scriptures)? scriptures.rows : null, 
         //              'scriptLink': (scriptLink)? scriptLink.rows : null,
         //               'business' : (business)  ? business.rows   : null,
