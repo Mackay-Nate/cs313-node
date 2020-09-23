@@ -262,8 +262,8 @@ express()
     try {
 
       const client = await pool.connect();
-      const wood   = await client.query('SELECT * FROM Wood ORDER BY id');
-      const stage  = await client.query('SELECT * FROM Stage');
+      const wood   = await client.query('SELECT * FROM Frame ORDER BY id');
+      const stage  = await client.query('SELECT * FROM Stage ORDER BY id');
         // const scriptures= await client.query('SELECT * FROM Scriptures WHERE week=' + req.query.week);
         // const scriptLink= await client.query('SELECT * FROM scriptLink WHERE id=' + req.query.week);
         // const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
