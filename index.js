@@ -307,7 +307,7 @@ express()
       // const update   = await client.query("UPDATE business SET note ='" + sanitize(req.query.announceInput) + "' WHERE id=" + req.query.week);
       console.log('update was successful');
 
-      const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
+      const business  = await client.query('SELECT * FROM business WHERE id=' + 47);
 
       const params = { 'business': (business) ? business.rows : null };
 
