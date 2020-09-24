@@ -306,7 +306,7 @@ express()
 
       const client   = await pool.connect()
 
-      const update1 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.un) + "' WHERE id=1");
+      const update1 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.un) + ", dateupdated='" + date + "' WHERE id=1");
       // const update2 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pN) + "' WHERE id=2");
       // const update3 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pG) + "' WHERE id=3");
       // const update4 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pK) + "' WHERE id=4");
@@ -373,4 +373,9 @@ express()
       }
     }
     return phrase;
+  };
+
+  function getDate() { 
+    var date = new Date();
+    return date;
   };

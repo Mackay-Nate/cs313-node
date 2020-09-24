@@ -325,9 +325,9 @@
 
       // document.getElementById('').value = data.wood[].quantity;
       document.getElementById('un').value = data.wood[0].quantity;
-      document.getElementById('pN').value = data.wood[1].quantity;
-      document.getElementById('pG').value = data.wood[2].quantity;
-      document.getElementById('pK').value = data.wood[3].quantity;
+      // document.getElementById('pN').value = data.wood[1].quantity;
+      // document.getElementById('pG').value = data.wood[2].quantity;
+      // document.getElementById('pK').value = data.wood[3].quantity;
       document.getElementById('stainN').value = data.wood[4].quantity;
       document.getElementById('stainG').value = data.wood[5].quantity;
       document.getElementById('stainK').value = data.wood[6].quantity;
@@ -345,9 +345,9 @@
       document.getElementById('dK').value = data.wood[18].quantity;
       
       document.getElementById('miniun').value = data.wood[19].quantity;
-      document.getElementById('minipN').value = data.wood[20].quantity;
-      document.getElementById('minipG').value = data.wood[21].quantity;
-      document.getElementById('minipK').value = data.wood[22].quantity;
+      // document.getElementById('minipN').value = data.wood[20].quantity;
+      // document.getElementById('minipG').value = data.wood[21].quantity;
+      // document.getElementById('minipK').value = data.wood[22].quantity;
       document.getElementById('ministainN').value = data.wood[23].quantity;
       document.getElementById('ministainG').value = data.wood[24].quantity;
       document.getElementById('ministainK').value = data.wood[25].quantity;
@@ -365,9 +365,9 @@
       document.getElementById('minidK').value = data.wood[37].quantity;
 
       // for (var i = 0; i < data.wood.length; i++) { 
-      document.getElementById('updateUn').innerHTML = formatDate(Date(data.wood[0].dateupdated));
-      document.getElementById('updatepN').innerHTML = data.wood[1].dateupdated;
-      document.getElementById('updatepK').innerHTML = Date(data.wood[3].dateupdated);
+      document.getElementById('updateUn').innerHTML = (data.wood[0].dateupdated);
+      document.getElementById('updatepN').innerHTML = formatDate(Date(data.wood[0].dateupdated));
+      document.getElementById('updatepG').innerHTML = Date(data.wood[0].dateupdated);
 
       }
     }
