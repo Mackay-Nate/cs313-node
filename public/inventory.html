@@ -272,7 +272,7 @@
 
       for (var i = 0; i < data.wood.length; i++) { 
         document.getElementsByTagName('input')[i].value = data.wood[i].quantity;
-        document.getElementsByClassName('update')[i].innerHTML = data.wood[i].dateupdated;
+        document.getElementsByClassName('update')[i].innerHTML = formatDate(data.wood[i].dateupdated);
       }
 
 
