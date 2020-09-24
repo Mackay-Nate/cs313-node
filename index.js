@@ -308,7 +308,11 @@ express()
 
       const client   = await pool.connect()
 
-      const update1 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.un) + ", dateupdated='" + date + "' WHERE id=1");
+      const check1 = await client.query("SELECT quantity FROM frame WHERE id=1");
+      if (check1 != req.query.un) {
+        const update1 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.un) + ", dateupdated='" + date + "' WHERE id=1");
+        console.log('un updated');
+      }
       // const update2 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pN) + "' WHERE id=2");
       // const update3 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pG) + "' WHERE id=3");
       // const update4 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pK) + "' WHERE id=4");
@@ -379,6 +383,6 @@ express()
 
   function getDate() { 
     var date = new Date();
-    return date.getMonth() + " " + date.getDate() + " " + date.getFullYear();
-    // return date.substring(0, 10);
+    // return (date.getMonth() + 1) + " " + date.getDate() + " " + date.getFullYear();
+    return "September 1, 2020";
   };
