@@ -309,8 +309,9 @@ express()
       const client   = await pool.connect()
 
       const check1 = await client.query("SELECT quantity FROM frame WHERE id=1");
-      console.log(check1);
-      console.log(check1.row);
+      console.log('check1 ' + check1);
+      console.log('check2 ' + check1.row);
+      console.log('check3 ' + check1.quantity)
       if (check1 != req.query.un) {
         const update1 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.un) + ", dateupdated='" + date + "' WHERE id=1");
         console.log('un updated');
