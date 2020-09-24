@@ -307,9 +307,9 @@ express()
       const client   = await pool.connect()
 
       const update1 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.un) + "' WHERE id=1");
-      const update2 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pN) + "' WHERE id=2");
-      const update3 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pG) + "' WHERE id=3");
-      const update4 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pK) + "' WHERE id=4");
+      // const update2 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pN) + "' WHERE id=2");
+      // const update3 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pG) + "' WHERE id=3");
+      // const update4 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pK) + "' WHERE id=4");
       const update5 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.stainN) + "' WHERE id=5");
       const update6 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.stainG) + "' WHERE id=6");
       const update7 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.stainK) + "' WHERE id=7");
@@ -326,9 +326,9 @@ express()
       const update18 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.dG) + "' WHERE id=18");
       const update19 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.dK) + "' WHERE id=19");
       const update20 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.miniun) + "' WHERE id=20");
-      const update21 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minipN) + "' WHERE id=21");
-      const update22 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minipG) + "' WHERE id=22");
-      const update23 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minipK) + "' WHERE id=23");
+      // const update21 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minipN) + "' WHERE id=21");
+      // const update22 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minipG) + "' WHERE id=22");
+      // const update23 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minipK) + "' WHERE id=23");
       const update24 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.ministainN) + "' WHERE id=24");
       const update25 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.ministainG) + "' WHERE id=25");
       const update26 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.ministainK) + "' WHERE id=26");
