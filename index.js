@@ -287,11 +287,11 @@ express()
       var date = getDate();
       console.log(date);
 
-      var updates = [req.query.un ,req.query.stainN ,req.query.stainG ,req.query.stainK ,req.query.cN ,req.query.cG ,req.query.cK ,req.query.slN ,req.query.slG ,req.query.slK ,req.query.stapledN ,req.query.stapledG ,req.query.stapledK ,req.query.dN ,req.query.dG ,req.query.dK ,req.query.miniun ,req.query.ministainN ,req.query.ministainG ,req.query.ministainK ,req.query.minicN ,req.query.minicG ,req.query.minicK ,req.query.minislN ,req.query.minislG ,req.query.minislK ,req.query.ministapledN ,req.query.ministapledG ,req.query.ministapledK ,req.query.minidN ,req.query.minidG ,req.query.minidK ];
+      var updates = [req.query.un, req.query.stainN, req.query.stainG, req.query.stainK, req.query.cN, req.query.cG, req.query.cK, req.query.slN, req.query.slG, req.query.slK, req.query.stapledN, req.query.stapledG, req.query.stapledK, req.query.dN, req.query.dG, req.query.dK, req.query.miniun, req.query.ministainN, req.query.ministainG, req.query.ministainK, req.query.minicN, req.query.minicG, req.query.minicK, req.query.minislN, req.query.minislG, req.query.minislK, req.query.ministapledN, req.query.ministapledG, req.query.ministapledK, req.query.minidN, req.query.minidG, req.query.minidK];
 
       const client   = await pool.connect()
 
-      for (var i = 1; i < updates.length + 1; i++) {
+      for (var i = 1; i < (updates.length + 1); i++) {
         const check = await client.query("SELECT quantity FROM frame WHERE id=" + i);
 
         if (check.rows[0].quantity != updates[i - 1]) {
