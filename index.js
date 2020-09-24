@@ -309,50 +309,143 @@ express()
       const client   = await pool.connect()
 
       const check1 = await client.query("SELECT quantity FROM frame WHERE id=1");
-      console.log('check1 ' + check1);
-      console.log('check2 ' + check1.rows.quantity);
-      console.log('check3 ' + check1.rows[0].quantity);
+      const check2 = await client.query("SELECT quantity FROM frame WHERE id=2");
+      const check3 = await client.query("SELECT quantity FROM frame WHERE id=3");
+      const check4 = await client.query("SELECT quantity FROM frame WHERE id=4");
+      const check5 = await client.query("SELECT quantity FROM frame WHERE id=5");
+      const check6 = await client.query("SELECT quantity FROM frame WHERE id=6");
+      const check7 = await client.query("SELECT quantity FROM frame WHERE id=7");
+      const check8 = await client.query("SELECT quantity FROM frame WHERE id=8");
+      const check9 = await client.query("SELECT quantity FROM frame WHERE id=9");
+      const check10 = await client.query("SELECT quantity FROM frame WHERE id=10");
+      const check11 = await client.query("SELECT quantity FROM frame WHERE id=11");
+      const check12 = await client.query("SELECT quantity FROM frame WHERE id=12");
+      const check13 = await client.query("SELECT quantity FROM frame WHERE id=13");
+      const check14 = await client.query("SELECT quantity FROM frame WHERE id=14");
+      const check15 = await client.query("SELECT quantity FROM frame WHERE id=15");
+      const check16 = await client.query("SELECT quantity FROM frame WHERE id=16");
+      const check17 = await client.query("SELECT quantity FROM frame WHERE id=17");
+      const check18 = await client.query("SELECT quantity FROM frame WHERE id=18");
+      const check19 = await client.query("SELECT quantity FROM frame WHERE id=19");
+      const check20 = await client.query("SELECT quantity FROM frame WHERE id=20");
+      const check21 = await client.query("SELECT quantity FROM frame WHERE id=21");
+      const check22 = await client.query("SELECT quantity FROM frame WHERE id=22");
+      const check23 = await client.query("SELECT quantity FROM frame WHERE id=23");
+      const check24 = await client.query("SELECT quantity FROM frame WHERE id=24");
+      const check25 = await client.query("SELECT quantity FROM frame WHERE id=25");
+      const check26 = await client.query("SELECT quantity FROM frame WHERE id=26");
+      const check27 = await client.query("SELECT quantity FROM frame WHERE id=27");
+      const check28 = await client.query("SELECT quantity FROM frame WHERE id=28");
+      const check29 = await client.query("SELECT quantity FROM frame WHERE id=29");
+      const check30 = await client.query("SELECT quantity FROM frame WHERE id=30");
+      const check31 = await client.query("SELECT quantity FROM frame WHERE id=31");
+      const check32 = await client.query("SELECT quantity FROM frame WHERE id=32");
+      const check33 = await client.query("SELECT quantity FROM frame WHERE id=33");
+      const check34 = await client.query("SELECT quantity FROM frame WHERE id=34");
+      const check35 = await client.query("SELECT quantity FROM frame WHERE id=35");
+      const check36 = await client.query("SELECT quantity FROM frame WHERE id=36");
+      const check37 = await client.query("SELECT quantity FROM frame WHERE id=37");
+      const check38 = await client.query("SELECT quantity FROM frame WHERE id=38");
+
+      // console.log('check3 ' + check1.rows[0].quantity);
       if (check1.rows[0].quantity != req.query.un) {
         const update1 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.un) + ", dateupdated='" + date + "' WHERE id=1");
         console.log('un updated');
       }
-      // const update2 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pN) + "' WHERE id=2");
-      // const update3 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pG) + "' WHERE id=3");
-      // const update4 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.pK) + "' WHERE id=4");
-      const update5 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.stainN) + "' WHERE id=5");
-      const update6 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.stainG) + "' WHERE id=6");
-      const update7 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.stainK) + "' WHERE id=7");
-      const update8 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.cN) + "' WHERE id=8");
-      const update9 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.cG) + "' WHERE id=9");
-      const update10 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.cK) + "' WHERE id=10");
-      const update11 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.slN) + "' WHERE id=11");
-      const update12 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.slG) + "' WHERE id=12");
-      const update13 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.slK) + "' WHERE id=13");
-      const update14 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.stapledN) + "' WHERE id=14");
-      const update15 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.stapledG) + "' WHERE id=15");
-      const update16 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.stapledK) + "' WHERE id=16");
-      const update17 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.dN) + "' WHERE id=17");
-      const update18 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.dG) + "' WHERE id=18");
-      const update19 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.dK) + "' WHERE id=19");
-      const update20 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.miniun) + "' WHERE id=20");
-      // const update21 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minipN) + "' WHERE id=21");
-      // const update22 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minipG) + "' WHERE id=22");
-      // const update23 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minipK) + "' WHERE id=23");
-      const update24 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.ministainN) + "' WHERE id=24");
-      const update25 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.ministainG) + "' WHERE id=25");
-      const update26 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.ministainK) + "' WHERE id=26");
-      const update27 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minicN) + "' WHERE id=27");
-      const update28 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minicG) + "' WHERE id=28");
-      const update29 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minicK) + "' WHERE id=29");
-      const update30 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minislN) + "' WHERE id=30");
-      const update31 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minislG) + "' WHERE id=31");
-      const update32 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minislK) + "' WHERE id=32");
-      const update33 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.ministapledN) + "' WHERE id=33");
-      const update34 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.ministapledG) + "' WHERE id=34");
-      const update35 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.ministapledK) + "' WHERE id=35");
-      const update36 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minidN) + "' WHERE id=36");
-      const update37 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minidG) + "' WHERE id=37");
-      const update38 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.minidK) + "' WHERE id=38");
+      if (check5.rows[0].quantity != req.query.stainN) {
+        const update5 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stainN) + ", dateupdated='" + date + "' WHERE id=5");
+      }
+      if (check6.rows[0].quantity != req.query.stainG) { 
+        const update6 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stainG) + ", dateupdated='" + date + "' WHERE id=6");
+      }
+      if (check7.rows[0].quantity != req.query.stainK) {
+        const update7 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stainK) + ", dateupdated='" + date + "' WHERE id=7");
+      }
+      if (check8.rows[0].quantity != req.query.cN) {
+        const update8 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.cN) + ", dateupdated='" + date + "' WHERE id=8");
+      }
+      if (check9.rows[0].quantity != req.query.cG) {
+        const update9 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.cG) + ", dateupdated='" + date + "' WHERE id=9");
+      }
+      if (check10.rows[0].quantity != req.query.cK) {
+        const update10 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.cK) + ", dateupdated='" + date + "' WHERE id=10");
+      }
+      if (check11.rows[0].quantity != req.query.slN) {
+        const update11 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.slN) + ", dateupdated='" + date + "' WHERE id=11");
+      }
+      if (check12.rows[0].quantity != req.query.slG) {
+        const update12 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.slG) + ", dateupdated='" + date + "' WHERE id=12");
+      }
+      if (check13.rows[0].quantity != req.query.slK) {
+        const update13 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.slK) + ", dateupdated='" + date + "' WHERE id=13");
+      }
+      if (check14.rows[0].quantity != req.query.stapledN) {
+        const update14 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stapledN) + ", dateupdated='" + date + "' WHERE id=14");
+      }
+      if (check15.rows[0].quantity != req.query.stapledG) {
+        const update15 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stapledG) + ", dateupdated='" + date + "' WHERE id=15");
+      }
+      if (check16.rows[0].quantity != req.query.stapledK) {
+        const update16 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stapledK) + ", dateupdated='" + date + "' WHERE id=16");
+      }
+      if (check17.rows[0].quantity != req.query.dN) {
+        const update17 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.dN) + ", dateupdated='" + date + "' WHERE id=17");
+      }
+      if (check18.rows[0].quantity != req.query.dG) {
+        const update18 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.dG) + ", dateupdated='" + date + "' WHERE id=18");
+      }
+      if (check19.rows[0].quantity != req.query.dK) {
+        const update19 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.dK) + ", dateupdated='" + date + "' WHERE id=19");
+      }
+
+      if (check20.rows[0].quantity != req.query.miniun) {
+        const update20 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.miniun) + ", dateupdated='" + date + "' WHERE id=20");
+      }
+      if (check24.rows[0].quantity != req.query.ministainN) {
+        const update24 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministainN) + ", dateupdated='" + date + "' WHERE id=24");
+      }
+      if (check25.rows[0].quantity != req.query.ministainG) {
+        const update25 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministainG) + ", dateupdated='" + date + "' WHERE id=25");
+      }
+      if (check26.rows[0].quantity != req.query.ministainK) {
+        const update26 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministainK) + ", dateupdated='" + date + "' WHERE id=26");
+      }
+      if (check27.rows[0].quantity != req.query.minicN) {
+        const update27 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minicN) + ", dateupdated='" + date + "' WHERE id=27");
+      }
+      if (check28.rows[0].quantity != req.query.minicG) {
+        const update28 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minicG) + ", dateupdated='" + date + "' WHERE id=28");
+      }
+      if (check29.rows[0].quantity != req.query.minicK) {
+        const update29 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minicK) + ", dateupdated='" + date + "' WHERE id=29");
+      }
+      if (check30.rows[0].quantity != req.query.minislN) {
+        const update30 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minislN) + ", dateupdated='" + date + "' WHERE id=30");
+      }
+      if (check32.rows[0].quantity != req.query.minislG) {
+        const update31 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minislG) + ", dateupdated='" + date + "' WHERE id=31");
+      }
+      if (check32.rows[0].quantity != req.query.minislK) {
+        const update32 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minislK) + ", dateupdated='" + date + "' WHERE id=32");
+      }
+      if (check33.rows[0].quantity != req.query.ministapledN) {
+        const update33 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministapledN) + ", dateupdated='" + date + "' WHERE id=33");
+      }
+      if (check34.rows[0].quantity != req.query.ministapledG) {
+        const update34 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministapledG) + ", dateupdated='" + date + "' WHERE id=34");
+      }
+      if (check35.rows[0].quantity != req.query.ministapledK) {
+        const update35 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministapledK) + ", dateupdated='" + date + "' WHERE id=35");
+      }
+      if (check36.rows[0].quantity != req.query.minidN) {
+        const update36 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minidN) + ", dateupdated='" + date + "' WHERE id=36");
+      }
+      if (check37.rows[0].quantity != req.query.minidG) {
+        const update37 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minidG) + ", dateupdated='" + date + "' WHERE id=37");
+      }
+      if (check38.rows[0].quantity != req.query.minidK) {
+        const update38 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minidK) + ", dateupdated='" + date + "' WHERE id=38");
+      }
 
       console.log('update was successful');
 
@@ -387,5 +480,5 @@ express()
   function getDate() { 
     var date = new Date();
     // return (date.getMonth() + 1) + " " + date.getDate() + " " + date.getFullYear();
-    return "September 3, 2020";
+    return "September 5, 2020";
   };
