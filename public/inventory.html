@@ -327,7 +327,7 @@
 
       // for (var i = 0; i < data.wood.length; i++) { 
       var tempDay = Date(data.wood[0].dateupdated);
-      document.getElementById('updateUn').innerHTML = formatDate(data.wood[0].dateupdated);
+      document.getElementById('updateUn').innerHTML = formatDate(Date(data.wood[0].dateupdated));
       document.getElementById('updatepN').innerHTML = data.wood[1].dateupdated;
       var tempDay = Date(data.wood[2].dateupdated);
       // document.getElementById('updatepG').innerHTML = tempDay.toDateString();
