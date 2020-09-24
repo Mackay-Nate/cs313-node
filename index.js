@@ -264,30 +264,12 @@ express()
       const client = await pool.connect();
       const wood   = await client.query('SELECT * FROM Frame ORDER BY id');
       const stage  = await client.query('SELECT * FROM Stage ORDER BY id');
-        // const scriptures= await client.query('SELECT * FROM Scriptures WHERE week=' + req.query.week);
-        // const scriptLink= await client.query('SELECT * FROM scriptLink WHERE id=' + req.query.week);
-        // const business  = await client.query('SELECT * FROM business WHERE id=' + req.query.week);
-        // const oSong     = await client.query('SELECT * FROM oSong WHERE id=' + req.query.week);
-        // const cSong     = await client.query('SELECT * FROM cSong ORDER BY id');
-        // const music     = await client.query('SELECT * FROM musicLink ORDER BY id');
-        // const topic     = await client.query('SELECT * FROM Topic WHERE id=' + req.query.week);
-        // const background= await client.query('SELECT * FROM background ORDER BY id');
-        // const PRSLesson = await client.query('SELECT * FROM PRSLesson WHERE weekTaught=' + req.query.week);
 
       const params = { 'wood': (wood)    ? wood.rows     : null, 
                       'stage': (stage)   ? stage.rows    : null 
         //              'scriptures': (scriptures)? scriptures.rows : null, 
-        //              'scriptLink': (scriptLink)? scriptLink.rows : null,
-        //               'business' : (business)  ? business.rows   : null,
-        //                  'oSong' : (oSong)     ? oSong.rows      : null, 
-        //                  'cSong' : (cSong)     ? cSong.rows      : null,
-        //                   'music': (music)     ? music.rows      : null,
-        //                   'topic': (topic)     ? topic.rows      : null, 
-        //             'background' : (background)? background.rows : null,
-        //              'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null 
-                        //  'week'  : (week)      ? week.rows       : null
                       };
-  
+
       console.log('inventory information successfully retrieved');
       res.send(params);
       client.release();
@@ -298,134 +280,26 @@ express()
     }
   })
 
-  // update the inventory numbers
+  // update the inventory quantity numbers
   .get('/updateInventory', async (req, res) => {
     try { 
       console.log("received request to update the inventory");
-      // console.log(Date());
       var date = getDate();
       console.log(date);
-      var updates = [req.query.un ,req.query.stainN ,req.query.stainG ,req.query.stainK ,req.query.cN ,req.query.cG ,req.query.cK ,req.query.slN ,req.query.slG ,req.query.slK ,req.query.stapledN ,req.query.stapledG ,req.query.stapledK ,req.query.dN ,req.query.dG ,req.query.dK ,req.query.miniun ,req.query.ministainN ,req.query.ministainG ,req.query.ministainK ,req.query.minicN ,req.query.minicG ,req.query.minicK ,req.query.minislN ,req.query.minislG ,req.query.minislK ,req.query.ministapledN ,req.query.ministapledG ,req.query.ministapledK ,req.query.minidN ,req.query.minidG ,req.query.minidK ];
 
+      var updates = [req.query.un ,req.query.stainN ,req.query.stainG ,req.query.stainK ,req.query.cN ,req.query.cG ,req.query.cK ,req.query.slN ,req.query.slG ,req.query.slK ,req.query.stapledN ,req.query.stapledG ,req.query.stapledK ,req.query.dN ,req.query.dG ,req.query.dK ,req.query.miniun ,req.query.ministainN ,req.query.ministainG ,req.query.ministainK ,req.query.minicN ,req.query.minicG ,req.query.minicK ,req.query.minislN ,req.query.minislG ,req.query.minislK ,req.query.ministapledN ,req.query.ministapledG ,req.query.ministapledK ,req.query.minidN ,req.query.minidG ,req.query.minidK ];
 
       const client   = await pool.connect()
 
-      for (var i = 1; i < updates.length; i++) {
+      for (var i = 1; i < updates.length + 1; i++) {
         const check = await client.query("SELECT quantity FROM frame WHERE id=" + i);
-        console.log("i= " + i);
-        console.log("check " + check.rows[0] + check.rows[0].quantity);
+
         if (check.rows[0].quantity != updates[i - 1]) {
           var update1 = await client.query("UPDATE frame SET quantity =" + sanitize(updates[i - 1]) + ", dateupdated='" + date + "' WHERE id=" + i);
           console.log(i + ' updated from ' + check.rows[0].quantity + ' to ' + updates[i - 1] );
         }
 
-
-      }
-      // console.log('check3 ' + check1.rows[0].quantity);
-      // if (check1.rows[0].quantity != req.query.un) {
-      //   const update1 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.un) + ", dateupdated='" + date + "' WHERE id=1");
-      //   console.log('un updated');
-      // }
-      // if (check5.rows[0].quantity != req.query.stainN) {
-      //   const update5 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stainN) + ", dateupdated='" + date + "' WHERE id=5");
-      // }
-      // if (check6.rows[0].quantity != req.query.stainG) { 
-      //   const update6 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stainG) + ", dateupdated='" + date + "' WHERE id=6");
-      // }
-      // if (check7.rows[0].quantity != req.query.stainK) {
-      //   const update7 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stainK) + ", dateupdated='" + date + "' WHERE id=7");
-      // }
-      // if (check8.rows[0].quantity != req.query.cN) {
-      //   const update8 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.cN) + ", dateupdated='" + date + "' WHERE id=8");
-      // }
-      // if (check9.rows[0].quantity != req.query.cG) {
-      //   const update9 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.cG) + ", dateupdated='" + date + "' WHERE id=9");
-      // }
-      // if (check10.rows[0].quantity != req.query.cK) {
-      //   const update10 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.cK) + ", dateupdated='" + date + "' WHERE id=10");
-      // }
-      // if (check11.rows[0].quantity != req.query.slN) {
-      //   const update11 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.slN) + ", dateupdated='" + date + "' WHERE id=11");
-      // }
-      // if (check12.rows[0].quantity != req.query.slG) {
-      //   const update12 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.slG) + ", dateupdated='" + date + "' WHERE id=12");
-      // }
-      // if (check13.rows[0].quantity != req.query.slK) {
-      //   const update13 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.slK) + ", dateupdated='" + date + "' WHERE id=13");
-      // }
-      // if (check14.rows[0].quantity != req.query.stapledN) {
-      //   const update14 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stapledN) + ", dateupdated='" + date + "' WHERE id=14");
-      // }
-      // if (check15.rows[0].quantity != req.query.stapledG) {
-      //   const update15 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stapledG) + ", dateupdated='" + date + "' WHERE id=15");
-      // }
-      // if (check16.rows[0].quantity != req.query.stapledK) {
-      //   const update16 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.stapledK) + ", dateupdated='" + date + "' WHERE id=16");
-      // }
-      // if (check17.rows[0].quantity != req.query.dN) {
-      //   const update17 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.dN) + ", dateupdated='" + date + "' WHERE id=17");
-      // }
-      // if (check18.rows[0].quantity != req.query.dG) {
-      //   const update18 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.dG) + ", dateupdated='" + date + "' WHERE id=18");
-      // }
-      // if (check19.rows[0].quantity != req.query.dK) {
-      //   const update19 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.dK) + ", dateupdated='" + date + "' WHERE id=19");
-      // }
-
-      // if (check20.rows[0].quantity != req.query.miniun) {
-      //   const update20 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.miniun) + ", dateupdated='" + date + "' WHERE id=20");
-      // }
-      // if (check24.rows[0].quantity != req.query.ministainN) {
-      //   const update24 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministainN) + ", dateupdated='" + date + "' WHERE id=24");
-      // }
-      // if (check25.rows[0].quantity != req.query.ministainG) {
-      //   const update25 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministainG) + ", dateupdated='" + date + "' WHERE id=25");
-      // }
-      // if (check26.rows[0].quantity != req.query.ministainK) {
-      //   const update26 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministainK) + ", dateupdated='" + date + "' WHERE id=26");
-      // }
-      // if (check27.rows[0].quantity != req.query.minicN) {
-      //   const update27 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minicN) + ", dateupdated='" + date + "' WHERE id=27");
-      // }
-      // if (check28.rows[0].quantity != req.query.minicG) {
-      //   const update28 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minicG) + ", dateupdated='" + date + "' WHERE id=28");
-      // }
-      // if (check29.rows[0].quantity != req.query.minicK) {
-      //   const update29 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minicK) + ", dateupdated='" + date + "' WHERE id=29");
-      // }
-      // if (check30.rows[0].quantity != req.query.minislN) {
-      //   const update30 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minislN) + ", dateupdated='" + date + "' WHERE id=30");
-      // }
-      // if (check32.rows[0].quantity != req.query.minislG) {
-      //   const update31 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minislG) + ", dateupdated='" + date + "' WHERE id=31");
-      // }
-      // if (check32.rows[0].quantity != req.query.minislK) {
-      //   const update32 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minislK) + ", dateupdated='" + date + "' WHERE id=32");
-      // }
-      // if (check33.rows[0].quantity != req.query.ministapledN) {
-      //   const update33 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministapledN) + ", dateupdated='" + date + "' WHERE id=33");
-      // }
-      // if (check34.rows[0].quantity != req.query.ministapledG) {
-      //   const update34 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministapledG) + ", dateupdated='" + date + "' WHERE id=34");
-      // }
-      // if (check35.rows[0].quantity != req.query.ministapledK) {
-      //   const update35 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.ministapledK) + ", dateupdated='" + date + "' WHERE id=35");
-      // }
-      // if (check36.rows[0].quantity != req.query.minidN) {
-      //   const update36 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minidN) + ", dateupdated='" + date + "' WHERE id=36");
-      // }
-      // if (check37.rows[0].quantity != req.query.minidG) {
-      //   const update37 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minidG) + ", dateupdated='" + date + "' WHERE id=37");
-      // }
-      // if (check38.rows[0].quantity != req.query.minidK) {
-      //   const update38 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.minidK) + ", dateupdated='" + date + "' WHERE id=38");
-      // }
-
       console.log('update was successful');
-
-      // const business  = await client.query('SELECT * FROM business WHERE id=' + 47);
-
-      // const params = { 'business': (business) ? business.rows : null };
 
       res.redirect('https://nate-node.herokuapp.com/inventory.html');
       client.release();

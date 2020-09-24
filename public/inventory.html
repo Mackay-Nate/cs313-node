@@ -266,92 +266,14 @@
     xmlHttpRequest.onreadystatechange = function() {
       if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
 
-      console.log('inside if statement');
-      var data = JSON.parse(xmlHttpRequest.responseText);
-      var total;
+        console.log('inside if statement');
+        var data = JSON.parse(xmlHttpRequest.responseText);
+        var total;
 
-      for (var i = 0; i < data.wood.length; i++) { 
-        document.getElementsByTagName('input')[i].value = data.wood[i].quantity;
-        document.getElementsByClassName('update')[i].innerHTML = formatDate(data.wood[i].dateupdated);
-      }
-
-
-
-
-      // document.getElementById('').value = data.wood[].quantity;
-      // document.getElementById('un').value = data.wood[0].quantity;
-      // document.getElementById('pN').value = data.wood[1].quantity;
-      // document.getElementById('pG').value = data.wood[2].quantity;
-      // document.getElementById('pK').value = data.wood[3].quantity;
-      // document.getElementById('stainN').value = data.wood[4].quantity;
-      // document.getElementById('stainG').value = data.wood[5].quantity;
-      // document.getElementById('stainK').value = data.wood[6].quantity;
-      // document.getElementById('cN').value = data.wood[7].quantity;
-      // document.getElementById('cG').value = data.wood[8].quantity;
-      // document.getElementById('cK').value = data.wood[9].quantity;
-      // document.getElementById('slN').value = data.wood[10].quantity;
-      // document.getElementById('slG').value = data.wood[11].quantity;
-      // document.getElementById('slK').value = data.wood[12].quantity;
-      // document.getElementById('stapledN').value = data.wood[13].quantity;
-      // document.getElementById('stapledG').value = data.wood[14].quantity;
-      // document.getElementById('stapledK').value = data.wood[15].quantity;
-      // document.getElementById('dN').value = data.wood[16].quantity;
-      // document.getElementById('dG').value = data.wood[17].quantity;
-      // document.getElementById('dK').value = data.wood[18].quantity;
-      
-      // document.getElementById('miniun').value = data.wood[19].quantity;
-      // document.getElementById('minipN').value = data.wood[20].quantity;
-      // document.getElementById('minipG').value = data.wood[21].quantity;
-      // document.getElementById('minipK').value = data.wood[22].quantity;
-      // document.getElementById('ministainN').value = data.wood[23].quantity;
-      // document.getElementById('ministainG').value = data.wood[24].quantity;
-      // document.getElementById('ministainK').value = data.wood[25].quantity;
-      // document.getElementById('minicN').value = data.wood[26].quantity;
-      // document.getElementById('minicG').value = data.wood[27].quantity;
-      // document.getElementById('minicK').value = data.wood[28].quantity;
-      // document.getElementById('minislN').value = data.wood[29].quantity;
-      // document.getElementById('minislG').value = data.wood[30].quantity;
-      // document.getElementById('minislK').value = data.wood[31].quantity;
-      // document.getElementById('ministapledN').value = data.wood[32].quantity;
-      // document.getElementById('ministapledG').value = data.wood[33].quantity;
-      // document.getElementById('ministapledK').value = data.wood[34].quantity;
-      // document.getElementById('minidN').value = data.wood[35].quantity;
-      // document.getElementById('minidG').value = data.wood[36].quantity;
-      // document.getElementById('minidK').value = data.wood[37].quantity;
-
-      // document.getElementById('updateUn').innerHTML = formatDate(data.wood[0].dateupdated);
-      // document.getElementById('updatestainN').innerHTML = formatDate(data.wood[4].dateupdated);
-      // document.getElementById('updatestainG').innerHTML = formatDate(data.wood[5].dateupdated);
-      // document.getElementById('updatestainK').innerHTML = formatDate(data.wood[6].dateupdated);
-      // document.getElementById('updatecN').innerHTML = formatDate(data.wood[7].dateupdated);
-      // document.getElementById('updatecG').innerHTML = formatDate(data.wood[8].dateupdated);
-      // document.getElementById('updatecK').innerHTML = formatDate(data.wood[9].dateupdated);
-      // document.getElementById('updateslN').innerHTML = formatDate(data.wood[10].dateupdated);
-      // document.getElementById('updateslG').innerHTML = formatDate(data.wood[11].dateupdated);
-      // document.getElementById('updateslK').innerHTML = formatDate(data.wood[12].dateupdated);
-      // document.getElementById('updatestapledN').innerHTML = formatDate(data.wood[13].dateupdated);
-      // document.getElementById('updatestapledG').innerHTML = formatDate(data.wood[14].dateupdated);
-      // document.getElementById('updatestapledK').innerHTML = formatDate(data.wood[15].dateupdated);
-      // document.getElementById('updatedN').innerHTML = formatDate(data.wood[16].dateupdated);
-      // document.getElementById('updatedG').innerHTML = formatDate(data.wood[17].dateupdated);
-      // document.getElementById('updatedK').innerHTML = formatDate(data.wood[18].dateupdated);
-
-      // document.getElementById('updateminiUn').innerHTML = formatDate(data.wood[19].dateupdated);
-      // document.getElementById('updateministainN').innerHTML = formatDate(data.wood[23].dateupdated);
-      // document.getElementById('updateministainG').innerHTML = formatDate(data.wood[24].dateupdated);
-      // document.getElementById('updateministainK').innerHTML = formatDate(data.wood[25].dateupdated);
-      // document.getElementById('updateminicN').innerHTML = formatDate(data.wood[26].dateupdated);
-      // document.getElementById('updateminicG').innerHTML = formatDate(data.wood[27].dateupdated);
-      // document.getElementById('updateminicK').innerHTML = formatDate(data.wood[28].dateupdated);
-      // document.getElementById('updateminislN').innerHTML = formatDate(data.wood[29].dateupdated);
-      // document.getElementById('updateminislG').innerHTML = formatDate(data.wood[30].dateupdated);
-      // document.getElementById('updateminislK').innerHTML = formatDate(data.wood[31].dateupdated);
-      // document.getElementById('updateministapledN').innerHTML = formatDate(data.wood[32].dateupdated);
-      // document.getElementById('updateministapledG').innerHTML = formatDate(data.wood[33].dateupdated);
-      // document.getElementById('updateministapledK').innerHTML = formatDate(data.wood[34].dateupdated);
-      // document.getElementById('updateminidN').innerHTML = formatDate(data.wood[35].dateupdated);
-      // document.getElementById('updateminidG').innerHTML = formatDate(data.wood[36].dateupdated);
-      // document.getElementById('updateminidK').innerHTML = formatDate(data.wood[37].dateupdated);
+        for (var i = 0; i < data.wood.length; i++) { 
+          document.getElementsByTagName('input')[i].value = data.wood[i].quantity;
+          document.getElementsByClassName('update')[i].innerHTML = formatDate(data.wood[i].dateupdated);
+        }
 
       }
     }
@@ -361,6 +283,7 @@
 
   };
 
+  // returns the date data type in this form September 24, 2020
   function formatDate(date) {
     var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     return (date.substring(5,6) > 0) ? month[date.substring(5 ,7) - 1] : month[date.substring(6 ,7) - 1] + " " + date.substring(8, 10) + ", " + date.substring(0, 4);
