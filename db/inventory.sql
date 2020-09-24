@@ -14,8 +14,7 @@ CREATE TABLE Stage (
 );
 
 INSERT INTO Stage (stage) VALUES ('unplaned');
-INSERT INTO Stage (stage) VALUES ('planed');
-INSERT INTO Stage (stage) VALUES ('stained');
+INSERT INTO Stage (stage) VALUES ('planed/stained');
 INSERT INTO Stage (stage) VALUES ('cut');
 INSERT INTO Stage (stage) VALUES ('slotted');
 INSERT INTO Stage (stage) VALUES ('stapled');
@@ -61,9 +60,6 @@ INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 2, 5, -
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 2, 6, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 2, 6, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 2, 6, -1, '09-01-2020');
-INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 2, 7, -1, '09-01-2020');
-INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 2, 7, -1, '09-01-2020');
-INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 2, 7, -1, '09-01-2020');
 
 INSERT INTO Frame (size, stage, quantity, dateUpdated) VALUES (1, 1, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 1, 2, -1, '09-01-2020');
@@ -81,8 +77,5 @@ INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 5, -
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 1, 6, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 1, 6, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 6, -1, '09-01-2020');
-INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 1, 7, -1, '09-01-2020');
-INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 1, 7, -1, '09-01-2020');
-INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 7, -1, '09-01-2020');
 
 

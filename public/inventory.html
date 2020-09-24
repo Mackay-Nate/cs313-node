@@ -50,7 +50,7 @@
     <tr><td class="col1 pop" onclick="pop('Stain')">planed/<br>stained
       <span class="popuptext" id="popStain">
         <table>
-          <tr><th colspan="2">stained last updated</th></tr>
+          <tr><th colspan="2">planed/stained last updated</th></tr>
           <tr><td>Natural</td><td id="updatestainN">date</td></tr>
           <tr><td>Gray</td>   <td id="updatestainG">date</td></tr>
           <tr><td>Kona</td>   <td id="updatestainK">date</td></tr>
@@ -273,16 +273,6 @@
   <input type="submit" value="Update quantities">
 </form>
 
-<!-- <input type="submit" value="Update quantities"> -->
-
-<form id="add" method="GET" action="/addPoints">
-  <table>
-    <tr><td>Child</td><td id="dropdown" name="kid"></td></tr>
-    <tr><td>Points</td><td><input type="text" name="points"></td></tr>
-    <tr><td>Notes</td><td><input type="text" name="notes"></td></tr>
-    </table>
-  <input type="submit" value="Add to the database">
-</form>
 
 <footer id="date">
 </footer>
@@ -319,46 +309,53 @@
       var data = JSON.parse(xmlHttpRequest.responseText);
       var total;
 
+      for (var i = 0; i < data.wood.length; i++) { 
+        document.getElementsByTagName('input')[i].value = data.wood[i].quantity;
+      }
+
+
+
+
       // document.getElementById('').value = data.wood[].quantity;
-      document.getElementById('un').value = data.wood[0].quantity;
+      // document.getElementById('un').value = data.wood[0].quantity;
       // document.getElementById('pN').value = data.wood[1].quantity;
       // document.getElementById('pG').value = data.wood[2].quantity;
       // document.getElementById('pK').value = data.wood[3].quantity;
-      document.getElementById('stainN').value = data.wood[4].quantity;
-      document.getElementById('stainG').value = data.wood[5].quantity;
-      document.getElementById('stainK').value = data.wood[6].quantity;
-      document.getElementById('cN').value = data.wood[7].quantity;
-      document.getElementById('cG').value = data.wood[8].quantity;
-      document.getElementById('cK').value = data.wood[9].quantity;
-      document.getElementById('slN').value = data.wood[10].quantity;
-      document.getElementById('slG').value = data.wood[11].quantity;
-      document.getElementById('slK').value = data.wood[12].quantity;
-      document.getElementById('stapledN').value = data.wood[13].quantity;
-      document.getElementById('stapledG').value = data.wood[14].quantity;
-      document.getElementById('stapledK').value = data.wood[15].quantity;
-      document.getElementById('dN').value = data.wood[16].quantity;
-      document.getElementById('dG').value = data.wood[17].quantity;
-      document.getElementById('dK').value = data.wood[18].quantity;
+      // document.getElementById('stainN').value = data.wood[4].quantity;
+      // document.getElementById('stainG').value = data.wood[5].quantity;
+      // document.getElementById('stainK').value = data.wood[6].quantity;
+      // document.getElementById('cN').value = data.wood[7].quantity;
+      // document.getElementById('cG').value = data.wood[8].quantity;
+      // document.getElementById('cK').value = data.wood[9].quantity;
+      // document.getElementById('slN').value = data.wood[10].quantity;
+      // document.getElementById('slG').value = data.wood[11].quantity;
+      // document.getElementById('slK').value = data.wood[12].quantity;
+      // document.getElementById('stapledN').value = data.wood[13].quantity;
+      // document.getElementById('stapledG').value = data.wood[14].quantity;
+      // document.getElementById('stapledK').value = data.wood[15].quantity;
+      // document.getElementById('dN').value = data.wood[16].quantity;
+      // document.getElementById('dG').value = data.wood[17].quantity;
+      // document.getElementById('dK').value = data.wood[18].quantity;
       
-      document.getElementById('miniun').value = data.wood[19].quantity;
+      // document.getElementById('miniun').value = data.wood[19].quantity;
       // document.getElementById('minipN').value = data.wood[20].quantity;
       // document.getElementById('minipG').value = data.wood[21].quantity;
       // document.getElementById('minipK').value = data.wood[22].quantity;
-      document.getElementById('ministainN').value = data.wood[23].quantity;
-      document.getElementById('ministainG').value = data.wood[24].quantity;
-      document.getElementById('ministainK').value = data.wood[25].quantity;
-      document.getElementById('minicN').value = data.wood[26].quantity;
-      document.getElementById('minicG').value = data.wood[27].quantity;
-      document.getElementById('minicK').value = data.wood[28].quantity;
-      document.getElementById('minislN').value = data.wood[29].quantity;
-      document.getElementById('minislG').value = data.wood[30].quantity;
-      document.getElementById('minislK').value = data.wood[31].quantity;
-      document.getElementById('ministapledN').value = data.wood[32].quantity;
-      document.getElementById('ministapledG').value = data.wood[33].quantity;
-      document.getElementById('ministapledK').value = data.wood[34].quantity;
-      document.getElementById('minidN').value = data.wood[35].quantity;
-      document.getElementById('minidG').value = data.wood[36].quantity;
-      document.getElementById('minidK').value = data.wood[37].quantity;
+      // document.getElementById('ministainN').value = data.wood[23].quantity;
+      // document.getElementById('ministainG').value = data.wood[24].quantity;
+      // document.getElementById('ministainK').value = data.wood[25].quantity;
+      // document.getElementById('minicN').value = data.wood[26].quantity;
+      // document.getElementById('minicG').value = data.wood[27].quantity;
+      // document.getElementById('minicK').value = data.wood[28].quantity;
+      // document.getElementById('minislN').value = data.wood[29].quantity;
+      // document.getElementById('minislG').value = data.wood[30].quantity;
+      // document.getElementById('minislK').value = data.wood[31].quantity;
+      // document.getElementById('ministapledN').value = data.wood[32].quantity;
+      // document.getElementById('ministapledG').value = data.wood[33].quantity;
+      // document.getElementById('ministapledK').value = data.wood[34].quantity;
+      // document.getElementById('minidN').value = data.wood[35].quantity;
+      // document.getElementById('minidG').value = data.wood[36].quantity;
+      // document.getElementById('minidK').value = data.wood[37].quantity;
 
       document.getElementById('updateUn').innerHTML = formatDate(data.wood[0].dateupdated);
       document.getElementById('updatestainN').innerHTML = formatDate(data.wood[4].dateupdated);
