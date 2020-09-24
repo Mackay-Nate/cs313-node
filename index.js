@@ -310,52 +310,14 @@ express()
 
       const client   = await pool.connect()
 
-      const check1 = await client.query("SELECT quantity FROM frame WHERE id=1");
-      const check2 = await client.query("SELECT quantity FROM frame WHERE id=2");
-      const check3 = await client.query("SELECT quantity FROM frame WHERE id=3");
-      const check4 = await client.query("SELECT quantity FROM frame WHERE id=4");
-      const check5 = await client.query("SELECT quantity FROM frame WHERE id=5");
-      const check6 = await client.query("SELECT quantity FROM frame WHERE id=6");
-      const check7 = await client.query("SELECT quantity FROM frame WHERE id=7");
-      const check8 = await client.query("SELECT quantity FROM frame WHERE id=8");
-      const check9 = await client.query("SELECT quantity FROM frame WHERE id=9");
-      const check10 = await client.query("SELECT quantity FROM frame WHERE id=10");
-      const check11 = await client.query("SELECT quantity FROM frame WHERE id=11");
-      const check12 = await client.query("SELECT quantity FROM frame WHERE id=12");
-      const check13 = await client.query("SELECT quantity FROM frame WHERE id=13");
-      const check14 = await client.query("SELECT quantity FROM frame WHERE id=14");
-      const check15 = await client.query("SELECT quantity FROM frame WHERE id=15");
-      const check16 = await client.query("SELECT quantity FROM frame WHERE id=16");
-      const check17 = await client.query("SELECT quantity FROM frame WHERE id=17");
-      const check18 = await client.query("SELECT quantity FROM frame WHERE id=18");
-      const check19 = await client.query("SELECT quantity FROM frame WHERE id=19");
-      const check20 = await client.query("SELECT quantity FROM frame WHERE id=20");
-      const check21 = await client.query("SELECT quantity FROM frame WHERE id=21");
-      const check22 = await client.query("SELECT quantity FROM frame WHERE id=22");
-      const check23 = await client.query("SELECT quantity FROM frame WHERE id=23");
-      const check24 = await client.query("SELECT quantity FROM frame WHERE id=24");
-      const check25 = await client.query("SELECT quantity FROM frame WHERE id=25");
-      const check26 = await client.query("SELECT quantity FROM frame WHERE id=26");
-      const check27 = await client.query("SELECT quantity FROM frame WHERE id=27");
-      const check28 = await client.query("SELECT quantity FROM frame WHERE id=28");
-      const check29 = await client.query("SELECT quantity FROM frame WHERE id=29");
-      const check30 = await client.query("SELECT quantity FROM frame WHERE id=30");
-      const check31 = await client.query("SELECT quantity FROM frame WHERE id=31");
-      const check32 = await client.query("SELECT quantity FROM frame WHERE id=32");
-      const check33 = await client.query("SELECT quantity FROM frame WHERE id=33");
-      const check34 = await client.query("SELECT quantity FROM frame WHERE id=34");
-      const check35 = await client.query("SELECT quantity FROM frame WHERE id=35");
-      const check36 = await client.query("SELECT quantity FROM frame WHERE id=36");
-      const check37 = await client.query("SELECT quantity FROM frame WHERE id=37");
-      const check38 = await client.query("SELECT quantity FROM frame WHERE id=38");
-
+      const check1 = await client.query("SELECT quantity FROM frame WHERE id=1"
       for (var i = 1; i < updates.length; i++) {
         const check = await client.query("SELECT quantity FROM frame WHERE id=" + i);
         console.log("i= " + i);
         console.log("check " + check.rows[0] + check.rows[0].quantity);
         if (check.rows[0].quantity != updates[i]) {
-          const update1 = await client.query("UPDATE frame SET quantity =" + sanitize(updates[i - 1]) + ", dateupdated='" + date + "' WHERE id=" + i);
-          console.log('un updated');
+          var update1 = await client.query("UPDATE frame SET quantity =" + sanitize(updates[i - 1]) + ", dateupdated='" + date + "' WHERE id=" + i);
+          console.log( i + ' updated from ' + check.rows[0].quantity + ' to ' + updates[i - 1] + );
         }
 
 
