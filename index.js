@@ -379,5 +379,5 @@ express()
 
   function getDate() { 
     var date = new Date();
-    return date;
+    return date.substring(0, 10);
   };
