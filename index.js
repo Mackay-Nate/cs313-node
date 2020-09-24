@@ -291,7 +291,7 @@ express()
 
       const client   = await pool.connect()
 
-      for (var i = 1; i < updates.length; i++) {
+      for (var i = 1; i < updates.length + 1; i++) {
         const check = await client.query("SELECT quantity FROM frame WHERE id=" + i);
 
         if (check.rows[0].quantity != updates[i - 1]) {
