@@ -328,6 +328,6 @@ express()
 
   function getDate() { 
     var date = new Date();
-    // return (date.getMonth() + 1) + " " + date.getDate() + " " + date.getFullYear();
-    return "September 5, 2020";
+    return (date.getMonth() + 1) + " " + date.getDate() + " " + date.getFullYear();
+    // return "September 5, 2020";
   };
