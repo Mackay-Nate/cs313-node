@@ -379,5 +379,6 @@ express()
 
   function getDate() { 
     var date = new Date();
-    return date.substring(0, 10);
+    return date.getMonth() + " " + date.getDate() + " " + date.getFullYear();
+    // return date.substring(0, 10);
   };
