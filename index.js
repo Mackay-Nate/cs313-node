@@ -316,7 +316,7 @@ express()
         console.log("check " + check.rows[0] + check.rows[0].quantity);
         if (check.rows[0].quantity != updates[i]) {
           var update1 = await client.query("UPDATE frame SET quantity =" + sanitize(updates[i - 1]) + ", dateupdated='" + date + "' WHERE id=" + i);
-          console.log( i + ' updated from ' + check.rows[0].quantity + ' to ' + updates[i - 1] + );
+          console.log(i + ' updated from ' + check.rows[0].quantity + ' to ' + updates[i - 1] );
         }
 
 
