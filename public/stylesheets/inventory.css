@@ -90,7 +90,7 @@ input[type=submit] {
 /* The actual popup */
 .pop .popuptext {
   visibility: hidden;
-  width: 140px;
+  width: 170px;
   background-color: #555;
   color: #fff;
   text-align: center;

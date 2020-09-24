@@ -19,10 +19,8 @@
     <tr><td class="col1 pop" onclick="pop('Un')" colspan="7">unplaned boards
       <span class="popuptext" id="popUn">
         <table>
-          <tr><th colspan="2">unplaned last updated</th></tr>
+          <tr><th colspan="2">last updated</th></tr>
           <tr><td>unplaned</td><td id="updateUn">date</td></tr>
-          <!-- <tr><td>Gray</td>   <td id="updateupG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updateupK">date</td></tr> -->
       </table></span></td>
       <td><button onclick="minus(un); return false;">-</button></td>
       <td><input type="number" id="un" name="un" min="-1" max="500" value="-2"><br></td>
@@ -72,9 +70,9 @@
       <span class="popuptext" id="popC">
         <table>
           <tr><th colspan="2">cut last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><td>Natural</td><td id="updatecN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatecG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatecK">date</td></tr>
         </table>
       </span></td>
       <td><button onclick="minus(cN); return false;">-</button></td>
@@ -91,9 +89,9 @@
       <span class="popuptext" id="popSl">
         <table>
           <tr><th colspan="2">slotted last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><td>Natural</td><td id="updateslN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updateslG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updateslK">date</td></tr>
         </table>
       </span></td>
       <td><button onclick="minus(slN); return false;">-</button></td>
@@ -110,9 +108,9 @@
       <span class="popuptext" id="popStapled">
         <table>
           <tr><th colspan="2">stapled last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><td>Natural</td><td id="updatestapledN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatestapleG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatestapleK">date</td></tr>
         </table>
       </span></td>
       <td><button onclick="minus(stapledN); return false;">-</button></td>
@@ -129,9 +127,9 @@
       <span class="popuptext" id="popD">
         <table>
           <tr><th colspan="2">completed last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><td>Natural</td><td id="updatedN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatedG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatedK">date</td></tr>
         </table>
       </span></td>
       <td><button onclick="minus(dN); return false;">-</button></td>
@@ -145,13 +143,11 @@
       <td><button onclick="plus(dK); return false;">+</button></td>
     </tr>
     <tr><th colspan="10">Mini</th></tr>
-    <tr><td class="col1 pop" onclick="pop('miniUp')" colspan="7">unplaned boards
-      <span class="popuptext" id="popminiUp">
+    <tr><td class="col1 pop" onclick="pop('miniUn')" colspan="7">unplaned boards
+      <span class="popuptext" id="popminiUn">
         <table>
-          <tr><th colspan="2">unplaned last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><th colspan="2">last updated</th></tr>
+          <tr><td>unplaned</td><td id="updateminiUn">date</td></tr>
         </table>
       </span></td>
       <td><button onclick="minus(miniun); return false;">-</button></td>
@@ -182,9 +178,9 @@
       <span class="popuptext" id="popminiStain">
         <table>
           <tr><th colspan="2">planed/stained last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><td>Natural</td><td id="updateministainN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updateministainG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updateministainK">date</td></tr>
         </table>
       </span></td>
       <td><button onclick="minus(ministainN); return false;">-</button></td>
@@ -201,9 +197,9 @@
       <span class="popuptext" id="popminiC">
         <table>
           <tr><th colspan="2">cut last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><td>Natural</td><td id="updateminicN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updateminicG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updateminicK">date</td></tr>
         </table>
       </span></td>
       <td><button onclick="minus(minicN); return false;">-</button></td>
@@ -220,9 +216,9 @@
       <span class="popuptext" id="popminiSl">
         <table>
           <tr><th colspan="2">slotted last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><td>Natural</td><td id="updateminislN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updateminislG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updateminislK">date</td></tr>
         </table>
       </span></td>
       <td><button onclick="minus(minislN); return false;">-</button></td>
@@ -239,9 +235,9 @@
       <span class="popuptext" id="popminiStapled">
         <table>
           <tr><th colspan="2">stapled last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><td>Natural</td><td id="updateministapledN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updateministapledG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updateministapledK">date</td></tr>
         </table>
       </span></td>
       <td><button onclick="minus(ministapledN); return false;">-</button></td>
@@ -258,9 +254,9 @@
       <span class="popuptext" id="popminiD">
         <table>
           <tr><th colspan="2">completed last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><td>Natural</td><td id="updateminidN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updateminidG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updateminidK">date</td></tr>
         </table>
       </span></td>
       <td><button onclick="minus(minidN); return false;">-</button></td>
@@ -382,9 +378,23 @@
       document.getElementById('updatedK').innerHTML = formatDate(data.wood[18].dateupdated);
 
       document.getElementById('updateminiUp').innerHTML = formatDate(data.wood[19].dateupdated);
-      document.getElementById('updateministainG').innerHTML = formatDate(data.wood[23].dateupdated);
+      document.getElementById('updateministainN').innerHTML = formatDate(data.wood[23].dateupdated);
       document.getElementById('updateministainG').innerHTML = formatDate(data.wood[24].dateupdated);
-      document.getElementById('updateministainG').innerHTML = formatDate(data.wood[25].dateupdated);
+      document.getElementById('updateministainK').innerHTML = formatDate(data.wood[25].dateupdated);
+      document.getElementById('updateminicN').innerHTML = formatDate(data.wood[26].dateupdated);
+      document.getElementById('updateminicG').innerHTML = formatDate(data.wood[27].dateupdated);
+      document.getElementById('updateminicK').innerHTML = formatDate(data.wood[28].dateupdated);
+      document.getElementById('updateminislN').innerHTML = formatDate(data.wood[29].dateupdated);
+      document.getElementById('updateminislG').innerHTML = formatDate(data.wood[30].dateupdated);
+      document.getElementById('updateminislK').innerHTML = formatDate(data.wood[31].dateupdated);
+      document.getElementById('updateministapledN').innerHTML = formatDate(data.wood[32].dateupdated);
+      document.getElementById('updateministapledG').innerHTML = formatDate(data.wood[33].dateupdated);
+      document.getElementById('updateministapledK').innerHTML = formatDate(data.wood[34].dateupdated);
+      document.getElementById('updateminidN').innerHTML = formatDate(data.wood[35].dateupdated);
+      document.getElementById('updateminidG').innerHTML = formatDate(data.wood[36].dateupdated);
+      document.getElementById('updateminidK').innerHTML = formatDate(data.wood[37].dateupdated);
+
+      document.getElementById('updateminiG').innerHTML = formatDate(data.wood[38].dateupdated);
 
     }
     }
