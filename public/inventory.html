@@ -20,9 +20,9 @@
       <span class="popuptext" id="popUn">
         <table>
           <tr><th colspan="2">unplaned last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><td>unplaned</td><td id="updateUn">date</td></tr>
+          <!-- <tr><td>Gray</td>   <td id="updateupG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updateupK">date</td></tr> -->
       </table></span></td>
       <td><button onclick="minus(un); return false;">-</button></td>
       <td><input type="number" id="un" name="un" min="0" max="500" value="-2"><br></td>
@@ -321,17 +321,17 @@
 
       console.log('inside if statement');
       var data = JSON.parse(xmlHttpRequest.responseText);
-      sessionStorage('data', data);
+      // sessionStorage('data', data);
       // var table = document.getElementById('displayTable');
       var total;
 
       // for (var i = 0; i < data.wood.length; i++) { 
       var tempDay = Date(data.wood[0].dateupdated);
-      document.getElementById('updatepN').innerHTML = tempDay.toDateString();
-      var tempDay = Date(data.wood[1].dateupdated);
-      document.getElementById('updatepG').innerHTML = tempDay.toDateString();
+      document.getElementById('updateUn').innerHTML = tempDay.toDateString();
+      document.getElementById('updatepN').innerHTML = data.wood[1].dateupdated;
       var tempDay = Date(data.wood[2].dateupdated);
-      document.getElementById('updatepK').innerHTML = tempDay.toDateString();
+      document.getElementById('updatepG').innerHTML = tempDay.toDateString();
+      document.getElementById('updatepK').innerHTML = Date(data.wood[3].dateupdated);
 
     //     var script = ""
     //     total = 0;
