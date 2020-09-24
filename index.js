@@ -305,12 +305,12 @@ express()
 
       const client   = await pool.connect()
 
-      // const update   = await client.query("UPDATE business SET note ='" + sanitize(req.query.announceInput) + "' WHERE id=" + req.query.week);
+      const update1 = await client.query("UPDATE frame SET quantity ='" + sanitize(req.query.un) + "' WHERE id=1");
       console.log('update was successful');
 
-      const business  = await client.query('SELECT * FROM business WHERE id=' + 47);
+      // const business  = await client.query('SELECT * FROM business WHERE id=' + 47);
 
-      const params = { 'business': (business) ? business.rows : null };
+      // const params = { 'business': (business) ? business.rows : null };
 
       res.redirect('https://nate-node.herokuapp.com/inventory.html');
       client.release();

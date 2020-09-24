@@ -321,8 +321,6 @@
 
       console.log('inside if statement');
       var data = JSON.parse(xmlHttpRequest.responseText);
-      // sessionStorage('data', data);
-      // var table = document.getElementById('displayTable');
       var total;
 
       // document.getElementById('').value = data.wood[].quantity;
@@ -367,73 +365,12 @@
       document.getElementById('minidK').value = data.wood[37].quantity;
 
       // for (var i = 0; i < data.wood.length; i++) { 
-      var tempDay = Date(data.wood[0].dateupdated);
       document.getElementById('updateUn').innerHTML = formatDate(Date(data.wood[0].dateupdated));
       document.getElementById('updatepN').innerHTML = data.wood[1].dateupdated;
-      var tempDay = Date(data.wood[2].dateupdated);
-      // document.getElementById('updatepG').innerHTML = tempDay.toDateString();
       document.getElementById('updatepK').innerHTML = Date(data.wood[3].dateupdated);
 
-    //     var script = ""
-    //     total = 0;
-    //     var row = document.createElement("tr");
-
-    //     //create a cell for a child
-    //     var item = document.createElement("td");
-    //     // item.innerHTML = (data.kids[i].firstname);
-    //     script += data.kids[i].firstname;
-    //     item.setAttribute('id', i - 1);
-    //     item.setAttribute('class', 'pop');
-    //     item.setAttribute('onclick','pop(' + (i - 1) + ')'); 
-
-    //     // var pop = document.createElement('span');
-    //     script += '<span class="popuptext" id=pop';
-    //     script += (i - 1) + '>';
-    //     script += '<table><th>points</th><th>why?</th>';
-    //     for (var j = 0; j < data.point.length; j++) { 
-    //       if (data.point[j].kids == (i - 1)) {
-    //         script += '<tr><td>' + data.point[j].points + '</td><td>' + data.point[j].notes + '</td></tr>';
-    //         total = total + data.point[j].points;
-    //       }
-    //     }
-    //     script += '</table></span>';
-    //     item.innerHTML = script;
-
-    //     row.appendChild(item);
-
-    //     var mButton = document.createElement("td");
-    //     var minus   = document.createElement('button');
-    //     minus.setAttribute("onclick", "minus(" + (i - 1) + ")");
-    //     minus.innerHTML = "-";
-    //     mButton.appendChild(minus);
-    //     row.appendChild(mButton);
-
-    //     var cell  = document.createElement('td');
-    //     var point = document.createElement('input'); 
-    //     point.setAttribute('type', 'text');
-    //     point.setAttribute('class', 'points'); 
-    //     // point.value = data.point[i].points;
-    //     if (total > 0) {
-    //       point.value = total;
-    //     } else {
-    //       point.value = 0;
-    //     }
-    //     cell.appendChild(point)
-    //     row.appendChild(cell);
-
-    //     var pButton = document.createElement("td");
-    //     var plus    = document.createElement('button');
-    //     plus.setAttribute("onclick", "plus(" + (i - 1) + ")");
-    //     plus.innerHTML = "+";
-    //     pButton.appendChild(plus);
-    //     row.appendChild(pButton);
-
-    //     table.appendChild(row);
-
-    //     document.getElementById('dropdown').innerHTML += '<input type="radio" id="' + (i - 1) + '" name="child" value="' + (i - 1) + '"> <label for="' + (i - 1) + '">' + data.kids[i].firstname + '</label><br>';
-      // }
+      }
     }
-  }
     //the json is from the database here
     xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/getInventory', true);
     xmlHttpRequest.send();
