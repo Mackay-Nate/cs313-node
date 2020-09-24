@@ -310,8 +310,8 @@ express()
 
       const check1 = await client.query("SELECT quantity FROM frame WHERE id=1");
       console.log('check1 ' + check1);
-      console.log('check2 ' + check1.row);
-      console.log('check3 ' + check1.quantity)
+      console.log('check2 ' + check1.row.quantity);
+      console.log('check3 ' + check1[0].quantity)
       if (check1 != req.query.un) {
         const update1 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.un) + ", dateupdated='" + date + "' WHERE id=1");
         console.log('un updated');
@@ -387,5 +387,5 @@ express()
   function getDate() { 
     var date = new Date();
     // return (date.getMonth() + 1) + " " + date.getDate() + " " + date.getFullYear();
-    return "September 1, 2020";
+    return "September 3, 2020";
   };
