@@ -312,7 +312,7 @@ express()
       console.log('check1 ' + check1);
       console.log('check2 ' + check1.rows.quantity);
       console.log('check3 ' + check1.rows[0].quantity);
-      if (check1 != req.query.un) {
+      if (check1.rows[0].quantity != req.query.un) {
         const update1 = await client.query("UPDATE frame SET quantity =" + sanitize(req.query.un) + ", dateupdated='" + date + "' WHERE id=1");
         console.log('un updated');
       }
