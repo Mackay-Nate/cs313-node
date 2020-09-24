@@ -349,7 +349,7 @@ express()
       const check37 = await client.query("SELECT quantity FROM frame WHERE id=37");
       const check38 = await client.query("SELECT quantity FROM frame WHERE id=38");
 
-      for (var i = 0; i < updates.length; i++) {
+      for (var i = 1; i < updates.length; i++) {
         const check = await client.query("SELECT quantity FROM frame WHERE id=" + i);
         console.log("i= " + i);
         console.log("check " + check.rows[0] + check.rows[0].quantity);
