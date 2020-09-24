@@ -302,6 +302,7 @@ express()
   .get('/updateInventory', async (req, res) => {
     try { 
       console.log("received request to update the inventory");
+      console.log(Date());
 
       const client   = await pool.connect()
 
