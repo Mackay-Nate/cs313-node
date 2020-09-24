@@ -303,6 +303,8 @@ express()
     try { 
       console.log("received request to update the inventory");
       console.log(Date());
+      var date = getDate();
+      console.log(date);
 
       const client   = await pool.connect()
 
