@@ -53,9 +53,9 @@
       <span class="popuptext" id="popStain">
         <table>
           <tr><th colspan="2">stained last updated</th></tr>
-          <tr><td>Natural</td><td id="updatepN">date</td></tr>
-          <tr><td>Gray</td>   <td id="updatepG">date</td></tr>
-          <tr><td>Kona</td>   <td id="updatepK">date</td></tr>
+          <tr><td>Natural</td><td id="updatestainN">date</td></tr>
+          <tr><td>Gray</td>   <td id="updatestainG">date</td></tr>
+          <tr><td>Kona</td>   <td id="updatestainK">date</td></tr>
         </table>
       </span></td>
       <td><button onclick="minus(stainN); return false;">-</button></td>
@@ -364,13 +364,29 @@
       document.getElementById('minidG').value = data.wood[36].quantity;
       document.getElementById('minidK').value = data.wood[37].quantity;
 
-      // for (var i = 0; i < data.wood.length; i++) { 
-      document.getElementById('updateUn').innerHTML = (data.wood[0].dateupdated);
-      document.getElementById('updatepN').innerHTML = formatDate(Date(data.wood[0].dateupdated));
-      document.getElementById('updatepG').innerHTML = Date(data.wood[0].dateupdated);
-      document.getElementById('updatepG').innerHTML = formatDate(data.wood[0].dateupdated);
+      document.getElementById('updateUn').innerHTML = formatDate(data.wood[0].dateupdated);
+      document.getElementById('updatestainN').innerHTML = formatDate(data.wood[4].dateupdated);
+      document.getElementById('updatestainG').innerHTML = formatDate(data.wood[5].dateupdated);
+      document.getElementById('updatestainK').innerHTML = formatDate(data.wood[6].dateupdated);
+      document.getElementById('updatecN').innerHTML = formatDate(data.wood[7].dateupdated);
+      document.getElementById('updatecG').innerHTML = formatDate(data.wood[8].dateupdated);
+      document.getElementById('updatecK').innerHTML = formatDate(data.wood[9].dateupdated);
+      document.getElementById('updateslN').innerHTML = formatDate(data.wood[10].dateupdated);
+      document.getElementById('updateslG').innerHTML = formatDate(data.wood[11].dateupdated);
+      document.getElementById('updateslK').innerHTML = formatDate(data.wood[12].dateupdated);
+      document.getElementById('updatestapledN').innerHTML = formatDate(data.wood[13].dateupdated);
+      document.getElementById('updatestapledG').innerHTML = formatDate(data.wood[14].dateupdated);
+      document.getElementById('updatestapledK').innerHTML = formatDate(data.wood[15].dateupdated);
+      document.getElementById('updatedN').innerHTML = formatDate(data.wood[16].dateupdated);
+      document.getElementById('updatedG').innerHTML = formatDate(data.wood[17].dateupdated);
+      document.getElementById('updatedK').innerHTML = formatDate(data.wood[18].dateupdated);
 
-      }
+      document.getElementById('updateminiUp').innerHTML = formatDate(data.wood[19].dateupdated);
+      document.getElementById('updateministainG').innerHTML = formatDate(data.wood[23].dateupdated);
+      document.getElementById('updateministainG').innerHTML = formatDate(data.wood[24].dateupdated);
+      document.getElementById('updateministainG').innerHTML = formatDate(data.wood[25].dateupdated);
+
+    }
     }
     //the json is from the database here
     xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/getInventory', true);
@@ -380,10 +396,8 @@
 
   function formatDate(date) {
     var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
     return (date.substring(5,6) > 0) ? month[date.substring(5 ,7) - 1] : month[date.substring(6 ,7) - 1] + " " + date.substring(8, 10) + ", " + date.substring(0, 4);
-    // return date.getMonth() + " " + date.getDay() + ", " + date.getFullYear();
-    // return date;
+
   };
 
 </script>
