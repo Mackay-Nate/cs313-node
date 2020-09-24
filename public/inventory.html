@@ -368,6 +368,7 @@
       document.getElementById('updateUn').innerHTML = (data.wood[0].dateupdated);
       document.getElementById('updatepN').innerHTML = formatDate(Date(data.wood[0].dateupdated));
       document.getElementById('updatepG').innerHTML = Date(data.wood[0].dateupdated);
+      document.getElementById('updatepG').innerHTML = formatDate(data.wood[0].dateupdated);
 
       }
     }
@@ -378,8 +379,11 @@
   };
 
   function formatDate(date) {
+    var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    return month[date.substring(5 ,7)] + " " + date.substring(8, 10) + ", " + date.substring(0, 4);
     // return date.getMonth() + " " + date.getDay() + ", " + date.getFullYear();
-    return date;
+    // return date;
   };
 
 </script>
