@@ -354,7 +354,7 @@ express()
         console.log("i= " + i);
         console.log("check " + check.rows[0] + check.rows[0].quantity);
         if (check.rows[0].quantity != updates[i]) {
-          const update1 = await client.query("UPDATE frame SET quantity =" + sanitize(updates[i]) + ", dateupdated='" + date + "' WHERE id=" + i);
+          const update1 = await client.query("UPDATE frame SET quantity =" + sanitize(updates[i - 1]) + ", dateupdated='" + date + "' WHERE id=" + i);
           console.log('un updated');
         }
 
