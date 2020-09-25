@@ -12,7 +12,6 @@
 <body onload="load()">
 
 <h1>Inventory</h1>
-<!-- <form id="form1" onsubmit="return false;"> -->
 <form method="GET" action="/updateInventory">
   <table id="displayTable">
     <tr><th colspan="10">Medium</th></tr>
@@ -251,10 +250,10 @@
     number.value = parseInt(number.value) - 1;
   };
 
+  // displays popup messages
   function pop(id) {
     document.getElementById("pop" + id).classList.toggle("show");
   };
-
   function show() { 
     document.getElementById("add").style.display = "initial";
   }

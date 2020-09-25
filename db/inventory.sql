@@ -40,10 +40,6 @@ CREATE TABLE Size (
 
 INSERT INTO Size (size) VALUES ('Mini', 'Medium');
 
-
-
--- INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES ( , 2, ,-1, '09-01-2020');
-
 INSERT INTO Frame (size, stage, quantity, dateUpdated) VALUES (2, 1, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 2, 2, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 2, 2, -1, '09-01-2020');
@@ -77,5 +73,3 @@ INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 5, -
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 1, 6, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 1, 6, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 6, -1, '09-01-2020');
-
-
