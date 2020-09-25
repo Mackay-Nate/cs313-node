@@ -156,7 +156,7 @@
     }
 
     //the json is from the database here
-    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/cfmweek?week=' + week, true);
+    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/cfmweek?week=' + week, true);
     xmlHttpRequest.send();
 
   };
@@ -228,7 +228,7 @@
       }
 
     }
-    xmlHttpRequest.open('GET', 'https://nate-node.herokuapp.com/add?announceInput=' + announceInput + '&week=' + week, true);
+    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/add?announceInput=' + announceInput + '&week=' + week, true);
     xmlHttpRequest.send();
 
   };

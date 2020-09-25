@@ -214,7 +214,7 @@ express()
       //                };
 
       // res.send(params);
-      res.redirect('https://nate-node.herokuapp.com/kid-points.html');
+      res.redirect('https://nates-apps.herokuapp.com/kid-points.html');
       client.release();
     } catch (err) {
       console.error(err);
@@ -302,7 +302,7 @@ express()
 
       console.log('update was successful');
 
-      res.redirect('https://nate-node.herokuapp.com/inventory.html');
+      res.redirect('https://nates-apps.herokuapp.com/inventory.html');
       client.release();
 
     } catch (err) {
