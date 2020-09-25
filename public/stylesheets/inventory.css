@@ -131,7 +131,8 @@ span table {
 
 #successful {
   visibility: hidden;
-  min-width: 250px;
+  min-width: 200px;
+  max-width: 230px;
   margin-left: -145px;
   background-color: #333;
   color: #fff;
@@ -140,7 +141,7 @@ span table {
   border-radius: 8px;
   padding: 16px;
   position: fixed;
-  left: 50%;
+  left: 55%;
   bottom: 330px;
   z-index: 1;
 }
