@@ -275,7 +275,7 @@
         }
 
         // check if new quantities were submitted
-        if (data.success[0].success) {
+        if (data.submit[0].success == true) {
           var success = document.getElementById("successful");
           success.className = "show";
           setTimeout(function(){ success.className = success.className.replace("show", ""); }, 3000);
