@@ -233,7 +233,7 @@
   <input type="submit" value="Update quantities">
 </form>
 
-
+<div id="successful"> The quantities were update successfully.</div>
 <footer id="date">
 </footer>
 
@@ -272,6 +272,13 @@
         for (var i = 0; i < data.wood.length; i++) { 
           document.getElementsByTagName('input')[i].value = data.wood[i].quantity;
           document.getElementsByClassName('update')[i].innerHTML = formatDate(data.wood[i].dateupdated);
+        }
+
+        // check if new quantities were submitted
+        if (data.success[0].success) {
+          var success = document.getElementById("successful");
+          success.className = "show";
+          setTimeout(function(){ success.className = success.className.replace("show", ""); }, 3000);
         }
 
       }

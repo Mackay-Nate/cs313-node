@@ -40,6 +40,14 @@ CREATE TABLE Size (
 
 INSERT INTO Size (size) VALUES ('Mini', 'Medium');
 
+CREATE TABLE Success (
+  id        SERIAL NOT NULL PRIMARY KEY,
+  type      VARCHAR(32),
+  success   BOOLEAN
+);
+
+INSERT INTO Success (type, success) VALUES ('frame', FALSE);
+
 INSERT INTO Frame (size, stage, quantity, dateUpdated) VALUES (2, 1, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 2, 2, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 2, 2, -1, '09-01-2020');

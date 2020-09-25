@@ -264,10 +264,12 @@ express()
       const client = await pool.connect();
       const wood   = await client.query('SELECT * FROM Frame ORDER BY id');
       const stage  = await client.query('SELECT * FROM Stage ORDER BY id');
+      const submit = await client.query("SELECT * FROM Success WHERE type='frame';");
+      const reset  = await client.query("UPDATE Success SET success=FALSE WHERE type='frame';");
 
       const params = { 'wood': (wood)    ? wood.rows     : null, 
-                      'stage': (stage)   ? stage.rows    : null 
-        //              'scriptures': (scriptures)? scriptures.rows : null, 
+                      'stage': (stage)   ? stage.rows    : null, 
+                     'submit': (submit)  ? submit.rows   : null 
                       };
 
       console.log('inventory information successfully retrieved');
@@ -297,6 +299,8 @@ express()
         if (check.rows[0].quantity != updates[i - 1]) {
           var update1 = await client.query("UPDATE frame SET quantity =" + sanitize(updates[i - 1]) + ", dateupdated='" + date + "' WHERE id=" + i);
           console.log(i + ' updated from ' + check.rows[0].quantity + ' to ' + updates[i - 1] );
+          const reset  = await client.query("UPDATE Success SET success=TRUE WHERE type='frame';");
+
         }
       }
 
