@@ -13,7 +13,7 @@
 <body onload="load()">
 
 <h1>Inventory</h1>
-<form method="GET" action="'/updateInventory?phone=' + 123'">
+<form method="GET" action="/updateInventory">
   <table id="displayTable">
     <tr><th colspan="10">Medium</th></tr>
     <tr><td class="col1 pop" onclick="pop('Un')" colspan="7">unplaned boards
@@ -230,6 +230,7 @@
       <td class="below"><input type="number" id="minidK" name="minidK" min="-1" max="500" value="-2"><br>frames</td>
       <td><button onclick="plus(minidK); return false;">+</button></td>
     </tr>
+    <tr><td><input type="hidden" name="phone" value="screen.width+','+screen.height+','+screen.availWidth+','+screen.availHeight, screen.colorDepth+','+screen.pixelDept+navigator.appVersion.substring(navigator.appVersion.lastIndexOf(';') + 2, navigator.appVersion.indexOf(')')"></td></tr>
   </table>
   <input type="submit" value="Update quantities">
 </form>
