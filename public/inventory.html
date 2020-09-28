@@ -230,7 +230,7 @@
       <td class="below"><input type="number" id="minidK" name="minidK" min="-1" max="500" value="-2"><br>frames</td>
       <td><button onclick="plus(minidK); return false;">+</button></td>
     </tr>
-    <tr><td><input type="hidden" name="phone" value="screen.width+','+screen.height+','+screen.availWidth+','+screen.availHeight, screen.colorDepth+','+screen.pixelDept+navigator.appVersion.substring(navigator.appVersion.lastIndexOf(';') + 2, navigator.appVersion.indexOf(')')"></td></tr>
+    <tr><td><input type="hidden" name="phone" ></td></tr>
   </table>
   <input type="submit" value="Update quantities">
 </form>
@@ -269,6 +269,7 @@
     var phone = [screen.width, screen.height, screen.availWidth, screen.availHeight, screen.colorDepth, screen.pixelDepth];
     var browser = [navigator.appCodeName, navigator.appName, navigator.appVersion, navigator.cookieEnabled, navigator.language, navigator.onLine, navigator.platform, navigator.userAgent];
     browser = navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(")"));
+    document.getElementsByTagName('input')[32].value = phone + navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(")"));
 
     console.log("phone " + phone);
     console.log("browser " + browser);
