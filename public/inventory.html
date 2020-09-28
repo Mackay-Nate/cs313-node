@@ -263,6 +263,7 @@
 
     //get the data from the database
     var xmlHttpRequest = new XMLHttpRequest();
+    var phone;
     xmlHttpRequest.onreadystatechange = function() {
       if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
 
@@ -283,7 +284,7 @@
         }
 
         // browser info
-        var phone = [screen.width, screen.height, screen.availWidth, screen.availHeight, screen.colorDepth, screen.pixelDepth];
+        phone = [screen.width, screen.height, screen.availWidth, screen.availHeight, screen.colorDepth, screen.pixelDepth];
         console.log("phone " + phone);
         console.log("phone width" + phone[0]);
         console.log("phone height" + phone[1]);
