@@ -264,6 +264,14 @@
     //get the data from the database
     var xmlHttpRequest = new XMLHttpRequest();
     var phone;
+            // browser info
+            phone = [screen.width, screen.height, screen.availWidth, screen.availHeight, screen.colorDepth, screen.pixelDepth];
+        console.log("phone " + phone);
+        console.log("phone width" + phone[0]);
+        console.log("phone height" + phone[1]);
+        console.log("phone avail width" + phone[2]);
+        console.log("phone avail height" + phone[3]);
+        console.log("phone color" + phone[4]);
     xmlHttpRequest.onreadystatechange = function() {
       if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
 
@@ -283,18 +291,10 @@
           setTimeout(function(){ success.className = success.className.replace("show", ""); }, 3000);
         }
 
-        // browser info
-        phone = [screen.width, screen.height, screen.availWidth, screen.availHeight, screen.colorDepth, screen.pixelDepth];
-        console.log("phone " + phone);
-        console.log("phone width" + phone[0]);
-        console.log("phone height" + phone[1]);
-        console.log("phone avail width" + phone[2]);
-        console.log("phone avail height" + phone[3]);
-        console.log("phone color" + phone[4]);
       }
     }
     //the json is from the database here
-    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/getInventory?phone=' + phone, true);
+    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/getInventory?phone=' + screen.width, true);
     xmlHttpRequest.send();
 
   };
