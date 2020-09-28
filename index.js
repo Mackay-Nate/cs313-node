@@ -293,7 +293,7 @@ express()
       var updates = [req.query.un, req.query.stainN, req.query.stainG, req.query.stainK, req.query.cN, req.query.cG, req.query.cK, req.query.slN, req.query.slG, req.query.slK, req.query.stapledN, req.query.stapledG, req.query.stapledK, req.query.dN, req.query.dG, req.query.dK, req.query.miniun, req.query.ministainN, req.query.ministainG, req.query.ministainK, req.query.minicN, req.query.minicG, req.query.minicK, req.query.minislN, req.query.minislG, req.query.minislK, req.query.ministapledN, req.query.ministapledG, req.query.ministapledK, req.query.minidN, req.query.minidG, req.query.minidK];
 
       const client   = await pool.connect()
-      const subUser   = await client.query("SELECT fname FROM Users WHERE phone=" + req.query.phone);
+      const subUser   = await client.query("SELECT fname FROM Users WHERE phone='" + req.query.phone + '");
       const sub = { 'subUser': (subUser)  ? subUser.rows  : null};
       console.log(sub.rows[0].fname);
 
