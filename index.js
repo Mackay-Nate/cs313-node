@@ -260,11 +260,7 @@ express()
   .get('/getInventory', async (req, res) => {
     console.log("received request to retrieve inventory");
     console.log("phone " + req.query.phone);
-    console.log("phone width" + req.query.phone[0]);
-    console.log("phone height" + req.query.phone[1]);
-    console.log("phone avail width" + req.query.phone[2]);
-    console.log("phone avail height" + req.query.phone[3]);
-    console.log("phone color" + req.query.phone[4]);
+    console.log("browser " + req.query.browser);
     try {
 
       const client = await pool.connect();
@@ -272,6 +268,7 @@ express()
       const stage  = await client.query('SELECT * FROM Stage ORDER BY id');
       const submit = await client.query("SELECT * FROM Success WHERE type='frame';");
       const reset  = await client.query("UPDATE Success SET success=FALSE WHERE type='frame';");
+      // const user   = await client.query("SELECT firstname FROM user WHERE phone=" + req.query.phone);
 
       const params = { 'wood': (wood)    ? wood.rows     : null, 
                       'stage': (stage)   ? stage.rows    : null, 
