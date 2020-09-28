@@ -259,12 +259,12 @@ express()
   // gets the inventory database info  
   .get('/getInventory', async (req, res) => {
     console.log("received request to retrieve inventory");
-    console.log("phone " + phone);
-    console.log("phone width" + phone[0]);
-    console.log("phone height" + phone[1]);
-    console.log("phone avail width" + phone[2]);
-    console.log("phone avail height" + phone[3]);
-    console.log("phone color" + phone[4]);
+    console.log("phone " + req.query.phone);
+    console.log("phone width" + req.query.phone[0]);
+    console.log("phone height" + req.query.phone[1]);
+    console.log("phone avail width" + req.query.phone[2]);
+    console.log("phone avail height" + req.query.phone[3]);
+    console.log("phone color" + req.query.phone[4]);
     try {
 
       const client = await pool.connect();
