@@ -5,7 +5,8 @@ CREATE TABLE Frame (
   size        INT REFERENCES Size(id),
   stage       INT REFERENCES Stage(id),
   quantity    INT, 
-  dateUpdated DATE
+  dateUpdated DATE, 
+  submitBy    VARCHAR(32) REFERENCES Users(fname)
 );
 
 CREATE TABLE Stage (
@@ -81,3 +82,10 @@ INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 5, -
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (1, 1, 6, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (2, 1, 6, -1, '09-01-2020');
 INSERT INTO Frame (color, size, stage, quantity, dateUpdated) VALUES (3, 1, 6, -1, '09-01-2020');
+
+
+ALTER TABLE Users
+ADD CONSTRAINT fname_unique UNIQUE (fname);
+
+ALTER TABLE Frame 
+ADD COLUMN submitBy VARCHAR(32) REFERENCES Users(fname);
