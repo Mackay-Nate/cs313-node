@@ -267,7 +267,7 @@
     // browser info
     var phone = [screen.width, screen.height, screen.availWidth, screen.availHeight, screen.colorDepth, screen.pixelDepth];
     var browser = [navigator.appCodeName, navigator.appName, navigator.appVersion, navigator.cookieEnabled, navigator.language, navigator.onLine, navigator.platform, navigator.userAgent];
-    browser = navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(" "));
+    browser = navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(")"));
 
     console.log("phone " + phone);
     console.log("browser " + browser);
@@ -294,7 +294,7 @@
       }
     }
     //the json is from the database here
-    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/getInventory?phone=' + phone + '&browser=' + browser, true);
+    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/getInventory?phone=' + phone + navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(")")), true);
     xmlHttpRequest.send();
 
   };
