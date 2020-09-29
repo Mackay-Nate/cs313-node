@@ -266,7 +266,8 @@
     var xmlHttpRequest = new XMLHttpRequest();
 
     // browser info
-    var phone = [screen.width, screen.height, screen.availWidth, screen.availHeight, screen.colorDepth, screen.pixelDepth];
+    // var phone = [screen.width, screen.height, screen.availWidth, screen.availHeight, screen.colorDepth, screen.pixelDepth];
+    var phone = [screen.width];
     var browser = [navigator.appCodeName, navigator.appName, navigator.appVersion, navigator.cookieEnabled, navigator.language, navigator.onLine, navigator.platform, navigator.userAgent];
     browser = navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(")"));
     document.getElementsByTagName('input')[32].value = phone + navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(")"));
