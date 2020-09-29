@@ -300,7 +300,7 @@ express()
         const check = await client.query("SELECT quantity FROM frame WHERE id=" + i);
 
         if (check.rows[0].quantity != updates[i - 1]) {
-          var update1 = await client.query("UPDATE frame SET quantity =" + sanitize(updates[i - 1]) + ", dateupdated='" + date + "' WHERE id=" + i);
+          var update1 = await client.query("UPDATE frame SET quantity =" + sanitize(updates[i - 1]) + ", dateupdated='" + date + "', phone=" + req.query.phone + " WHERE id=" + i);
           console.log(i + ' updated from ' + check.rows[0].quantity + ' to ' + updates[i - 1] );
           const reset  = await client.query("UPDATE Success SET success=TRUE WHERE type='frame';");
 
