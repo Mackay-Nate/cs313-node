@@ -272,9 +272,6 @@
     browser = navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(")"));
     document.getElementsByTagName('input')[32].value = phone + navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(")"));
 
-    console.log("phone " + phone);
-    console.log("browser " + browser);
-
     xmlHttpRequest.onreadystatechange = function() {
       if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
 
