@@ -318,27 +318,44 @@ express()
     }
   })
 
-    //data for kids-points
-    .get('/israel', async (req, res) => {
-      try { 
-        console.log("received request for israel data");
-  
-        const client = await pool.connect()
-        const data   = await client.query('SELECT * FROM Israel ORDER BY id');
-  
-        const params = { 'data' : (data) ? data.rows : null
-                       };
+  //data for kids-points
+  .get('/israel', async (req, res) => {
+    try { 
+      console.log("received request for israel data");
 
-        res.send(params);
-        client.release();
-      } catch (err) {
-        console.error(err);
-        res.send("Error " + err);
-      }
-    })
+      const client = await pool.connect()
+      const data   = await client.query('SELECT * FROM Israel ORDER BY id');
 
-    
+      const params = { 'data' : (data) ? data.rows : null
+                     };
 
+      res.send(params);
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+
+
+  //data for kids-points
+  .get('/israel', async (req, res) => {
+    try { 
+      console.log("received request for israel data");
+
+      const client = await pool.connect()
+      const data   = await client.query("INSERT INTO Israel (promise, scripture) VALUES ('" + req.query.note + "', '" + req.query.scripture + "')");
+
+      const params = { 'data' : (data) ? data.rows : null
+                     };
+
+      res.send(params);
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
 
 
 
