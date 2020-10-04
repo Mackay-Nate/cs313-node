@@ -349,7 +349,7 @@ express()
       const params = { 'data' : (data) ? data.rows : null
                      };
 
-      res.send(params);
+      res.redirect('https://nates-apps.herokuapp.com/Israel.html');
       client.release();
     } catch (err) {
       console.error(err);
