@@ -318,6 +318,29 @@ express()
     }
   })
 
+    //data for kids-points
+    .get('/israel', async (req, res) => {
+      try { 
+        console.log("received request for israel data");
+  
+        const client = await pool.connect()
+        const data   = await client.query('SELECT * FROM Israel ORDER BY id');
+  
+        const params = { 'data' : (data) ? data.rows : null
+                       };
+
+        res.send(params);
+        client.release();
+      } catch (err) {
+        console.error(err);
+        res.send("Error " + err);
+      }
+    })
+
+    
+
+
+
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 

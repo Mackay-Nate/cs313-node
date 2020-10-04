@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises for Covenant Israel</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/israel.css">
+    <link rel="shortcut icon" href="https://www.flaticon.com/premium-icon/icons/svg/2015/2015200.svg" type="image/x-icon" >
+  </head>
+
+<body onload="load()" id="lesson">
+
+<h1>The Gathering of Israel</h1>
+<p>Make a list of the promises the Lord has made to covenant Israel.</p>
+<ul id="list">
+</ul>
+
+<form id="add" method="GET" onsubmit="newItem()">
+  <table>
+  <tr><td>Promise</td>
+    <td><textarea name="note" rows="3"></textarea></td>
+  </tr>
+  <tr><td>Scripture:</td>
+    <td><input type="text" name="scripture"></td>
+  </tr>
+  <tr><td colspan="2">
+    <input type="submit" value="Add a new promises">
+  </td></tr>
+  </table>
+</form>
+
+<footer id="date">
+</footer>
+
+<script>
+
+  function load() { 
+    //get the data from the database
+    var xmlHttpRequest = new XMLHttpRequest();
+    xmlHttpRequest.onreadystatechange = function() {
+      if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+  
+        console.log('inside xmlHttpResquet');
+        var data = JSON.parse(xmlHttpRequest.responseText);
+
+        // add the database info to the list
+        for (var i = 0; i < data.length; i++) {
+          var item = document.createElement('li');
+          item.innerHTML = data[i].promise;
+        }
+      }
+    }
+
+    //the json is from the database here
+    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/israel', true);
+    xmlHttpRequest.send();
+  
+  };
+
+  // // returns the yearly week number 0-52
+  // function getWeek() { 
+  //   let now = new Date();
+  //   let onejan = new Date(now.getFullYear(), 0, 1);
+
+  //   if (now.getDay() > 5) { 
+  //     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);      
+  //   } else if (now.getDay() > 0) {
+  //     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2) + 1;      
+  //   } 
+
+  //   return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
+  // };
+
+  // // add a preceding zero to single digits, if necessary
+  // function addZero(week) {
+  //   if (week < 10) {
+  //     return '0' + week;
+  //   } else {
+  //     return week;
+  //   }
+  // };
+
+  // // edit music link based on if the music is a hymn or not 
+  // function getMusicLink(music) {
+  //   if (music.book == 1) {
+  //     return ("Hymn number " + music.number + ", <em>" + music.name + "</em>");
+  //   } else {
+  //     return ("<em>" + music.name + "</em>, from the Children's Songbook, page " + music.number);
+  //   }
+  // };
+
+  // // edit DOM for announcement section 
+  // function editItem(item) {
+  //   var edit = document.getElementById('announce');
+  //   var box = document.createElement('input');
+  //   box.setAttribute("type", "text");
+  //   box.setAttribute("id", "announceInput");
+  //   box.setAttribute("name", "announceInput");
+  //   box.setAttribute("value", item.innerText);
+
+  //   edit.parentElement.childNodes[1].innerText = "";
+  //   edit.parentElement.childNodes[1].removeAttribute("onclick");
+
+  //   edit.appendChild(box);
+  //   document.getElementById('announce').childNodes[0].focus();
+  //   document.getElementsByClassName('hidden')[0].style.display = "initial";
+  // };
+
+  // function addBusiness() {
+  //   //add the data to the database
+
+  //   var announceInput = document.getElementById('announceInput').value; 
+  //   var week = document.getElementById('week').value; 
+
+  //   var xmlHttpRequest = new XMLHttpRequest();
+  //   xmlHttpRequest.onreadystatechange = function() {
+  //     if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
+  //       var data = JSON.parse(xmlHttpRequest.responseText);
+
+  //       console.log("/add http request");
+  //       document.getElementById("announce").innerHTML = data.business[0].note;
+  //       document.getElementById('announce').setAttribute("onclick", "editItem(this)");
+  //       document.getElementsByClassName('hidden')[0].style.display = "none";
+  //     }
+
+  //   }
+  //   xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/lesson', true);
+  //   xmlHttpRequest.send();
+
+  // };
+
+</script>
+</body>
+</html>

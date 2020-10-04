@@ -1,0 +1,93 @@
+body {
+  background-color: burlywood;
+  background-image: url("https://images.twinkl.co.uk/tr/image/upload/illustation/jacobs-12-sons-3.png");
+  background-blend-mode: screen;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+#points { 
+  background-color: rgb(140, 203, 255);
+  background-blend-mode: screen;
+  /* background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat; */
+  /* color: rgb(40, 40, 40); */
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+table {
+  margin: auto;
+  text-align: center;
+}
+
+.col1 {
+  text-align: right;
+  padding: 6px;
+  width: 120px;
+  font-variant: small-caps;
+  margin: 0px;
+}
+
+.col2 {
+  width: 160px;
+}
+
+tr {
+  font-weight: 800;
+}
+
+h1 { 
+  margin-top: 50px;
+}
+
+h3 { 
+  margin: 9px;
+}
+
+a { 
+  color: inherit;
+  text-decoration: unset;
+}
+
+input, textarea {
+  padding: 4px;
+  background: rgb(239, 245, 188);
+  color: rgb(138, 138, 138);
+  width: 170px;
+  border-width: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+.points { 
+  width: 30px;
+  text-align: right;
+}
+
+button {
+  background: rgb(140, 203, 255);
+  color: rgb(140, 203, 255);
+  border-color: rgb(140, 203, 255);
+  border-width: 0px;
+  padding: 10px;
+}
+
+.arrow { 
+  content: "";
+  position: relative;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
