@@ -41,12 +41,12 @@
       if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
   
         console.log('inside xmlHttpResquet');
-        var data = JSON.parse(xmlHttpRequest.responseText);
+        var database = JSON.parse(xmlHttpRequest.responseText);
 
         // add the database info to the list
-        for (var i = 0; i < data.length; i++) {
+        for (var i = 0; i < database.data.length; i++) {
           var item = document.createElement('li');
-          item.innerHTML = data[i].promise;
+          item.innerHTML = database.data[i].promise;
         }
       }
     }
