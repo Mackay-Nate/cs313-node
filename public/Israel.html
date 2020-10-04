@@ -47,6 +47,7 @@
         for (var i = 0; i < database.data.length; i++) {
           var item = document.createElement('li');
           item.innerHTML = database.data[i].promise;
+          document.getElementById('list').appendChild(item);
         }
       }
     }
