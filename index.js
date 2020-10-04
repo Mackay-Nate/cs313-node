@@ -339,7 +339,7 @@ express()
 
 
   //data for kids-points
-  .get('/israel', async (req, res) => {
+  .get('/addIsrael', async (req, res) => {
     try { 
       console.log("received request for israel data");
 
