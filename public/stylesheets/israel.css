@@ -18,8 +18,8 @@ body {
   text-align: center;
 }
 
-ul {
-  list-style-type: none;
+ol {
+  list-style-position: inside;
 }
 
 table {
