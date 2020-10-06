@@ -302,7 +302,7 @@
   // returns the date data type in this form September 24, 2020
   function formatDate(date) {
     var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    return ((date.substring(5,6) > 0) ? month[date.substring(5 ,7) - 1] : month[date.substring(6 ,7) - 1]) + " " + date.substring(8, 10) + ", " + date.substring(0, 4);
+    return ((date.substring(5,6) > 0) ? month[date.substring(5 ,7) - 1] : month[date.substring(6 ,7) - 1]) + " " + ((date.substring(8,9) > 0) ? date.substring(8, 10) : date.substring(8, 9)) + ", " + date.substring(0, 4);
 
   };
 
