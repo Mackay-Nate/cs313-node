@@ -47,10 +47,10 @@
         // add the database info to the list
         for (var i = 0; i < database.data.length; i++) {
           var item  = document.createElement('li');
-          var quote = document.createElement('q');
-          q.innerHTML = database.data[i].promise;
-          document.getElementById('list').appendChild(q);
-          document.getElementById('list').innerHTML += database.data[i].scripture;
+          var scrip = document.createElement('q');
+          scrip.innerHTML = database.data[i].promise;
+          document.getElementById('list').appendChild(scrip);
+          document.getElementById('list').innerHTML += + " -" + database.data[i].scripture;
         }
       }
     }
