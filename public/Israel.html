@@ -50,7 +50,8 @@
           var scrip = document.createElement('q');
           scrip.innerHTML = database.data[i].promise;
           
-          var text = "<br>  -" + database.data[i].scripture;
+          var text = "  -" + database.data[i].scripture;
+          item.appendChild(document.createElement('br'));
           item.appendChild(scrip);
           scrip.after(text);
           document.getElementById('list').appendChild(item);
