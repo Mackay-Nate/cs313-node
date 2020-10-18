@@ -50,8 +50,9 @@
           var scrip = document.createElement('q');
           scrip.innerHTML = database.data[i].promise;
           
-          item.innerHTML = "  -" + database.data[i].scripture;
-          item.after(scrip);
+          var text = "  -" + database.data[i].scripture;
+          scrip.after(text);
+          item.appendChild(scrip);
           document.getElementById('list').appendChild(item);
         }
       }
