@@ -46,9 +46,11 @@
 
         // add the database info to the list
         for (var i = 0; i < database.data.length; i++) {
-          var item = document.createElement('li');
-          item.innerHTML = database.data[i].promise;
-          document.getElementById('list').appendChild(item);
+          var item  = document.createElement('li');
+          var quote = document.createElement('q');
+          q.innerHTML = database.data[i].promise;
+          document.getElementById('list').appendChild(q);
+          document.getElementById('list').innerHTML += database.data[i].scripture;
         }
       }
     }
@@ -58,78 +60,6 @@
     xmlHttpRequest.send();
   
   };
-
-  // // returns the yearly week number 0-52
-  // function getWeek() { 
-  //   let now = new Date();
-  //   let onejan = new Date(now.getFullYear(), 0, 1);
-
-  //   if (now.getDay() > 5) { 
-  //     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);      
-  //   } else if (now.getDay() > 0) {
-  //     return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2) + 1;      
-  //   } 
-
-  //   return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
-  // };
-
-  // // add a preceding zero to single digits, if necessary
-  // function addZero(week) {
-  //   if (week < 10) {
-  //     return '0' + week;
-  //   } else {
-  //     return week;
-  //   }
-  // };
-
-  // // edit music link based on if the music is a hymn or not 
-  // function getMusicLink(music) {
-  //   if (music.book == 1) {
-  //     return ("Hymn number " + music.number + ", <em>" + music.name + "</em>");
-  //   } else {
-  //     return ("<em>" + music.name + "</em>, from the Children's Songbook, page " + music.number);
-  //   }
-  // };
-
-  // // edit DOM for announcement section 
-  // function editItem(item) {
-  //   var edit = document.getElementById('announce');
-  //   var box = document.createElement('input');
-  //   box.setAttribute("type", "text");
-  //   box.setAttribute("id", "announceInput");
-  //   box.setAttribute("name", "announceInput");
-  //   box.setAttribute("value", item.innerText);
-
-  //   edit.parentElement.childNodes[1].innerText = "";
-  //   edit.parentElement.childNodes[1].removeAttribute("onclick");
-
-  //   edit.appendChild(box);
-  //   document.getElementById('announce').childNodes[0].focus();
-  //   document.getElementsByClassName('hidden')[0].style.display = "initial";
-  // };
-
-  // function addBusiness() {
-  //   //add the data to the database
-
-  //   var announceInput = document.getElementById('announceInput').value; 
-  //   var week = document.getElementById('week').value; 
-
-  //   var xmlHttpRequest = new XMLHttpRequest();
-  //   xmlHttpRequest.onreadystatechange = function() {
-  //     if (xmlHttpRequest.readyState == XMLHttpRequest.DONE && xmlHttpRequest.status == 200 ) {
-  //       var data = JSON.parse(xmlHttpRequest.responseText);
-
-  //       console.log("/add http request");
-  //       document.getElementById("announce").innerHTML = data.business[0].note;
-  //       document.getElementById('announce').setAttribute("onclick", "editItem(this)");
-  //       document.getElementsByClassName('hidden')[0].style.display = "none";
-  //     }
-
-  //   }
-  //   xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/lesson', true);
-  //   xmlHttpRequest.send();
-
-  // };
 
 </script>
 </body>

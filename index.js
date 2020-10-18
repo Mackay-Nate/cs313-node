@@ -207,13 +207,7 @@ express()
       const client = await pool.connect()
       const member = await client.query("INSERT INTO Points (kids, points, notes) VALUES (" + req.query.child + ", " + req.query.points + ", '" + req.query.notes + "')");
       console.log("points added to the database");
-      // const point  = await client.query('SELECT * FROM Points');
 
-      // const params = { 'member': (member) ? member.rows : null, 
-      //                  'point' : (point)  ? point.rows  : null
-      //                };
-
-      // res.send(params);
       res.redirect('https://nates-apps.herokuapp.com/kid-points.html');
       client.release();
     } catch (err) {

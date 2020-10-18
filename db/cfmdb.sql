@@ -366,5 +366,24 @@ INSERT INTO background (picture) VALUES ('Joseph.jpg');
 INSERT INTO background (picture) VALUES ('https://upload.wikimedia.org/wikipedia/commons/c/c8/Joseph_Smith_first_vision_stained_glass.jpg');
 INSERT INTO background (picture) VALUES ('https://www.sltrib.com/resizer/hxyw7axVp11boJEAibpdlp10Y-0=/0x600/smart/filters:quality(86)/arc-anglerfish-arc2-prod-sltrib.s3.amazonaws.com/public/PJQ6RUV7HJBUPKPT63HXIHJLI4.jpeg');
 
-INSERT INTO PRSLesson (talkName, speaker, link, weekTaught)
-VALUES ('Hear Him', 'President Russell M. Nelson', 'https://www.churchofjesuschrist.org/study/general-conference/2020/04/45nelson?lang=eng', 1);
+-- INSERT INTO PRSLesson (talkName, speaker, link, weekTaught)
+-- VALUES ('Hear Him', 'President Russell M. Nelson', 'https://www.churchofjesuschrist.org/study/general-conference/2020/04/45nelson?lang=eng', 1);
+
+INSERT INTO PRSLesson (talkName, speaker, link, weekTaught) 
+VALUES ('Do Justly, Love Mercy, and Walk Humbly with God', 'Elder Dale G. Renlund', 'https://www.churchofjesuschrist.org/study/general-conference/2020/10/55renlund?lang=eng', 2);
+
+INSERT INTO PRSLesson (talkName, speaker, link, weekTaught) 
+VALUES ('Waiting on the Lord', 'Elder Jeffrey R. Holland', 'https://www.churchofjesuschrist.org/study/general-conference/2020/10/57holland?lang=eng', 4);
+
+INSERT INTO PRSLesson (talkName, speaker, link, weekTaught) 
+VALUES ('Embrace the Future with Faith', 'President Russell M. Nelson', 'https://www.churchofjesuschrist.org/study/general-conference/2020/10/37nelson?lang=eng', 7);
+
+INSERT INTO PRSLesson (talkName, speaker, link, weekTaught) 
+VALUES ('God Will Do Something Unimaginable', 'Elder Dieter F. Uchtdorf', 'https://www.churchofjesuschrist.org/study/general-conference/2020/10/28uchtdorf?lang=eng', 9);
+
+INSERT INTO PRSLesson (talkName, speaker, link, weekTaught) 
+VALUES ('Becoming like Him', 'Elder Scott D. Whiting', 'https://www.churchofjesuschrist.org/study/general-conference/2020/10/13whiting?lang=eng', 11);
+
+INSERT INTO PRSLesson (talkName, speaker, link, weekTaught) 
+VALUES ('Watch Ye Therefore, and Pray Always', 'President M. Russell Ballard', 'https://www.churchofjesuschrist.org/study/general-conference/2020/10/41ballard?lang=eng', 13);
+
