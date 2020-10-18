@@ -49,8 +49,9 @@
           var item  = document.createElement('li');
           var scrip = document.createElement('q');
           scrip.innerHTML = database.data[i].promise;
-          item.appendChild(scrip);
+          
           item.innerHTML = "  -" + database.data[i].scripture;
+          item.appendChild(scrip);
           document.getElementById('list').appendChild(item);
         }
       }
