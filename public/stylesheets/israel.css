@@ -20,6 +20,11 @@ body {
 
 ol {
   list-style-position: inside;
+  padding-left: 0px;
+}
+
+li { 
+  padding: 10px 0px;
 }
 
 table {
