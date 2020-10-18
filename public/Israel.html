@@ -51,7 +51,7 @@
           scrip.innerHTML = database.data[i].promise;
           
           item.innerHTML = "  -" + database.data[i].scripture;
-          item.appendChild(scrip);
+          item.after(scrip);
           document.getElementById('list').appendChild(item);
         }
       }
