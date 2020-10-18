@@ -52,8 +52,9 @@
           
           var text = "  -" + database.data[i].scripture;
           item.appendChild(scrip);
-          item.appendChild(document.createElement('br'));
-          item.after(text);
+          scrip.after(text);
+          script.appendChild(document.createElement('br'));
+          
           document.getElementById('list').appendChild(item);
         }
       }
