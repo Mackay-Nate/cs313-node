@@ -46,15 +46,17 @@
 
         // add the database info to the list
         for (var i = 0; i < database.data.length; i++) {
-          var item  = document.createElement('li');
-          var scrip = document.createElement('q');
-          scrip.innerHTML = database.data[i].promise;
+
+          var text = "<li><q>" + database.data[i].promise + "</q><br>-  " + database.data[i].scripture + "</li>";
+          // var item  = document.createElement('li');
+          // var scrip = document.createElement('q');
+          // scrip.innerHTML = database.data[i].promise;
           
-          var text = "  -" + database.data[i].scripture;
-          item.appendChild(scrip);
-          item.after(text);
-          item.appendChild(document.createElement('br'));
-          document.getElementById('list').appendChild(item);
+          // var text = "  -" + database.data[i].scripture;
+          // item.appendChild(scrip);
+          // item.after(text);
+          // item.appendChild(document.createElement('br'));
+          // document.getElementById('list').appendChild(item);
         }
       }
     }
