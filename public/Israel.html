@@ -51,8 +51,8 @@
           scrip.innerHTML = database.data[i].promise;
           
           var text = "  -" + database.data[i].scripture;
-          item.appendChild(document.createElement('br'));
           item.appendChild(scrip);
+          item.appendChild(document.createElement('br'));
           scrip.after(text);
           document.getElementById('list').appendChild(item);
         }
