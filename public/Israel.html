@@ -16,16 +16,16 @@
 </ol>
 <p><q>Ponder these promises. Talk about them with your family and friends. Then live and watch for these promises to be fulfilled in your own life.</q><br>-President Russell M. Nelson</p>
 
-<form id="add" method="GET" action="/addIsrael">
+<form id="add" class="hidden" method="GET" action="/addIsrael">
   <table>
   <tr><td>Promise</td>
     <td><textarea name="note" rows="3"></textarea></td>
   </tr>
   <tr><td>Scripture:</td>
-    <td><input type="text" name="scripture"></td>
+    <td><input type="text" name="scripture" autocomplete="off"></td>
   </tr>
   <tr><td colspan="2">
-    <input type="submit" value="Add a new promises">
+    <input type="submit" value="Add a new promise">
   </td></tr>
   </table>
 </form>
@@ -47,16 +47,9 @@
         // add the database info to the list
         for (var i = 0; i < database.data.length; i++) {
 
-          
           var item  = document.createElement('li');
           item.innerHTML = "<q>" + database.data[i].promise + "</q><br>-  " + database.data[i].scripture;
-          // var scrip = document.createElement('q');
-          // scrip.innerHTML = database.data[i].promise;
-          
-          // var text = "  -" + database.data[i].scripture;
-          // item.appendChild(scrip);
-          // item.after(text);
-          // item.appendChild(document.createElement('br'));
+
           document.getElementById('list').appendChild(item);
         }
       }

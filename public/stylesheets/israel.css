@@ -21,6 +21,7 @@ body {
 ol {
   list-style-position: inside;
   padding-left: 0px;
+  margin: 5px 0px;
 }
 
 li { 
@@ -70,7 +71,7 @@ input, textarea {
 }
 
 .hidden {
-  display: none;
+  /* display: none; */
 }
 
 .points { 
@@ -95,4 +96,8 @@ button {
   border-width: 10px;
   border-style: solid;
   border-color: #555 transparent transparent transparent;
+}
+
+textarea { 
+  height: 100px;
 }
