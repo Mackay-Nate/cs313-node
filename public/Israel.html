@@ -44,7 +44,7 @@
         console.log('inside xmlHttpResquet');
         var database = JSON.parse(xmlHttpRequest.responseText);
 
-        if(database.user[0].access) {
+        if(database.user[0].allowed) {
           document.getElementById('add').style.display = "initial";
         }
         // add the database info to the list

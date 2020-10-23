@@ -321,7 +321,7 @@ express()
       const data   = await client.query('SELECT * FROM Israel ORDER BY id');
       var   user   = await client.query("SELECT fname FROM Users WHERE phone='" + req.query.phone + ";'");
       if (user.rows == "" ) {
-        var user = [{id: 5, fname: 'John', access: false}];
+        var user = [{id: 5, fname: 'John', allowed: false}];
       }
 
       const params = { 'data' : (data) ? data.rows : null,
