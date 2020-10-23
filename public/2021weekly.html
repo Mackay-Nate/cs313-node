@@ -127,6 +127,9 @@
       var data = JSON.parse(xmlHttpRequest.responseText);
 
       // add the database info to the webpage
+      if (data.user[0].fname == 'John') {
+        document.getElementById('announce').removeAttribute("onclick");
+      }
       document.getElementById("dates").innerHTML = data.dates[0].weekname;
       document.getElementById("conduct").innerHTML = data.family[(week + 2) % 5].firstname;
       document.getElementById("teacher").innerHTML = data.family[(week + 4) % 5].firstname;
@@ -157,7 +160,7 @@
     }
 
     //the json is from the database here
-    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/cfmweek?week=' + week, true);
+    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/cfmweek?week=' + week + '&phone=' + screen.width + navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(")")), true);
     xmlHttpRequest.send();
 
   };

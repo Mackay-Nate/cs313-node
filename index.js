@@ -89,6 +89,10 @@ express()
       const topic     = await client.query('SELECT * FROM Topic WHERE id=' + req.query.week);
       const background= await client.query('SELECT * FROM background ORDER BY id');
       const PRSLesson = await client.query('SELECT * FROM PRSLesson WHERE weekTaught=' + req.query.week);
+      var   user   = await client.query("SELECT * FROM Users WHERE phone='" + req.query.phone + "'");
+      if (user.rows == "" ) {
+        var user = [{id: 5, fname: 'John', allowed: false}];
+      }
 
       const params = { 'family': (family)    ? family.rows     : null, 
                         'dates': (dates)     ? dates.rows      : null, 
@@ -100,7 +104,8 @@ express()
                         'music': (music)     ? music.rows      : null,
                         'topic': (topic)     ? topic.rows      : null, 
                   'background' : (background)? background.rows : null,
-                   'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null 
+                   'PRSLesson' : (PRSLesson) ? PRSLesson.rows  : null,
+                       'user'  : (user.rows) ? user.rows       : user 
                       //  'week'  : (week)      ? week.rows       : null
                     };
 
@@ -143,7 +148,7 @@ express()
       const client = await pool.connect()
       const member = await client.query('SELECT * FROM Member');
       const job    = await client.query('SELECT * FROM Job');
-      var date = ['7th', '11th', '14th', '21st'];
+      var date     = ['7th', '11th', '14th', '21st'];
 
       const params = { 'member': (member) ? member.rows : null, 
                         'job'  : (job)    ? job.rows    : null, 
@@ -292,8 +297,6 @@ express()
       var updates = [req.query.un, req.query.stainN, req.query.stainG, req.query.stainK, req.query.cN, req.query.cG, req.query.cK, req.query.slN, req.query.slG, req.query.slK, req.query.stapledN, req.query.stapledG, req.query.stapledK, req.query.dN, req.query.dG, req.query.dK, req.query.miniun, req.query.ministainN, req.query.ministainG, req.query.ministainK, req.query.minicN, req.query.minicG, req.query.minicK, req.query.minislN, req.query.minislG, req.query.minislK, req.query.ministapledN, req.query.ministapledG, req.query.ministapledK, req.query.minidN, req.query.minidG, req.query.minidK];
 
       const client   = await pool.connect()
-      // const subUser   = await client.query("SELECT fname FROM Users WHERE phone='" + req.query.phone + "'");
-      // console.log(subUser.rows[0].fname);
 
       for (var i = 1; i < updates.length + 1; i++) {
         const check = await client.query("SELECT quantity FROM frame WHERE id=" + i);
