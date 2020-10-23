@@ -319,7 +319,7 @@ express()
 
       const client = await pool.connect()
       const data   = await client.query('SELECT * FROM Israel ORDER BY id');
-      var   user   = await client.query("SELECT fname FROM Users WHERE phone='" + req.query.phone + ";'");
+      var   user   = await client.query("SELECT * FROM Users WHERE phone='" + req.query.phone + "'");
       if (user.rows == "" ) {
         var user = [{id: 5, fname: 'John', allowed: false}];
       }
