@@ -235,6 +235,7 @@
 </form>
 
 <div id="successful"> The quantities were updated successfully.</div>
+<div id="unknown">Device not recognized.</div>
 <footer id="date">
 </footer>
 
@@ -278,9 +279,15 @@
         var data = JSON.parse(xmlHttpRequest.responseText);
         var total;
 
-        for (var i = 0; i < data.wood.length; i++) { 
-          document.getElementsByTagName('input')[i].value = data.wood[i].quantity;
-          document.getElementsByClassName('update')[i].innerHTML = formatDate(data.wood[i].dateupdated);
+        if (data.submit[0].fname != "John") {
+          for (var i = 0; i < data.wood.length; i++) { 
+            document.getElementsByTagName('input')[i].value = data.wood[i].quantity;
+            document.getElementsByClassName('update')[i].innerHTML = formatDate(data.wood[i].dateupdated);
+          }
+        } else { 
+          var device = document.getElementById("unknown");
+          device.className = "show";
+          setTimeout(function(){ device.className = device.className.replace("show", ""); }, 2000);
         }
 
         // check if new quantities were submitted

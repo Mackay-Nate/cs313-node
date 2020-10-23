@@ -129,7 +129,7 @@ span table {
   font-size: 70%;
 }
 
-#successful {
+#successful, #unknown {
   visibility: hidden;
   min-width: 200px;
   max-width: 230px;
@@ -146,7 +146,7 @@ span table {
   z-index: 1;
 }
 
-#successful.show {
+#successful.show, #unknown.show {
   visibility: visible;
   animation: fadein 0.5s, fadeout 0.5s 4.5s;
 }
