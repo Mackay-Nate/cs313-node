@@ -231,7 +231,7 @@
     </tr>
     <tr><td><input type="hidden" name="phone" ></td></tr>
   </table>
-  <input type="submit" value="Update quantities">
+  <input id="upQuan" class="hidden" type="submit" value="Update quantities">
 </form>
 
 <div id="successful"> The quantities were updated successfully.</div>
@@ -283,11 +283,13 @@
           for (var i = 0; i < data.wood.length; i++) { 
             document.getElementsByTagName('input')[i].value = data.wood[i].quantity;
             document.getElementsByClassName('update')[i].innerHTML = formatDate(data.wood[i].dateupdated);
+            document.getElementById('upQuan').style.display = "initial";
           }
         } else { 
           var device = document.getElementById("unknown");
           device.className = "show";
           setTimeout(function(){ device.className = device.className.replace("show", ""); }, 2000);
+          document.getElementById('upQuan').style.display = "none";
         }
 
         // check if new quantities were submitted
