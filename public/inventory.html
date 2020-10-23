@@ -279,7 +279,7 @@
         var data = JSON.parse(xmlHttpRequest.responseText);
         var total;
 
-        if (data.submit[0].fname != "John") {
+        if (data.user[0].fname != "John") {
           for (var i = 0; i < data.wood.length; i++) { 
             document.getElementsByTagName('input')[i].value = data.wood[i].quantity;
             document.getElementsByClassName('update')[i].innerHTML = formatDate(data.wood[i].dateupdated);
