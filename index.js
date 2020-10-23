@@ -312,15 +312,20 @@ express()
     }
   })
 
-  //data for kids-points
+  //data for promises to covenant Israel
   .get('/israel', async (req, res) => {
     try { 
       console.log("received request for israel data");
 
       const client = await pool.connect()
       const data   = await client.query('SELECT * FROM Israel ORDER BY id');
+      var   user   = await client.query("SELECT fname FROM Users WHERE phone='" + req.query.phone + ";'");
+      if (user.rows == "" ) {
+        var user = [{id: 5, fname: 'John', access: false}];
+      }
 
-      const params = { 'data' : (data) ? data.rows : null
+      const params = { 'data' : (data) ? data.rows : null,
+                      'user'  : (user.rows)  ?  user.rows  : user
                      };
 
       res.send(params);
@@ -331,8 +336,7 @@ express()
     }
   })
 
-
-  //data for kids-points
+  //adding data to covenant Israel
   .get('/addIsrael', async (req, res) => {
     try { 
       console.log("received request for israel data");
