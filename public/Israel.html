@@ -44,6 +44,9 @@
         console.log('inside xmlHttpResquet');
         var database = JSON.parse(xmlHttpRequest.responseText);
 
+        if(database.user[0].access) {
+          document.getElementById('add').style.display = "initial";
+        }
         // add the database info to the list
         for (var i = 0; i < database.data.length; i++) {
 
@@ -56,7 +59,7 @@
     }
 
     //the json is from the database here
-    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/israel', true);
+    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/israel?phone=' + screen.width + navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(")")), true);
     xmlHttpRequest.send();
   };
 

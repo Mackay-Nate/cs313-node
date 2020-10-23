@@ -71,7 +71,7 @@ input, textarea {
 }
 
 .hidden {
-  /* display: none; */
+  display: none;
 }
 
 .points { 
