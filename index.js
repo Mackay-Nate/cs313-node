@@ -261,10 +261,15 @@ express()
       const stage  = await client.query('SELECT * FROM Stage ORDER BY id');
       const submit = await client.query("SELECT * FROM Success WHERE type='frame';");
       const reset  = await client.query("UPDATE Success SET success=FALSE WHERE type='frame';");
+      var   user   = await client.query("SELECT * FROM Users WHERE phone='" + req.query.phone + "'");
+      if (user.rows == "" ) {
+        var user = [{id: 5, fname: 'John', allowed: false}];
+      }
 
       const params = { 'wood': (wood)    ? wood.rows     : null, 
                       'stage': (stage)   ? stage.rows    : null, 
-                     'submit': (submit)  ? submit.rows   : null 
+                     'submit': (submit)  ? submit.rows   : null,
+                       'user': (user.rows) ?  user.rows  : user
                       };
 
       console.log('inventory information successfully retrieved');
