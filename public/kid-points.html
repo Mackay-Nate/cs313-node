@@ -65,6 +65,10 @@
       var table = document.getElementById('displayTable');
       var total;
 
+      if (data.user[0].allowed == false) {
+        document.getElementById('addPointButton').removeAttribute("onclick");
+      }
+
       for (var i = 2; i < data.kids.length; i++) { 
         var script = ""
         total = 0;
@@ -127,7 +131,7 @@
     }
   }
     //the json is from the database here
-    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/getPoints', true);
+    xmlHttpRequest.open('GET', 'https://nates-apps.herokuapp.com/getPoints?phone=' + screen.width + navigator.appVersion.substring(navigator.appVersion.lastIndexOf(";") + 2, navigator.appVersion.indexOf(")")), true);
     xmlHttpRequest.send();
 
   };
