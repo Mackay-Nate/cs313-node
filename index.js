@@ -170,27 +170,6 @@ express()
       const client = await pool.connect()
       const kids   = await client.query('SELECT * FROM Family  ORDER BY id');
       const point  = await client.query('SELECT * FROM Points');
-
-      const params = { 'kids'  : (kids)   ? kids.rows   : null, 
-                       'point' : (point)  ? point.rows  : null
-                     };
-
-      res.send(params);
-      client.release();
-    } catch (err) {
-      console.error(err);
-      res.send("Error " + err);
-    }
-  })
-
-  //data for kids-points
-  .get('/getPoints', async (req, res) => {
-    try { 
-      console.log("received request for getting kids points");
-
-      const client = await pool.connect()
-      const kids   = await client.query('SELECT * FROM Family  ORDER BY id');
-      const point  = await client.query('SELECT * FROM Points');
       var   user   = await client.query("SELECT * FROM Users WHERE phone='" + req.query.phone + "'");
       if (user.rows == "" ) {
         var user = [{id: 5, fname: 'John', allowed: false}];
