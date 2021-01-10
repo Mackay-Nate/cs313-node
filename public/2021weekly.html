@@ -131,7 +131,7 @@
       if (data.user[0].fname == 'John') {
         document.getElementById('announce').removeAttribute("onclick");
       }
-      document.getElementById("dates").innerHTML = data.dates[0].weekname;
+      document.getElementById("dates").innerHTML = data.dates[0].weekname + <br> + week;
       document.getElementById("conduct").innerHTML = data.family[order[(week + 2) % order.length]].firstname;
       document.getElementById("teacher").innerHTML = data.family[order[(week + 3) % order.length]].firstname;
       document.getElementById("cprayer").innerHTML = data.family[order[(week + 0) % order.length]].firstname;
