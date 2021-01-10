@@ -172,12 +172,12 @@
     let onejan = new Date(now.getFullYear(), 0, 1);
 
     if (now.getDay() > 6) { 
-      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);      
+      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 1);      
     } else if (now.getDay() > 0) {
-      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2) + 1;      
+      return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 1) + 1;      
     } 
 
-    return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 2);
+    return (Math.ceil( (((now - onejan) / 86400000) + onejan.getDay() + 1) / 7 ) - 1);
   };
 
   // add a preceding zero to single digits, if necessary
