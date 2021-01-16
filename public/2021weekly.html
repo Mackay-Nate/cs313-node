@@ -78,7 +78,8 @@
       <!--<tr><th class="col1"><th></th></tr>-->
 
       <tr><td class="col1">Conducting</td><td id="conduct" class="col2"></td></tr>
-      <tr><td class="col1">Family announcements</td><td id="announce" onclick="editItem(this)">Love one Another</td></tr>
+      <tr><td class="col1" rowspan="2">Family announcements</td><td id="announce" onclick="editItem(this)">Love one Another</td></tr>
+      <tr><td id="next"></td></tr>
     </table>
     <input type="hidden" id="week" name="week">
     <input type="submit" id="submit" value="Done" class="hidden">
@@ -136,6 +137,7 @@
       document.getElementById("teacher").innerHTML = data.family[order[(week + 3) % order.length]].firstname;
       document.getElementById("cprayer").innerHTML = data.family[order[(week + 0) % order.length]].firstname;
       document.getElementById("oprayer").innerHTML = data.family[order[(week + 1) % order.length]].firstname; 
+      document.getElementById("next").innerHTML = data.family[order[(week + 6) % order.length]].firstname;
 
       document.getElementById("topic").innerHTML = '<a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-doctrine-and-covenants-2021/' + addZero(week) + '?lang=eng" target="_blank">' + data.topic[0].title +'</a>';
 
