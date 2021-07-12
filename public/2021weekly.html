@@ -93,8 +93,8 @@
     <tr><td class="col1"></td><td></td></tr>
     <tr><td class="col1"></td><td></td></tr>
     <tr><td class="col1">Topic</td><td id="topic"><a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-individuals-and-families-new-testament-2019/41?lang=eng" target="_blank">Be kind, tell the truth...</a></td></tr>
-    <tr><td class="col1">Priesthood/
-      Relief Society</td><td id="prs"></td></tr>
+    <tr><td class="col1">Relief Society</td><td id="rs"></td></tr>
+    <tr><td class="col1">Priesthood</td><td id="priesthood"></td></tr>
     <tr><td class="col1">Scriptures</td><td id="scripture"><a href="https://www.churchofjesuschrist.org/study/scriptures/nt?lang=eng" style="text-decoration: unset;" target="_blank">Doctrine & Covenants</a></td></tr>
   </table>
   <input type="button" value="Click to load next week" onclick="load(getWeek() + 1)">
@@ -151,9 +151,9 @@
       document.getElementById("announce").innerHTML = data.business[0].note;
 
       if (data.PRSLesson[0] == undefined) {
-        document.getElementById("prs").innerHTML = "";
+        document.getElementById("rs").innerHTML = "";
       } else {
-        document.getElementById("prs").innerHTML = '<a href=' + data.PRSLesson[0].link + ' target="_blank"><em>' + data.PRSLesson[0].talkname + '</em>, by ' + data.PRSLesson[0].speaker + '</a>';
+        document.getElementById("rs").innerHTML = '<a href=' + data.PRSLesson[0].link + ' target="_blank"><em>' + data.PRSLesson[0].talkname + '</em>, by ' + data.PRSLesson[0].speaker + '</a>';
       }
 
       document.body.style.backgroundImage = "url('" + data.background[(week % data.background.length)].picture + "')";
